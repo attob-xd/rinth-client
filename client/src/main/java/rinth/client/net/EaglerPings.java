@@ -5,9 +5,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.mojang.logging.LogUtils;
-import rinth.client.platform.ClientPlatform;
-import rinth.net.WebSocketUrl;
-import rinth.net.eagler.EaglerQuery;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -25,6 +22,9 @@ import net.minecraft.network.protocol.status.ServerStatus;
 import net.minecraft.util.Util;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.platform.ClientPlatform;
+import rinth.net.WebSocketUrl;
+import rinth.net.eagler.EaglerQuery;
 
 /**
  * The server list's ping for Eagler servers (ADR 0016): they don't answer the vanilla status

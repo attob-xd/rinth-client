@@ -1,12 +1,12 @@
 package rinth.classlib.additions.java.lang;
 
+import java.lang.reflect.Type;
+import java.net.URL;
+import org.jspecify.annotations.Nullable;
 import rinth.classlib.InstanceMethod;
 import rinth.classlib.reflect.GenericSuperclasses;
 import rinth.classlib.resources.ClassPathResources;
 import rinth.classlib.substitutes.java.lang.TModule;
-import java.lang.reflect.Type;
-import java.net.URL;
-import org.jspecify.annotations.Nullable;
 
 /**
  * {@code java.lang.Class} methods TeaVM lacks. The browser build keeps no signers and few generic

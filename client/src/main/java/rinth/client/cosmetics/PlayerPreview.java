@@ -1,9 +1,5 @@
 package rinth.client.cosmetics;
 
-import rinth.client.skins.OwnSkin;
-import rinth.client.startup.DeferredModels;
-import rinth.online.Cosmetic;
-import rinth.online.Loadout;
 import java.util.UUID;
 import java.util.function.Supplier;
 import net.minecraft.client.gui.ComponentPath;
@@ -18,6 +14,10 @@ import net.minecraft.util.Util;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
 import org.jspecify.annotations.Nullable;
+import rinth.client.skins.OwnSkin;
+import rinth.client.startup.DeferredModels;
+import rinth.online.Cosmetic;
+import rinth.online.Loadout;
 
 /**
  * The player in 3D wearing a loadout (ADR 0061), drawn by the game's own player renderer with every

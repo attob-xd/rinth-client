@@ -2,10 +2,10 @@ package net.minecraft.client.multiplayer.resolver;
 
 import com.google.common.net.HostAndPort;
 import com.mojang.logging.LogUtils;
-import rinth.net.WebSocketUrl;
 import java.net.IDN;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.net.WebSocketUrl;
 
 /**
  * Rinth's replacement for the game's server address (patches/classes.txt): what a player types

@@ -34,9 +34,6 @@ import com.mojang.renderpearl.backend.api.BackendRenderPipeline;
 import com.mojang.renderpearl.backend.api.CommandEncoderBackend;
 import com.mojang.renderpearl.backend.api.GpuDeviceBackend;
 import com.mojang.renderpearl.backend.api.GpuSurfaceBackend;
-import rinth.client.render.GpuFrameStats;
-import rinth.client.render.PipelineCompilingBackend;
-import rinth.render.webgl2.shaders.ShaderManifest;
 import java.nio.ByteBuffer;
 import java.util.HashSet;
 import java.util.List;
@@ -51,6 +48,9 @@ import org.jspecify.annotations.Nullable;
 import org.teavm.jso.JSObject;
 import org.teavm.jso.webgl.WebGL2RenderingContext;
 import org.teavm.jso.webgl.WebGLTexture;
+import rinth.client.render.GpuFrameStats;
+import rinth.client.render.PipelineCompilingBackend;
+import rinth.render.webgl2.shaders.ShaderManifest;
 
 /**
  * Mojang's {@code GpuDevice} backend API over WebGL2, under the game's own frontend

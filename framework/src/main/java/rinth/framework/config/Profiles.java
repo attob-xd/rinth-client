@@ -7,7 +7,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
-import rinth.framework.Module;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,6 +14,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.function.Consumer;
 import org.jspecify.annotations.Nullable;
+import rinth.framework.Module;
 
 /**
  * The player's profiles: named sets of module states and settings ("PvP", "Building"), one active.

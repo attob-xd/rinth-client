@@ -1,7 +1,5 @@
 package rinth.classlib.substitutes.java.nio.channels;
 
-import rinth.classlib.nio.FileChannels;
-import rinth.classlib.substitutes.java.nio.channels.spi.TAbstractInterruptibleChannel;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
@@ -14,6 +12,8 @@ import java.nio.file.attribute.FileAttribute;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import rinth.classlib.nio.FileChannels;
+import rinth.classlib.substitutes.java.nio.channels.spi.TAbstractInterruptibleChannel;
 
 /**
  * {@code java.nio.channels.FileChannel}, which TeaVM lacks: a channel for reading, writing and

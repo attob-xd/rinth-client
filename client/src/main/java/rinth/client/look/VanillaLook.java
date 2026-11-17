@@ -1,11 +1,11 @@
 package rinth.client.look;
 
-import rinth.client.settings.RinthSettingsScreen;
-import rinth.client.ui.EditedScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.TitleScreen;
+import rinth.client.settings.RinthSettingsScreen;
+import rinth.client.ui.EditedScreen;
 
 /**
  * The game's own look ({@code Look.vanilla}): its screens as the game lays them out and draws

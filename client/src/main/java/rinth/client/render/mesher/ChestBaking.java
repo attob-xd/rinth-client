@@ -2,7 +2,6 @@ package rinth.client.render.mesher;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import rinth.mesher.Snapshot;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.Iterator;
@@ -33,6 +32,7 @@ import net.minecraft.world.phys.Vec3;
 import org.joml.Vector3f;
 import org.joml.Vector3fc;
 import org.jspecify.annotations.Nullable;
+import rinth.mesher.Snapshot;
 
 /**
  * Closed chests drawn as part of their section's terrain (ADR 0030), Enhanced Block Entities'

@@ -1,7 +1,5 @@
 package rinth.tools.survey;
 
-import rinth.tools.build.FileTrees;
-import rinth.tools.build.Log;
 import java.io.IOException;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -30,6 +28,8 @@ import org.teavm.tooling.TeaVMTool;
 import org.teavm.tooling.TeaVMToolException;
 import org.teavm.tooling.TeaVMToolLog;
 import org.teavm.vm.TeaVMOptimizationLevel;
+import rinth.tools.build.FileTrees;
+import rinth.tools.build.Log;
 
 /**
  * Runs TeaVM's WebAssembly GC compile over the client and turns what it learns into findings.

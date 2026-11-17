@@ -2,12 +2,6 @@ package rinth.tools.survey;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import rinth.tools.build.BuildConfig;
-import rinth.tools.build.CliException;
-import rinth.tools.build.FileTrees;
-import rinth.tools.build.GameFiles;
-import rinth.tools.build.Log;
-import rinth.tools.build.Workspace;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -17,6 +11,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import org.jspecify.annotations.Nullable;
+import rinth.tools.build.BuildConfig;
+import rinth.tools.build.CliException;
+import rinth.tools.build.FileTrees;
+import rinth.tools.build.GameFiles;
+import rinth.tools.build.Log;
+import rinth.tools.build.Workspace;
 
 /**
  * {@code ./rinth survey}: the TeaVM compile survey.

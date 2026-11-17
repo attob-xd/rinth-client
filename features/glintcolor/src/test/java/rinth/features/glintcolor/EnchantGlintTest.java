@@ -2,8 +2,8 @@ package rinth.features.glintcolor;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.framework.testing.TestGame;
 import org.junit.jupiter.api.Test;
+import rinth.framework.testing.TestGame;
 
 class EnchantGlintTest {
 

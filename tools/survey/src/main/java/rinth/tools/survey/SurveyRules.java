@@ -1,6 +1,5 @@
 package rinth.tools.survey;
 
-import rinth.tools.build.CliException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -9,6 +8,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.regex.Pattern;
 import org.jspecify.annotations.Nullable;
+import rinth.tools.build.CliException;
 
 /**
  * The survey's policy file ({@code tools/survey/rules.txt}): which libraries are compiled

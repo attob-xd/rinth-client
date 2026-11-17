@@ -1,9 +1,9 @@
 package rinth.platform.desktop.audio;
 
-import rinth.platform.api.audio.AudioBuffer;
-import rinth.platform.api.audio.PcmFormat;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.lwjgl.openal.AL10;
+import rinth.platform.api.audio.AudioBuffer;
+import rinth.platform.api.audio.PcmFormat;
 
 /** An OpenAL buffer name and what was uploaded into it. */
 final class OpenAlBuffer implements AudioBuffer {

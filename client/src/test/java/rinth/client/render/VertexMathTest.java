@@ -6,7 +6,6 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.QuadInstance;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import rinth.client.testing.TestPlatform;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.client.model.geom.builders.UVPair;
@@ -15,6 +14,7 @@ import net.minecraft.core.Direction;
 import org.joml.Vector3f;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import rinth.client.testing.TestPlatform;
 
 /** {@link VertexMath#putBakedQuad} writes what the game's {@code putBakedQuad} writes, to the bit. */
 class VertexMathTest {
@@ -125,8 +125,7 @@ class VertexMathTest {
         // The game's own path: VertexConsumer's default, which Recorder doesn't override.
         game.putBakedQuad(poses.last(), quad, instance);
         Recorder rinth = new Recorder();
-        assertThat(VertexMath.putBakedQuad(rinth, poses.last(), quad, instance))
-                .isTrue();
+        assertThat(VertexMath.putBakedQuad(rinth, poses.last(), quad, instance)).isTrue();
 
         assertThat(rinth.vertices).hasSize(4).isEqualTo(game.vertices);
     }

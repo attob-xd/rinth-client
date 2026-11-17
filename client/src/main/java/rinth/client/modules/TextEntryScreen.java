@@ -1,9 +1,6 @@
 package rinth.client.modules;
 
 import com.mojang.blaze3d.platform.InputConstants;
-import rinth.client.ui.ScreenPanels;
-import rinth.client.ui.Theme;
-import rinth.client.ui.Ui;
 import java.util.List;
 import java.util.function.Consumer;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
@@ -14,6 +11,9 @@ import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.FormattedCharSequence;
 import org.jspecify.annotations.Nullable;
+import rinth.client.ui.ScreenPanels;
+import rinth.client.ui.Theme;
+import rinth.client.ui.Ui;
 
 /**
  * A line of text a module asks for ({@code Game.askText}): a title, what to type, a field and Done.

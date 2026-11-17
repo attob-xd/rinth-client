@@ -1,20 +1,5 @@
 package rinth.client.modules;
 
-import rinth.client.cosmetics.WardrobeScreen;
-import rinth.client.ui.GuiPreset;
-import rinth.client.ui.Icons;
-import rinth.client.ui.Logo;
-import rinth.client.ui.Look;
-import rinth.client.ui.Panels;
-import rinth.client.ui.RoundRects;
-import rinth.client.ui.ScreenPanels;
-import rinth.client.ui.SmoothFont;
-import rinth.client.ui.Theme;
-import rinth.client.ui.Ui;
-import rinth.framework.Category;
-import rinth.framework.Module;
-import rinth.framework.ModuleSystem;
-import rinth.framework.setting.ChoiceSetting;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
@@ -33,6 +18,21 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.util.ARGB;
 import net.minecraft.util.FormattedCharSequence;
 import org.jspecify.annotations.Nullable;
+import rinth.client.cosmetics.WardrobeScreen;
+import rinth.client.ui.GuiPreset;
+import rinth.client.ui.Icons;
+import rinth.client.ui.Logo;
+import rinth.client.ui.Look;
+import rinth.client.ui.Panels;
+import rinth.client.ui.RoundRects;
+import rinth.client.ui.ScreenPanels;
+import rinth.client.ui.SmoothFont;
+import rinth.client.ui.Theme;
+import rinth.client.ui.Ui;
+import rinth.framework.Category;
+import rinth.framework.Module;
+import rinth.framework.ModuleSystem;
+import rinth.framework.setting.ChoiceSetting;
 
 /**
  * The module menu (ADR 0046, in ADR 0048's look): one glass panel, categories down the left with

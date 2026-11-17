@@ -1,8 +1,5 @@
 package rinth.client.online;
 
-import rinth.client.platform.ClientPlatform;
-import rinth.client.ui.Theme;
-import rinth.platform.api.PlatformShell;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -12,6 +9,9 @@ import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import org.jspecify.annotations.Nullable;
+import rinth.client.platform.ClientPlatform;
+import rinth.client.ui.Theme;
+import rinth.platform.api.PlatformShell;
 
 /**
  * The ten recovery codes, shown once (ADR 0058), with Copy and Download, and Continue only once the

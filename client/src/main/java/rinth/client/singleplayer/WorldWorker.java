@@ -4,11 +4,6 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.services.MinecraftServicesDiscoveryService;
 import com.mojang.logging.LogUtils;
 import com.mojang.serialization.Dynamic;
-import rinth.client.net.PlatformEventLoopGroupHolder;
-import rinth.client.net.PlatformSocketChannel;
-import rinth.client.platform.ClientPlatform;
-import rinth.platform.api.storage.PlatformStorage;
-import rinth.platform.api.threads.PlatformChannel;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
@@ -48,6 +43,11 @@ import net.minecraft.world.level.storage.LevelResource;
 import net.minecraft.world.level.storage.LevelStorageSource;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.net.PlatformEventLoopGroupHolder;
+import rinth.client.net.PlatformSocketChannel;
+import rinth.client.platform.ClientPlatform;
+import rinth.platform.api.storage.PlatformStorage;
+import rinth.platform.api.threads.PlatformChannel;
 
 /**
  * Singleplayer's server, in a worker started by the page (ADR 0039): takes the world the page hands

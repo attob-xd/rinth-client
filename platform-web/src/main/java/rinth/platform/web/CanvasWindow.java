@@ -1,13 +1,13 @@
 package rinth.platform.web;
 
+import java.util.List;
+import org.jspecify.annotations.Nullable;
+import org.teavm.jso.JSObject;
 import rinth.platform.api.window.DisplayMode;
 import rinth.platform.api.window.IconImage;
 import rinth.platform.api.window.PlatformWindow;
 import rinth.platform.api.window.SystemBehavior;
 import rinth.platform.api.window.SystemCursor;
-import java.util.List;
-import org.jspecify.annotations.Nullable;
-import org.teavm.jso.JSObject;
 
 /**
  * The page's canvas as the game's window. Screen coordinates are CSS pixels, with the canvas's

@@ -1,10 +1,10 @@
 package rinth.tools.webbuild;
 
-import rinth.tools.build.CliException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
+import rinth.tools.build.CliException;
 
 /**
  * The benchmark's budgets (ADR 0025, 0026): {@code app-web/benchmark/budgets.properties},

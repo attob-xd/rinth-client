@@ -1,11 +1,5 @@
 package rinth.client.eagler;
 
-import rinth.client.RinthKeys;
-import rinth.client.ui.Panels;
-import rinth.client.ui.RoundRects;
-import rinth.client.ui.ScreenPanels;
-import rinth.client.ui.Theme;
-import rinth.platform.api.rtc.Microphone;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -21,6 +15,12 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Util;
 import org.jspecify.annotations.Nullable;
+import rinth.client.RinthKeys;
+import rinth.client.ui.Panels;
+import rinth.client.ui.RoundRects;
+import rinth.client.ui.ScreenPanels;
+import rinth.client.ui.Theme;
+import rinth.platform.api.rtc.Microphone;
 
 /**
  * Voice chat in the pause menu's top right corner, where Eagler's 1.8 client has it: the channel

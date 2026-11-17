@@ -1,7 +1,7 @@
 package rinth.client.render.mesher;
 
-import rinth.mesher.MeshTables;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
+import rinth.mesher.MeshTables;
 
 /** The game's section layers as the mesher numbers them. */
 public final class Layers {

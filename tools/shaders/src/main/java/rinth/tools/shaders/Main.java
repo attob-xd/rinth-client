@@ -1,10 +1,6 @@
 package rinth.tools.shaders;
 
 import com.mojang.renderpearl.api.pipeline.ShaderType;
-import rinth.render.webgl2.shaders.ShaderManifest;
-import rinth.render.webgl2.shaders.ShaderStageKey;
-import rinth.render.webgl2.shaders.SourceHash;
-import rinth.render.webgl2.shaders.TranslatedStage;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -18,6 +14,10 @@ import java.util.Set;
 import java.util.TreeMap;
 import net.minecraft.client.renderer.ShaderDefines;
 import org.jspecify.annotations.Nullable;
+import rinth.render.webgl2.shaders.ShaderManifest;
+import rinth.render.webgl2.shaders.ShaderStageKey;
+import rinth.render.webgl2.shaders.SourceHash;
+import rinth.render.webgl2.shaders.TranslatedStage;
 
 /**
  * Translates every shader stage the game can compile to GLSL ES 3.00 and writes the manifest the

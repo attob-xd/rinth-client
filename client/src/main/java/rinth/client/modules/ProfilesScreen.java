@@ -1,11 +1,5 @@
 package rinth.client.modules;
 
-import rinth.client.ui.ControlList;
-import rinth.client.ui.ListScreen;
-import rinth.client.ui.Theme;
-import rinth.client.ui.Ui;
-import rinth.framework.ModuleSystem;
-import rinth.framework.config.Profiles;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.client.gui.components.Button;
@@ -16,6 +10,12 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import org.jspecify.annotations.Nullable;
+import rinth.client.ui.ControlList;
+import rinth.client.ui.ListScreen;
+import rinth.client.ui.Theme;
+import rinth.client.ui.Ui;
+import rinth.framework.ModuleSystem;
+import rinth.framework.config.Profiles;
 
 /**
  * The profiles: switch to one, delete one, or make a new one as a copy of the active one. Each is a

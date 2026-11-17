@@ -1,5 +1,6 @@
 package rinth.client.modules;
 
+import java.util.List;
 import rinth.features.armorpotionview.ArmorPotionView;
 import rinth.features.blockoutline.BlockOutline;
 import rinth.features.clearchat.ClearChat;
@@ -34,7 +35,6 @@ import rinth.features.waypoints.WaypointsModule;
 import rinth.features.weatherchanger.WeatherChanger;
 import rinth.features.zoom.Zoom;
 import rinth.framework.Module;
-import java.util.List;
 
 /**
  * Every feature module in the build, in the order the module menu lists them within a category. A

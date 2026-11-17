@@ -1,5 +1,16 @@
 package rinth.client.modules;
 
+import java.util.Arrays;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Font;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.Hud;
+import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.client.renderer.state.level.CameraRenderState;
+import org.joml.Matrix4f;
+import org.joml.Matrix4fc;
+import org.joml.Vector4f;
+import org.jspecify.annotations.Nullable;
 import rinth.client.ui.Circles;
 import rinth.client.ui.RoundRects;
 import rinth.client.ui.Shapes;
@@ -15,17 +26,6 @@ import rinth.framework.hud.HudCanvas;
 import rinth.framework.hud.Shape;
 import rinth.framework.hud.Tone;
 import rinth.framework.hud.WorldOverlay;
-import java.util.Arrays;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
-import net.minecraft.client.gui.Hud;
-import net.minecraft.client.renderer.RenderPipelines;
-import net.minecraft.client.renderer.state.level.CameraRenderState;
-import org.joml.Matrix4f;
-import org.joml.Matrix4fc;
-import org.joml.Vector4f;
-import org.jspecify.annotations.Nullable;
 
 /**
  * Modules' HUD elements, drawn with the game's HUD. The hook sits after the HUD's first stratum, so

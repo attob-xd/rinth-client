@@ -1,5 +1,6 @@
 package rinth.features.weatherchanger;
 
+import org.jspecify.annotations.Nullable;
 import rinth.framework.Category;
 import rinth.framework.Module;
 import rinth.framework.event.Events;
@@ -7,7 +8,6 @@ import rinth.framework.game.Weather;
 import rinth.framework.setting.BooleanSetting;
 import rinth.framework.setting.ChoiceSetting;
 import rinth.framework.setting.IntSetting;
-import org.jspecify.annotations.Nullable;
 
 /**
  * Weather Changer: the sky as the player likes it, on their screen only. Clear skies in a storm,

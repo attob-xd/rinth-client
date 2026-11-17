@@ -2,19 +2,6 @@ package rinth.client.modules;
 
 import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.platform.cursor.CursorTypes;
-import rinth.client.gui.BackdropCache;
-import rinth.client.ui.Icons;
-import rinth.client.ui.Look;
-import rinth.client.ui.MenuBackdrop;
-import rinth.client.ui.Panels;
-import rinth.client.ui.RoundRects;
-import rinth.client.ui.Theme;
-import rinth.client.ui.Ui;
-import rinth.framework.Module;
-import rinth.framework.ModuleSystem;
-import rinth.framework.hud.Anchor;
-import rinth.framework.hud.HudCanvas;
-import rinth.framework.hud.HudElement;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +18,19 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.util.Util;
 import org.jspecify.annotations.Nullable;
+import rinth.client.gui.BackdropCache;
+import rinth.client.ui.Icons;
+import rinth.client.ui.Look;
+import rinth.client.ui.MenuBackdrop;
+import rinth.client.ui.Panels;
+import rinth.client.ui.RoundRects;
+import rinth.client.ui.Theme;
+import rinth.client.ui.Ui;
+import rinth.framework.Module;
+import rinth.framework.ModuleSystem;
+import rinth.framework.hud.Anchor;
+import rinth.framework.hud.HudCanvas;
+import rinth.framework.hud.HudElement;
 
 /**
  * The HUD editor: every enabled module's HUD elements, drawn as they are in play, over the

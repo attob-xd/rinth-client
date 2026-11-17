@@ -1,7 +1,7 @@
 package rinth.platform.web;
 
-import rinth.platform.api.input.Scancodes;
 import org.jspecify.annotations.Nullable;
+import rinth.platform.api.input.Scancodes;
 
 /**
  * Maps the browser's keys to the platform's. {@code KeyboardEvent.code} names the physical key,

@@ -1,7 +1,6 @@
 package rinth.client.eagler;
 
 import com.mojang.logging.LogUtils;
-import rinth.net.WebSocketUrl;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.ConnectScreen;
 import net.minecraft.client.gui.screens.Screen;
@@ -11,6 +10,7 @@ import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.multiplayer.resolver.ServerAddress;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.net.WebSocketUrl;
 
 /**
  * An Eagler server sending the player to another server (ADR 0019): during login, in place

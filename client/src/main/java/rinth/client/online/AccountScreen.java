@@ -1,11 +1,11 @@
 package rinth.client.online;
 
-import rinth.client.ui.Theme;
-import rinth.framework.online.Online.Status;
 import java.util.List;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.CommonComponents;
 import org.jspecify.annotations.Nullable;
+import rinth.client.ui.Theme;
+import rinth.framework.online.Online.Status;
 
 /**
  * Rinth Account (ADR 0058), from the title screen's player card: signing in, creating an account

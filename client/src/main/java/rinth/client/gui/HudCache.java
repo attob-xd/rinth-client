@@ -12,7 +12,6 @@ import com.mojang.renderpearl.api.pipeline.RenderPipeline;
 import com.mojang.renderpearl.api.textures.FilterMode;
 import com.mojang.renderpearl.api.textures.GpuTexture;
 import com.mojang.renderpearl.api.textures.GpuTextureView;
-import rinth.client.tier.DeviceTier;
 import java.util.Optional;
 import java.util.OptionalDouble;
 import net.minecraft.client.Minecraft;
@@ -22,6 +21,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.util.Util;
 import org.joml.Vector4f;
 import org.jspecify.annotations.Nullable;
+import rinth.client.tier.DeviceTier;
 
 /**
  * The HUD drawn into a texture a few dozen times a second and reused in between (ADR 0030),

@@ -1,12 +1,5 @@
 package rinth.client.cosmetics;
 
-import rinth.client.RinthKeys;
-import rinth.client.online.RinthOnline;
-import rinth.client.ui.Circles;
-import rinth.client.ui.Look;
-import rinth.client.ui.RoundRects;
-import rinth.client.ui.Theme;
-import rinth.online.Cosmetic;
 import java.util.List;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.Screen;
@@ -14,6 +7,13 @@ import net.minecraft.client.input.KeyEvent;
 import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.network.chat.Component;
 import org.jspecify.annotations.Nullable;
+import rinth.client.RinthKeys;
+import rinth.client.online.RinthOnline;
+import rinth.client.ui.Circles;
+import rinth.client.ui.Look;
+import rinth.client.ui.RoundRects;
+import rinth.client.ui.Theme;
+import rinth.online.Cosmetic;
 
 /**
  * The emote wheel (ADR 0061): held open by its key (G), the player's emotes round a circle; the one

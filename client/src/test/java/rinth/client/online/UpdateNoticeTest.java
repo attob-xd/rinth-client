@@ -2,15 +2,15 @@ package rinth.client.online;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.client.RinthBuild;
-import rinth.framework.config.ConfigStorage;
-import rinth.online.FakeService;
-import rinth.online.OnlineService;
 import java.util.HashMap;
 import java.util.Map;
 import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import rinth.client.RinthBuild;
+import rinth.framework.config.ConfigStorage;
+import rinth.online.FakeService;
+import rinth.online.OnlineService;
 
 class UpdateNoticeTest {
 

@@ -3,9 +3,9 @@ package rinth.features.clearchat;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.data.Offset.offset;
 
+import org.junit.jupiter.api.Test;
 import rinth.framework.game.GameOption;
 import rinth.framework.testing.TestGame;
-import org.junit.jupiter.api.Test;
 
 class ClearChatTest {
 

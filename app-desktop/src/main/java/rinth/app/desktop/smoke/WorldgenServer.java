@@ -1,13 +1,5 @@
 package rinth.app.desktop.smoke;
 
-import rinth.client.startup.CriterionCodecs;
-import rinth.client.world.BiomeCells;
-import rinth.client.world.DensityBranches;
-import rinth.client.world.Heights;
-import rinth.client.world.SurfaceWrites;
-import rinth.platform.api.Platforms;
-import rinth.platform.desktop.DesktopPlatform;
-import rinth.platform.desktop.DesktopStorage;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PipedInputStream;
@@ -18,6 +10,14 @@ import java.nio.file.Path;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import rinth.client.startup.CriterionCodecs;
+import rinth.client.world.BiomeCells;
+import rinth.client.world.DensityBranches;
+import rinth.client.world.Heights;
+import rinth.client.world.SurfaceWrites;
+import rinth.platform.api.Platforms;
+import rinth.platform.desktop.DesktopPlatform;
+import rinth.platform.desktop.DesktopStorage;
 
 /**
  * The game's dedicated server on the desktop platform, with the browser build's world generation

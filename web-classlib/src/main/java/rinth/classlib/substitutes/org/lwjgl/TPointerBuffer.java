@@ -1,8 +1,8 @@
 package rinth.classlib.substitutes.org.lwjgl;
 
+import java.nio.ByteBuffer;
 import rinth.classlib.memory.Heap;
 import rinth.classlib.substitutes.org.lwjgl.system.TPointer;
-import java.nio.ByteBuffer;
 
 /**
  * LWJGL's {@code PointerBuffer}, over {@link Heap}: pointers of {@link TPointer#POINTER_SIZE} bytes

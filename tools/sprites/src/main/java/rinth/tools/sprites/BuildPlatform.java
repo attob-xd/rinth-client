@@ -1,9 +1,9 @@
 package rinth.tools.sprites;
 
+import java.lang.reflect.Proxy;
 import rinth.platform.api.Platform;
 import rinth.platform.api.Platforms;
 import rinth.platform.api.threads.PlatformThreads;
-import java.lang.reflect.Proxy;
 
 /**
  * The platform the game sees while this tool decodes its sprites: loading the game's classes runs

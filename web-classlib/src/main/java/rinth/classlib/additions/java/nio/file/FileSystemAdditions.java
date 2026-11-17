@@ -1,12 +1,12 @@
 package rinth.classlib.additions.java.nio.file;
 
-import rinth.classlib.InstanceMethod;
-import rinth.classlib.util.Globs;
 import java.io.IOException;
 import java.nio.file.FileSystem;
 import java.nio.file.PathMatcher;
 import java.nio.file.WatchService;
 import java.util.regex.Pattern;
+import rinth.classlib.InstanceMethod;
+import rinth.classlib.util.Globs;
 
 /** {@code java.nio.file.FileSystem} methods TeaVM lacks. */
 public final class FileSystemAdditions {

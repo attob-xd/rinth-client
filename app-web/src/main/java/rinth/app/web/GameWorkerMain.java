@@ -1,5 +1,9 @@
 package rinth.app.web;
 
+import java.io.IOException;
+import java.util.List;
+import org.teavm.jso.JSBody;
+import org.teavm.jso.typedarrays.ArrayBuffer;
 import rinth.classlib.concurrent.Waits;
 import rinth.classlib.resources.ClassPathResources;
 import rinth.client.datafix.DataFixing;
@@ -26,10 +30,6 @@ import rinth.platform.api.Platforms;
 import rinth.platform.web.WebPlatform;
 import rinth.platform.web.WorkerPlatform;
 import rinth.platform.web.storage.WebFileSystem;
-import java.io.IOException;
-import java.util.List;
-import org.teavm.jso.JSBody;
-import org.teavm.jso.typedarrays.ArrayBuffer;
 
 /**
  * The entry point of a copy of the game in a worker (ADR 0039): {@code WebMain.main(["--worker",

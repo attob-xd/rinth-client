@@ -2,7 +2,6 @@ package rinth.modtoggles.mixin;
 
 import com.terraformersmc.modmenu.gui.widget.entries.ModListEntry;
 import com.terraformersmc.modmenu.util.mod.Mod;
-import rinth.modtoggles.ModSwitches;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.ObjectSelectionList;
 import net.minecraft.client.input.MouseButtonEvent;
@@ -13,6 +12,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import rinth.modtoggles.ModSwitches;
 
 /** A mod's row in Mod Menu's list: its ON/OFF switch drawn at the row's right, and clicks on it. */
 @Mixin(ModListEntry.class)

@@ -3,15 +3,15 @@ package rinth.tools.webbuild;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import rinth.tools.build.CliException;
-import rinth.tools.webbuild.DownloadBudget.Kind;
-import rinth.tools.webbuild.DownloadBudget.Measure;
-import rinth.tools.webbuild.DownloadBudget.Measured;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Set;
 import org.junit.jupiter.api.Test;
+import rinth.tools.build.CliException;
+import rinth.tools.webbuild.DownloadBudget.Kind;
+import rinth.tools.webbuild.DownloadBudget.Measure;
+import rinth.tools.webbuild.DownloadBudget.Measured;
 
 class DownloadBudgetTest {
 

@@ -1,12 +1,6 @@
 package com.mojang.blaze3d.audio;
 
 import com.mojang.logging.LogUtils;
-import rinth.client.audio.CompressedSoundStream;
-import rinth.platform.api.audio.AudioBuffer;
-import rinth.platform.api.audio.AudioDevice;
-import rinth.platform.api.audio.AudioException;
-import rinth.platform.api.audio.AudioSource;
-import rinth.platform.api.audio.PcmFormat;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -15,6 +9,12 @@ import net.minecraft.client.sounds.AudioStream;
 import net.minecraft.world.phys.Vec3;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.audio.CompressedSoundStream;
+import rinth.platform.api.audio.AudioBuffer;
+import rinth.platform.api.audio.AudioDevice;
+import rinth.platform.api.audio.AudioException;
+import rinth.platform.api.audio.AudioSource;
+import rinth.platform.api.audio.PcmFormat;
 
 /**
  * Rinth replacement: one playing sound, over a platform {@link AudioSource}.

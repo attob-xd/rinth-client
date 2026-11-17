@@ -1,6 +1,5 @@
 package rinth.client.eagler;
 
-import rinth.net.eagler.EaglerPassword;
 import java.util.List;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
@@ -19,6 +18,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.util.FormattedCharSequence;
 import org.jspecify.annotations.Nullable;
+import rinth.net.eagler.EaglerPassword;
 
 /**
  * Asks for the password an Eagler server's auth plugin wants (ADR 0019), then joins again

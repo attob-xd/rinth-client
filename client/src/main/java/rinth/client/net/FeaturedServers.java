@@ -1,10 +1,5 @@
 package rinth.client.net;
 
-import rinth.client.RinthBuild;
-import rinth.client.online.RinthOnline;
-import rinth.client.ui.RoundRects;
-import rinth.client.ui.Theme;
-import rinth.online.OnlineService;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -18,6 +13,11 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import org.jspecify.annotations.Nullable;
+import rinth.client.RinthBuild;
+import rinth.client.online.RinthOnline;
+import rinth.client.ui.RoundRects;
+import rinth.client.ui.Theme;
+import rinth.online.OnlineService;
 
 /**
  * Featured servers (ADR 0062): pinned atop the server list, marked Sponsored so it's plain they're

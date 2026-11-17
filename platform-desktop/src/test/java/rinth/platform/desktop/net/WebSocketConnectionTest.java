@@ -2,8 +2,6 @@ package rinth.platform.desktop.net;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.platform.api.PlatformLog;
-import rinth.platform.api.net.NetConnection;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -45,6 +43,8 @@ import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import rinth.platform.api.PlatformLog;
+import rinth.platform.api.net.NetConnection;
 
 @SuppressWarnings("FutureReturnValueIgnored")
 class WebSocketConnectionTest {

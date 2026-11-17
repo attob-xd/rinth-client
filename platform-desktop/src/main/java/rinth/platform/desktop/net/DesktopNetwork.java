@@ -1,11 +1,11 @@
 package rinth.platform.desktop.net;
 
-import rinth.platform.api.PlatformLog;
-import rinth.platform.api.net.NetConnection;
-import rinth.platform.api.net.PlatformNetwork;
 import java.net.http.HttpClient;
 import java.time.Duration;
 import org.jspecify.annotations.Nullable;
+import rinth.platform.api.PlatformLog;
+import rinth.platform.api.net.NetConnection;
+import rinth.platform.api.net.PlatformNetwork;
 
 /** Server connections as plain TCP sockets, or WebSockets through the JDK's HTTP client. */
 public final class DesktopNetwork implements PlatformNetwork {

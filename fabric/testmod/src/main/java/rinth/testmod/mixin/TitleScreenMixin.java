@@ -1,6 +1,5 @@
 package rinth.testmod.mixin;
 
-import rinth.testmod.TestMod;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.Screen;
@@ -10,6 +9,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import rinth.testmod.TestMod;
 
 /**
  * An {@code @Inject}: a line on the title screen, from the language file, saying the mod is in,

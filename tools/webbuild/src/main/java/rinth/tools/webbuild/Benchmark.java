@@ -6,8 +6,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.sun.net.httpserver.HttpServer;
-import rinth.tools.build.CliException;
-import rinth.tools.wsbridge.WebSocketBridge;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -28,6 +26,8 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 import org.jspecify.annotations.Nullable;
+import rinth.tools.build.CliException;
+import rinth.tools.wsbridge.WebSocketBridge;
 
 /**
  * The benchmark runner (ADR 0021): plays fixed scenarios in the browser build against a

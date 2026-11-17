@@ -1,11 +1,6 @@
 package rinth.client.modules;
 
 import com.mojang.logging.LogUtils;
-import rinth.client.RinthKeys;
-import rinth.client.online.RinthOnline;
-import rinth.client.ui.SettingControls;
-import rinth.framework.Module;
-import rinth.framework.ModuleSystem;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -15,6 +10,11 @@ import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.client.multiplayer.ServerData;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.RinthKeys;
+import rinth.client.online.RinthOnline;
+import rinth.client.ui.SettingControls;
+import rinth.framework.Module;
+import rinth.framework.ModuleSystem;
 
 /**
  * The client's module system (ADR 0046): made with the build's features on the first tick,

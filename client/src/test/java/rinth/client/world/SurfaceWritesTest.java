@@ -2,7 +2,6 @@ package rinth.client.world;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.client.testing.VanillaRegistries;
 import java.util.Random;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.ChunkPos;
@@ -17,6 +16,7 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import rinth.client.testing.VanillaRegistries;
 
 /**
  * Writing a chunk's surface through {@link SurfaceWrites} leaves it as the game's own writes do:

@@ -1,7 +1,5 @@
 package rinth.platform.desktop.net;
 
-import rinth.platform.api.PlatformLog;
-import rinth.platform.api.net.NetConnection;
 import java.io.IOException;
 import java.net.ProtocolException;
 import java.net.URI;
@@ -17,6 +15,8 @@ import java.util.concurrent.CompletionException;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.TimeUnit;
 import org.jspecify.annotations.Nullable;
+import rinth.platform.api.PlatformLog;
+import rinth.platform.api.net.NetConnection;
 
 /**
  * One WebSocket through the JDK's HTTP client. Each send is one binary message (or one text

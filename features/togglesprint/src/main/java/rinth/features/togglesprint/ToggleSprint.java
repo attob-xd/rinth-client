@@ -1,5 +1,6 @@
 package rinth.features.togglesprint;
 
+import org.jspecify.annotations.Nullable;
 import rinth.framework.Category;
 import rinth.framework.Module;
 import rinth.framework.event.Events;
@@ -12,7 +13,6 @@ import rinth.framework.hud.Tone;
 import rinth.framework.setting.BooleanSetting;
 import rinth.framework.setting.ChoiceSetting;
 import rinth.framework.setting.ColorSetting;
-import org.jspecify.annotations.Nullable;
 
 /**
  * Toggle Sprint: a press of the sprint key latches sprinting on until the next press, or the player

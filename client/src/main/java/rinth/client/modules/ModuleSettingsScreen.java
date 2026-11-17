@@ -1,6 +1,16 @@
 package rinth.client.modules;
 
 import com.mojang.blaze3d.platform.InputConstants;
+import java.util.ArrayList;
+import java.util.List;
+import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.layouts.LinearLayout;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.input.KeyEvent;
+import net.minecraft.client.input.MouseButtonEvent;
+import net.minecraft.network.chat.CommonComponents;
+import net.minecraft.network.chat.Component;
+import org.jspecify.annotations.Nullable;
 import rinth.client.ui.ControlList;
 import rinth.client.ui.ListScreen;
 import rinth.client.ui.SettingControls;
@@ -14,16 +24,6 @@ import rinth.framework.setting.Key;
 import rinth.framework.setting.KeySetting;
 import rinth.framework.setting.Setting;
 import rinth.framework.setting.Settings;
-import java.util.ArrayList;
-import java.util.List;
-import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.layouts.LinearLayout;
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.input.KeyEvent;
-import net.minecraft.client.input.MouseButtonEvent;
-import net.minecraft.network.chat.CommonComponents;
-import net.minecraft.network.chat.Component;
-import org.jspecify.annotations.Nullable;
 
 /**
  * A module's settings, generated from its schema alone: a row per visible setting with its control

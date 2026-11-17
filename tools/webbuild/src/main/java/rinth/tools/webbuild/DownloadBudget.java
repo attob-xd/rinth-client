@@ -1,6 +1,5 @@
 package rinth.tools.webbuild;
 
-import rinth.tools.build.CliException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -12,6 +11,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 import org.jspecify.annotations.Nullable;
+import rinth.tools.build.CliException;
 
 /**
  * The browser build's download-size budget ({@code app-web/download-budget.properties}), and the

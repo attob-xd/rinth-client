@@ -1,16 +1,16 @@
 package rinth.client.online;
 
-import rinth.client.RinthBuild;
-import rinth.client.settings.ClientSettings;
-import rinth.online.Failure;
-import rinth.online.OnlineService;
-import rinth.platform.api.Platforms;
 import java.nio.ByteBuffer;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
 import java.util.Base64;
 import java.util.UUID;
 import net.minecraft.util.Util;
+import rinth.client.RinthBuild;
+import rinth.client.settings.ClientSettings;
+import rinth.online.Failure;
+import rinth.online.OnlineService;
+import rinth.platform.api.Platforms;
 
 /**
  * Usage counts (ADR 0062): once a UTC day, the online service hears that this install ran, with a

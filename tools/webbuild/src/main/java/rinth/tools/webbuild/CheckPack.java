@@ -2,7 +2,6 @@ package rinth.tools.webbuild;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import rinth.tools.build.CliException;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -16,6 +15,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
 import javax.imageio.ImageIO;
+import rinth.tools.build.CliException;
 
 /**
  * A resource pack the browser checks import, made from scratch when the check runs: the

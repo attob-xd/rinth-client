@@ -1,9 +1,9 @@
 package rinth.classlib.additions.java.io;
 
+import java.io.RandomAccessFile;
 import rinth.classlib.InstanceMethod;
 import rinth.classlib.nio.FileChannels;
 import rinth.classlib.substitutes.java.nio.channels.TFileChannel;
-import java.io.RandomAccessFile;
 
 /** {@code java.io.RandomAccessFile} methods TeaVM lacks. */
 public final class RandomAccessFileAdditions {

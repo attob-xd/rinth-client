@@ -4,13 +4,13 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import rinth.framework.config.ConfigStorage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import org.jspecify.annotations.Nullable;
+import rinth.framework.config.ConfigStorage;
 
 /**
  * The player's own cosmetics (ADR 0061): what they wear, what they own, their saved outfits, and

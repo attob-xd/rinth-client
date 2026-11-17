@@ -1,6 +1,5 @@
 package rinth.tools.webbuild;
 
-import rinth.tools.survey.Finding;
 import java.util.ArrayList;
 import java.util.List;
 import org.jspecify.annotations.Nullable;
@@ -36,6 +35,7 @@ import org.teavm.model.instructions.LongConstantInstruction;
 import org.teavm.model.instructions.NullConstantInstruction;
 import org.teavm.model.instructions.PutFieldInstruction;
 import org.teavm.model.instructions.StringConstantInstruction;
+import rinth.tools.survey.Finding;
 
 /**
  * Removes references to missing symbols that {@link Removals} says go, as TeaVM loads each class.

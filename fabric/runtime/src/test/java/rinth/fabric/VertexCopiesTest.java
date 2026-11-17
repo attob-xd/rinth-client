@@ -5,12 +5,12 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.renderpearl.api.vertex.VertexFormat;
-import rinth.platform.api.Platform;
-import rinth.platform.api.Platforms;
-import rinth.platform.api.threads.PlatformThreads;
 import java.lang.reflect.Proxy;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import rinth.platform.api.Platform;
+import rinth.platform.api.Platforms;
+import rinth.platform.api.threads.PlatformThreads;
 
 class VertexCopiesTest {
 

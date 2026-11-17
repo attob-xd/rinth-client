@@ -1,8 +1,8 @@
 package rinth.classlib.concurrent;
 
-import rinth.classlib.substitutes.java.lang.TThread$Builder$OfVirtual;
 import java.util.concurrent.ThreadFactory;
 import org.jspecify.annotations.Nullable;
+import rinth.classlib.substitutes.java.lang.TThread$Builder$OfVirtual;
 
 /**
  * What {@code Thread.ofVirtual()} returns. In a page every thread is already a coroutine, as cheap

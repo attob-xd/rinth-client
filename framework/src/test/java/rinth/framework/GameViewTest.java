@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.offset;
 
+import org.junit.jupiter.api.Test;
 import rinth.framework.config.Profiles;
 import rinth.framework.event.Events;
 import rinth.framework.game.GameOption;
@@ -12,7 +13,6 @@ import rinth.framework.hud.Anchor;
 import rinth.framework.hud.GamePartElement;
 import rinth.framework.setting.FloatSetting;
 import rinth.framework.testing.TestGame;
-import org.junit.jupiter.api.Test;
 
 /** Option holds, game parts and the fire overlay: what ADR 0050 adds to modules. */
 class GameViewTest {

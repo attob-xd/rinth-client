@@ -1,8 +1,8 @@
 package rinth.app.web;
 
+import java.net.URI;
 import rinth.client.credits.Credit;
 import rinth.client.credits.Credits;
-import java.net.URI;
 
 /**
  * What the browser build contains that the desktop doesn't, for the credits screen: TeaVM's

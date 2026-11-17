@@ -1,7 +1,7 @@
 package rinth.client.net;
 
-import rinth.client.platform.ClientPlatform;
 import java.io.IOException;
+import rinth.client.platform.ClientPlatform;
 
 /**
  * The integrated server's "Open to LAN" on a platform that can't listen for connections (the

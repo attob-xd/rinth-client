@@ -1,14 +1,5 @@
 package rinth.client.cosmetics;
 
-import rinth.client.RinthKeys;
-import rinth.client.online.RinthOnline;
-import rinth.client.settings.ClientSettings;
-import rinth.framework.online.RinthPlayer;
-import rinth.framework.online.Online;
-import rinth.online.Cosmetic;
-import rinth.online.Loadout;
-import rinth.online.OnlineService;
-import rinth.online.Wardrobe;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -33,6 +24,15 @@ import net.minecraft.world.entity.Avatar;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.PlayerSkin;
 import org.jspecify.annotations.Nullable;
+import rinth.client.RinthKeys;
+import rinth.client.online.RinthOnline;
+import rinth.client.settings.ClientSettings;
+import rinth.framework.online.Online;
+import rinth.framework.online.RinthPlayer;
+import rinth.online.Cosmetic;
+import rinth.online.Loadout;
+import rinth.online.OnlineService;
+import rinth.online.Wardrobe;
 
 /**
  * Cosmetics in the world (ADR 0061): what each player wears and plays, from the player's own

@@ -3,9 +3,6 @@ package rinth.classlib.image;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import rinth.classlib.memory.Heap;
-import rinth.classlib.substitutes.org.lwjgl.stb.TSTBIWriteCallback;
-import rinth.classlib.substitutes.org.lwjgl.stb.TSTBImageWrite;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -14,6 +11,9 @@ import java.nio.ByteBuffer;
 import java.util.Random;
 import javax.imageio.ImageIO;
 import org.junit.jupiter.api.Test;
+import rinth.classlib.memory.Heap;
+import rinth.classlib.substitutes.org.lwjgl.stb.TSTBIWriteCallback;
+import rinth.classlib.substitutes.org.lwjgl.stb.TSTBImageWrite;
 
 /** PNGs the encoder writes, read back by the JDK's reader and by {@link PngDecoder}. */
 class PngEncoderTest {

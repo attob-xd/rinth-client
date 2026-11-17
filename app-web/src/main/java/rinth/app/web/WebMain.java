@@ -3,6 +3,15 @@ package rinth.app.web;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.mojang.renderpearl.api.device.GpuBackend;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+import org.teavm.jso.JSBody;
 import rinth.app.web.headless.HeadlessBackend;
 import rinth.app.web.jsmods.WebScriptHost;
 import rinth.classlib.concurrent.Waits;
@@ -67,15 +76,6 @@ import rinth.platform.web.WebPlatform;
 import rinth.platform.web.storage.WebFileSystem;
 import rinth.render.webgl2.WebGl2Backend;
 import rinth.render.webgl2.shaders.ShaderManifest;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-import org.teavm.jso.JSBody;
 
 /**
  * The browser build's entry point: opens the stored files ({@link WebFileSystem}), mounts the
@@ -167,6 +167,7 @@ public final class WebMain {
         Platforms.install(new WebPlatform(storage, files));
         // Where the mods switched off in Mod Menu are saved, read before the game's code runs (ModSwitchState).
         System.setProperty(ModSwitchState.DIRECTORY_PROPERTY, storage.gameDirectory());
+        moveIncariSettings(Path.of(storage.gameDirectory()));
         WebCredits.install();
         // Realms is stripped from the browser build (tools/survey/rules.txt).
         OnlineServices.disableRealms();
@@ -192,7 +193,7 @@ public final class WebMain {
                 // them every time.
                 String build = LoaderPage.buildId();
                 if (build != null && !"build".equals(option("meshtables"))) {
-                    MeshTableCache.enable(Path.of("/rinth/cache/mesher-tables.bin"), build);
+                    MeshTableCache.enable(Path.of("/incari/cache/mesher-tables.bin"), build);
                 }
                 // Closed chests meshed into terrain (ADR 0030); ?chests=game draws them the game's way.
                 if (!"game".equals(option("chests"))) {
@@ -423,6 +424,22 @@ public final class WebMain {
             }
         }
         return ids;
+    }
+
+    /**
+     * Rinth was Incari: a player's settings, skins and maps saved before the rename sit in the game
+     * directory's "incari" folder. Moved once to "rinth", where the game now looks; failures are dropped.
+     */
+    private static void moveIncariSettings(Path gameDirectory) {
+        Path old = gameDirectory.resolve("incari");
+        Path current = gameDirectory.resolve("rinth");
+        try {
+            if (Files.isDirectory(old) && !Files.exists(current)) {
+                Files.move(old, current);
+            }
+        } catch (IOException | RuntimeException e) {
+            // The game starts with fresh Rinth settings; the old folder stays where it was.
+        }
     }
 
     /**

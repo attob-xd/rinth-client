@@ -1,13 +1,6 @@
 package rinth.client.modules;
 
 import com.mojang.blaze3d.platform.InputConstants;
-import rinth.client.ui.SettingControls;
-import rinth.framework.KeyInput;
-import rinth.framework.Module;
-import rinth.framework.ModuleSystem;
-import rinth.framework.setting.Key;
-import rinth.framework.setting.KeySetting;
-import rinth.framework.setting.Setting;
 import java.util.ArrayList;
 import java.util.IdentityHashMap;
 import java.util.List;
@@ -15,6 +8,13 @@ import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import org.jspecify.annotations.Nullable;
+import rinth.client.ui.SettingControls;
+import rinth.framework.KeyInput;
+import rinth.framework.Module;
+import rinth.framework.ModuleSystem;
+import rinth.framework.setting.Key;
+import rinth.framework.setting.KeySetting;
+import rinth.framework.setting.Setting;
 
 /**
  * Module keybinds through the game's own key handling. Each {@link KeySetting} gets a key mapping

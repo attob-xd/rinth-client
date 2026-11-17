@@ -1,5 +1,14 @@
 package rinth.platform.desktop;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+import org.jspecify.annotations.Nullable;
+import org.lwjgl.sdl.SDLHints;
+import org.lwjgl.sdl.SDLInit;
+import org.lwjgl.sdl.SDLPlatform;
+import org.lwjgl.sdl.SDLTimer;
+import org.lwjgl.sdl.SDLVideo;
+import org.lwjgl.system.MemoryUtil;
 import rinth.platform.api.AppInfo;
 import rinth.platform.api.NativeSurfaceFactory;
 import rinth.platform.api.Platform;
@@ -20,15 +29,6 @@ import rinth.platform.api.window.PlatformWindow;
 import rinth.platform.api.window.WindowSpec;
 import rinth.platform.desktop.audio.OpenAlAudio;
 import rinth.platform.desktop.net.DesktopNetwork;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import org.jspecify.annotations.Nullable;
-import org.lwjgl.sdl.SDLHints;
-import org.lwjgl.sdl.SDLInit;
-import org.lwjgl.sdl.SDLPlatform;
-import org.lwjgl.sdl.SDLTimer;
-import org.lwjgl.sdl.SDLVideo;
-import org.lwjgl.system.MemoryUtil;
 
 /**
  * The platform on a normal JVM: SDL3 for the window and input, OpenAL for sound, TCP sockets for

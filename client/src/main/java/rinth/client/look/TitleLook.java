@@ -1,24 +1,5 @@
 package rinth.client.look;
 
-import rinth.client.RinthBuild;
-import rinth.client.cosmetics.Cosmetics;
-import rinth.client.cosmetics.WardrobeScreen;
-import rinth.client.modules.RinthModules;
-import rinth.client.online.AccountScreen;
-import rinth.client.online.RinthOnline;
-import rinth.client.online.UpdateNotice;
-import rinth.client.profile.PlayerName;
-import rinth.client.profile.TitleProfile;
-import rinth.client.settings.RinthSettingsScreen;
-import rinth.client.ui.Icons;
-import rinth.client.ui.Logo;
-import rinth.client.ui.Look;
-import rinth.client.ui.MenuBackdrop;
-import rinth.client.ui.Panels;
-import rinth.client.ui.RoundRects;
-import rinth.client.ui.Theme;
-import rinth.client.ui.Ui;
-import rinth.framework.MenuButton;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -46,6 +27,25 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.util.ARGB;
 import net.minecraft.util.Util;
 import org.jspecify.annotations.Nullable;
+import rinth.client.RinthBuild;
+import rinth.client.cosmetics.Cosmetics;
+import rinth.client.cosmetics.WardrobeScreen;
+import rinth.client.modules.RinthModules;
+import rinth.client.online.AccountScreen;
+import rinth.client.online.RinthOnline;
+import rinth.client.online.UpdateNotice;
+import rinth.client.profile.PlayerName;
+import rinth.client.profile.TitleProfile;
+import rinth.client.settings.RinthSettingsScreen;
+import rinth.client.ui.Icons;
+import rinth.client.ui.Logo;
+import rinth.client.ui.Look;
+import rinth.client.ui.MenuBackdrop;
+import rinth.client.ui.Panels;
+import rinth.client.ui.RoundRects;
+import rinth.client.ui.Theme;
+import rinth.client.ui.Ui;
+import rinth.framework.MenuButton;
 
 /**
  * The title screen in the client's look: the backdrop under a cold tint that deepens toward

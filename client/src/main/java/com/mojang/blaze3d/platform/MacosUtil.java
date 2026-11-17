@@ -1,9 +1,9 @@
 package com.mojang.blaze3d.platform;
 
+import net.minecraft.util.Util;
 import rinth.client.platform.ClientPlatform;
 import rinth.platform.api.window.PlatformWindow;
 import rinth.platform.api.window.SystemBehavior;
-import net.minecraft.util.Util;
 
 /**
  * Rinth's replacement for Mojang's macOS helpers (patches/classes.txt). The two options the

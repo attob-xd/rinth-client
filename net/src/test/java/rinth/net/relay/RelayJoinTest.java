@@ -2,13 +2,6 @@ package rinth.net.relay;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.platform.api.net.NetConnection;
-import rinth.platform.api.net.PlatformNetwork;
-import rinth.platform.api.rtc.IceServer;
-import rinth.platform.api.rtc.Microphone;
-import rinth.platform.api.rtc.PlatformRtc;
-import rinth.platform.api.rtc.RemoteVoice;
-import rinth.platform.api.rtc.RtcPeer;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import java.nio.ByteBuffer;
@@ -17,6 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.Test;
+import rinth.platform.api.net.NetConnection;
+import rinth.platform.api.net.PlatformNetwork;
+import rinth.platform.api.rtc.IceServer;
+import rinth.platform.api.rtc.Microphone;
+import rinth.platform.api.rtc.PlatformRtc;
+import rinth.platform.api.rtc.RemoteVoice;
+import rinth.platform.api.rtc.RtcPeer;
 
 /** A join against a scripted relay and a fake WebRTC peer. */
 class RelayJoinTest {

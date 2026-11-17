@@ -2,9 +2,6 @@ package rinth.client.skins;
 
 import com.mojang.authlib.GameProfile;
 import com.mojang.blaze3d.platform.NativeImage;
-import rinth.net.eagler.EaglerMessages;
-import rinth.net.eagler.EaglerSession;
-import rinth.net.eagler.EaglerTextures;
 import io.netty.buffer.ByteBuf;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +17,9 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.PlayerModelType;
 import net.minecraft.world.entity.player.PlayerSkin;
 import org.jspecify.annotations.Nullable;
+import rinth.net.eagler.EaglerMessages;
+import rinth.net.eagler.EaglerSession;
+import rinth.net.eagler.EaglerTextures;
 
 /**
  * Players' skins on an Eagler server (ADR 0016). Eagler servers don't put skins in game

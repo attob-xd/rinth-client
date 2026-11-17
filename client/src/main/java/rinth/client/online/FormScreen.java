@@ -1,13 +1,5 @@
 package rinth.client.online;
 
-import rinth.client.gui.HiddenPasswords;
-import rinth.client.ui.ScreenPanels;
-import rinth.client.ui.Theme;
-import rinth.client.ui.Ui;
-import rinth.online.Credentials;
-import rinth.online.Failure;
-import rinth.online.OnlineService;
-import rinth.online.Result;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -22,6 +14,14 @@ import net.minecraft.client.input.KeyEvent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.FormattedCharSequence;
 import org.jspecify.annotations.Nullable;
+import rinth.client.gui.HiddenPasswords;
+import rinth.client.ui.ScreenPanels;
+import rinth.client.ui.Theme;
+import rinth.client.ui.Ui;
+import rinth.online.Credentials;
+import rinth.online.Failure;
+import rinth.online.OnlineService;
+import rinth.online.Result;
 
 /**
  * The shape of the account screens (ADR 0058): one glass panel in the middle, a title, then lines

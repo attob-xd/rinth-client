@@ -1,10 +1,5 @@
 package rinth.client.render.mesher;
 
-import rinth.client.platform.ClientPlatform;
-import rinth.mesher.MeshTables;
-import rinth.mesher.Snapshot;
-import rinth.mesher.StateFlags;
-import rinth.platform.api.threads.PlatformThreads;
 import java.util.List;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.block.BlockTintSource;
@@ -25,6 +20,11 @@ import net.minecraft.world.level.chunk.PalettedContainer;
 import net.minecraft.world.level.lighting.LayerLightEventListener;
 import net.minecraft.world.phys.Vec3;
 import org.jspecify.annotations.Nullable;
+import rinth.client.platform.ClientPlatform;
+import rinth.mesher.MeshTables;
+import rinth.mesher.Snapshot;
+import rinth.mesher.StateFlags;
+import rinth.platform.api.threads.PlatformThreads;
 
 /**
  * Fills a {@link Snapshot} from the game's copy of a section's surroundings (a

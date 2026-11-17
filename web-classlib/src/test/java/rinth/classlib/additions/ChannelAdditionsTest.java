@@ -6,12 +6,6 @@ import static java.nio.file.StandardOpenOption.WRITE;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import rinth.classlib.additions.java.io.FileInputStreamAdditions;
-import rinth.classlib.additions.java.io.FileOutputStreamAdditions;
-import rinth.classlib.additions.java.io.RandomAccessFileAdditions;
-import rinth.classlib.additions.java.nio.file.FilesAdditions;
-import rinth.classlib.substitutes.java.nio.channels.TFileChannel;
-import rinth.classlib.substitutes.java.nio.channels.TFileLock;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -24,6 +18,12 @@ import java.nio.file.Path;
 import java.util.Set;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
+import rinth.classlib.additions.java.io.FileInputStreamAdditions;
+import rinth.classlib.additions.java.io.FileOutputStreamAdditions;
+import rinth.classlib.additions.java.io.RandomAccessFileAdditions;
+import rinth.classlib.additions.java.nio.file.FilesAdditions;
+import rinth.classlib.substitutes.java.nio.channels.TFileChannel;
+import rinth.classlib.substitutes.java.nio.channels.TFileLock;
 
 /** The {@code getChannel} and {@code Files.newByteChannel} additions, against the JDK's. */
 class ChannelAdditionsTest {

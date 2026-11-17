@@ -2,9 +2,9 @@ package rinth.features.hiteffects;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Test;
 import rinth.framework.game.Effect;
 import rinth.framework.testing.TestGame;
-import org.junit.jupiter.api.Test;
 
 class HitEffectsTest {
 

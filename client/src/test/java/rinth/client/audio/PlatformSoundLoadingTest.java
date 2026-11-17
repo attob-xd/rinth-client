@@ -3,9 +3,6 @@ package rinth.client.audio;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.mojang.blaze3d.audio.SoundBuffer;
-import rinth.platform.api.audio.AudioDecoder;
-import rinth.platform.api.audio.AudioException;
-import rinth.platform.api.audio.DecodedAudio;
 import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -22,6 +19,9 @@ import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceProvider;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import rinth.platform.api.audio.AudioDecoder;
+import rinth.platform.api.audio.AudioException;
+import rinth.platform.api.audio.DecodedAudio;
 
 class PlatformSoundLoadingTest {
 

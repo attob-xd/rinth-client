@@ -3,12 +3,12 @@ package rinth.classlib.memory;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import rinth.classlib.substitutes.org.lwjgl.system.TMemoryStack;
-import rinth.classlib.substitutes.org.lwjgl.system.TMemoryUtil;
-import rinth.classlib.substitutes.org.lwjgl.util.shaderc.TShadercIncludeResult;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 import org.junit.jupiter.api.Test;
+import rinth.classlib.substitutes.org.lwjgl.system.TMemoryStack;
+import rinth.classlib.substitutes.org.lwjgl.system.TMemoryUtil;
+import rinth.classlib.substitutes.org.lwjgl.util.shaderc.TShadercIncludeResult;
 
 class HeapTest {
 

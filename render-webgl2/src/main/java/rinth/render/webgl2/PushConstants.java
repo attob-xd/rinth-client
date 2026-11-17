@@ -3,12 +3,12 @@ package rinth.render.webgl2;
 import static org.teavm.jso.webgl.WebGL2RenderingContext.DYNAMIC_DRAW;
 import static org.teavm.jso.webgl.WebGL2RenderingContext.UNIFORM_BUFFER;
 
-import rinth.render.webgl2.shaders.TranslatedStage;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import org.jspecify.annotations.Nullable;
 import org.teavm.jso.typedarrays.Int8Array;
 import org.teavm.jso.webgl.WebGLBuffer;
+import rinth.render.webgl2.shaders.TranslatedStage;
 
 /**
  * Push constants, which WebGL2 lacks, as the uniform block the build translates them to

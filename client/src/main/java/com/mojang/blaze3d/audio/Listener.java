@@ -1,8 +1,8 @@
 package com.mojang.blaze3d.audio;
 
-import rinth.platform.api.audio.AudioListener;
 import net.minecraft.world.phys.Vec3;
 import org.jspecify.annotations.Nullable;
+import rinth.platform.api.audio.AudioListener;
 
 /**
  * Rinth replacement: the player's ears, forwarded to the open device's {@link AudioListener}.

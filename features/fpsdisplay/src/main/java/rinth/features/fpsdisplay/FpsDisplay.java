@@ -1,5 +1,6 @@
 package rinth.features.fpsdisplay;
 
+import org.jspecify.annotations.Nullable;
 import rinth.framework.Category;
 import rinth.framework.Module;
 import rinth.framework.hud.Anchor;
@@ -8,7 +9,6 @@ import rinth.framework.hud.TextElement;
 import rinth.framework.hud.Tone;
 import rinth.framework.setting.BooleanSetting;
 import rinth.framework.setting.ChoiceSetting;
-import org.jspecify.annotations.Nullable;
 
 /** FPS Display: the frames drawn in the last second, as the debug screen counts them. */
 public final class FpsDisplay extends Module {

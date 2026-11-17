@@ -1,12 +1,12 @@
 package rinth.client.audio;
 
 import com.mojang.blaze3d.audio.SoundBuffer;
-import rinth.client.tier.DeviceTier;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import net.minecraft.resources.Identifier;
+import rinth.client.tier.DeviceTier;
 
 /**
  * How much decoded sound the platform's cache keeps (ADR 0025). The game keeps every sound it

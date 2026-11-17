@@ -5,9 +5,6 @@ import com.mojang.blaze3d.vertex.CompactVectorArray;
 import com.mojang.blaze3d.vertex.MeshData;
 import com.mojang.renderpearl.api.pipeline.IndexType;
 import com.mojang.renderpearl.api.pipeline.PrimitiveTopology;
-import rinth.client.render.terrain.SectionDraws;
-import rinth.mesher.Facings;
-import rinth.mesher.MeshTables;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.List;
@@ -18,6 +15,9 @@ import net.minecraft.client.renderer.chunk.VisibilitySet;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import org.jspecify.annotations.Nullable;
+import rinth.client.render.terrain.SectionDraws;
+import rinth.mesher.Facings;
+import rinth.mesher.MeshTables;
 
 /**
  * Turns an encoded mesh ({@code rinth.mesher.MeshResult}) into the game's

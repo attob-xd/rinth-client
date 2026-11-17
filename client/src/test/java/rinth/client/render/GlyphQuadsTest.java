@@ -3,13 +3,13 @@ package rinth.client.render;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import rinth.client.testing.TestPlatform;
 import java.util.ArrayList;
 import java.util.List;
 import org.joml.Matrix4f;
 import org.joml.Matrix4fc;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import rinth.client.testing.TestPlatform;
 
 /**
  * {@link GlyphQuads} writes a glyph's quad as the game's four vertex calls write it: the same

@@ -1,6 +1,5 @@
 package rinth.tools.webbuild;
 
-import rinth.tools.build.CliException;
 import java.io.ByteArrayOutputStream;
 import java.io.FilterOutputStream;
 import java.io.IOException;
@@ -22,6 +21,7 @@ import java.util.Map;
 import java.util.stream.Stream;
 import java.util.zip.Deflater;
 import java.util.zip.GZIPOutputStream;
+import rinth.tools.build.CliException;
 
 /**
  * Packs a web folder ({@link WebFolder}) into one HTML file that plays from the disk (ADR

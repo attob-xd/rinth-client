@@ -4,8 +4,6 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import rinth.platform.api.net.NetConnection;
-import rinth.platform.api.net.PlatformNetwork;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,6 +13,8 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import org.jspecify.annotations.Nullable;
+import rinth.platform.api.net.NetConnection;
+import rinth.platform.api.net.PlatformNetwork;
 
 /**
  * Rinth's service in the test's process, speaking {@code docs/online-protocol.md} as the backend

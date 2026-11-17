@@ -1,7 +1,5 @@
 package rinth.classlib.substitutes.java.util.concurrent;
 
-import rinth.classlib.concurrent.Monitors;
-import rinth.classlib.concurrent.SnapshotIterator;
 import java.util.AbstractQueue;
 import java.util.Collection;
 import java.util.Iterator;
@@ -11,6 +9,8 @@ import java.util.PriorityQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
 import org.jspecify.annotations.Nullable;
+import rinth.classlib.concurrent.Monitors;
+import rinth.classlib.concurrent.SnapshotIterator;
 
 /**
  * {@code java.util.concurrent.DelayQueue}: an unbounded queue whose elements can only be taken once

@@ -1,10 +1,6 @@
 package rinth.client.modules;
 
 import com.mojang.logging.LogUtils;
-import rinth.client.platform.ClientPlatform;
-import rinth.client.settings.ClientSettings;
-import rinth.framework.ModuleSystem;
-import rinth.framework.event.Events;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -13,6 +9,10 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.platform.ClientPlatform;
+import rinth.client.settings.ClientSettings;
+import rinth.framework.ModuleSystem;
+import rinth.framework.event.Events;
 
 /**
  * Screenshots (ADR 0054; the gallery is the client's own since ADR 0062, not a module's): the

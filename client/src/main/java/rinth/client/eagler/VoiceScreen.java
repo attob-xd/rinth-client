@@ -1,7 +1,5 @@
 package rinth.client.eagler;
 
-import rinth.client.RinthKeys;
-import rinth.platform.api.rtc.Microphone;
 import java.util.List;
 import java.util.function.DoubleConsumer;
 import java.util.function.DoubleFunction;
@@ -14,6 +12,8 @@ import net.minecraft.client.gui.components.CycleButton;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
+import rinth.client.RinthKeys;
+import rinth.platform.api.rtc.Microphone;
 
 /**
  * Voice chat's settings and the voices connected now, opened from the pause menu's voice

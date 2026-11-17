@@ -3,9 +3,6 @@ package rinth.client.modules;
 import com.mojang.blaze3d.platform.NativeImage;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import rinth.framework.ModuleSystem;
-import rinth.framework.event.Events;
-import rinth.framework.game.Effect;
 import java.io.IOException;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -28,6 +25,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jspecify.annotations.Nullable;
+import rinth.framework.ModuleSystem;
+import rinth.framework.event.Events;
+import rinth.framework.game.Effect;
 
 /**
  * The personal effects modules hold (ADR 0061): the block outline's color, width and fill (Block

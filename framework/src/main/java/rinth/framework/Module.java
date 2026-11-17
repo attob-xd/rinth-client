@@ -1,5 +1,10 @@
 package rinth.framework;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.function.DoubleSupplier;
+import org.jspecify.annotations.Nullable;
 import rinth.framework.event.Channel;
 import rinth.framework.event.EventBus;
 import rinth.framework.event.Events;
@@ -10,11 +15,6 @@ import rinth.framework.setting.Ids;
 import rinth.framework.setting.Key;
 import rinth.framework.setting.KeySetting;
 import rinth.framework.setting.Settings;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.function.DoubleSupplier;
-import org.jspecify.annotations.Nullable;
 
 /**
  * A client feature the player turns on and off: toggle sprint, keystrokes, zoom. A subclass

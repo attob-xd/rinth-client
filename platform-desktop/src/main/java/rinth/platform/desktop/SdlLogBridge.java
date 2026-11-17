@@ -1,9 +1,9 @@
 package rinth.platform.desktop;
 
-import rinth.platform.api.PlatformLog;
 import org.lwjgl.sdl.SDLLog;
 import org.lwjgl.sdl.SDL_LogOutputFunction;
 import org.lwjgl.system.MemoryUtil;
+import rinth.platform.api.PlatformLog;
 
 /** Sends SDL's own log messages to the platform log, tagged with SDL's category. */
 final class SdlLogBridge {

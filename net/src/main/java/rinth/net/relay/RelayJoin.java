@@ -1,9 +1,5 @@
 package rinth.net.relay;
 
-import rinth.platform.api.net.NetConnection;
-import rinth.platform.api.net.PlatformNetwork;
-import rinth.platform.api.rtc.PlatformRtc;
-import rinth.platform.api.rtc.RtcPeer;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.handler.codec.DecoderException;
@@ -12,6 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.LongSupplier;
 import org.jspecify.annotations.Nullable;
+import rinth.platform.api.net.NetConnection;
+import rinth.platform.api.net.PlatformNetwork;
+import rinth.platform.api.rtc.PlatformRtc;
+import rinth.platform.api.rtc.RtcPeer;
 
 /**
  * Joining a shared world through an Eagler relay (ADR 0019), up to an open data channel to

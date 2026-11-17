@@ -1,9 +1,5 @@
 package rinth.client.render.mesher;
 
-import rinth.client.render.AnimatedSprites;
-import rinth.mesher.GameMath;
-import rinth.mesher.MeshTables;
-import rinth.mesher.StateFlags;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -46,6 +42,10 @@ import org.joml.Vector3fc;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import rinth.client.render.AnimatedSprites;
+import rinth.mesher.GameMath;
+import rinth.mesher.MeshTables;
+import rinth.mesher.StateFlags;
 
 /**
  * Builds the mesher's tables from the game (ADR 0023): every block state's flags and shapes,

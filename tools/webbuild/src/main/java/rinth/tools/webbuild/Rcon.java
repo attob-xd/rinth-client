@@ -1,6 +1,5 @@
 package rinth.tools.webbuild;
 
-import rinth.tools.build.CliException;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -9,6 +8,7 @@ import java.net.Socket;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.charset.StandardCharsets;
+import rinth.tools.build.CliException;
 
 /**
  * A minimal client for a Minecraft server's remote console (RCON), so a browser check can make the

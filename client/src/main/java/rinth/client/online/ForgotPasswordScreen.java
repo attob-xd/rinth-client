@@ -1,12 +1,12 @@
 package rinth.client.online;
 
-import rinth.client.ui.Theme;
-import rinth.online.Credentials;
-import rinth.online.RecoveryCodes;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.CommonComponents;
 import org.jspecify.annotations.Nullable;
+import rinth.client.ui.Theme;
+import rinth.online.Credentials;
+import rinth.online.RecoveryCodes;
 
 /**
  * Forgot Password: the username, one recovery code (used up by this) and a new password. Every other

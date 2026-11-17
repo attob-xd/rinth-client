@@ -1,8 +1,8 @@
 package rinth.classlib.substitutes.org.lwjgl.stb;
 
+import java.nio.ByteBuffer;
 import rinth.classlib.image.PngEncoder;
 import rinth.classlib.memory.Heap;
-import java.nio.ByteBuffer;
 
 /**
  * LWJGL's {@code STBImageWrite}, as far as {@code NativeImage} uses it: PNG files (the game's

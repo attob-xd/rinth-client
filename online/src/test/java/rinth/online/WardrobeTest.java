@@ -3,12 +3,12 @@ package rinth.online;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.google.gson.JsonObject;
-import rinth.framework.online.RinthPlayer;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 import org.junit.jupiter.api.Test;
+import rinth.framework.online.RinthPlayer;
 
 class WardrobeTest {
 

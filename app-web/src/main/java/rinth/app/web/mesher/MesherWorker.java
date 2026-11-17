@@ -1,13 +1,13 @@
 package rinth.app.web.mesher;
 
-import rinth.mesher.Bytes;
-import rinth.mesher.MeshJobs;
 import java.nio.ByteBuffer;
 import org.jspecify.annotations.Nullable;
 import org.teavm.jso.JSBody;
 import org.teavm.jso.JSFunctor;
 import org.teavm.jso.JSObject;
 import org.teavm.jso.typedarrays.Int8Array;
+import rinth.mesher.Bytes;
+import rinth.mesher.MeshJobs;
 
 /**
  * The mesher workers' program (ADR 0023): compiled by TeaVM on its own into

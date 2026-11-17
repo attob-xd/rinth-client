@@ -2,8 +2,6 @@ package rinth.tools.webbuild;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import rinth.tools.build.CliException;
-import rinth.tools.build.Downloader;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -18,6 +16,8 @@ import java.util.HexFormat;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
+import rinth.tools.build.CliException;
+import rinth.tools.build.Downloader;
 
 /**
  * A vanilla dedicated server for the screenshot-diff harness, with a fresh world every run: the

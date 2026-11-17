@@ -3,6 +3,9 @@ package rinth.framework;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+import java.util.ArrayList;
+import java.util.List;
+import org.junit.jupiter.api.Test;
 import rinth.framework.event.Events;
 import rinth.framework.hud.Anchor;
 import rinth.framework.hud.HudCanvas;
@@ -13,9 +16,6 @@ import rinth.framework.setting.IntSetting;
 import rinth.framework.setting.Key;
 import rinth.framework.setting.KeySetting;
 import rinth.framework.testing.TestGame;
-import java.util.ArrayList;
-import java.util.List;
-import org.junit.jupiter.api.Test;
 
 class ModuleSystemTest {
 

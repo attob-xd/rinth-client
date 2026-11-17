@@ -4,10 +4,6 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import rinth.framework.ModuleSystem;
-import rinth.framework.hud.Shape;
-import rinth.framework.waypoint.Waypoint;
-import rinth.framework.waypoint.Waypoints;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,6 +15,10 @@ import java.util.Map;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
+import rinth.framework.ModuleSystem;
+import rinth.framework.hud.Shape;
+import rinth.framework.waypoint.Waypoint;
+import rinth.framework.waypoint.Waypoints;
 
 /**
  * The world map's Export and Import (Rinth): what the open world's map has seen, and its waypoints, as

@@ -5,7 +5,6 @@ import static org.assertj.core.api.Assertions.within;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import rinth.client.testing.TestPlatform;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.EnumSet;
@@ -16,6 +15,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.core.Direction;
 import org.joml.Vector3f;
 import org.junit.jupiter.api.Test;
+import rinth.client.testing.TestPlatform;
 
 /**
  * A baked model placed by its part rows lands where the game's own {@code ModelPart.render} puts

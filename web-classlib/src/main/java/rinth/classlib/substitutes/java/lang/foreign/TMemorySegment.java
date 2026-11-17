@@ -1,8 +1,8 @@
 package rinth.classlib.substitutes.java.lang.foreign;
 
-import rinth.classlib.memory.Heap;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import rinth.classlib.memory.Heap;
 
 /**
  * {@code java.lang.foreign.MemorySegment}, only native segments over {@link Heap} (the browser's

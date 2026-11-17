@@ -1,7 +1,6 @@
 package rinth.fabric;
 
 import com.mojang.logging.LogUtils;
-import rinth.fabric.generated.FabricModTable;
 import java.util.List;
 import java.util.function.Consumer;
 import net.fabricmc.api.ClientModInitializer;
@@ -11,6 +10,7 @@ import net.fabricmc.loader.api.entrypoint.EntrypointContainer;
 import net.fabricmc.loader.impl.FabricLoaderImpl;
 import net.minecraft.client.Minecraft;
 import org.slf4j.Logger;
+import rinth.fabric.generated.FabricModTable;
 
 /**
  * Starts the Fabric mods built into the client (ADR 0065). tools/fabricmods puts a call to

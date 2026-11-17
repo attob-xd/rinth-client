@@ -1,24 +1,5 @@
 package rinth.client.modules;
 
-import rinth.client.platform.ClientPlatform;
-import rinth.client.singleplayer.WorkerWorlds;
-import rinth.client.ui.Look;
-import rinth.client.ui.SmoothFont;
-import rinth.client.ui.Theme;
-import rinth.framework.game.EffectCategory;
-import rinth.framework.game.EffectView;
-import rinth.framework.game.EquipmentSlot;
-import rinth.framework.game.Game;
-import rinth.framework.game.GameKey;
-import rinth.framework.game.GameOption;
-import rinth.framework.game.Hitboxes;
-import rinth.framework.game.ItemView;
-import rinth.framework.game.Perspective;
-import rinth.framework.game.PlayerView;
-import rinth.framework.game.ThemeColors;
-import rinth.framework.game.UiFont;
-import rinth.framework.game.Weather;
-import rinth.framework.waypoint.Waypoint;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -62,6 +43,25 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.storage.LevelResource;
 import org.jspecify.annotations.Nullable;
+import rinth.client.platform.ClientPlatform;
+import rinth.client.singleplayer.WorkerWorlds;
+import rinth.client.ui.Look;
+import rinth.client.ui.SmoothFont;
+import rinth.client.ui.Theme;
+import rinth.framework.game.EffectCategory;
+import rinth.framework.game.EffectView;
+import rinth.framework.game.EquipmentSlot;
+import rinth.framework.game.Game;
+import rinth.framework.game.GameKey;
+import rinth.framework.game.GameOption;
+import rinth.framework.game.Hitboxes;
+import rinth.framework.game.ItemView;
+import rinth.framework.game.Perspective;
+import rinth.framework.game.PlayerView;
+import rinth.framework.game.ThemeColors;
+import rinth.framework.game.UiFont;
+import rinth.framework.game.Weather;
+import rinth.framework.waypoint.Waypoint;
 
 /**
  * The game as modules see it ({@link Game}, ADR 0050): the local player's place, equipment and

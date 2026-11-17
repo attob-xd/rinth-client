@@ -1,9 +1,9 @@
 package rinth.classlib.additions.java.util.zip;
 
-import rinth.classlib.InstanceMethod;
 import java.nio.ByteBuffer;
 import java.util.zip.DataFormatException;
 import java.util.zip.Inflater;
+import rinth.classlib.InstanceMethod;
 
 /** {@code java.util.zip.Inflater} methods TeaVM lacks: the buffer forms, over the array forms. */
 public final class InflaterAdditions {

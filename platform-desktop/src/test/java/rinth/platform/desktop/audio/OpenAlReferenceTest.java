@@ -3,11 +3,6 @@ package rinth.platform.desktop.audio;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.within;
 
-import rinth.platform.api.PlatformLog;
-import rinth.platform.api.audio.AudioBuffer;
-import rinth.platform.api.audio.AudioDevice;
-import rinth.platform.api.audio.AudioSource;
-import rinth.platform.api.audio.PcmFormat;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -16,6 +11,11 @@ import java.nio.file.Path;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import rinth.platform.api.PlatformLog;
+import rinth.platform.api.audio.AudioBuffer;
+import rinth.platform.api.audio.AudioDevice;
+import rinth.platform.api.audio.AudioSource;
+import rinth.platform.api.audio.PcmFormat;
 
 /**
  * What the desktop's sound actually sounds like, for the browser to match (ADR 0013): a tone

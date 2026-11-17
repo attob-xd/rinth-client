@@ -1,8 +1,8 @@
 package rinth.client.gui;
 
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import rinth.client.profiler.ProfilerOverlay;
 import rinth.client.recorder.ScreenRecorder;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
 
 /**
  * What Rinth draws over everything, screens included, after the game's debug overlay: the

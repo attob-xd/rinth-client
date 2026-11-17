@@ -96,7 +96,7 @@ class InPlaceTest {
     }
 
     private static TreeFileSystem tree(Store store) {
-        TreeFileSystem files = new TreeFileSystem(new Journal("/rinth", List.of()), () -> 3_000);
+        TreeFileSystem files = new TreeFileSystem(new Journal("/incari", List.of()), () -> 3_000);
         files.setInPlaceStore(store);
         return files;
     }

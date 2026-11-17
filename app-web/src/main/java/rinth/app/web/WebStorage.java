@@ -1,7 +1,7 @@
 package rinth.app.web;
 
-import rinth.platform.api.storage.PlatformStorage;
 import org.jspecify.annotations.Nullable;
+import rinth.platform.api.storage.PlatformStorage;
 
 /** Where the browser build keeps its files: under {@code WebFileSystem.ROOT}, which survives a reload. */
 record WebStorage(

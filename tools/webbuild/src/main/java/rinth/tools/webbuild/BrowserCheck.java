@@ -2,7 +2,6 @@ package rinth.tools.webbuild;
 
 import com.google.gson.JsonPrimitive;
 import com.sun.net.httpserver.HttpServer;
-import rinth.tools.build.CliException;
 import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Files;
@@ -15,6 +14,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 import org.jspecify.annotations.Nullable;
+import rinth.tools.build.CliException;
 
 /**
  * Checks that the browser build's game loop runs: serves the output directory on a free loopback

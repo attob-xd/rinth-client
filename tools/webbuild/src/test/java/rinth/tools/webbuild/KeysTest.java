@@ -3,8 +3,8 @@ package rinth.tools.webbuild;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import rinth.tools.build.CliException;
 import org.junit.jupiter.api.Test;
+import rinth.tools.build.CliException;
 
 class KeysTest {
 

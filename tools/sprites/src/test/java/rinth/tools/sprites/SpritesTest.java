@@ -3,7 +3,6 @@ package rinth.tools.sprites;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.mojang.blaze3d.platform.NativeImage;
-import rinth.client.render.SpriteCache;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.ByteBuffer;
@@ -25,6 +24,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
+import rinth.client.render.SpriteCache;
 
 /**
  * The vanilla sprites, decoded here and read back through the page's {@link SpriteCache}: the

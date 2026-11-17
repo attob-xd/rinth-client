@@ -1,6 +1,5 @@
 package rinth.client.cosmetics;
 
-import rinth.online.Cosmetic;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -8,6 +7,7 @@ import java.util.UUID;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
+import rinth.online.Cosmetic;
 
 /**
  * Name tag cosmetics (ADR 0061): the name over a player's head in a color, or fading from one color

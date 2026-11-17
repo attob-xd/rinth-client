@@ -1,10 +1,5 @@
 package com.mojang.blaze3d.platform;
 
-import rinth.client.modules.RinthModules;
-import rinth.client.platform.ClientPlatform;
-import rinth.platform.api.input.KeyAction;
-import rinth.platform.api.input.KeyModifiers;
-import rinth.platform.api.window.PlatformEventListener;
 import java.util.List;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.options.controls.KeyBindsScreen;
@@ -13,6 +8,11 @@ import net.minecraft.client.input.KeyEvent;
 import net.minecraft.client.input.MouseButtonInfo;
 import net.minecraft.client.input.PreeditEvent;
 import org.jspecify.annotations.Nullable;
+import rinth.client.modules.RinthModules;
+import rinth.client.platform.ClientPlatform;
+import rinth.platform.api.input.KeyAction;
+import rinth.platform.api.input.KeyModifiers;
+import rinth.platform.api.window.PlatformEventListener;
 
 /**
  * Rinth's replacement for Mojang's SDL event pump (patches/classes.txt). The name stays because

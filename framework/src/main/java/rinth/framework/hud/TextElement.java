@@ -1,8 +1,8 @@
 package rinth.framework.hud;
 
+import org.jspecify.annotations.Nullable;
 import rinth.framework.setting.BooleanSetting;
 import rinth.framework.setting.ColorSetting;
-import org.jspecify.annotations.Nullable;
 
 /**
  * A HUD element that's one line of text, on the theme's glass unless the player turns the

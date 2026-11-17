@@ -1,8 +1,5 @@
 package rinth.client.render.mesher;
 
-import rinth.mesher.Bytes;
-import rinth.mesher.MeshJobs;
-import rinth.mesher.MeshTables;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
@@ -18,6 +15,9 @@ import net.minecraft.server.packs.repository.PackSource;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import rinth.mesher.Bytes;
+import rinth.mesher.MeshJobs;
+import rinth.mesher.MeshTables;
 
 /**
  * The mesher's tables kept from one start to the next (ADR 0032). Building them reads every block

@@ -1,7 +1,7 @@
 package com.mojang.blaze3d.platform;
 
-import rinth.client.platform.ClientPlatform;
 import net.minecraft.util.StringDecomposer;
+import rinth.client.platform.ClientPlatform;
 
 /** Rinth's replacement for Mojang's clipboard access (patches/classes.txt), over the platform shell. */
 public class ClipboardManager {

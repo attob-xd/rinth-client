@@ -1,6 +1,6 @@
 {
   "comment": "Shared with the online service's own tests (ADR 0058). Server hashes are SHA-256 of serverHashPrefix + normalized; proof of work hashes the 16-byte challenge then the nonce as 8 bytes big-endian.",
-  "serverHashPrefix": "rinth-server-v1\n",
+  "serverHashPrefix": "incari-server-v1\n",
   "serverHashes": [
     {
       "address": "play.example.com",

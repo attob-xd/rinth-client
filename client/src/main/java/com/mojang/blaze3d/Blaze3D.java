@@ -1,9 +1,9 @@
 package com.mojang.blaze3d;
 
-import rinth.client.platform.ClientPlatform;
-import rinth.client.world.FolderDownloads;
 import java.net.URI;
 import java.nio.file.Path;
+import rinth.client.platform.ClientPlatform;
+import rinth.client.world.FolderDownloads;
 
 /** Rinth's replacement for Mojang's {@code Blaze3D} helpers (patches/classes.txt), over the platform. */
 public class Blaze3D {

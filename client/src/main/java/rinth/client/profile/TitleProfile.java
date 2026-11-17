@@ -1,11 +1,5 @@
 package rinth.client.profile;
 
-import rinth.client.cosmetics.Cosmetics;
-import rinth.client.cosmetics.PlayerPreview;
-import rinth.client.cosmetics.WardrobeScreen;
-import rinth.client.online.AccountScreen;
-import rinth.client.skins.OwnSkin;
-import rinth.client.startup.DeferredModels;
 import java.util.function.Consumer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ComponentPath;
@@ -28,6 +22,12 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.PlayerModelType;
 import net.minecraft.world.entity.player.PlayerSkin;
 import org.jspecify.annotations.Nullable;
+import rinth.client.cosmetics.Cosmetics;
+import rinth.client.cosmetics.PlayerPreview;
+import rinth.client.cosmetics.WardrobeScreen;
+import rinth.client.online.AccountScreen;
+import rinth.client.skins.OwnSkin;
+import rinth.client.startup.DeferredModels;
 
 /**
  * The player on the title screen, to the right of its buttons: their model in 3D with their skin,

@@ -2,10 +2,10 @@ package rinth.features.weatherchanger;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Test;
 import rinth.framework.game.Weather;
 import rinth.framework.setting.BooleanSetting;
 import rinth.framework.testing.TestGame;
-import org.junit.jupiter.api.Test;
 
 class WeatherChangerTest {
 

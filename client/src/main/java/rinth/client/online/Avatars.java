@@ -1,6 +1,5 @@
 package rinth.client.online;
 
-import rinth.client.ui.Theme;
 import java.util.Locale;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -10,6 +9,7 @@ import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.client.multiplayer.PlayerInfo;
 import net.minecraft.world.entity.player.PlayerSkin;
 import org.jspecify.annotations.Nullable;
+import rinth.client.ui.Theme;
 
 /**
  * The chat menu's pictures of people (ADR 0059): a player on this server shows their skin's face,

@@ -1,10 +1,10 @@
 package rinth.classlib;
 
-import rinth.classlib.concurrent.Waits;
 import java.util.Arrays;
 import org.teavm.interop.PlatformMarker;
 import org.teavm.interop.Platforms;
 import org.teavm.jso.JSBody;
+import rinth.classlib.concurrent.Waits;
 
 /**
  * Counts the program's throws in a build compiled with {@code -Pteavm.throwCensus} (the web build's

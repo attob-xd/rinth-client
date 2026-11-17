@@ -2,9 +2,9 @@ package com.mojang.blaze3d.audio;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.platform.api.audio.AudioDeviceList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
+import rinth.platform.api.audio.AudioDeviceList;
 
 class DeviceTrackingTest {
 

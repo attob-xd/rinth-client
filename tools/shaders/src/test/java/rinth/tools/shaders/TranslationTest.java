@@ -4,11 +4,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import com.mojang.renderpearl.api.pipeline.ShaderType;
-import rinth.render.webgl2.shaders.TranslatedStage;
 import java.util.Map;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import rinth.render.webgl2.shaders.TranslatedStage;
 
 /** Runs shaderc and SPIRV-Cross (LWJGL's natives) on small shaders written for the test. */
 class TranslationTest {

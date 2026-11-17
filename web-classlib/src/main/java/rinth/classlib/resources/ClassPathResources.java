@@ -20,7 +20,7 @@ import org.jspecify.annotations.Nullable;
 public final class ClassPathResources {
 
     /** The directory that stands in for the class path's root. */
-    public static final String ROOT = "/rinth/classpath";
+    public static final String ROOT = "/incari/classpath";
 
     /** More directories searched after {@link #ROOT}, in order; set up before the game starts. */
     private static final List<String> MORE_ROOTS = new ArrayList<>();

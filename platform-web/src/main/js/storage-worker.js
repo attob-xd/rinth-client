@@ -118,7 +118,7 @@ function parts(path) {
 
 /**
  * The store in the origin private file system: a folder per folder, a file per file, under the
- * same paths as the page's (so "/incari/game/options.txt" is rinth/game/options.txt there).
+ * same paths as the page's (so "/incari/game/options.txt" is incari/game/options.txt there).
  * @param {DirectoryHandle} root
  * @returns {Backend}
  */

@@ -2,11 +2,11 @@ package rinth.online;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.framework.online.RinthPlayer;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import org.junit.jupiter.api.Test;
+import rinth.framework.online.RinthPlayer;
 
 /** The tab list's players and which are Rinth players, when names repeat (ADR 0058). */
 class WorldPlayersTest {

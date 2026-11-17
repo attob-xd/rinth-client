@@ -1,9 +1,9 @@
 package rinth.classlib.additions.java.io;
 
-import rinth.classlib.InstanceMethod;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
+import rinth.classlib.InstanceMethod;
 
 /** {@code java.io.Reader} methods TeaVM lacks. */
 public final class ReaderAdditions {

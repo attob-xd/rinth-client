@@ -1,7 +1,7 @@
 package rinth.platform.desktop;
 
-import rinth.platform.api.storage.PlatformStorage;
 import org.jspecify.annotations.Nullable;
+import rinth.platform.api.storage.PlatformStorage;
 
 /**
  * Game directories on the local file system, as the launcher (or {@code app-desktop}) chose them.

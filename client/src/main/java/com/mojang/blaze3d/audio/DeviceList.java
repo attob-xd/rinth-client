@@ -1,9 +1,9 @@
 package com.mojang.blaze3d.audio;
 
-import rinth.platform.api.Platforms;
-import rinth.platform.api.audio.AudioDeviceList;
 import java.util.List;
 import org.jspecify.annotations.Nullable;
+import rinth.platform.api.Platforms;
+import rinth.platform.api.audio.AudioDeviceList;
 
 /**
  * Rinth replacement: the output devices the platform offers, in the game's own type. The options

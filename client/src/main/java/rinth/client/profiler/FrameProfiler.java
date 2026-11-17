@@ -1,9 +1,9 @@
 package rinth.client.profiler;
 
-import rinth.client.platform.ClientPlatform;
 import java.util.function.Supplier;
 import net.minecraft.util.profiling.ProfilerFiller;
 import net.minecraft.util.profiling.metrics.MetricCategory;
+import rinth.client.platform.ClientPlatform;
 
 /**
  * Times a frame from the zones the game already marks for its own profiler: the game loop

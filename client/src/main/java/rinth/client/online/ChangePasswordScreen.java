@@ -1,12 +1,12 @@
 package rinth.client.online;
 
-import rinth.client.ui.Theme;
-import rinth.online.Credentials;
 import java.util.Objects;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.CommonComponents;
 import org.jspecify.annotations.Nullable;
+import rinth.client.ui.Theme;
+import rinth.online.Credentials;
 
 /** Change Password: the current one and a new one. Every other session the account has ends. */
 final class ChangePasswordScreen extends FormScreen {

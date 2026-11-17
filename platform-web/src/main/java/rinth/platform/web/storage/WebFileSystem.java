@@ -23,7 +23,7 @@ import org.teavm.runtime.fs.VirtualFileSystemProvider;
 public final class WebFileSystem {
 
     /** Paths under this folder survive a reload. */
-    public static final String ROOT = "/rinth";
+    public static final String ROOT = "/incari";
 
     private static final String LOCK = "rinth-storage";
 

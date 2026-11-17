@@ -1,8 +1,8 @@
 package rinth.app.web;
 
-import rinth.render.webgl2.shaders.ShaderManifest;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import rinth.render.webgl2.shaders.ShaderManifest;
 
 /**
  * The game's shaders as the build translated them for WebGL2 ({@code tools/shaders}). They're

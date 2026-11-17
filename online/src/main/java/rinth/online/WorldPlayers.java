@@ -1,6 +1,5 @@
 package rinth.online;
 
-import rinth.framework.online.RinthPlayer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
@@ -9,6 +8,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import org.jspecify.annotations.Nullable;
+import rinth.framework.online.RinthPlayer;
 
 /**
  * The world the player is in, as the service hears of it, and which players in its tab list are

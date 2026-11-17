@@ -1,7 +1,5 @@
 package rinth.platform.desktop.net;
 
-import rinth.platform.api.PlatformLog;
-import rinth.platform.api.net.NetConnection;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.StandardSocketOptions;
@@ -10,6 +8,8 @@ import java.nio.channels.SocketChannel;
 import java.util.ArrayDeque;
 import java.util.Queue;
 import org.jspecify.annotations.Nullable;
+import rinth.platform.api.PlatformLog;
+import rinth.platform.api.net.NetConnection;
 
 /**
  * One TCP connection. A virtual thread connects and then reads; writes happen on the caller's

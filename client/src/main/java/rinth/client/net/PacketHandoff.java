@@ -1,6 +1,5 @@
 package rinth.client.net;
 
-import rinth.client.platform.ClientPlatform;
 import java.util.Collections;
 import java.util.IdentityHashMap;
 import java.util.Set;
@@ -11,6 +10,7 @@ import net.minecraft.network.PacketProcessor;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.common.ClientboundCustomPayloadPacket;
 import net.minecraft.network.protocol.common.ClientboundTransferPacket;
+import rinth.client.platform.ClientPlatform;
 
 /**
  * Packets handed to the game's thread without the round trip (ADR 0033). The game decodes each

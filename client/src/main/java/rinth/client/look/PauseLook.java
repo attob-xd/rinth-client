@@ -1,16 +1,16 @@
 package rinth.client.look;
 
-import rinth.client.modules.RinthModules;
-import rinth.client.ui.EditedScreen;
-import rinth.client.ui.ScreenPanels;
-import rinth.client.ui.Ui;
-import rinth.framework.MenuButton;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.components.StringWidget;
 import net.minecraft.client.gui.screens.PauseScreen;
 import net.minecraft.network.chat.Component;
+import rinth.client.modules.RinthModules;
+import rinth.client.ui.EditedScreen;
+import rinth.client.ui.ScreenPanels;
+import rinth.client.ui.Ui;
+import rinth.framework.MenuButton;
 
 /**
  * The pause menu in the client's look: its buttons gathered on one glass card in the middle

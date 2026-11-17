@@ -1,14 +1,14 @@
 package rinth.client.eagler;
 
-import rinth.client.settings.RinthSettingsScreen;
-import rinth.client.ui.Icons;
-import rinth.client.ui.Ui;
 import java.util.function.Consumer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.components.Renderable;
 import net.minecraft.client.gui.layouts.GridLayout;
 import net.minecraft.client.gui.screens.Screen;
+import rinth.client.settings.RinthSettingsScreen;
+import rinth.client.ui.Icons;
+import rinth.client.ui.Ui;
 
 /**
  * What Rinth adds to the pause menu: Rinth Settings' button, an Eagler server's own buttons and

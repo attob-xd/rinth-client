@@ -3,7 +3,6 @@ package rinth.client.singleplayer;
 import com.mojang.authlib.GameProfile;
 import com.mojang.datafixers.DataFixer;
 import com.mojang.logging.LogUtils;
-import rinth.client.platform.ClientPlatform;
 import java.net.Proxy;
 import java.nio.file.Path;
 import java.util.Optional;
@@ -35,6 +34,7 @@ import net.minecraft.world.level.storage.LevelStorageSource;
 import net.minecraft.world.level.storage.PlayerDataStorage;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.platform.ClientPlatform;
 
 /**
  * Singleplayer's server in a worker (ADR 0039): one player, its owner, on a world of the player's

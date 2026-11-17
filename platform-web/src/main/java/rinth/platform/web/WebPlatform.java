@@ -1,5 +1,18 @@
 package rinth.platform.web;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.URI;
+import java.nio.file.Files;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Optional;
+import java.util.concurrent.ExecutorService;
+import org.jspecify.annotations.Nullable;
+import org.teavm.jso.JSObject;
+import org.teavm.jso.typedarrays.Int8Array;
 import rinth.platform.api.AppInfo;
 import rinth.platform.api.NativeSurfaceFactory;
 import rinth.platform.api.Platform;
@@ -23,19 +36,6 @@ import rinth.platform.web.audio.WebAudio;
 import rinth.platform.web.fonts.CanvasFonts;
 import rinth.platform.web.rtc.WebRtc;
 import rinth.platform.web.storage.WebFileSystem;
-import java.io.File;
-import java.io.IOException;
-import java.net.URI;
-import java.nio.file.Files;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Optional;
-import java.util.concurrent.ExecutorService;
-import org.jspecify.annotations.Nullable;
-import org.teavm.jso.JSObject;
-import org.teavm.jso.typedarrays.Int8Array;
 
 /**
  * The platform in a browser tab, over TeaVM's JavaScript interop: a canvas window with keyboard
@@ -52,7 +52,7 @@ public final class WebPlatform implements Platform {
     public static final String CANVAS_ID = "rinth-canvas";
 
     /** Where files dropped on the page are copied for the game to open ({@link DroppedFiles}). */
-    public static final String DROP_DIRECTORY = "/rinth/dropped";
+    public static final String DROP_DIRECTORY = "/incari/dropped";
 
     private static final double HEARTBEAT_MILLIS = 5000;
 

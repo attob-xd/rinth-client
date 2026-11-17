@@ -1,17 +1,17 @@
 package rinth.client.eagler;
 
 import com.mojang.logging.LogUtils;
-import rinth.client.skins.EaglerSkins;
-import rinth.client.skins.OwnSkin;
-import rinth.net.eagler.EaglerMessages;
-import rinth.net.eagler.EaglerPauseMenu;
-import rinth.net.eagler.EaglerSession;
 import io.netty.buffer.ByteBuf;
 import java.nio.file.Path;
 import java.util.UUID;
 import net.minecraft.client.Minecraft;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.skins.EaglerSkins;
+import rinth.client.skins.OwnSkin;
+import rinth.net.eagler.EaglerMessages;
+import rinth.net.eagler.EaglerPauseMenu;
+import rinth.net.eagler.EaglerSession;
 
 /**
  * Everything an Eagler connection the player joins does beside the game's packets:

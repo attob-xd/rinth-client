@@ -1,6 +1,5 @@
 package rinth.tools.webbuild;
 
-import rinth.tools.build.CliException;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
@@ -17,6 +16,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.imageio.ImageIO;
 import org.jspecify.annotations.Nullable;
+import rinth.tools.build.CliException;
 
 /**
  * The desktop game (Mojang's OpenGL backend) as the harness's reference: started from the launch

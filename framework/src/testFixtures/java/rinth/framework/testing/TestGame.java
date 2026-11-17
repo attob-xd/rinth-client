@@ -1,5 +1,14 @@
 package rinth.framework.testing;
 
+import java.util.ArrayList;
+import java.util.EnumMap;
+import java.util.EnumSet;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import org.jspecify.annotations.Nullable;
 import rinth.framework.KeyInput;
 import rinth.framework.Module;
 import rinth.framework.ModuleSystem;
@@ -28,15 +37,6 @@ import rinth.framework.hud.WorldOverlay;
 import rinth.framework.setting.Key;
 import rinth.framework.setting.KeySetting;
 import rinth.framework.waypoint.Waypoint;
-import java.util.ArrayList;
-import java.util.EnumMap;
-import java.util.EnumSet;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import org.jspecify.annotations.Nullable;
 
 /**
  * The game's side of the module framework, faked for tests: config files in memory, keys pressed by

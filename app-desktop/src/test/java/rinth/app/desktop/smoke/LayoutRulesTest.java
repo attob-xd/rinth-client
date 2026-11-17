@@ -2,9 +2,9 @@ package rinth.app.desktop.smoke;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.app.desktop.smoke.LayoutRules.Box;
 import java.util.List;
 import org.junit.jupiter.api.Test;
+import rinth.app.desktop.smoke.LayoutRules.Box;
 
 class LayoutRulesTest {
 

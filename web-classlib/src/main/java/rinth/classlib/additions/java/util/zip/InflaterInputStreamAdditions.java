@@ -1,9 +1,9 @@
 package rinth.classlib.additions.java.util.zip;
 
-import rinth.classlib.InstanceMethod;
-import rinth.classlib.Replaces;
 import java.io.IOException;
 import java.util.zip.InflaterInputStream;
+import rinth.classlib.InstanceMethod;
+import rinth.classlib.Replaces;
 
 /** {@code java.util.zip.InflaterInputStream} methods TeaVM has but gets wrong. */
 public final class InflaterInputStreamAdditions {

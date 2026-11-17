@@ -1,7 +1,5 @@
 package rinth.framework.waypoint;
 
-import rinth.framework.config.ConfigStorage;
-import rinth.framework.config.WaypointCodec;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,6 +7,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.function.Consumer;
 import org.jspecify.annotations.Nullable;
+import rinth.framework.config.ConfigStorage;
+import rinth.framework.config.WaypointCodec;
 
 /**
  * The waypoints of the world the player is in, every dimension's, kept in a file of the world's

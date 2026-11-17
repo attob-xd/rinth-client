@@ -1,10 +1,5 @@
 package rinth.client.modules;
 
-import rinth.client.ui.RoundRects;
-import rinth.client.ui.Theme;
-import rinth.framework.ModuleSystem;
-import rinth.framework.event.ContainerTooltip;
-import rinth.framework.event.Events;
 import java.util.Optional;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -19,6 +14,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.level.block.ShulkerBoxBlock;
 import org.jspecify.annotations.Nullable;
+import rinth.client.ui.RoundRects;
+import rinth.client.ui.Theme;
+import rinth.framework.ModuleSystem;
+import rinth.framework.event.ContainerTooltip;
+import rinth.framework.event.Events;
 
 /**
  * The container tooltip event ({@link Events#CONTAINER_TOOLTIP}): an item holding others (a

@@ -1,7 +1,7 @@
 package rinth.classlib.substitutes.java.util.concurrent;
 
-import rinth.classlib.concurrent.Monitors;
 import org.jspecify.annotations.Nullable;
+import rinth.classlib.concurrent.Monitors;
 
 /** {@code java.util.concurrent.RecursiveTask}: a {@link TForkJoinTask} that computes a result. */
 public abstract class TRecursiveTask<V extends @Nullable Object> extends TForkJoinTask<V> {

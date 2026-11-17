@@ -1,7 +1,5 @@
 package rinth.platform.desktop;
 
-import rinth.platform.api.PlatformLog;
-import rinth.platform.api.PlatformShell;
 import java.net.URI;
 import java.nio.IntBuffer;
 import org.jspecify.annotations.Nullable;
@@ -11,6 +9,8 @@ import org.lwjgl.sdl.SDLMisc;
 import org.lwjgl.sdl.SDL_MessageBoxButtonData;
 import org.lwjgl.sdl.SDL_MessageBoxData;
 import org.lwjgl.system.MemoryStack;
+import rinth.platform.api.PlatformLog;
+import rinth.platform.api.PlatformShell;
 
 /** Clipboard, links and message boxes through SDL3. */
 final class SdlShell implements PlatformShell {

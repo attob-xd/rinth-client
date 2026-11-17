@@ -1,14 +1,14 @@
 package rinth.platform.web;
 
-import rinth.platform.api.input.KeyAction;
-import rinth.platform.api.input.KeyModifiers;
-import rinth.platform.api.input.Scancodes;
-import rinth.platform.api.window.PlatformEventListener;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import org.jspecify.annotations.Nullable;
+import rinth.platform.api.input.KeyAction;
+import rinth.platform.api.input.KeyModifiers;
+import rinth.platform.api.input.Scancodes;
+import rinth.platform.api.window.PlatformEventListener;
 
 /**
  * DOM events, turned into the platform's events and queued until the game's next

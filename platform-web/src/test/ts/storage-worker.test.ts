@@ -255,7 +255,7 @@ class Worker {
   }
 
   open(inPlace?: { within: string; suffixes: string[] }): Promise<Message> {
-    return this.request({ type: "open", root: "/rinth", lock: "rinth-storage", inPlace });
+    return this.request({ type: "open", root: "/incari", lock: "rinth-storage", inPlace });
   }
 }
 
@@ -360,7 +360,7 @@ describe("the storage worker", () => {
       assert.deepEqual(listing(await second.open()), afterChanges);
       const read = await second.request({ type: "read", path: "/incari/game/options.txt" });
       assert.equal(new TextDecoder().decode(read.data as ArrayBuffer), "fov:0.5");
-      assert.equal((await second.request({ type: "read", path: "/rinth/nothing" })).data, null);
+      assert.equal((await second.request({ type: "read", path: "/incari/nothing" })).data, null);
       assert.deepEqual((await second.request({ type: "list", path: "/incari/game" })).paths, [
         "/incari/game/options.txt",
         "/incari/game/servers.dat",
@@ -402,15 +402,15 @@ describe("the storage worker", () => {
     const opfs = new FakeDirectory();
     const worker = new Worker({ opfs });
     await worker.open();
-    await worker.apply([{ op: "write", path: "/rinth/r.mca", size: 10, at: 0, data: bytes("0123456789"), mtime: 1 }]);
+    await worker.apply([{ op: "write", path: "/incari/r.mca", size: 10, at: 0, data: bytes("0123456789"), mtime: 1 }]);
     const applied = await worker.apply([
-      { op: "write", path: "/rinth/r.mca", size: 12, at: 1, data: bytes("ab"), mtime: 2 },
-      { op: "write", path: "/rinth/r.mca", size: 12, at: 9, data: bytes("XYZ"), mtime: 2 },
-      { op: "write", path: "/rinth/other", size: 1, at: 0, data: bytes("o"), mtime: 2 },
+      { op: "write", path: "/incari/r.mca", size: 12, at: 1, data: bytes("ab"), mtime: 2 },
+      { op: "write", path: "/incari/r.mca", size: 12, at: 9, data: bytes("XYZ"), mtime: 2 },
+      { op: "write", path: "/incari/other", size: 1, at: 0, data: bytes("o"), mtime: 2 },
     ]);
     assert.equal(applied.error, undefined);
-    assert.equal(textAt(opfs, "/rinth/r.mca"), "0ab345678XYZ");
-    assert.equal(textAt(opfs, "/rinth/other"), "o");
+    assert.equal(textAt(opfs, "/incari/r.mca"), "0ab345678XYZ");
+    assert.equal(textAt(opfs, "/incari/other"), "o");
   });
 
   it("takes changes from a port, in the page's queue, and answers there", async () => {
@@ -440,15 +440,15 @@ describe("the storage worker", () => {
     const worker = new Worker({ opfs });
     await worker.open();
     await worker.apply([
-      { op: "write", path: "/rinth/a", size: 1, at: 0, data: bytes("1"), mtime: 1 },
-      { op: "mkdir", path: "/rinth/b/c", mtime: 1 },
+      { op: "write", path: "/incari/a", size: 1, at: 0, data: bytes("1"), mtime: 1 },
+      { op: "mkdir", path: "/incari/b/c", mtime: 1 },
     ]);
     await worker.apply([
-      { op: "mkdir", path: "/rinth/a", mtime: 2 },
-      { op: "write", path: "/rinth/b", size: 1, at: 0, data: bytes("2"), mtime: 2 },
-      { op: "delete", path: "/rinth/never-there" },
+      { op: "mkdir", path: "/incari/a", mtime: 2 },
+      { op: "write", path: "/incari/b", size: 1, at: 0, data: bytes("2"), mtime: 2 },
+      { op: "delete", path: "/incari/never-there" },
     ]);
-    assert.deepEqual(listing(await new Worker({ opfs }).open()), ["/rinth/a", "/rinth/b=2"]);
+    assert.deepEqual(listing(await new Worker({ opfs }).open()), ["/incari/a", "/incari/b=2"]);
   });
 
   it("falls back to IndexedDB where there's no origin private file system", async () => {

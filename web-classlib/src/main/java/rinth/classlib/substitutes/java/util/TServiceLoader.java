@@ -1,7 +1,5 @@
 package rinth.classlib.substitutes.java.util;
 
-import rinth.classlib.ServiceProviders;
-import rinth.classlib.nio.ZipFileSystemProvider;
 import java.nio.file.spi.FileSystemProvider;
 import java.util.Iterator;
 import java.util.List;
@@ -9,6 +7,8 @@ import java.util.Optional;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 import org.jspecify.annotations.Nullable;
+import rinth.classlib.ServiceProviders;
+import rinth.classlib.nio.ZipFileSystemProvider;
 
 /**
  * {@code java.util.ServiceLoader} for the browser build: providers are bound here, not found. The

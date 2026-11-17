@@ -3,6 +3,16 @@ package rinth.classlib.additions;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+import java.io.StringReader;
+import java.io.StringWriter;
+import java.nio.ByteBuffer;
+import java.time.Duration;
+import java.util.List;
+import java.util.Locale;
+import java.util.Spliterators;
+import java.util.concurrent.TimeUnit;
+import java.util.regex.Pattern;
+import org.junit.jupiter.api.Test;
 import rinth.classlib.additions.java.io.ReaderAdditions;
 import rinth.classlib.additions.java.lang.CharacterAdditions;
 import rinth.classlib.additions.java.lang.IntegerAdditions;
@@ -15,16 +25,6 @@ import rinth.classlib.additions.java.util.LocaleAdditions;
 import rinth.classlib.additions.java.util.concurrent.TimeUnitAdditions;
 import rinth.classlib.additions.java.util.regex.PatternAdditions;
 import rinth.classlib.additions.java.util.stream.StreamSupportAdditions;
-import java.io.StringReader;
-import java.io.StringWriter;
-import java.nio.ByteBuffer;
-import java.time.Duration;
-import java.util.List;
-import java.util.Locale;
-import java.util.Spliterators;
-import java.util.concurrent.TimeUnit;
-import java.util.regex.Pattern;
-import org.junit.jupiter.api.Test;
 
 /** The additions against the JDK methods they stand in for, where the JDK has them. */
 class AdditionsTest {

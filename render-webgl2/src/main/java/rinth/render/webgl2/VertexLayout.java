@@ -2,13 +2,13 @@ package rinth.render.webgl2;
 
 import com.mojang.renderpearl.api.vertex.VertexFormat;
 import com.mojang.renderpearl.api.vertex.VertexFormatElement;
-import rinth.render.webgl2.shaders.TranslatedStage;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.jspecify.annotations.Nullable;
 import org.teavm.jso.webgl.WebGL2RenderingContext;
+import rinth.render.webgl2.shaders.TranslatedStage;
 
 /**
  * Where each vertex shader input reads from: which vertex buffer slot, at what offset and stride,

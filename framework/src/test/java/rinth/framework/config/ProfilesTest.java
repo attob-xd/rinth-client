@@ -2,12 +2,12 @@ package rinth.framework.config;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Test;
 import rinth.framework.Category;
 import rinth.framework.Module;
 import rinth.framework.setting.ColorSetting;
 import rinth.framework.setting.IntSetting;
 import rinth.framework.testing.TestGame;
-import org.junit.jupiter.api.Test;
 
 class ProfilesTest {
 

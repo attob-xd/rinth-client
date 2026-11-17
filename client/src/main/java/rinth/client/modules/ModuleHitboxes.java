@@ -1,6 +1,5 @@
 package rinth.client.modules;
 
-import rinth.framework.game.Hitboxes;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.debug.DebugScreenEntries;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -18,6 +17,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import org.jspecify.annotations.Nullable;
+import rinth.framework.game.Hitboxes;
 
 /**
  * The hitboxes a module holds ({@code Game.overrideHitboxes}): each entity's box, drawn as the

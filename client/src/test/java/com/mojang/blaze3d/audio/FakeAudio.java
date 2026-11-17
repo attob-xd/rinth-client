@@ -1,5 +1,11 @@
 package com.mojang.blaze3d.audio;
 
+import java.nio.ByteBuffer;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import org.jspecify.annotations.Nullable;
 import rinth.platform.api.audio.AudioBuffer;
 import rinth.platform.api.audio.AudioDevice;
 import rinth.platform.api.audio.AudioDeviceList;
@@ -9,12 +15,6 @@ import rinth.platform.api.audio.AudioSource;
 import rinth.platform.api.audio.DecodedAudio;
 import rinth.platform.api.audio.PcmFormat;
 import rinth.platform.api.audio.PlatformAudio;
-import java.nio.ByteBuffer;
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import org.jspecify.annotations.Nullable;
 
 /** A sound system in memory: records what the game asks of it, plays nothing. */
 final class FakeAudio implements PlatformAudio {

@@ -1,9 +1,6 @@
 package rinth.client.modules;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import rinth.framework.ModuleSystem;
-import rinth.framework.event.Events;
-import rinth.framework.hud.WorldCanvas;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.SubmitNodeCollector;
@@ -11,6 +8,9 @@ import net.minecraft.client.renderer.blockentity.BeaconRenderer;
 import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.util.ARGB;
 import org.jspecify.annotations.Nullable;
+import rinth.framework.ModuleSystem;
+import rinth.framework.event.Events;
+import rinth.framework.hud.WorldCanvas;
 
 /**
  * What modules add to the world itself ({@link Events#WORLD}, ADR 0051): waypoints' beams, drawn as

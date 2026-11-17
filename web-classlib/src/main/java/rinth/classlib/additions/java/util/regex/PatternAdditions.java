@@ -1,8 +1,8 @@
 package rinth.classlib.additions.java.util.regex;
 
-import rinth.classlib.InstanceMethod;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
+import rinth.classlib.InstanceMethod;
 
 /** {@code java.util.regex.Pattern} methods TeaVM lacks. */
 public final class PatternAdditions {

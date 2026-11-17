@@ -1,10 +1,10 @@
 package rinth.client.credits;
 
 import com.viaversion.viaversion.util.VersionInfo;
-import rinth.client.RinthBuild;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
+import rinth.client.RinthBuild;
 
 /**
  * What the credits screen lists: Rinth and the third-party software it adds to the game, in

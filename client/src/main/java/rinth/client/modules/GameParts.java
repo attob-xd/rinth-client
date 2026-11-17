@@ -1,8 +1,5 @@
 package rinth.client.modules;
 
-import rinth.client.look.HudLook;
-import rinth.framework.ModuleSystem;
-import rinth.framework.game.GamePart;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.network.chat.Component;
@@ -11,6 +8,9 @@ import net.minecraft.world.scores.ScoreHolder;
 import net.minecraft.world.scores.Scoreboard;
 import net.minecraft.world.scores.criteria.ObjectiveCriteria;
 import org.jspecify.annotations.Nullable;
+import rinth.client.look.HudLook;
+import rinth.framework.ModuleSystem;
+import rinth.framework.game.GamePart;
 
 /**
  * Parts of the game's HUD a module draws itself ({@code GamePartElement}, ADR 0050): the scoreboard

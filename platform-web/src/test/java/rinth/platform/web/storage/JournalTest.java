@@ -1,7 +1,7 @@
 package rinth.platform.web.storage;
 
-import static rinth.platform.web.storage.TreeFileSystemTest.bytes;
 import static org.assertj.core.api.Assertions.assertThat;
+import static rinth.platform.web.storage.TreeFileSystemTest.bytes;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -19,9 +19,9 @@ class JournalTest {
     @BeforeEach
     void setUp() throws IOException {
         files = new TreeFileSystem(
-                new Journal("/rinth", List.of("/rinth/dropped", "/rinth/classpath")), () -> 1_000);
+                new Journal("/incari", List.of("/incari/dropped", "/incari/classpath")), () -> 1_000);
         files.load("/incari/game", true, 1, null);
-        files.load("/rinth/dropped", true, 1, null);
+        files.load("/incari/dropped", true, 1, null);
         files.collectChanges();
     }
 
@@ -117,9 +117,9 @@ class JournalTest {
 
     @Test
     void transientFoldersAndPathsOutsideTheRootArentSent() throws IOException {
-        files.getFile("/rinth/dropped").createDirectory("1");
-        files.getFile("/rinth/dropped/1").createFile("pack.zip");
-        write("/rinth/dropped/1/pack.zip", "PK");
+        files.getFile("/incari/dropped").createDirectory("1");
+        files.getFile("/incari/dropped/1").createFile("pack.zip");
+        write("/incari/dropped/1/pack.zip", "PK");
         files.getFile("/").createDirectory("tmp");
         files.getFile("/tmp").createFile("x");
         assertThat(files.collectChanges()).isEmpty();
@@ -127,9 +127,9 @@ class JournalTest {
 
     @Test
     void aFileCopiedOutOfATransientFolderIsSent() throws IOException {
-        files.load("/rinth/dropped/1/pack.zip", false, 1, bytes("PK"));
+        files.load("/incari/dropped/1/pack.zip", false, 1, bytes("PK"));
         files.getFile("/incari/game").createDirectory("resourcepacks");
-        files.getFile("/incari/game/resourcepacks").adopt(files.getFile("/rinth/dropped/1/pack.zip"), "pack.zip");
+        files.getFile("/incari/game/resourcepacks").adopt(files.getFile("/incari/dropped/1/pack.zip"), "pack.zip");
         assertThat(describe(files.collectChanges()))
                 .containsExactly(
                         "mkdir /incari/game/resourcepacks", "write /incari/game/resourcepacks/pack.zip 2 @0 PK");

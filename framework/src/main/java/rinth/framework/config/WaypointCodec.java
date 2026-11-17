@@ -5,13 +5,13 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonPrimitive;
-import rinth.framework.hud.Shape;
-import rinth.framework.waypoint.Waypoint;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.function.Consumer;
 import org.jspecify.annotations.Nullable;
+import rinth.framework.hud.Shape;
+import rinth.framework.waypoint.Waypoint;
 
 /**
  * A world's waypoints as JSON.

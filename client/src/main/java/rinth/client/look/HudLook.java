@@ -1,10 +1,10 @@
 package rinth.client.look;
 
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import rinth.client.ui.Panels;
 import rinth.client.ui.RoundRects;
 import rinth.client.ui.Skins;
 import rinth.client.ui.Theme;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
 
 /**
  * The HUD's text panels in the client's look, from hooks where the game fills them: the tab

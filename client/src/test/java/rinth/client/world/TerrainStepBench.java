@@ -1,6 +1,5 @@
 package rinth.client.world;
 
-import rinth.client.testing.VanillaRegistries;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -29,6 +28,7 @@ import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureStart;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.Test;
+import rinth.client.testing.VanillaRegistries;
 
 /**
  * Times the overworld's terrain step (biomes, then noise, surface and carvers) on the JVM, with the

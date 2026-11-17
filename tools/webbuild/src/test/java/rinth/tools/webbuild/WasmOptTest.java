@@ -3,7 +3,6 @@ package rinth.tools.webbuild;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import rinth.tools.build.CliException;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -13,6 +12,7 @@ import java.nio.file.Path;
 import java.util.zip.GZIPOutputStream;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
+import rinth.tools.build.CliException;
 
 class WasmOptTest {
 

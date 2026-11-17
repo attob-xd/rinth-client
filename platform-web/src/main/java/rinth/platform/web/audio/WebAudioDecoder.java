@@ -1,13 +1,13 @@
 package rinth.platform.web.audio;
 
-import rinth.platform.api.audio.AudioDecoder;
-import rinth.platform.api.audio.AudioException;
-import rinth.platform.api.audio.DecodedAudio;
 import org.jspecify.annotations.Nullable;
 import org.teavm.interop.Async;
 import org.teavm.interop.AsyncCallback;
 import org.teavm.jso.JSObject;
 import org.teavm.jso.typedarrays.Int8Array;
+import rinth.platform.api.audio.AudioDecoder;
+import rinth.platform.api.audio.AudioException;
+import rinth.platform.api.audio.DecodedAudio;
 
 /**
  * Decodes sound files with the browser's own decoder ({@code decodeAudioData}), which runs natively

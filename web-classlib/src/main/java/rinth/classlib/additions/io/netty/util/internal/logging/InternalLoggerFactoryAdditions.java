@@ -1,8 +1,8 @@
 package rinth.classlib.additions.io.netty.util.internal.logging;
 
-import rinth.classlib.Replaces;
 import io.netty.util.internal.logging.InternalLoggerFactory;
 import io.netty.util.internal.logging.Slf4JLoggerFactory;
+import rinth.classlib.Replaces;
 
 /**
  * Netty's logger lookup, bound to SLF4J (which the browser build binds to the console) instead of

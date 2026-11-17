@@ -1,9 +1,9 @@
 package rinth.tools.webbuild;
 
-import rinth.tools.build.CliException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import rinth.tools.build.CliException;
 
 /**
  * Keys as the DevTools protocol sends them: what a US keyboard reports for each

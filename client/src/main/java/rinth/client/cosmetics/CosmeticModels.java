@@ -1,7 +1,6 @@
 package rinth.client.cosmetics;
 
 import com.mojang.blaze3d.platform.NativeImage;
-import rinth.online.Cosmetic;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.HashMap;
@@ -24,6 +23,7 @@ import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.Identifier;
 import org.jspecify.annotations.Nullable;
+import rinth.online.Cosmetic;
 
 /**
  * The hats and back cosmetics as models (ADR 0061): each a few boxes, described here, baked once,

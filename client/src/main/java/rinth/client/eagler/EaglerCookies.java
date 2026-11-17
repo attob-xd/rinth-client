@@ -1,7 +1,6 @@
 package rinth.client.eagler;
 
 import com.mojang.logging.LogUtils;
-import rinth.net.WebSocketUrl;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -12,6 +11,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.net.WebSocketUrl;
 
 /**
  * Eagler server cookies (ADR 0019): up to 255 bytes a server stores in the client, for at

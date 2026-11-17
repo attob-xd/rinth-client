@@ -2,13 +2,13 @@ package rinth.net.eagler;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.platform.api.net.NetConnection;
-import rinth.platform.api.net.PlatformNetwork;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.Test;
+import rinth.platform.api.net.NetConnection;
+import rinth.platform.api.net.PlatformNetwork;
 
 class EaglerQueryTest {
 

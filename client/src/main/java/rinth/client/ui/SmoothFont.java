@@ -8,8 +8,6 @@ import com.mojang.blaze3d.platform.NativeImage;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.logging.LogUtils;
 import com.mojang.renderpearl.api.textures.GpuTexture;
-import rinth.platform.api.Platforms;
-import rinth.platform.api.fonts.FontFace;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,6 +21,8 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.server.packs.resources.ResourceManager;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.platform.api.Platforms;
+import rinth.platform.api.fonts.FontFace;
 
 /**
  * A TrueType font drawn by the platform ({@code PlatformFonts}): FreeType on the desktop, the

@@ -1131,8 +1131,7 @@ public final class SmokeTest {
         waitForTitle();
         takeControl();
         rinth.framework.ModuleSystem system = onGameThread(rinth.client.modules.RinthModules::system);
-        onGameThread(
-                () -> rinth.client.online.RinthOnline.service().wardrobe().saveOutfit("My Practice Server Setup"));
+        onGameThread(() -> rinth.client.online.RinthOnline.service().wardrobe().saveOutfit("My Practice Server Setup"));
         for (int scale : new int[] {2, 3, 4}) {
             String name = "fit-" + scale;
             guiScale(scale);
@@ -1304,8 +1303,7 @@ public final class SmokeTest {
     private void layoutScenario() throws Exception {
         waitForTitle();
         rinth.framework.ModuleSystem system = onGameThread(rinth.client.modules.RinthModules::system);
-        onGameThread(
-                () -> rinth.client.online.RinthOnline.service().wardrobe().saveOutfit("My Practice Server Setup"));
+        onGameThread(() -> rinth.client.online.RinthOnline.service().wardrobe().saveOutfit("My Practice Server Setup"));
         java.util.Map<String, Callable<Screen>> screens = new java.util.LinkedHashMap<>();
         screens.put("title", TitleScreen::new);
         screens.put(
@@ -1656,8 +1654,7 @@ public final class SmokeTest {
         // The emote wheel, held open by G.
         injector().key(10, 'g', true);
         boolean wheel = waitUntil(
-                Duration.ofSeconds(3),
-                () -> minecraft.gui.screen() instanceof rinth.client.cosmetics.EmoteWheelScreen);
+                Duration.ofSeconds(3), () -> minecraft.gui.screen() instanceof rinth.client.cosmetics.EmoteWheelScreen);
         sleep(Duration.ofMillis(500));
         screenshot("cosmetics-emote-wheel");
         injector().key(10, 'g', false);
@@ -1667,8 +1664,7 @@ public final class SmokeTest {
         injector().key(10, 'g', true);
         injector().key(10, 'g', false);
         boolean tapped = waitUntil(
-                Duration.ofSeconds(3),
-                () -> minecraft.gui.screen() instanceof rinth.client.cosmetics.EmoteWheelScreen);
+                Duration.ofSeconds(3), () -> minecraft.gui.screen() instanceof rinth.client.cosmetics.EmoteWheelScreen);
         sleep(Duration.ofMillis(500));
         boolean stays = minecraft.gui.screen() instanceof rinth.client.cosmetics.EmoteWheelScreen;
         injector().key(10, 'g', true);
@@ -3099,8 +3095,7 @@ public final class SmokeTest {
 
     /** Runs an online request on the game thread and waits for its answer (a minute at most). */
     private <T> rinth.online.Result<T> awaitOnline(
-            java.util.function.Consumer<java.util.function.Consumer<rinth.online.Result<T>>> request)
-            throws Exception {
+            java.util.function.Consumer<java.util.function.Consumer<rinth.online.Result<T>>> request) throws Exception {
         java.util.concurrent.CompletableFuture<rinth.online.Result<T>> answer =
                 new java.util.concurrent.CompletableFuture<>();
         onGameThread(() -> {

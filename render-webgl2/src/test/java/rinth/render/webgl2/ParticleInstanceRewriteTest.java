@@ -3,9 +3,9 @@ package rinth.render.webgl2;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import rinth.render.webgl2.shaders.TranslatedStage;
 import java.util.List;
 import org.junit.jupiter.api.Test;
+import rinth.render.webgl2.shaders.TranslatedStage;
 
 class ParticleInstanceRewriteTest {
 

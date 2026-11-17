@@ -1,11 +1,6 @@
 package rinth.client.singleplayer;
 
 import com.mojang.logging.LogUtils;
-import rinth.client.platform.ClientPlatform;
-import rinth.client.settings.ClientSettings;
-import rinth.net.relay.RelayHost;
-import rinth.platform.api.net.NetConnection;
-import rinth.platform.api.threads.PlatformChannel;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,6 +16,11 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.platform.ClientPlatform;
+import rinth.client.settings.ClientSettings;
+import rinth.net.relay.RelayHost;
+import rinth.platform.api.net.NetConnection;
+import rinth.platform.api.threads.PlatformChannel;
 
 /**
  * Sharing a singleplayer world through an Eagler relay (ADR 0062): World Options' LAN choice in the

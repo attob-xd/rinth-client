@@ -1,9 +1,9 @@
 package rinth.render.webgl2;
 
+import java.lang.reflect.Proxy;
 import rinth.platform.api.Platform;
 import rinth.platform.api.Platforms;
 import rinth.platform.api.threads.PlatformThreads;
-import java.lang.reflect.Proxy;
 
 /**
  * Enough of a platform for game classes to load in tests: building a {@code VertexFormat} runs

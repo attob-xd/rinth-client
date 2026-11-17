@@ -1,10 +1,5 @@
 package rinth.net.relay;
 
-import rinth.platform.api.net.NetConnection;
-import rinth.platform.api.net.PlatformNetwork;
-import rinth.platform.api.rtc.IceServer;
-import rinth.platform.api.rtc.PlatformRtc;
-import rinth.platform.api.rtc.RtcPeer;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.handler.codec.DecoderException;
@@ -15,6 +10,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.LongSupplier;
 import org.jspecify.annotations.Nullable;
+import rinth.platform.api.net.NetConnection;
+import rinth.platform.api.net.PlatformNetwork;
+import rinth.platform.api.rtc.IceServer;
+import rinth.platform.api.rtc.PlatformRtc;
+import rinth.platform.api.rtc.RtcPeer;
 
 /**
  * Shares a world through an Eagler relay (ADR 0062): the host's side of {@link RelayJoin}, as

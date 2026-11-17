@@ -1,13 +1,13 @@
 package rinth.client.singleplayer;
 
-import rinth.platform.api.net.NetConnection;
-import rinth.platform.api.threads.PlatformChannel;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import org.jspecify.annotations.Nullable;
+import rinth.platform.api.net.NetConnection;
+import rinth.platform.api.threads.PlatformChannel;
 
 /**
  * One end of the game's connection between the page and singleplayer's server in a worker

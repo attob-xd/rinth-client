@@ -1,8 +1,8 @@
 package rinth.platform.web.audio;
 
+import org.teavm.jso.JSObject;
 import rinth.platform.api.audio.AudioBuffer;
 import rinth.platform.api.audio.PcmFormat;
-import org.teavm.jso.JSObject;
 
 /**
  * Samples a Web Audio buffer holds, playable by any number of sources. The page's garbage

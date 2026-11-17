@@ -1,8 +1,8 @@
 package rinth.client.platform;
 
-import rinth.platform.api.Platform;
 import net.minecraft.util.TimeSource;
 import org.jspecify.annotations.Nullable;
+import rinth.platform.api.Platform;
 
 /** Starting and stopping the platform, at the points where the game used to start and stop SDL. */
 public final class PlatformLifecycle {

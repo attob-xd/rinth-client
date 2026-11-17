@@ -1,15 +1,15 @@
 package rinth.framework.testing;
 
-import rinth.framework.game.EffectCategory;
-import rinth.framework.game.EffectView;
-import rinth.framework.game.EquipmentSlot;
-import rinth.framework.game.ItemView;
-import rinth.framework.game.PlayerView;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import rinth.framework.game.EffectCategory;
+import rinth.framework.game.EffectView;
+import rinth.framework.game.EquipmentSlot;
+import rinth.framework.game.ItemView;
+import rinth.framework.game.PlayerView;
 
 /**
  * A player for tests: the test puts items in slots and effects on them, and moves them about. They

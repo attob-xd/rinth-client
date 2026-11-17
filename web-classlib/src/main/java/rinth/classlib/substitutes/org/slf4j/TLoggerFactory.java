@@ -1,9 +1,9 @@
 package rinth.classlib.substitutes.org.slf4j;
 
-import rinth.classlib.logging.ConsoleLogging;
 import org.slf4j.ILoggerFactory;
 import org.slf4j.Logger;
 import org.slf4j.spi.SLF4JServiceProvider;
+import rinth.classlib.logging.ConsoleLogging;
 
 /**
  * SLF4J's {@code LoggerFactory} for the browser build, bound straight to the console. The library's

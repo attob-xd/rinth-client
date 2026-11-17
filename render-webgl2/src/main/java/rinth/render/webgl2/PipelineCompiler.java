@@ -8,10 +8,6 @@ import com.mojang.renderpearl.api.pipeline.ShaderSource;
 import com.mojang.renderpearl.api.pipeline.ShaderType;
 import com.mojang.renderpearl.api.vertex.VertexFormat;
 import com.mojang.renderpearl.frontend.FrontendRenderPipeline;
-import rinth.render.webgl2.shaders.ShaderManifest;
-import rinth.render.webgl2.shaders.ShaderStageKey;
-import rinth.render.webgl2.shaders.SourceHash;
-import rinth.render.webgl2.shaders.TranslatedStage;
 import it.unimi.dsi.fastutil.objects.Object2IntArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMaps;
@@ -22,6 +18,10 @@ import java.util.concurrent.CompletableFuture;
 import net.minecraft.client.renderer.ShaderDefines;
 import net.minecraft.resources.Identifier;
 import org.jspecify.annotations.Nullable;
+import rinth.render.webgl2.shaders.ShaderManifest;
+import rinth.render.webgl2.shaders.ShaderStageKey;
+import rinth.render.webgl2.shaders.SourceHash;
+import rinth.render.webgl2.shaders.TranslatedStage;
 
 /**
  * Turns the game's pipeline descriptions into WebGL2 pipelines, from the shaders the build

@@ -2,10 +2,10 @@ package rinth.features.zoom;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Test;
 import rinth.framework.event.Turn;
 import rinth.framework.setting.Key;
 import rinth.framework.testing.TestGame;
-import org.junit.jupiter.api.Test;
 
 class ZoomTest {
 

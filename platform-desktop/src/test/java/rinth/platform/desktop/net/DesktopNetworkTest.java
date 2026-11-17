@@ -2,8 +2,6 @@ package rinth.platform.desktop.net;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.platform.api.PlatformLog;
-import rinth.platform.api.net.NetConnection;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,6 +16,8 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.Test;
+import rinth.platform.api.PlatformLog;
+import rinth.platform.api.net.NetConnection;
 
 class DesktopNetworkTest {
 

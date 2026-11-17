@@ -3,9 +3,9 @@ package rinth.online;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
-import rinth.framework.config.ConfigStorage;
 import java.io.IOException;
 import org.jspecify.annotations.Nullable;
+import rinth.framework.config.ConfigStorage;
 
 /**
  * The session token, kept between starts (ADR 0058): {@code session.json} under the client's

@@ -1,8 +1,5 @@
 package rinth.app.desktop.smoke;
 
-import rinth.app.desktop.smoke.LayoutRules.Box;
-import rinth.client.ui.GuiSkin;
-import rinth.client.ui.Skins;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +15,9 @@ import net.minecraft.client.renderer.state.gui.GuiTextRenderState;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.FormattedCharSequence;
 import org.jspecify.annotations.Nullable;
+import rinth.app.desktop.smoke.LayoutRules.Box;
+import rinth.client.ui.GuiSkin;
+import rinth.client.ui.Skins;
 
 /**
  * A screen's layout as drawn: one frame of it extracted off the window, with the pointer away,

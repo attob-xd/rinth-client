@@ -1,7 +1,6 @@
 package rinth.tools.shaders;
 
 import com.mojang.renderpearl.api.pipeline.ShaderType;
-import rinth.render.webgl2.shaders.TranslatedStage;
 import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +10,7 @@ import org.lwjgl.system.MemoryStack;
 import org.lwjgl.system.MemoryUtil;
 import org.lwjgl.util.spvc.Spvc;
 import org.lwjgl.util.spvc.SpvcReflectedResource;
+import rinth.render.webgl2.shaders.TranslatedStage;
 
 /**
  * SPIR-V to GLSL ES 3.00 with SPIRV-Cross, plus the reflection the WebGL2 device needs.

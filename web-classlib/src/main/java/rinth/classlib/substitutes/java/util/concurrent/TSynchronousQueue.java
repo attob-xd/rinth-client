@@ -1,6 +1,5 @@
 package rinth.classlib.substitutes.java.util.concurrent;
 
-import rinth.classlib.concurrent.Monitors;
 import java.util.AbstractQueue;
 import java.util.ArrayDeque;
 import java.util.Collection;
@@ -10,6 +9,7 @@ import java.util.Objects;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
 import org.jspecify.annotations.Nullable;
+import rinth.classlib.concurrent.Monitors;
 
 /**
  * {@code java.util.concurrent.SynchronousQueue}: no capacity, each insert hands its element

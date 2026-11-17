@@ -1,11 +1,11 @@
 package rinth.classlib.substitutes.org.lwjgl.stb;
 
-import rinth.classlib.image.PngDecoder;
-import rinth.classlib.memory.Heap;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 import org.jspecify.annotations.Nullable;
+import rinth.classlib.image.PngDecoder;
+import rinth.classlib.memory.Heap;
 
 /**
  * LWJGL's {@code STBImage}, as far as {@code NativeImage} uses it: PNG files (the only format

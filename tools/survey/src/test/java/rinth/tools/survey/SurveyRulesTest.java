@@ -3,10 +3,10 @@ package rinth.tools.survey;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import rinth.tools.build.CliException;
 import java.nio.file.Path;
 import java.util.List;
 import org.junit.jupiter.api.Test;
+import rinth.tools.build.CliException;
 
 class SurveyRulesTest {
 

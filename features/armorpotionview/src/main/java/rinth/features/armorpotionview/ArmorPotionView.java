@@ -1,11 +1,11 @@
 package rinth.features.armorpotionview;
 
+import org.jspecify.annotations.Nullable;
 import rinth.framework.Category;
 import rinth.framework.Module;
 import rinth.framework.game.PlayerView;
 import rinth.framework.setting.BooleanSetting;
 import rinth.framework.setting.ChoiceSetting;
-import org.jspecify.annotations.Nullable;
 
 /**
  * Armor &amp; Potion View: two HUD elements, placed apart. One shows the armor the player wears (and

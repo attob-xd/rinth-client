@@ -3,12 +3,6 @@ package rinth.client.modules;
 import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.platform.NativeImage;
 import com.mojang.logging.LogUtils;
-import rinth.client.platform.ClientPlatform;
-import rinth.client.ui.Panels;
-import rinth.client.ui.RoundRects;
-import rinth.client.ui.Theme;
-import rinth.client.ui.Ui;
-import rinth.platform.api.PlatformShell;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -36,6 +30,12 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.platform.ClientPlatform;
+import rinth.client.ui.Panels;
+import rinth.client.ui.RoundRects;
+import rinth.client.ui.Theme;
+import rinth.client.ui.Ui;
+import rinth.platform.api.PlatformShell;
 
 /**
  * The screenshot gallery (Screenshot Manager, ADR 0054): the screenshots folder's pictures as a grid

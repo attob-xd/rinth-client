@@ -1,11 +1,11 @@
 package rinth.client.platform;
 
+import net.minecraft.SharedConstants;
+import org.jspecify.annotations.Nullable;
 import rinth.platform.api.AppInfo;
 import rinth.platform.api.Platform;
 import rinth.platform.api.Platforms;
 import rinth.platform.api.window.PlatformWindow;
-import net.minecraft.SharedConstants;
-import org.jspecify.annotations.Nullable;
 
 /**
  * The game's side of the platform: the installed {@link Platform} and the one window the game

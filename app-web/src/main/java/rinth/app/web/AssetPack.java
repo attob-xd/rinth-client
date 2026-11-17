@@ -2,13 +2,13 @@ package rinth.app.web;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import rinth.classlib.resources.ClassPathResources;
-import rinth.platform.web.storage.WebFileSystem;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import org.jspecify.annotations.Nullable;
+import rinth.classlib.resources.ClassPathResources;
+import rinth.platform.web.storage.WebFileSystem;
 
 /**
  * The asset pack (ADR 0014): what the build prepares for the game ahead of time, in one zip

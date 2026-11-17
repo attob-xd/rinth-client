@@ -1,11 +1,11 @@
 package rinth.platform.desktop.audio;
 
-import rinth.platform.api.audio.AudioBuffer;
-import rinth.platform.api.audio.AudioException;
-import rinth.platform.api.audio.AudioSource;
 import java.util.ArrayDeque;
 import org.lwjgl.openal.AL10;
 import org.lwjgl.openal.EXTLinearDistance;
+import rinth.platform.api.audio.AudioBuffer;
+import rinth.platform.api.audio.AudioException;
+import rinth.platform.api.audio.AudioSource;
 
 /**
  * An OpenAL source. Confined to the game's sound thread, like everything the game does with a

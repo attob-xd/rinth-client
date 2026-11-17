@@ -1,8 +1,8 @@
 package rinth.classlib.additions.java.util.concurrent;
 
-import rinth.classlib.InstanceMethod;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
+import rinth.classlib.InstanceMethod;
 
 /** {@code java.util.concurrent.TimeUnit} methods TeaVM lacks. */
 public final class TimeUnitAdditions {

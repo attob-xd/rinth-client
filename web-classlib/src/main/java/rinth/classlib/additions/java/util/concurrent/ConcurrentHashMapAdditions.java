@@ -1,7 +1,7 @@
 package rinth.classlib.additions.java.util.concurrent;
 
-import rinth.classlib.substitutes.java.util.concurrent.TConcurrentHashMap$KeySetView;
 import java.util.concurrent.ConcurrentHashMap;
+import rinth.classlib.substitutes.java.util.concurrent.TConcurrentHashMap$KeySetView;
 
 /**
  * {@code java.util.concurrent.ConcurrentHashMap} methods TeaVM lacks. They name the class library's

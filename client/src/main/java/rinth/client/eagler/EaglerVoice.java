@@ -3,12 +3,6 @@ package rinth.client.eagler;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.mojang.logging.LogUtils;
-import rinth.client.platform.ClientPlatform;
-import rinth.net.eagler.EaglerMessages;
-import rinth.platform.api.rtc.IceServer;
-import rinth.platform.api.rtc.Microphone;
-import rinth.platform.api.rtc.PlatformRtc;
-import rinth.platform.api.rtc.RtcPeer;
 import io.netty.buffer.ByteBuf;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -25,6 +19,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.platform.ClientPlatform;
+import rinth.net.eagler.EaglerMessages;
+import rinth.platform.api.rtc.IceServer;
+import rinth.platform.api.rtc.Microphone;
+import rinth.platform.api.rtc.PlatformRtc;
+import rinth.platform.api.rtc.RtcPeer;
 
 /**
  * Eagler voice chat on one connection (ADR 0019). The server only signals: it tells each

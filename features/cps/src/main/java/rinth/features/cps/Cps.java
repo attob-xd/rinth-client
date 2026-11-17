@@ -1,5 +1,6 @@
 package rinth.features.cps;
 
+import org.jspecify.annotations.Nullable;
 import rinth.framework.Category;
 import rinth.framework.Module;
 import rinth.framework.event.ClickCounter;
@@ -9,7 +10,6 @@ import rinth.framework.hud.Anchor;
 import rinth.framework.hud.HudCanvas;
 import rinth.framework.hud.TextElement;
 import rinth.framework.setting.ChoiceSetting;
-import org.jspecify.annotations.Nullable;
 
 /** CPS: how many times the player clicked in the last second, left, right or both. */
 public final class Cps extends Module {

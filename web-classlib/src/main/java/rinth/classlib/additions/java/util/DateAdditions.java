@@ -1,10 +1,10 @@
 package rinth.classlib.additions.java.util;
 
-import rinth.classlib.InstanceMethod;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.Date;
 import java.util.Locale;
+import rinth.classlib.InstanceMethod;
 
 /** {@code java.util.Date} methods TeaVM lacks: the bridges to {@code java.time}. */
 @SuppressWarnings("JavaUtilDate") // These are Date's own methods.

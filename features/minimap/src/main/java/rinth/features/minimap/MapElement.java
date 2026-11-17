@@ -1,5 +1,7 @@
 package rinth.features.minimap;
 
+import java.util.List;
+import org.jspecify.annotations.Nullable;
 import rinth.features.minimap.Minimap.MapShape;
 import rinth.framework.game.PlayerView;
 import rinth.framework.hud.Anchor;
@@ -8,8 +10,6 @@ import rinth.framework.hud.HudElement;
 import rinth.framework.hud.Shape;
 import rinth.framework.hud.Tone;
 import rinth.framework.waypoint.Waypoint;
-import java.util.List;
-import org.jspecify.annotations.Nullable;
 
 /**
  * The map on the HUD. Live ({@link #isLive()}): it turns and scrolls with the player every frame,

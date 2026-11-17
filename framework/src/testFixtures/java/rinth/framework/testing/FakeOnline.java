@@ -1,11 +1,11 @@
 package rinth.framework.testing;
 
-import rinth.framework.online.RinthPlayer;
-import rinth.framework.online.Online;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import org.jspecify.annotations.Nullable;
+import rinth.framework.online.Online;
+import rinth.framework.online.RinthPlayer;
 
 /** An {@link Online} a test sets by hand: signed in or not, and who in the world is an Rinth player. */
 public final class FakeOnline implements Online {

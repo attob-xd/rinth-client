@@ -1,6 +1,5 @@
 package rinth.classlib.substitutes.java.util.concurrent;
 
-import rinth.classlib.concurrent.SnapshotIterator;
 import java.util.AbstractQueue;
 import java.util.Collection;
 import java.util.Iterator;
@@ -11,6 +10,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import org.jspecify.annotations.Nullable;
+import rinth.classlib.concurrent.SnapshotIterator;
 
 /**
  * {@code java.util.concurrent.ScheduledThreadPoolExecutor}: a {@link TThreadPoolExecutor} whose

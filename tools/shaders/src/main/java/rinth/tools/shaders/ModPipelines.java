@@ -1,7 +1,6 @@
 package rinth.tools.shaders;
 
 import com.mojang.renderpearl.api.pipeline.ShaderType;
-import rinth.render.webgl2.shaders.ShaderStageKey;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -14,6 +13,7 @@ import java.util.Map;
 import java.util.Set;
 import net.minecraft.client.renderer.ShaderDefines;
 import net.minecraft.resources.Identifier;
+import rinth.render.webgl2.shaders.ShaderStageKey;
 
 /**
  * The pipelines the built-in Fabric mods asked the browser for (ADR 0065). A mod makes its pipelines

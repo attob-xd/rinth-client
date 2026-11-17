@@ -2,12 +2,12 @@ package rinth.client.render;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.client.testing.TestPlatform;
 import java.util.Random;
 import net.minecraft.util.ARGB;
 import net.minecraft.world.level.ColorResolver;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import rinth.client.testing.TestPlatform;
 
 /** {@link TintBlend} blends as the game's {@code ClientLevel.calculateBlockTint}, reused samples or not. */
 class TintBlendTest {

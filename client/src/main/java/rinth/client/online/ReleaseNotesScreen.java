@@ -1,8 +1,8 @@
 package rinth.client.online;
 
-import rinth.client.ui.Theme;
 import java.util.List;
 import net.minecraft.client.gui.screens.Screen;
+import rinth.client.ui.Theme;
 
 /**
  * What's new in a newer Rinth Client, opened from the title screen's update notice: its changelog

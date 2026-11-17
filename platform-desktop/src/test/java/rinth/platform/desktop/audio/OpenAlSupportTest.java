@@ -2,8 +2,8 @@ package rinth.platform.desktop.audio;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.platform.api.audio.PcmFormat;
 import org.junit.jupiter.api.Test;
+import rinth.platform.api.audio.PcmFormat;
 
 /** Runs without LWJGL: OpenAlSupport only uses its inlined constants. */
 class OpenAlSupportTest {

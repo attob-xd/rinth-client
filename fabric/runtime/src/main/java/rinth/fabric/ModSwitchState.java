@@ -1,7 +1,6 @@
 package rinth.fabric;
 
 import com.mojang.logging.LogUtils;
-import rinth.fabric.generated.FabricModTable;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -16,6 +15,7 @@ import net.fabricmc.loader.impl.ModContainerImpl;
 import net.fabricmc.loader.impl.ModSwitchControl;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.fabric.generated.FabricModTable;
 
 /**
  * Which built-in mods are switched off, so Mod Menu's switches need no rebuild. Every mod is built

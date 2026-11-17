@@ -5,9 +5,9 @@ import com.mojang.renderpearl.api.device.GpuBackend;
 import com.mojang.renderpearl.api.device.GpuDebugOptions;
 import com.mojang.renderpearl.api.device.GpuDevice;
 import com.mojang.renderpearl.frontend.FrontendGpuDevice;
-import rinth.render.webgl2.shaders.ShaderManifest;
 import org.jspecify.annotations.Nullable;
 import org.teavm.jso.webgl.WebGL2RenderingContext;
+import rinth.render.webgl2.shaders.ShaderManifest;
 
 /**
  * The browser's graphics backend: a WebGL2 context on the page's canvas, under the game's own

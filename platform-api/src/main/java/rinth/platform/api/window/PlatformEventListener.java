@@ -1,9 +1,9 @@
 package rinth.platform.api.window;
 
+import java.util.List;
 import rinth.platform.api.input.KeyAction;
 import rinth.platform.api.input.KeyModifiers;
 import rinth.platform.api.input.Scancodes;
-import java.util.List;
 
 /**
  * Receives window and input events from {@code Platform.pollEvents}. Every method has a no-op

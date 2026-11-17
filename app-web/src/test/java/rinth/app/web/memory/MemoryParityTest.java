@@ -3,15 +3,15 @@ package rinth.app.web.memory;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.mojang.blaze3d.vertex.BufferBuilder;
-import rinth.platform.api.Platform;
-import rinth.platform.api.Platforms;
-import rinth.platform.api.threads.PlatformThreads;
 import java.lang.reflect.Proxy;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Supplier;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import rinth.platform.api.Platform;
+import rinth.platform.api.Platforms;
+import rinth.platform.api.threads.PlatformThreads;
 
 /**
  * The memory layer's gate (ADR 0008): the game's vertex and image code writes the same bytes over web-classlib's memory

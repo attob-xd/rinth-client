@@ -1,5 +1,8 @@
 package rinth.features.waypoints;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import rinth.features.waypoints.WaypointsModule.Labels;
 import rinth.framework.event.OverlayListener;
 import rinth.framework.game.PlayerView;
@@ -7,9 +10,6 @@ import rinth.framework.hud.Shape;
 import rinth.framework.hud.Tone;
 import rinth.framework.hud.WorldOverlay;
 import rinth.framework.waypoint.Waypoint;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * The waypoints over the world, drawn every frame. On screen: the icon in place, with a glass tag

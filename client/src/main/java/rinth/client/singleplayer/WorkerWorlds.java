@@ -3,11 +3,6 @@ package rinth.client.singleplayer;
 import com.mojang.blaze3d.platform.SDLEventHandler;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.logging.LogUtils;
-import rinth.client.net.PlatformEventLoopGroupHolder;
-import rinth.client.net.PlatformSocketChannel;
-import rinth.client.platform.ClientPlatform;
-import rinth.platform.api.storage.PlatformStorage;
-import rinth.platform.api.threads.PlatformChannel;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
@@ -47,6 +42,11 @@ import net.minecraft.world.level.storage.LevelResource;
 import net.minecraft.world.level.storage.LevelStorageSource;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.net.PlatformEventLoopGroupHolder;
+import rinth.client.net.PlatformSocketChannel;
+import rinth.client.platform.ClientPlatform;
+import rinth.platform.api.storage.PlatformStorage;
+import rinth.platform.api.threads.PlatformChannel;
 
 /**
  * The page's side of singleplayer's server in a worker (ADR 0039). Hooks in {@code Minecraft} hand a

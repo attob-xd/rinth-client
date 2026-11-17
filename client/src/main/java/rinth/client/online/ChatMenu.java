@@ -1,11 +1,5 @@
 package rinth.client.online;
 
-import rinth.client.ui.Icons;
-import rinth.client.ui.RoundRects;
-import rinth.client.ui.ScreenEdits;
-import rinth.client.ui.Theme;
-import rinth.online.OnlineService;
-import rinth.online.Social;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ComponentPath;
 import net.minecraft.client.gui.Font;
@@ -21,6 +15,12 @@ import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.client.input.InputWithModifiers;
 import net.minecraft.network.chat.Component;
 import org.jspecify.annotations.Nullable;
+import rinth.client.ui.Icons;
+import rinth.client.ui.RoundRects;
+import rinth.client.ui.ScreenEdits;
+import rinth.client.ui.Theme;
+import rinth.online.OnlineService;
+import rinth.online.Social;
 
 /**
  * Ways into the chat menu (ADR 0059): the game's Friends key (O by default; Mojang's own friends

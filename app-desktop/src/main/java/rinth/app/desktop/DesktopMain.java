@@ -4,6 +4,11 @@ import com.mojang.blaze3d.platform.NativeLibrariesBootstrap;
 import com.mojang.renderpearl.api.device.GpuBackend;
 import com.mojang.renderpearl.backend.opengl.GlBackend;
 import com.mojang.renderpearl.backend.vulkan.VulkanBackend;
+import java.util.List;
+import net.minecraft.client.PreferredGraphicsApi;
+import org.jspecify.annotations.Nullable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import rinth.app.desktop.smoke.SceneAgent;
 import rinth.app.desktop.smoke.SmokeTest;
 import rinth.client.datafix.DataFixing;
@@ -15,11 +20,6 @@ import rinth.platform.api.PlatformLog;
 import rinth.platform.api.Platforms;
 import rinth.platform.desktop.DesktopPlatform;
 import rinth.platform.desktop.DesktopStorage;
-import java.util.List;
-import net.minecraft.client.PreferredGraphicsApi;
-import org.jspecify.annotations.Nullable;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Starts the game on the desktop platform: installs {@link DesktopPlatform} and the desktop's

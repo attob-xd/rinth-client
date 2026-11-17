@@ -16,9 +16,5 @@ class BoundaryTest {
             .should()
             .onlyDependOnClassesThat()
             .resideInAnyPackage(
-                    "java.lang..",
-                    "java.util..",
-                    "org.jspecify..",
-                    "rinth.framework..",
-                    "rinth.features.fpsdisplay..");
+                    "java.lang..", "java.util..", "org.jspecify..", "rinth.framework..", "rinth.features.fpsdisplay..");
 }

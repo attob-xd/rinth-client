@@ -2,7 +2,6 @@ package rinth.client.cosmetics;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
-import rinth.online.Cosmetic;
 import net.minecraft.client.model.player.PlayerModel;
 import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
@@ -12,6 +11,7 @@ import net.minecraft.client.renderer.entity.state.AvatarRenderState;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.util.Mth;
 import org.jspecify.annotations.Nullable;
+import rinth.online.Cosmetic;
 
 /**
  * Draws a player's hat and back cosmetic (ADR 0061), from what their render state carries ({@link

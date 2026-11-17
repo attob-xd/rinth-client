@@ -1,11 +1,11 @@
 package rinth.platform.web;
 
-import rinth.platform.api.profile.FrameSample;
-import rinth.platform.api.profile.MemoryUsage;
-import rinth.platform.api.profile.PlatformProfiling;
 import java.nio.ByteBuffer;
 import org.teavm.jso.JSBody;
 import org.teavm.jso.typedarrays.Int8Array;
+import rinth.platform.api.profile.FrameSample;
+import rinth.platform.api.profile.MemoryUsage;
+import rinth.platform.api.profile.PlatformProfiling;
 
 /**
  * Profiling in the page (ADR 0021): frames go into the frame monitor's table

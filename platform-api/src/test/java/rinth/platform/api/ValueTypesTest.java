@@ -3,16 +3,16 @@ package rinth.platform.api;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+import java.util.ArrayList;
+import java.util.List;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
 import rinth.platform.api.audio.AudioException;
 import rinth.platform.api.audio.PcmFormat;
 import rinth.platform.api.window.DisplayInfo;
 import rinth.platform.api.window.DisplayMode;
 import rinth.platform.api.window.IconImage;
 import rinth.platform.api.window.WindowSpec;
-import java.util.ArrayList;
-import java.util.List;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Test;
 
 class ValueTypesTest {
 

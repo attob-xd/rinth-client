@@ -1,8 +1,8 @@
 package rinth.framework.waypoint;
 
-import rinth.framework.hud.Shape;
 import java.util.List;
 import org.jspecify.annotations.Nullable;
+import rinth.framework.hud.Shape;
 
 /**
  * A named mark at a block in one dimension of a world: its color and icon, whether it's shown,

@@ -1,16 +1,16 @@
 package rinth.client.profiler;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.TitleScreen;
+import net.minecraft.client.renderer.chunk.SectionRenderDispatcher;
+import net.minecraft.util.profiling.ProfilerFiller;
+import org.jspecify.annotations.Nullable;
 import rinth.client.RinthKeys;
 import rinth.client.platform.ClientPlatform;
 import rinth.client.render.GpuFrameStats;
 import rinth.platform.api.profile.FrameSample;
 import rinth.platform.api.profile.MemoryUsage;
 import rinth.platform.api.profile.PlatformProfiling;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.TitleScreen;
-import net.minecraft.client.renderer.chunk.SectionRenderDispatcher;
-import net.minecraft.util.profiling.ProfilerFiller;
-import org.jspecify.annotations.Nullable;
 
 /**
  * The profiler's switch and its state (ADR 0021). It collects while its overlay is shown or

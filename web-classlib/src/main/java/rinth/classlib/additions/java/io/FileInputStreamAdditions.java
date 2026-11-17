@@ -1,11 +1,11 @@
 package rinth.classlib.additions.java.io;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import rinth.classlib.InstanceMethod;
 import rinth.classlib.Replaces;
 import rinth.classlib.nio.FileChannels;
 import rinth.classlib.substitutes.java.nio.channels.TFileChannel;
-import java.io.FileInputStream;
-import java.io.IOException;
 
 /** {@code java.io.FileInputStream} methods TeaVM lacks, or has wrong. */
 public final class FileInputStreamAdditions {

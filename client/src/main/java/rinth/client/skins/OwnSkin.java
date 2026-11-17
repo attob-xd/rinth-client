@@ -2,8 +2,6 @@ package rinth.client.skins;
 
 import com.mojang.blaze3d.platform.NativeImage;
 import com.mojang.logging.LogUtils;
-import rinth.net.eagler.EaglerLogin;
-import rinth.net.eagler.EaglerTextures;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
@@ -26,6 +24,8 @@ import net.minecraft.world.entity.player.PlayerModelType;
 import net.minecraft.world.entity.player.PlayerSkin;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.net.eagler.EaglerLogin;
+import rinth.net.eagler.EaglerTextures;
 
 /**
  * The skin and cape this player shows: one of the game's default skins, or a PNG they added

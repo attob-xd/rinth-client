@@ -3,7 +3,6 @@ package rinth.tools.webbuild;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import rinth.tools.build.CliException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -15,6 +14,7 @@ import java.util.HexFormat;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.SequencedMap;
+import rinth.tools.build.CliException;
 
 /**
  * Writes {@code build.json}, the build manifest the page's loader reads (ADR 0014): which builds

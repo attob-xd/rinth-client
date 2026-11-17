@@ -1,9 +1,9 @@
 package rinth.classlib.substitutes.com.ibm.icu.text;
 
-import rinth.classlib.substitutes.com.ibm.icu.util.TCalendar;
-import rinth.classlib.substitutes.com.ibm.icu.util.TULocale;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import rinth.classlib.substitutes.com.ibm.icu.util.TCalendar;
+import rinth.classlib.substitutes.com.ibm.icu.util.TULocale;
 
 /**
  * ICU's {@code SimpleDateFormat} for the browser build, over {@link java.text.SimpleDateFormat},

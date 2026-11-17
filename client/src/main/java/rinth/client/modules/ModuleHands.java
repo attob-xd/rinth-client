@@ -2,9 +2,6 @@ package rinth.client.modules;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
-import rinth.framework.ModuleSystem;
-import rinth.framework.event.Events;
-import rinth.framework.event.HeldItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.resources.model.cuboid.ItemTransform;
@@ -16,6 +13,9 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ShieldItem;
 import net.minecraft.world.phys.HitResult;
 import org.joml.Vector3fc;
+import rinth.framework.ModuleSystem;
+import rinth.framework.event.Events;
+import rinth.framework.event.HeldItem;
 
 /**
  * The held item event ({@link Events#HELD_ITEM}): how each hand's item is drawn in first person.

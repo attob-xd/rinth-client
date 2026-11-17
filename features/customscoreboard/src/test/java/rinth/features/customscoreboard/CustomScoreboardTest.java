@@ -2,11 +2,11 @@ package rinth.features.customscoreboard;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Test;
 import rinth.framework.game.GamePart;
 import rinth.framework.hud.Anchor;
 import rinth.framework.hud.HudElement;
 import rinth.framework.testing.TestGame;
-import org.junit.jupiter.api.Test;
 
 class CustomScoreboardTest {
 

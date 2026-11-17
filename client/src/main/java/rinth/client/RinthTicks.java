@@ -1,5 +1,6 @@
 package rinth.client;
 
+import net.minecraft.client.Minecraft;
 import rinth.client.cosmetics.Cosmetics;
 import rinth.client.eagler.EaglerVoice;
 import rinth.client.legacy.LegacyRules;
@@ -11,7 +12,6 @@ import rinth.client.recorder.ScreenRecorder;
 import rinth.client.render.mesher.ChestBaking;
 import rinth.client.singleplayer.QuickWorlds;
 import rinth.client.ui.Logo;
-import net.minecraft.client.Minecraft;
 
 /**
  * What Rinth does once a client tick, from one hook in {@code Minecraft.tick} (after the GUI's

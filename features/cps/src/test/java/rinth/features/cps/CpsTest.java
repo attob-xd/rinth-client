@@ -2,9 +2,9 @@ package rinth.features.cps;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Test;
 import rinth.framework.event.ClickListener;
 import rinth.framework.testing.TestGame;
-import org.junit.jupiter.api.Test;
 
 class CpsTest {
 

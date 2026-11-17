@@ -1,11 +1,11 @@
 package rinth.client.eagler;
 
-import rinth.net.WebSocketUrl;
-import rinth.net.eagler.EaglerPassword;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import org.jspecify.annotations.Nullable;
+import rinth.net.WebSocketUrl;
+import rinth.net.eagler.EaglerPassword;
 
 /**
  * Passwords for Eagler servers that ask for one (ADR 0019). A password is kept in memory for

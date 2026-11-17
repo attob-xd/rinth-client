@@ -1,7 +1,7 @@
 package rinth.classlib.additions.java.time;
 
-import rinth.classlib.InstanceMethod;
 import java.time.Duration;
+import rinth.classlib.InstanceMethod;
 
 /** {@code java.time.Duration} methods newer than ThreeTen Backport, which the browser build uses. */
 public final class DurationAdditions {

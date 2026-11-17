@@ -1,7 +1,7 @@
 package rinth.classlib.substitutes.org.lwjgl.util.shaderc;
 
-import rinth.classlib.memory.Heap;
 import java.nio.ByteBuffer;
+import rinth.classlib.memory.Heap;
 
 /**
  * LWJGL's {@code ShadercIncludeResult} struct, as far as the game's shader include cache

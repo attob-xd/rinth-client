@@ -1,15 +1,15 @@
 package rinth.client.online;
 
-import rinth.client.ui.Theme;
-import rinth.online.Credentials;
-import rinth.online.Failure;
-import rinth.online.OnlineService;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.CommonComponents;
 import org.jspecify.annotations.Nullable;
+import rinth.client.ui.Theme;
+import rinth.online.Credentials;
+import rinth.online.Failure;
+import rinth.online.OnlineService;
 
 /**
  * Blocked Players (ADR 0058): the accounts the player blocked, to unblock, and a field to block or

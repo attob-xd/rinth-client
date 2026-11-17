@@ -1,9 +1,6 @@
 package rinth.client.profile;
 
 import com.mojang.blaze3d.Blaze3D;
-import rinth.client.skins.OwnSkin;
-import rinth.client.startup.DeferredModels;
-import rinth.client.ui.Ui;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -22,6 +19,9 @@ import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import org.jspecify.annotations.Nullable;
+import rinth.client.skins.OwnSkin;
+import rinth.client.startup.DeferredModels;
+import rinth.client.ui.Ui;
 
 /**
  * Edit Profile, as Eagler clients have it: the name the player plays under offline, and the skin

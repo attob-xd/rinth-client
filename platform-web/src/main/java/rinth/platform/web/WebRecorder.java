@@ -1,8 +1,8 @@
 package rinth.platform.web;
 
-import rinth.platform.api.PlatformRecorder;
 import org.jspecify.annotations.Nullable;
 import org.teavm.jso.JSBody;
+import rinth.platform.api.PlatformRecorder;
 
 /**
  * Screen recording in the page (ADR 0062), as Eaglercraft's browser builds record: the canvas as a

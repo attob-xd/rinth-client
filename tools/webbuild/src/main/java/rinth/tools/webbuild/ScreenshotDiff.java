@@ -1,7 +1,5 @@
 package rinth.tools.webbuild;
 
-import rinth.tools.build.CliException;
-import rinth.tools.wsbridge.WebSocketBridge;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.InetAddress;
@@ -19,6 +17,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.imageio.ImageIO;
 import org.jspecify.annotations.Nullable;
+import rinth.tools.build.CliException;
+import rinth.tools.wsbridge.WebSocketBridge;
 
 /**
  * The screenshot-diff harness: renders fixed scenes with the desktop game (Mojang's OpenGL

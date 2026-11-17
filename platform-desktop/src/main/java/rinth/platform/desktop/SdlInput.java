@@ -1,9 +1,9 @@
 package rinth.platform.desktop;
 
-import rinth.platform.api.input.PlatformInput;
 import java.nio.ByteBuffer;
 import org.jspecify.annotations.Nullable;
 import org.lwjgl.sdl.SDLKeyboard;
+import rinth.platform.api.input.PlatformInput;
 
 /**
  * Keyboard state from SDL3. SDL's scancodes are HID usage ids and its modifier bits are the

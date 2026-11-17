@@ -1,7 +1,7 @@
 package rinth.classlib.additions.java.nio;
 
-import rinth.classlib.InstanceMethod;
 import java.nio.ByteBuffer;
+import rinth.classlib.InstanceMethod;
 
 /** {@code java.nio.ByteBuffer} methods TeaVM lacks. */
 public final class ByteBufferAdditions {

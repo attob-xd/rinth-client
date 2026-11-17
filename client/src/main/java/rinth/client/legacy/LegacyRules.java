@@ -1,8 +1,8 @@
 package rinth.client.legacy;
 
-import rinth.client.net.ServerConnections;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.Minecraft;
+import rinth.client.net.ServerConnections;
 
 /**
  * Which of the old versions' behaviours are on (ADR 0020), from the protocol of the server

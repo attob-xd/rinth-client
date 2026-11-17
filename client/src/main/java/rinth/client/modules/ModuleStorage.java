@@ -1,11 +1,11 @@
 package rinth.client.modules;
 
-import rinth.framework.config.ConfigStorage;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import org.jspecify.annotations.Nullable;
+import rinth.framework.config.ConfigStorage;
 
 /**
  * The module config's files, under the game directory's {@code rinth/modules}; the online service's

@@ -1,8 +1,6 @@
 package rinth.client.render.mesher;
 
 import com.mojang.blaze3d.vertex.MeshData;
-import rinth.mesher.Facings;
-import rinth.mesher.MeshResult;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.List;
@@ -17,6 +15,8 @@ import net.minecraft.core.SectionPos;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import rinth.mesher.Facings;
+import rinth.mesher.MeshResult;
 
 /**
  * Checks Rinth's mesher against the game's section compiler: with {@code

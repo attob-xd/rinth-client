@@ -1,7 +1,7 @@
 package rinth.framework.event;
 
-import rinth.framework.hud.HudCanvas;
 import org.jspecify.annotations.Nullable;
+import rinth.framework.hud.HudCanvas;
 
 /**
  * The crosshair about to be drawn, as {@link Events#CROSSHAIR} hands it to listeners: where its

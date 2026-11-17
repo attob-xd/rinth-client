@@ -1,7 +1,7 @@
 package rinth.classlib.substitutes.java.util.concurrent;
 
-import rinth.classlib.concurrent.Monitors;
 import java.util.concurrent.TimeUnit;
+import rinth.classlib.concurrent.Monitors;
 
 /**
  * {@code java.util.concurrent.CountDownLatch}: a count behind a private monitor; waiters

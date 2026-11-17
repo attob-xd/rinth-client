@@ -1,10 +1,10 @@
 package rinth.classlib.substitutes.org.lwjgl.stb;
 
-import rinth.classlib.memory.Heap;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.Map;
 import org.jspecify.annotations.Nullable;
+import rinth.classlib.memory.Heap;
 
 /**
  * LWJGL's {@code STBIWriteCallback}, as {@code NativeImage}'s PNG writer extends it: the encoder

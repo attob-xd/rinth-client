@@ -2,8 +2,6 @@ package rinth.client.ui;
 
 import com.mojang.blaze3d.platform.NativeImage;
 import com.mojang.logging.LogUtils;
-import rinth.client.platform.ClientPlatform;
-import rinth.client.ui.UiAtlas.Region;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Optional;
@@ -14,6 +12,8 @@ import net.minecraft.server.packs.resources.Resource;
 import org.joml.Matrix3x2f;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.platform.ClientPlatform;
+import rinth.client.ui.UiAtlas.Region;
 
 /**
  * Rinth's mark: the game's own carrot, read from the game's resources as it runs, so the mark is

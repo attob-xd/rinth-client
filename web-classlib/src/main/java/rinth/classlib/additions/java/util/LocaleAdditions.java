@@ -1,7 +1,7 @@
 package rinth.classlib.additions.java.util;
 
-import rinth.classlib.InstanceMethod;
 import java.util.Locale;
+import rinth.classlib.InstanceMethod;
 
 /** {@code java.util.Locale} methods TeaVM lacks. */
 public final class LocaleAdditions {

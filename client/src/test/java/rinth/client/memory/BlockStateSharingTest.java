@@ -2,7 +2,6 @@ package rinth.client.memory;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.client.testing.TestPlatform;
 import net.minecraft.SharedConstants;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -14,6 +13,7 @@ import net.minecraft.world.level.block.SupportType;
 import net.minecraft.world.level.block.state.BlockState;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import rinth.client.testing.TestPlatform;
 
 /**
  * Every block state's cache, built with what states share and sturdy faces worked out once

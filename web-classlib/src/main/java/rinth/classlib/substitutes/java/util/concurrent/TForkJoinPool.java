@@ -1,6 +1,5 @@
 package rinth.classlib.substitutes.java.util.concurrent;
 
-import rinth.classlib.concurrent.Monitors;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -13,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Predicate;
 import org.jspecify.annotations.Nullable;
+import rinth.classlib.concurrent.Monitors;
 
 /**
  * {@code java.util.concurrent.ForkJoinPool}, without work stealing: all workers share one FIFO

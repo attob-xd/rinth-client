@@ -1,9 +1,9 @@
 package rinth.classlib.substitutes.java.security;
 
-import rinth.classlib.security.Digest;
 import java.nio.ByteBuffer;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
+import rinth.classlib.security.Digest;
 
 /**
  * {@code java.security.MessageDigest}, which TeaVM lacks, for MD5, SHA-1 and SHA-256

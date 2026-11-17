@@ -1,11 +1,11 @@
 package rinth.classlib.substitutes.org.lwjgl.system;
 
-import rinth.classlib.memory.Heap;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.LongBuffer;
 import java.nio.charset.StandardCharsets;
+import rinth.classlib.memory.Heap;
 
 /**
  * LWJGL's {@code MemoryStack}, the part the game uses outside its OpenGL and Vulkan backends, over

@@ -1,15 +1,15 @@
 package com.mojang.blaze3d.platform;
 
 import com.mojang.logging.LogUtils;
-import rinth.client.platform.ClientPlatform;
-import rinth.client.platform.DisplayModes;
-import rinth.platform.api.window.DisplayInfo;
-import rinth.platform.api.window.DisplayMode;
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.platform.ClientPlatform;
+import rinth.client.platform.DisplayModes;
+import rinth.platform.api.window.DisplayInfo;
+import rinth.platform.api.window.DisplayMode;
 
 /**
  * Rinth's replacement for Mojang's monitor record (patches/classes.txt): one display and the

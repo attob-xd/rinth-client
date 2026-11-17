@@ -2,10 +2,6 @@ package rinth.client.audio;
 
 import com.mojang.blaze3d.audio.SoundBuffer;
 import com.mojang.logging.LogUtils;
-import rinth.client.tier.DeviceTier;
-import rinth.platform.api.Platforms;
-import rinth.platform.api.audio.AudioDecoder;
-import rinth.platform.api.audio.AudioException;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,6 +16,10 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.server.packs.resources.ResourceProvider;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.tier.DeviceTier;
+import rinth.platform.api.Platforms;
+import rinth.platform.api.audio.AudioDecoder;
+import rinth.platform.api.audio.AudioException;
 
 /**
  * Loads the game's sounds through the platform's own decoder, where it has one (the browser,

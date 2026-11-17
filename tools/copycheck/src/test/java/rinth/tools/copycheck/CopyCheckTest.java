@@ -76,8 +76,7 @@ class CopyCheckTest {
                 }
                 """;
 
-        assertThat(CopyCheck.of(List.of(VENDOR), 20).check("Fresh.java", rinth))
-                .isEmpty();
+        assertThat(CopyCheck.of(List.of(VENDOR), 20).check("Fresh.java", rinth)).isEmpty();
     }
 
     @Test

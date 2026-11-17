@@ -1,11 +1,11 @@
 package rinth.classlib.additions.java.nio.file;
 
-import rinth.classlib.InstanceMethod;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.WatchEvent;
 import java.nio.file.WatchKey;
 import java.nio.file.WatchService;
+import rinth.classlib.InstanceMethod;
 
 /** {@code java.nio.file.Path} methods TeaVM lacks. */
 public final class PathAdditions {

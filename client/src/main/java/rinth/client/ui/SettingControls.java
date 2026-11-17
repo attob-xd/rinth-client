@@ -1,5 +1,15 @@
 package rinth.client.ui;
 
+import java.util.List;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Font;
+import net.minecraft.client.gui.components.AbstractWidget;
+import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.components.CycleButton;
+import net.minecraft.client.gui.components.Tooltip;
+import net.minecraft.network.chat.Component;
+import org.jspecify.annotations.Nullable;
 import rinth.framework.setting.ActionSetting;
 import rinth.framework.setting.BooleanSetting;
 import rinth.framework.setting.ChoiceSetting;
@@ -11,16 +21,6 @@ import rinth.framework.setting.Key;
 import rinth.framework.setting.KeySetting;
 import rinth.framework.setting.Setting;
 import rinth.framework.setting.SettingVisitor;
-import java.util.List;
-import net.minecraft.ChatFormatting;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.components.AbstractWidget;
-import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.components.CycleButton;
-import net.minecraft.client.gui.components.Tooltip;
-import net.minecraft.network.chat.Component;
-import org.jspecify.annotations.Nullable;
 
 /**
  * The control for each kind of setting, made from the setting alone: this is what makes a module's

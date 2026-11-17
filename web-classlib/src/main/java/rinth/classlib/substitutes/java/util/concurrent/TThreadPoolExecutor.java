@@ -1,6 +1,5 @@
 package rinth.classlib.substitutes.java.util.concurrent;
 
-import rinth.classlib.concurrent.Monitors;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -8,6 +7,7 @@ import java.util.Objects;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
 import org.jspecify.annotations.Nullable;
+import rinth.classlib.concurrent.Monitors;
 
 /**
  * {@code java.util.concurrent.ThreadPoolExecutor}: core and maximum pool sizes, keep-alive, a

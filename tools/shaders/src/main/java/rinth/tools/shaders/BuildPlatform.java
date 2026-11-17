@@ -1,9 +1,9 @@
 package rinth.tools.shaders;
 
+import java.lang.reflect.Proxy;
 import rinth.platform.api.Platform;
 import rinth.platform.api.Platforms;
 import rinth.platform.api.threads.PlatformThreads;
-import java.lang.reflect.Proxy;
 
 /**
  * The platform the game sees while this tool lists its pipelines. Loading {@code RenderPipelines}

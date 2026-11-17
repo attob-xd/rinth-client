@@ -1,7 +1,5 @@
 package rinth.platform.desktop;
 
-import rinth.platform.api.fonts.FontFace;
-import rinth.platform.api.fonts.PlatformFonts;
 import java.nio.ByteBuffer;
 import org.jspecify.annotations.Nullable;
 import org.lwjgl.PointerBuffer;
@@ -11,6 +9,8 @@ import org.lwjgl.util.freetype.FT_Bitmap;
 import org.lwjgl.util.freetype.FT_Face;
 import org.lwjgl.util.freetype.FT_GlyphSlot;
 import org.lwjgl.util.freetype.FreeType;
+import rinth.platform.api.fonts.FontFace;
+import rinth.platform.api.fonts.PlatformFonts;
 
 /**
  * Smooth fonts through FreeType, the library the game's own TrueType provider uses, with a library

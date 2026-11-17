@@ -1,7 +1,6 @@
 package rinth.client.net;
 
 import com.mojang.logging.LogUtils;
-import rinth.via.RinthVia;
 import java.nio.file.Path;
 import java.util.HashSet;
 import java.util.Set;
@@ -15,6 +14,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.contents.TranslatableContents;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.via.RinthVia;
 
 /**
  * "Auto" that finds a server's version by joining (ADR 0018). When nothing says which version a

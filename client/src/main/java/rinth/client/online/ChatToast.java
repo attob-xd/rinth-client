@@ -1,12 +1,12 @@
 package rinth.client.online;
 
-import rinth.client.ui.Icons;
-import rinth.client.ui.Theme;
-import rinth.online.Social;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.toasts.Toast;
 import net.minecraft.client.gui.components.toasts.ToastManager;
+import rinth.client.ui.Icons;
+import rinth.client.ui.Theme;
+import rinth.online.Social;
 
 /**
  * A message or a friend request that arrived while the chat menu was closed (ADR 0059): who, and

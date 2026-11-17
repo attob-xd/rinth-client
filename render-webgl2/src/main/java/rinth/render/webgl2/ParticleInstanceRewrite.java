@@ -1,10 +1,10 @@
 package rinth.render.webgl2;
 
-import rinth.render.webgl2.shaders.TranslatedStage;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import rinth.render.webgl2.shaders.TranslatedStage;
 
 /**
  * Rewrites the game's particle vertex shader to draw particles instanced (ADR 0032): each instance

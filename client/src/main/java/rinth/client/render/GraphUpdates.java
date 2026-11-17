@@ -1,7 +1,7 @@
 package rinth.client.render;
 
-import rinth.client.platform.ClientPlatform;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
+import rinth.client.platform.ClientPlatform;
 
 /**
  * The occlusion graph's full update spread over frames (ADR 0031). The game rebuilds the graph that

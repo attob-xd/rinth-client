@@ -1,6 +1,5 @@
 package rinth.client.world;
 
-import rinth.client.platform.ClientPlatform;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -10,6 +9,7 @@ import net.minecraft.world.level.chunk.ProtoChunk;
 import net.minecraft.world.level.chunk.status.ChunkStatus;
 import net.minecraft.world.level.levelgen.Heightmap;
 import org.jspecify.annotations.Nullable;
+import rinth.client.platform.ClientPlatform;
 
 /**
  * A chunk's blocks read and written while its surface is built, without the per-block overhead of

@@ -1,16 +1,16 @@
 package com.mojang.blaze3d.audio;
 
 import com.mojang.logging.LogUtils;
-import rinth.platform.api.audio.AudioBuffer;
-import rinth.platform.api.audio.AudioDevice;
-import rinth.platform.api.audio.AudioException;
-import rinth.platform.api.audio.DecodedAudio;
-import rinth.platform.api.audio.PcmFormat;
 import java.nio.ByteBuffer;
 import java.util.Objects;
 import javax.sound.sampled.AudioFormat;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.platform.api.audio.AudioBuffer;
+import rinth.platform.api.audio.AudioDevice;
+import rinth.platform.api.audio.AudioException;
+import rinth.platform.api.audio.DecodedAudio;
+import rinth.platform.api.audio.PcmFormat;
 
 /**
  * Rinth replacement: a fully decoded sound, uploaded to the device the first time a channel

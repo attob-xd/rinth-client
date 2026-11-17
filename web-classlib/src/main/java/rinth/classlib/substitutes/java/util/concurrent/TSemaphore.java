@@ -1,10 +1,10 @@
 package rinth.classlib.substitutes.java.util.concurrent;
 
-import rinth.classlib.concurrent.Monitors;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;
+import rinth.classlib.concurrent.Monitors;
 
 /**
  * {@code java.util.concurrent.Semaphore}: a permit count behind a private monitor. Blocked

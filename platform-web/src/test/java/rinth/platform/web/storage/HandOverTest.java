@@ -11,8 +11,8 @@ import org.teavm.runtime.fs.VirtualFileAccessor;
 /** A world's folder handed to a worker's copy of the game and back (ADR 0039). */
 class HandOverTest {
 
-    private final TreeFileSystem page = new TreeFileSystem(new Journal("/rinth", List.of()), () -> 1_000);
-    private final TreeFileSystem worker = new TreeFileSystem(new Journal("/rinth", List.of()), () -> 2_000);
+    private final TreeFileSystem page = new TreeFileSystem(new Journal("/incari", List.of()), () -> 1_000);
+    private final TreeFileSystem worker = new TreeFileSystem(new Journal("/incari", List.of()), () -> 2_000);
 
     @Test
     void aFolderGoesOverWithoutTellingTheStoreAndComesBack() throws IOException {

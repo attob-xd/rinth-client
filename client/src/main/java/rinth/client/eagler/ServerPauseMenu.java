@@ -3,7 +3,6 @@ package rinth.client.eagler;
 import com.mojang.blaze3d.Blaze3D;
 import com.mojang.blaze3d.platform.NativeImage;
 import com.mojang.logging.LogUtils;
-import rinth.net.eagler.EaglerPauseMenu;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -28,6 +27,7 @@ import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.resources.Identifier;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.net.eagler.EaglerPauseMenu;
 
 /**
  * The pause menu an EaglerXServer customizes (its {@code pause_menu.yml}): a "server info" button

@@ -1,8 +1,8 @@
 package rinth.app.web;
 
+import java.io.IOException;
 import rinth.classlib.resources.ClassPathResources;
 import rinth.platform.web.storage.WebFileSystem;
-import java.io.IOException;
 
 /**
  * Puts the client jar's resources where the game looks for them ({@link ClassPathResources}):

@@ -1,7 +1,5 @@
 package rinth.net;
 
-import rinth.platform.api.net.NetConnection;
-import rinth.platform.api.net.PlatformNetwork;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.AbstractChannel;
@@ -20,6 +18,8 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.concurrent.atomic.AtomicLong;
 import org.jspecify.annotations.Nullable;
+import rinth.platform.api.net.NetConnection;
+import rinth.platform.api.net.PlatformNetwork;
 
 /**
  * A Netty client channel over one of the platform's connections ({@code PlatformNetwork}), so the

@@ -1,15 +1,15 @@
 package rinth.tools.copycheck;
 
-import rinth.tools.build.BuildConfig;
-import rinth.tools.build.CliException;
-import rinth.tools.build.Git;
-import rinth.tools.build.Log;
-import rinth.tools.build.Workspace;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import rinth.tools.build.BuildConfig;
+import rinth.tools.build.CliException;
+import rinth.tools.build.Git;
+import rinth.tools.build.Log;
+import rinth.tools.build.Workspace;
 
 /**
  * {@code ./rinth copycheck}: fails if any Rinth Java file contains a long run copied from

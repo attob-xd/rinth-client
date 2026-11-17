@@ -1,10 +1,5 @@
 package rinth.tools.webbuild;
 
-import rinth.tools.build.CliException;
-import rinth.tools.webbuild.DownloadBudget.Kind;
-import rinth.tools.webbuild.DownloadBudget.Measure;
-import rinth.tools.webbuild.DownloadBudget.Measured;
-import rinth.tools.webbuild.DownloadBudget.Outcome;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,6 +21,11 @@ import java.util.concurrent.Future;
 import java.util.stream.Stream;
 import java.util.zip.GZIPOutputStream;
 import org.jspecify.annotations.Nullable;
+import rinth.tools.build.CliException;
+import rinth.tools.webbuild.DownloadBudget.Kind;
+import rinth.tools.webbuild.DownloadBudget.Measure;
+import rinth.tools.webbuild.DownloadBudget.Measured;
+import rinth.tools.webbuild.DownloadBudget.Outcome;
 
 /**
  * Measures what a player downloads: every file in the build output and each extra file

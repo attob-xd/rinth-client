@@ -27,7 +27,7 @@ public final class StorageProbe {
     private StorageProbe() {}
 
     public static void main(String[] args) throws IOException {
-        WebFileSystem files = WebFileSystem.install(List.of("/rinth/dropped"));
+        WebFileSystem files = WebFileSystem.install(List.of("/incari/dropped"));
         StringBuilder problems = new StringBuilder();
         Path game = Path.of("/incari/game");
 
@@ -82,7 +82,7 @@ public final class StorageProbe {
                 problems.append(" walk ").append(count);
             }
         }
-        if (!new File("/rinth/classpath").exists() && new File("/tmp").isDirectory()) {
+        if (!new File("/incari/classpath").exists() && new File("/tmp").isDirectory()) {
             // Nothing mounted in a probe; /tmp is there.
         } else if (!new File("/tmp").isDirectory()) {
             problems.append(" /tmp");

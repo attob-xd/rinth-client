@@ -288,8 +288,7 @@ public final class ParticleInstancing {
         }
         long size = Long.highestOneBit(Math.max(bytes, 4096) - 1) << 1;
         return RenderSystem.getDevice()
-                .createBuffer(
-                        () -> "Rinth instanced " + name, GpuBuffer.USAGE_VERTEX | GpuBuffer.USAGE_COPY_DST, size);
+                .createBuffer(() -> "Rinth instanced " + name, GpuBuffer.USAGE_VERTEX | GpuBuffer.USAGE_COPY_DST, size);
     }
 
     /** A copy of a particle pipeline, instanced. */

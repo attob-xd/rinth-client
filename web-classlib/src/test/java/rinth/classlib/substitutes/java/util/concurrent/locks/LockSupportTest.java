@@ -1,14 +1,14 @@
 package rinth.classlib.substitutes.java.util.concurrent.locks;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static rinth.classlib.substitutes.java.util.concurrent.Concurrency.awaitBlocked;
 import static rinth.classlib.substitutes.java.util.concurrent.Concurrency.start;
-import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.classlib.substitutes.java.util.concurrent.Concurrency.Worker;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
+import rinth.classlib.substitutes.java.util.concurrent.Concurrency.Worker;
 
 @Timeout(30)
 class LockSupportTest {

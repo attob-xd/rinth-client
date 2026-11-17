@@ -1,7 +1,5 @@
 package rinth.tools.onlinedev;
 
-import rinth.online.FakeService;
-import rinth.platform.api.net.NetConnection;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
@@ -20,6 +18,8 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 import org.jspecify.annotations.Nullable;
+import rinth.online.FakeService;
+import rinth.platform.api.net.NetConnection;
 
 /**
  * Serves {@code :online}'s fake service on {@code ws://localhost:<port>/v1/ws}, one Netty thread for
@@ -68,8 +68,7 @@ public final class Main {
                 .bind("127.0.0.1", port)
                 .sync()
                 .channel();
-        System.out.println(
-                "Rinth online dev service on ws://127.0.0.1:" + port + "/v1/ws (memory only; Ctrl+C stops)");
+        System.out.println("Rinth online dev service on ws://127.0.0.1:" + port + "/v1/ws (memory only; Ctrl+C stops)");
         server.closeFuture().sync();
     }
 

@@ -1,7 +1,6 @@
 package rinth.client.world;
 
 import com.mojang.logging.LogUtils;
-import rinth.client.platform.ClientPlatform;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -17,6 +16,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.toasts.SystemToast;
 import net.minecraft.util.Util;
 import org.slf4j.Logger;
+import rinth.client.platform.ClientPlatform;
 
 /**
  * The game's "open folder" buttons on a platform that can't show folders (the browser): a world's

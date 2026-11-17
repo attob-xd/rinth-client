@@ -3,9 +3,9 @@ package rinth.render.webgl2;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import rinth.render.webgl2.shaders.TranslatedStage;
 import java.util.List;
 import org.junit.jupiter.api.Test;
+import rinth.render.webgl2.shaders.TranslatedStage;
 
 class EntityInstanceRewriteTest {
 
@@ -76,13 +76,7 @@ class EntityInstanceRewriteTest {
         assertThat(rewritten.attributes())
                 .extracting(TranslatedStage.Attribute::name)
                 .containsExactly(
-                        "RinthLocalPosition",
-                        "RinthLocalNormal",
-                        "Color",
-                        "UV2",
-                        "UV0",
-                        "RinthPart",
-                        "RinthFirstRow");
+                        "RinthLocalPosition", "RinthLocalNormal", "Color", "UV2", "UV0", "RinthPart", "RinthFirstRow");
         assertThat(rewritten.attributes())
                 .filteredOn(attribute -> attribute.name().startsWith("RinthPart")
                         || attribute.name().equals("RinthFirstRow"))

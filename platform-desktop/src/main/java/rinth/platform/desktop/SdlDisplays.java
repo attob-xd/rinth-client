@@ -1,9 +1,5 @@
 package rinth.platform.desktop;
 
-import rinth.platform.api.PlatformLog;
-import rinth.platform.api.window.DisplayInfo;
-import rinth.platform.api.window.DisplayMode;
-import rinth.platform.api.window.PlatformDisplays;
 import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +13,10 @@ import org.lwjgl.sdl.SDL_DisplayMode;
 import org.lwjgl.sdl.SDL_PixelFormatDetails;
 import org.lwjgl.sdl.SDL_Rect;
 import org.lwjgl.system.MemoryStack;
+import rinth.platform.api.PlatformLog;
+import rinth.platform.api.window.DisplayInfo;
+import rinth.platform.api.window.DisplayMode;
+import rinth.platform.api.window.PlatformDisplays;
 
 /** Monitors as SDL3 reports them, queried fresh on every call. */
 final class SdlDisplays implements PlatformDisplays {

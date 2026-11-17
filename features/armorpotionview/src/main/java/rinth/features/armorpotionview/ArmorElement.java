@@ -1,5 +1,6 @@
 package rinth.features.armorpotionview;
 
+import org.jspecify.annotations.Nullable;
 import rinth.features.armorpotionview.ArmorPotionView.Durability;
 import rinth.features.armorpotionview.ArmorPotionView.Layout;
 import rinth.framework.game.EquipmentSlot;
@@ -9,7 +10,6 @@ import rinth.framework.hud.Anchor;
 import rinth.framework.hud.HudCanvas;
 import rinth.framework.hud.HudElement;
 import rinth.framework.hud.Tone;
-import org.jspecify.annotations.Nullable;
 
 /**
  * The armor the player wears, helmet first, then what they hold: each item's icon with the game's

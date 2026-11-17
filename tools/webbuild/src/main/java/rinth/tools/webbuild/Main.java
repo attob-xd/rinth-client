@@ -1,13 +1,5 @@
 package rinth.tools.webbuild;
 
-import rinth.tools.build.BuildConfig;
-import rinth.tools.build.CliException;
-import rinth.tools.build.GameFiles;
-import rinth.tools.build.Log;
-import rinth.tools.build.Workspace;
-import rinth.tools.survey.HostJdkHidingLoader;
-import rinth.tools.survey.Origins;
-import rinth.tools.survey.SurveyRules;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -28,6 +20,14 @@ import org.teavm.tooling.TeaVMProblemRenderer;
 import org.teavm.tooling.TeaVMTargetType;
 import org.teavm.tooling.TeaVMTool;
 import org.teavm.vm.TeaVMOptimizationLevel;
+import rinth.tools.build.BuildConfig;
+import rinth.tools.build.CliException;
+import rinth.tools.build.GameFiles;
+import rinth.tools.build.Log;
+import rinth.tools.build.Workspace;
+import rinth.tools.survey.HostJdkHidingLoader;
+import rinth.tools.survey.Origins;
+import rinth.tools.survey.SurveyRules;
 
 /**
  * Compiles the browser build with TeaVM: the game as {@code :client} built it, the web

@@ -2,11 +2,11 @@ package rinth.features.togglesprint;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Test;
 import rinth.framework.event.MovementInput;
 import rinth.framework.setting.ChoiceSetting;
 import rinth.framework.setting.Setting;
 import rinth.framework.testing.TestGame;
-import org.junit.jupiter.api.Test;
 
 class ToggleSprintTest {
 

@@ -1,6 +1,5 @@
 package rinth.modtoggles;
 
-import rinth.client.platform.ClientPlatform;
 import java.util.Optional;
 import java.util.Set;
 import net.fabricmc.loader.impl.FabricLoaderImpl;
@@ -8,6 +7,7 @@ import net.fabricmc.loader.impl.ModSwitchControl;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.network.chat.Component;
+import rinth.client.platform.ClientPlatform;
 
 /**
  * The ON/OFF switch drawn at the right of a mod's row in Mod Menu. Every mod is built into the one

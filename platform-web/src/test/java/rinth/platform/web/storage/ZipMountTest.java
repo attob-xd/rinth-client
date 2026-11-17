@@ -1,8 +1,8 @@
 package rinth.platform.web.storage;
 
-import static rinth.platform.web.storage.TreeFileSystemTest.bytes;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static rinth.platform.web.storage.TreeFileSystemTest.bytes;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -20,7 +20,7 @@ import org.teavm.runtime.fs.VirtualFileAccessor;
 class ZipMountTest {
 
     private final TreeFileSystem files =
-            new TreeFileSystem(new Journal("/rinth", List.of("/rinth/classpath")), () -> 5);
+            new TreeFileSystem(new Journal("/incari", List.of("/incari/classpath")), () -> 5);
 
     @Test
     void includedEntriesMountReadOnlyAndReadBack() throws IOException {
@@ -35,33 +35,33 @@ class ZipMountTest {
                 directory("data/"),
                 deflated("pack.png", new byte[0]));
         int mounted = files.mount(
-                "/rinth/classpath",
+                "/incari/classpath",
                 ZipArchive.open(source(zip)),
                 name -> !name.endsWith(".class") && !name.startsWith("META-INF/"));
         assertThat(mounted).isEqualTo(4);
-        assertThat(read("/rinth/classpath/version.json")).isEqualTo("{\"id\":\"26.3\"}");
-        assertThat(read("/rinth/classpath/assets/minecraft/lang/en_us.json")).contains("Singleplayer");
-        assertThat(readBytes("/rinth/classpath/assets/minecraft/textures/noise.bin"))
+        assertThat(read("/incari/classpath/version.json")).isEqualTo("{\"id\":\"26.3\"}");
+        assertThat(read("/incari/classpath/assets/minecraft/lang/en_us.json")).contains("Singleplayer");
+        assertThat(readBytes("/incari/classpath/assets/minecraft/textures/noise.bin"))
                 .isEqualTo(noise);
-        assertThat(files.getFile("/rinth/classpath/assets/minecraft/textures/noise.bin")
+        assertThat(files.getFile("/incari/classpath/assets/minecraft/textures/noise.bin")
                         .length())
                 .isEqualTo(noise.length);
-        assertThat(read("/rinth/classpath/pack.png")).isEmpty();
-        assertThat(files.getFile("/rinth/classpath/net").exists()).isFalse();
-        assertThat(files.getFile("/rinth/classpath").listFiles())
+        assertThat(read("/incari/classpath/pack.png")).isEmpty();
+        assertThat(files.getFile("/incari/classpath/net").exists()).isFalse();
+        assertThat(files.getFile("/incari/classpath").listFiles())
                 .containsExactly("assets", "pack.png", "version.json");
 
         // Read-only: no writers, no new files, no deletes, no renames out.
-        assertThat(files.getFile("/rinth/classpath/version.json").createAccessor(true, true, false))
+        assertThat(files.getFile("/incari/classpath/version.json").createAccessor(true, true, false))
                 .isNull();
-        assertThat(files.getFile("/rinth/classpath/version.json").canWrite()).isFalse();
-        assertThatThrownBy(() -> files.getFile("/rinth/classpath/assets").createFile("x"))
+        assertThat(files.getFile("/incari/classpath/version.json").canWrite()).isFalse();
+        assertThatThrownBy(() -> files.getFile("/incari/classpath/assets").createFile("x"))
                 .isInstanceOf(IOException.class);
-        assertThat(files.getFile("/rinth/classpath/assets").createDirectory("x"))
+        assertThat(files.getFile("/incari/classpath/assets").createDirectory("x"))
                 .isFalse();
-        assertThat(files.getFile("/rinth/classpath/version.json").delete()).isFalse();
-        files.getFile("/rinth").createDirectory("game");
-        assertThat(files.getFile("/incari/game").adopt(files.getFile("/rinth/classpath/version.json"), "v"))
+        assertThat(files.getFile("/incari/classpath/version.json").delete()).isFalse();
+        files.getFile("/incari").createDirectory("game");
+        assertThat(files.getFile("/incari/game").adopt(files.getFile("/incari/classpath/version.json"), "v"))
                 .isFalse();
         assertThat(files.hasChanges()).isTrue();
         assertThat(files.collectChanges()).extracting(StoreOp::path).containsExactly("/incari/game");
@@ -109,13 +109,13 @@ class ZipMountTest {
                         "data/minecraft/tags/block/logs.json",
                         "data/minecraft/noise.bin",
                         "net/minecraft/server/Main.class");
-        int mounted = files.mount("/rinth/classpath", compacted, name -> !name.endsWith(".class"));
+        int mounted = files.mount("/incari/classpath", compacted, name -> !name.endsWith(".class"));
         assertThat(mounted).isEqualTo(3);
-        assertThat(read("/rinth/classpath/version.json")).isEqualTo("{\"id\":\"26.3\"}");
-        assertThat(read("/rinth/classpath/data/minecraft/tags/block/logs.json"))
+        assertThat(read("/incari/classpath/version.json")).isEqualTo("{\"id\":\"26.3\"}");
+        assertThat(read("/incari/classpath/data/minecraft/tags/block/logs.json"))
                 .isEqualTo("{\"values\":[]}");
-        assertThat(readBytes("/rinth/classpath/data/minecraft/noise.bin")).isEqualTo(noise);
-        assertThat(files.getFile("/rinth/classpath/assets").exists()).isFalse();
+        assertThat(readBytes("/incari/classpath/data/minecraft/noise.bin")).isEqualTo(noise);
+        assertThat(files.getFile("/incari/classpath/assets").exists()).isFalse();
     }
 
     private String read(String path) throws IOException {

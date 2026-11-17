@@ -14,7 +14,7 @@ import java.util.Locale;
 public final class ServerHash {
 
     /** Bumped if the rules below ever change, so old and new hashes never match by accident. */
-    static final String PREFIX = "rinth-server-v1\n";
+    static final String PREFIX = "incari-server-v1\n";
 
     private static final int GAME_PORT = 25565;
 

@@ -3,8 +3,6 @@ package rinth.app.web;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import rinth.client.audio.RemoteSounds;
-import rinth.client.resources.RemoteAssets;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -14,6 +12,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import rinth.client.audio.RemoteSounds;
+import rinth.client.resources.RemoteAssets;
 
 /**
  * The game's files from the asset index, laid out by name under the assets directory (the layout

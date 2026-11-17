@@ -1,8 +1,8 @@
 package rinth.classlib.substitutes.java.util.concurrent.atomic;
 
-import static rinth.classlib.substitutes.java.util.concurrent.Concurrency.runConcurrently;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static rinth.classlib.substitutes.java.util.concurrent.Concurrency.runConcurrently;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;

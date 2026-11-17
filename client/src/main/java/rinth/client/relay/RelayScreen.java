@@ -1,9 +1,6 @@
 package rinth.client.relay;
 
 import com.mojang.logging.LogUtils;
-import rinth.client.platform.ClientPlatform;
-import rinth.client.ui.EditedScreen;
-import rinth.net.WebSocketUrl;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -25,6 +22,9 @@ import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.platform.ClientPlatform;
+import rinth.client.ui.EditedScreen;
+import rinth.net.WebSocketUrl;
 
 /**
  * Joining a world an Eagler player shares (ADR 0019): the relay the host shared it through,

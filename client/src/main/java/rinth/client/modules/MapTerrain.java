@@ -10,7 +10,6 @@ import com.mojang.renderpearl.api.textures.FilterMode;
 import com.mojang.renderpearl.api.textures.GpuSampler;
 import com.mojang.renderpearl.api.textures.GpuTexture;
 import com.mojang.renderpearl.api.textures.GpuTextureView;
-import rinth.client.ui.Circles;
 import java.util.Arrays;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
@@ -32,6 +31,7 @@ import org.joml.Matrix3x2f;
 import org.joml.Matrix3x2fc;
 import org.joml.Vector4f;
 import org.jspecify.annotations.Nullable;
+import rinth.client.ui.Circles;
 
 /**
  * The minimap's terrain ({@code HudCanvas.terrain}, ADR 0051): the loaded world seen from above, one

@@ -1,5 +1,11 @@
 package rinth.platform.web.audio;
 
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.List;
+import org.jspecify.annotations.Nullable;
+import org.teavm.jso.JSObject;
+import org.teavm.jso.typedarrays.Int8Array;
 import rinth.platform.api.audio.AudioBuffer;
 import rinth.platform.api.audio.AudioDevice;
 import rinth.platform.api.audio.AudioException;
@@ -7,12 +13,6 @@ import rinth.platform.api.audio.AudioListener;
 import rinth.platform.api.audio.AudioSource;
 import rinth.platform.api.audio.DecodedAudio;
 import rinth.platform.api.audio.PcmFormat;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.List;
-import org.jspecify.annotations.Nullable;
-import org.teavm.jso.JSObject;
-import org.teavm.jso.typedarrays.Int8Array;
 
 /**
  * An open output: a master gain on the page's audio context, and the sources playing into it.

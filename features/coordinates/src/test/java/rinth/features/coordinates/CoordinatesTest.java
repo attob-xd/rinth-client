@@ -2,12 +2,12 @@ package rinth.features.coordinates;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.List;
+import org.junit.jupiter.api.Test;
 import rinth.framework.game.PlayerView;
 import rinth.framework.setting.BooleanSetting;
 import rinth.framework.setting.ChoiceSetting;
 import rinth.framework.testing.TestGame;
-import java.util.List;
-import org.junit.jupiter.api.Test;
 
 class CoordinatesTest {
 

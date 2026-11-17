@@ -1,9 +1,9 @@
 package rinth.classlib.memory;
 
-import rinth.classlib.substitutes.java.nio.TNativeBuffer;
-import rinth.classlib.substitutes.java.nio.file.TAddressBasedBuffer;
 import java.nio.Buffer;
 import org.teavm.interop.Address;
+import rinth.classlib.substitutes.java.nio.TNativeBuffer;
+import rinth.classlib.substitutes.java.nio.file.TAddressBasedBuffer;
 
 /**
  * {@link Heap}'s browser backend: the WebAssembly module's linear memory, read and written through

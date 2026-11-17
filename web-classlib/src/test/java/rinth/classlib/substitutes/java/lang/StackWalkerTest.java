@@ -3,8 +3,8 @@ package rinth.classlib.substitutes.java.lang;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import rinth.classlib.UnknownCaller;
 import org.junit.jupiter.api.Test;
+import rinth.classlib.UnknownCaller;
 
 class StackWalkerTest {
 

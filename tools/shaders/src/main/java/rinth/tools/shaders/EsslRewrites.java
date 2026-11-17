@@ -1,10 +1,10 @@
 package rinth.tools.shaders;
 
-import rinth.render.webgl2.shaders.TexelBuffers;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import rinth.render.webgl2.shaders.TexelBuffers;
 
 /**
  * Rewrites of SPIRV-Cross's GLSL ES output for what GLSL ES 3.00 lacks and desktop GLSL has.

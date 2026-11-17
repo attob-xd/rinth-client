@@ -2,6 +2,9 @@ package rinth.features.minimap;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.List;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import rinth.features.minimap.Minimap.MapShape;
 import rinth.framework.game.PlayerView;
 import rinth.framework.hud.Anchor;
@@ -9,9 +12,6 @@ import rinth.framework.hud.HudElement;
 import rinth.framework.hud.Shape;
 import rinth.framework.testing.TestGame;
 import rinth.framework.waypoint.Waypoint;
-import java.util.List;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 class MinimapTest {
 

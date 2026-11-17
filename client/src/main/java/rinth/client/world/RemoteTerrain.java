@@ -2,8 +2,6 @@ package rinth.client.world;
 
 import com.mojang.logging.LogUtils;
 import com.mojang.serialization.DynamicOps;
-import rinth.client.platform.ClientPlatform;
-import rinth.platform.api.threads.PlatformChannel;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
@@ -52,6 +50,8 @@ import net.minecraft.world.level.levelgen.RandomState;
 import net.minecraft.world.level.levelgen.blending.Blender;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.platform.ClientPlatform;
+import rinth.platform.api.threads.PlatformChannel;
 
 /**
  * Builds chunks' terrain (noise, surface, carvers) in helper workers beside singleplayer's server

@@ -1,7 +1,7 @@
 package rinth.platform.desktop.audio;
 
-import rinth.platform.api.audio.AudioListener;
 import org.lwjgl.openal.AL10;
+import rinth.platform.api.audio.AudioListener;
 
 /** OpenAL's listener, which belongs to the current context: one per device here. */
 final class OpenAlListener implements AudioListener {

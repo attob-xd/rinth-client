@@ -1,19 +1,5 @@
 package rinth.client.modules;
 
-import rinth.client.ui.Icons;
-import rinth.client.ui.Panels;
-import rinth.client.ui.RoundRects;
-import rinth.client.ui.ScreenPanels;
-import rinth.client.ui.Shapes;
-import rinth.client.ui.Theme;
-import rinth.client.ui.Ui;
-import rinth.framework.Module;
-import rinth.framework.ModuleSystem;
-import rinth.framework.game.PlayerView;
-import rinth.framework.hud.Shape;
-import rinth.framework.setting.Setting;
-import rinth.framework.waypoint.Waypoint;
-import rinth.framework.waypoint.Waypoints;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -33,6 +19,20 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.util.ARGB;
 import net.minecraft.util.Util;
 import org.jspecify.annotations.Nullable;
+import rinth.client.ui.Icons;
+import rinth.client.ui.Panels;
+import rinth.client.ui.RoundRects;
+import rinth.client.ui.ScreenPanels;
+import rinth.client.ui.Shapes;
+import rinth.client.ui.Theme;
+import rinth.client.ui.Ui;
+import rinth.framework.Module;
+import rinth.framework.ModuleSystem;
+import rinth.framework.game.PlayerView;
+import rinth.framework.hud.Shape;
+import rinth.framework.setting.Setting;
+import rinth.framework.waypoint.Waypoint;
+import rinth.framework.waypoint.Waypoints;
 
 /**
  * The world's waypoints (ADR 0051): one glass panel with a search field and New waypoint at the top,

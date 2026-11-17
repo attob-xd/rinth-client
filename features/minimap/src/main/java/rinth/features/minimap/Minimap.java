@@ -1,5 +1,6 @@
 package rinth.features.minimap;
 
+import org.jspecify.annotations.Nullable;
 import rinth.framework.Category;
 import rinth.framework.Module;
 import rinth.framework.game.PlayerView;
@@ -9,7 +10,6 @@ import rinth.framework.setting.IntSetting;
 import rinth.framework.setting.Key;
 import rinth.framework.setting.KeySetting;
 import rinth.framework.waypoint.Waypoints;
-import org.jspecify.annotations.Nullable;
 
 /**
  * Minimap: the loaded world around the player seen from above, in a round or square frame on the

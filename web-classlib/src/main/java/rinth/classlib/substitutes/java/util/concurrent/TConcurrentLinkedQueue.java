@@ -1,7 +1,5 @@
 package rinth.classlib.substitutes.java.util.concurrent;
 
-import rinth.classlib.concurrent.Monitors;
-import rinth.classlib.concurrent.SnapshotIterator;
 import java.util.AbstractQueue;
 import java.util.ArrayDeque;
 import java.util.Collection;
@@ -9,6 +7,8 @@ import java.util.Iterator;
 import java.util.Objects;
 import java.util.function.Consumer;
 import org.jspecify.annotations.Nullable;
+import rinth.classlib.concurrent.Monitors;
+import rinth.classlib.concurrent.SnapshotIterator;
 
 /**
  * {@code java.util.concurrent.ConcurrentLinkedQueue}: an unbounded, non-blocking FIFO queue. The

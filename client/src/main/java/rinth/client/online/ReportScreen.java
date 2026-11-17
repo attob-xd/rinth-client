@@ -1,11 +1,5 @@
 package rinth.client.online;
 
-import rinth.client.ui.Theme;
-import rinth.client.ui.Ui;
-import rinth.framework.online.RinthPlayer;
-import rinth.online.OnlineService;
-import rinth.online.OnlineService.ReportReason;
-import rinth.online.Result;
 import java.util.List;
 import java.util.function.Consumer;
 import net.minecraft.client.gui.components.EditBox;
@@ -13,6 +7,12 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import org.jspecify.annotations.Nullable;
+import rinth.client.ui.Theme;
+import rinth.client.ui.Ui;
+import rinth.framework.online.RinthPlayer;
+import rinth.online.OnlineService;
+import rinth.online.OnlineService.ReportReason;
+import rinth.online.Result;
 
 /**
  * Report a player (ADR 0058): a reason from the service's fixed list and an optional note. The

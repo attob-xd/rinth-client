@@ -1,5 +1,7 @@
 package rinth.features.armorpotionview;
 
+import java.util.Arrays;
+import org.jspecify.annotations.Nullable;
 import rinth.features.armorpotionview.ArmorPotionView.Side;
 import rinth.framework.game.EffectCategory;
 import rinth.framework.game.EffectView;
@@ -8,8 +10,6 @@ import rinth.framework.hud.Anchor;
 import rinth.framework.hud.HudCanvas;
 import rinth.framework.hud.HudElement;
 import rinth.framework.hud.Tone;
-import java.util.Arrays;
-import org.jspecify.annotations.Nullable;
 
 /**
  * The player's active effects, one row each in the game's order: the effect's icon, its name and

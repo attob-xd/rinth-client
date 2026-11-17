@@ -1,7 +1,5 @@
 package rinth.platform.web.fonts;
 
-import rinth.platform.api.fonts.FontFace;
-import rinth.platform.api.fonts.PlatformFonts;
 import org.jspecify.annotations.Nullable;
 import org.teavm.interop.Async;
 import org.teavm.interop.AsyncCallback;
@@ -9,6 +7,8 @@ import org.teavm.jso.JSBody;
 import org.teavm.jso.JSFunctor;
 import org.teavm.jso.JSObject;
 import org.teavm.jso.typedarrays.Int8Array;
+import rinth.platform.api.fonts.FontFace;
+import rinth.platform.api.fonts.PlatformFonts;
 
 /**
  * Smooth fonts drawn by the browser: the font file handed to the page as a {@code FontFace}, each

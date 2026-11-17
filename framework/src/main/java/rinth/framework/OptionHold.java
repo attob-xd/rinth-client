@@ -1,12 +1,12 @@
 package rinth.framework;
 
+import java.util.Locale;
+import java.util.function.DoubleSupplier;
 import rinth.framework.event.TickListener;
 import rinth.framework.game.Game;
 import rinth.framework.game.GameOption;
 import rinth.framework.setting.BooleanSetting;
 import rinth.framework.setting.FloatSetting;
-import java.util.Locale;
-import java.util.function.DoubleSupplier;
 
 /**
  * One game option a module holds while it's on ({@link Module#holdOption}): set to the module's

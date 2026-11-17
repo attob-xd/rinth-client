@@ -1,6 +1,5 @@
 package rinth.tools.webbuild;
 
-import rinth.tools.build.CliException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -8,6 +7,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
 import org.jspecify.annotations.Nullable;
+import rinth.tools.build.CliException;
 
 /**
  * The benchmark's baseline: {@code app-web/benchmark/baseline.properties}, the figures each

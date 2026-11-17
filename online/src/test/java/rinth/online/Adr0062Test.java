@@ -2,12 +2,12 @@ package rinth.online;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.framework.online.RinthPlayer;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 import org.junit.jupiter.api.Test;
+import rinth.framework.online.RinthPlayer;
 
 /** ADR 0062's additions: featured servers in hello, usage counts, and the Rinth badge. */
 class Adr0062Test {

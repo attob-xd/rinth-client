@@ -1,6 +1,5 @@
 package rinth.client.profile;
 
-import rinth.client.skins.OwnSkin;
 import java.util.List;
 import java.util.function.Consumer;
 import net.minecraft.client.gui.Font;
@@ -10,6 +9,7 @@ import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.input.KeyEvent;
 import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.network.chat.Component;
+import rinth.client.skins.OwnSkin;
 
 /**
  * The skin list as Eagler clients show it: a box with the skin worn and an arrow, which opens a

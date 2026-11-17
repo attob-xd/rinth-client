@@ -1,6 +1,5 @@
 package rinth.net.relay;
 
-import rinth.platform.api.rtc.IceServer;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.handler.codec.DecoderException;
@@ -8,6 +7,7 @@ import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import rinth.platform.api.rtc.IceServer;
 
 /**
  * The messages of Eagler's shared-world relay (protocol version 1): one binary WebSocket message

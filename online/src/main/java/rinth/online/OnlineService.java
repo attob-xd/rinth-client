@@ -6,11 +6,6 @@ import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonPrimitive;
-import rinth.framework.config.ConfigStorage;
-import rinth.framework.online.RinthPlayer;
-import rinth.framework.online.Online;
-import rinth.platform.api.net.NetConnection;
-import rinth.platform.api.net.PlatformNetwork;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -25,6 +20,11 @@ import java.util.function.Consumer;
 import java.util.function.DoubleSupplier;
 import java.util.function.LongSupplier;
 import org.jspecify.annotations.Nullable;
+import rinth.framework.config.ConfigStorage;
+import rinth.framework.online.Online;
+import rinth.framework.online.RinthPlayer;
+import rinth.platform.api.net.NetConnection;
+import rinth.platform.api.net.PlatformNetwork;
 
 /**
  * The client's side of Rinth's online service (ADR 0058): one WebSocket, kept open and reopened

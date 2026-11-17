@@ -1,7 +1,5 @@
 package rinth.classlib.nio;
 
-import rinth.classlib.substitutes.java.nio.channels.TFileChannel;
-import rinth.classlib.substitutes.java.nio.channels.TFileLock;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
@@ -11,6 +9,8 @@ import java.nio.channels.NonWritableChannelException;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.channels.WritableByteChannel;
 import java.util.Objects;
+import rinth.classlib.substitutes.java.nio.channels.TFileChannel;
+import rinth.classlib.substitutes.java.nio.channels.TFileLock;
 
 /**
  * The {@code FileChannel} contract (argument checks, access modes, closed state, scattering and

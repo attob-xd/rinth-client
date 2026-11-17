@@ -19,7 +19,7 @@ class TreeFileSystemTest {
 
     @BeforeEach
     void setUp() throws IOException {
-        files = new TreeFileSystem(new Journal("/rinth", List.of("/rinth/dropped")), () -> time);
+        files = new TreeFileSystem(new Journal("/incari", List.of("/incari/dropped")), () -> time);
         files.setWorkingDirectory("/incari/game");
     }
 
@@ -28,7 +28,7 @@ class TreeFileSystemTest {
         assertThat(files.normalize("/a//b/./c/../d/")).isEqualTo("/a/b/d");
         assertThat(files.normalize("/..")).isEqualTo("/");
         assertThat(files.normalize("options.txt")).isEqualTo("/incari/game/options.txt");
-        assertThat(files.canonicalize("../x")).isEqualTo("/rinth/x");
+        assertThat(files.canonicalize("../x")).isEqualTo("/incari/x");
         assertThat(files.getUserDir()).isEqualTo("/incari/game");
         assertThat(files.getFile("/").isDirectory()).isTrue();
     }
@@ -97,7 +97,7 @@ class TreeFileSystemTest {
 
     @Test
     void createFileInAMissingFolderFails() {
-        assertThatThrownBy(() -> files.getFile("/rinth/nowhere").createFile("x"))
+        assertThatThrownBy(() -> files.getFile("/incari/nowhere").createFile("x"))
                 .isInstanceOf(IOException.class);
     }
 
@@ -119,9 +119,9 @@ class TreeFileSystemTest {
         // A folder can't go inside itself.
         assertThat(files.getFile("/incari/game/dir").adopt(files.getFile("/incari/game/dir"), "again"))
                 .isFalse();
-        assertThat(files.getFile("/rinth").adopt(files.getFile("/incari/game/dir"), "moved"))
+        assertThat(files.getFile("/incari").adopt(files.getFile("/incari/game/dir"), "moved"))
                 .isTrue();
-        assertThat(files.getFile("/rinth/moved/inside").isFile()).isTrue();
+        assertThat(files.getFile("/incari/moved/inside").isFile()).isTrue();
     }
 
     @Test

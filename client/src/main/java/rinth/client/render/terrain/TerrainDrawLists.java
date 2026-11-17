@@ -6,10 +6,6 @@ import com.mojang.renderpearl.api.buffers.GpuBufferSlice;
 import com.mojang.renderpearl.api.pipeline.IndexType;
 import com.mojang.renderpearl.api.pipeline.PrimitiveTopology;
 import com.mojang.renderpearl.api.textures.GpuTextureView;
-import rinth.client.render.AnimatedSprites;
-import rinth.client.render.SectionLayers;
-import rinth.client.render.mesher.Layers;
-import rinth.mesher.Facings;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
@@ -27,6 +23,10 @@ import net.minecraft.util.Util;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Matrix4fc;
 import org.jspecify.annotations.Nullable;
+import rinth.client.render.AnimatedSprites;
+import rinth.client.render.SectionLayers;
+import rinth.client.render.mesher.Layers;
+import rinth.mesher.Facings;
 
 /**
  * The frame's terrain draw list, as the game's {@code LevelRenderer.prepareChunkRendersIndirect}

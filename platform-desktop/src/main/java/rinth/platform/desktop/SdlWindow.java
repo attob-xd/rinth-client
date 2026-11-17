@@ -2,16 +2,6 @@ package rinth.platform.desktop;
 
 import static org.lwjgl.sdl.SDLError.SDL_GetError;
 
-import rinth.platform.api.NativeSurfaceFactory;
-import rinth.platform.api.PlatformException;
-import rinth.platform.api.PlatformLog;
-import rinth.platform.api.window.DisplayInfo;
-import rinth.platform.api.window.DisplayMode;
-import rinth.platform.api.window.IconImage;
-import rinth.platform.api.window.PlatformWindow;
-import rinth.platform.api.window.SystemBehavior;
-import rinth.platform.api.window.SystemCursor;
-import rinth.platform.api.window.WindowSpec;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
@@ -32,6 +22,16 @@ import org.lwjgl.sdl.SDL_Rect;
 import org.lwjgl.sdl.SDL_Surface;
 import org.lwjgl.system.MemoryStack;
 import org.lwjgl.system.MemoryUtil;
+import rinth.platform.api.NativeSurfaceFactory;
+import rinth.platform.api.PlatformException;
+import rinth.platform.api.PlatformLog;
+import rinth.platform.api.window.DisplayInfo;
+import rinth.platform.api.window.DisplayMode;
+import rinth.platform.api.window.IconImage;
+import rinth.platform.api.window.PlatformWindow;
+import rinth.platform.api.window.SystemBehavior;
+import rinth.platform.api.window.SystemCursor;
+import rinth.platform.api.window.WindowSpec;
 
 /** The game's window as an SDL3 window. */
 final class SdlWindow implements PlatformWindow {

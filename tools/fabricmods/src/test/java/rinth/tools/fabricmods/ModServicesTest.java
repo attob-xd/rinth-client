@@ -2,7 +2,6 @@ package rinth.tools.fabricmods;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.classlib.ServiceProviders;
 import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Map;
@@ -18,6 +17,7 @@ import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.MethodInsnNode;
+import rinth.classlib.ServiceProviders;
 
 class ModServicesTest {
 

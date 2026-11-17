@@ -1,6 +1,5 @@
 package rinth.net.relay;
 
-import rinth.platform.api.net.NetConnection;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
@@ -8,6 +7,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 import org.jspecify.annotations.Nullable;
+import rinth.platform.api.net.NetConnection;
 
 /**
  * A shared world's address once {@link RelayJoin} has opened a data channel to its host: the

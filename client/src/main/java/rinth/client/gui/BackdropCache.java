@@ -5,10 +5,10 @@ import com.mojang.blaze3d.pipeline.TextureTarget;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.renderpearl.api.GpuFormat;
 import com.mojang.renderpearl.api.textures.GpuTexture;
-import rinth.client.ui.Look;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.Util;
 import org.jspecify.annotations.Nullable;
+import rinth.client.ui.Look;
 
 /**
  * A screen's blurred backdrop kept between refreshes, a few a second, while the UI over it runs at

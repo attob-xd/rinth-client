@@ -1,12 +1,12 @@
 package rinth.app.desktop.smoke;
 
+import java.util.List;
 import rinth.platform.api.net.NetConnection;
 import rinth.platform.api.rtc.IceServer;
 import rinth.platform.api.rtc.Microphone;
 import rinth.platform.api.rtc.PlatformRtc;
 import rinth.platform.api.rtc.RemoteVoice;
 import rinth.platform.api.rtc.RtcPeer;
-import java.util.List;
 
 /**
  * WebRTC's stand-in on the desktop, for the voice smoke test: peers exchange made-up

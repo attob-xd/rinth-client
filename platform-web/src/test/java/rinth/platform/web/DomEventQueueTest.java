@@ -1,21 +1,21 @@
 package rinth.platform.web;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static rinth.platform.web.DomEventQueue.DOM_ALT;
 import static rinth.platform.web.DomEventQueue.DOM_ALT_GRAPH;
 import static rinth.platform.web.DomEventQueue.DOM_CAPS_LOCK;
 import static rinth.platform.web.DomEventQueue.DOM_CTRL;
 import static rinth.platform.web.DomEventQueue.DOM_META;
 import static rinth.platform.web.DomEventQueue.DOM_SHIFT;
-import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.platform.api.input.KeyAction;
-import rinth.platform.api.input.KeyModifiers;
-import rinth.platform.api.input.Scancodes;
-import rinth.platform.api.window.PlatformEventListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import org.junit.jupiter.api.Test;
+import rinth.platform.api.input.KeyAction;
+import rinth.platform.api.input.KeyModifiers;
+import rinth.platform.api.input.Scancodes;
+import rinth.platform.api.window.PlatformEventListener;
 
 class DomEventQueueTest {
 
@@ -275,17 +275,17 @@ class DomEventQueueTest {
 
     @Test
     void droppedFilesReachTheGame() {
-        queue.event("drop", "/rinth/dropped/1/pack.zip\n/rinth/dropped/1/Folder", "", 0, 0, 0, 0, 0, 0);
+        queue.event("drop", "/incari/dropped/1/pack.zip\n/incari/dropped/1/Folder", "", 0, 0, 0, 0, 0, 0);
         queue.event("drop", "", "", 0, 0, 0, 0, 0, 0);
-        assertThat(drain()).containsExactly("files [/rinth/dropped/1/pack.zip, /rinth/dropped/1/Folder]");
+        assertThat(drain()).containsExactly("files [/incari/dropped/1/pack.zip, /incari/dropped/1/Folder]");
     }
 
     @Test
     void aDropSurvivesAFlush() {
-        queue.event("drop", "/rinth/dropped/1/pack.zip", "", 0, 0, 0, 0, 0, 0);
+        queue.event("drop", "/incari/dropped/1/pack.zip", "", 0, 0, 0, 0, 0, 0);
         keyDown("KeyW", "w", 0);
         queue.flushInput();
-        assertThat(drain()).containsExactly("files [/rinth/dropped/1/pack.zip]");
+        assertThat(drain()).containsExactly("files [/incari/dropped/1/pack.zip]");
     }
 
     // --- Visibility ---

@@ -1,16 +1,5 @@
 package rinth.client.online;
 
-import rinth.client.ui.Icons;
-import rinth.client.ui.ScreenPanels;
-import rinth.client.ui.Theme;
-import rinth.client.ui.Ui;
-import rinth.framework.online.RinthPlayer;
-import rinth.framework.online.Online.Status;
-import rinth.online.Credentials;
-import rinth.online.Failure;
-import rinth.online.OnlineService;
-import rinth.online.Result;
-import rinth.online.Social;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -33,6 +22,17 @@ import net.minecraft.util.ARGB;
 import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.world.entity.player.PlayerSkin;
 import org.jspecify.annotations.Nullable;
+import rinth.client.ui.Icons;
+import rinth.client.ui.ScreenPanels;
+import rinth.client.ui.Theme;
+import rinth.client.ui.Ui;
+import rinth.framework.online.Online.Status;
+import rinth.framework.online.RinthPlayer;
+import rinth.online.Credentials;
+import rinth.online.Failure;
+import rinth.online.OnlineService;
+import rinth.online.Result;
+import rinth.online.Social;
 
 /**
  * The chat menu (ADR 0059), laid out like Discord, which most players know: people down the left,

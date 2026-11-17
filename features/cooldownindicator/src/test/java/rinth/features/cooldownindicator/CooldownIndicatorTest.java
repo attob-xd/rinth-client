@@ -2,10 +2,10 @@ package rinth.features.cooldownindicator;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.framework.game.GameOption;
-import rinth.framework.testing.TestGame;
 import java.util.List;
 import org.junit.jupiter.api.Test;
+import rinth.framework.game.GameOption;
+import rinth.framework.testing.TestGame;
 
 class CooldownIndicatorTest {
 

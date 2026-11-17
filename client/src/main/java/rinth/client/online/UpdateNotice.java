@@ -1,15 +1,15 @@
 package rinth.client.online;
 
-import rinth.client.RinthBuild;
-import rinth.framework.online.Online.Status;
-import rinth.online.OnlineService;
-import rinth.online.Releases;
 import java.net.URI;
 import java.util.List;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.ConfirmLinkScreen;
 import net.minecraft.client.gui.screens.Screen;
 import org.jspecify.annotations.Nullable;
+import rinth.client.RinthBuild;
+import rinth.framework.online.Online.Status;
+import rinth.online.OnlineService;
+import rinth.online.Releases;
 
 /**
  * Whether the title screen tells the player a newer Rinth Client is out, and leads them to its

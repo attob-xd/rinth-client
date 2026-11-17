@@ -2,11 +2,11 @@ package com.mojang.blaze3d.audio;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.client.audio.CompressedSoundStream;
 import java.nio.ByteBuffer;
 import javax.sound.sampled.AudioFormat;
 import net.minecraft.client.sounds.AudioStream;
 import org.junit.jupiter.api.Test;
+import rinth.client.audio.CompressedSoundStream;
 
 class ChannelTest {
 

@@ -1,10 +1,10 @@
 package rinth.client.cosmetics;
 
-import rinth.online.Cosmetic;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.player.PlayerModel;
 import net.minecraft.client.renderer.entity.state.AvatarRenderState;
 import net.minecraft.util.Mth;
+import rinth.online.Cosmetic;
 
 /**
  * Emotes as the player model plays them (ADR 0061): each a pose for the arms and head, eased in and

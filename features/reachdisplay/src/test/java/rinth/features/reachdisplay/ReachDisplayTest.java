@@ -2,9 +2,9 @@ package rinth.features.reachdisplay;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Test;
 import rinth.framework.setting.IntSetting;
 import rinth.framework.testing.TestGame;
-import org.junit.jupiter.api.Test;
 
 class ReachDisplayTest {
 

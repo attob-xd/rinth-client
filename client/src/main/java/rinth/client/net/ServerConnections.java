@@ -1,23 +1,6 @@
 package rinth.client.net;
 
 import com.mojang.logging.LogUtils;
-import rinth.client.eagler.EaglerAuth;
-import rinth.client.eagler.EaglerCookies;
-import rinth.client.eagler.EaglerJoin;
-import rinth.client.eagler.EaglerVoice;
-import rinth.client.skins.OwnSkin;
-import rinth.net.MessageFraming;
-import rinth.net.WebSocketAddress;
-import rinth.net.WebSocketUrl;
-import rinth.net.eagler.EaglerHandshake;
-import rinth.net.eagler.EaglerLogin;
-import rinth.net.eagler.EaglerSession;
-import rinth.net.eagler.EaglerTextures;
-import rinth.net.relay.LanFraming;
-import rinth.net.relay.LanLogin;
-import rinth.net.relay.RelayWorldAddress;
-import rinth.via.RinthVia;
-import rinth.via.ViaPipeline;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -52,6 +35,23 @@ import net.minecraft.network.protocol.status.ServerboundStatusRequestPacket;
 import net.minecraft.server.network.EventLoopGroupHolder;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.eagler.EaglerAuth;
+import rinth.client.eagler.EaglerCookies;
+import rinth.client.eagler.EaglerJoin;
+import rinth.client.eagler.EaglerVoice;
+import rinth.client.skins.OwnSkin;
+import rinth.net.MessageFraming;
+import rinth.net.WebSocketAddress;
+import rinth.net.WebSocketUrl;
+import rinth.net.eagler.EaglerHandshake;
+import rinth.net.eagler.EaglerLogin;
+import rinth.net.eagler.EaglerSession;
+import rinth.net.eagler.EaglerTextures;
+import rinth.net.relay.LanFraming;
+import rinth.net.relay.LanLogin;
+import rinth.net.relay.RelayWorldAddress;
+import rinth.via.RinthVia;
+import rinth.via.ViaPipeline;
 
 /**
  * How the game's connection to a server is built (ADR 0016, ADR 0017). The connect screen tells

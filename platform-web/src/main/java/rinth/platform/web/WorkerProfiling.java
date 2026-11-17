@@ -1,9 +1,9 @@
 package rinth.platform.web;
 
+import org.teavm.jso.JSBody;
 import rinth.platform.api.profile.FrameSample;
 import rinth.platform.api.profile.MemoryUsage;
 import rinth.platform.api.profile.PlatformProfiling;
-import org.teavm.jso.JSBody;
 
 /**
  * Profiling in a copy of the game in a worker (ADR 0039): no frames, but singleplayer's server

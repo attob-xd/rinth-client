@@ -1,5 +1,6 @@
 package rinth.features.keystrokes;
 
+import org.jspecify.annotations.Nullable;
 import rinth.framework.Category;
 import rinth.framework.Module;
 import rinth.framework.event.ClickCounter;
@@ -14,7 +15,6 @@ import rinth.framework.hud.Tone;
 import rinth.framework.setting.BooleanSetting;
 import rinth.framework.setting.ColorSetting;
 import rinth.framework.setting.IntSetting;
-import org.jspecify.annotations.Nullable;
 
 /**
  * Keystrokes: the movement keys, the mouse buttons and the space bar as the player has bound them,

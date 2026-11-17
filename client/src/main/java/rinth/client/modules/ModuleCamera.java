@@ -1,12 +1,12 @@
 package rinth.client.modules;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.Options;
+import net.minecraft.client.player.LocalPlayer;
 import rinth.framework.ModuleSystem;
 import rinth.framework.event.CameraAngles;
 import rinth.framework.event.Events;
 import rinth.framework.event.Turn;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.Options;
-import net.minecraft.client.player.LocalPlayer;
 
 /**
  * The turn and camera events ({@link Events#TURN}, {@link Events#CAMERA}): the mouse's turns,

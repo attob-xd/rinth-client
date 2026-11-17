@@ -2,11 +2,11 @@ package rinth.features.crosshair;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.List;
+import org.junit.jupiter.api.Test;
 import rinth.framework.setting.BooleanSetting;
 import rinth.framework.setting.GridSetting;
 import rinth.framework.testing.TestGame;
-import java.util.List;
-import org.junit.jupiter.api.Test;
 
 class CrosshairEditorTest {
 

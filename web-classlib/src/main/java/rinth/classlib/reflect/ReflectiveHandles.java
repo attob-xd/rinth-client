@@ -1,7 +1,5 @@
 package rinth.classlib.reflect;
 
-import rinth.classlib.substitutes.java.lang.invoke.TMethodHandle;
-import rinth.classlib.substitutes.java.lang.invoke.TMethodHandles$Lookup;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -9,6 +7,8 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
 import org.jspecify.annotations.Nullable;
+import rinth.classlib.substitutes.java.lang.invoke.TMethodHandle;
+import rinth.classlib.substitutes.java.lang.invoke.TMethodHandles$Lookup;
 
 /**
  * Method handles made from reflection, for the built-in Fabric mods (ADR 0065): tools/fabricmods

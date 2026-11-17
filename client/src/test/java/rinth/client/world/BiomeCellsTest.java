@@ -2,7 +2,6 @@ package rinth.client.world;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.client.testing.VanillaRegistries;
 import java.util.List;
 import java.util.function.Function;
 import net.minecraft.core.BlockPos;
@@ -17,6 +16,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import rinth.client.testing.VanillaRegistries;
 
 /**
  * Every block's biome from {@link BiomeCells} is the game's blurred one, over biome cells laid out

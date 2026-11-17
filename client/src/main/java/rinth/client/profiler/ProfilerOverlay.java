@@ -1,13 +1,13 @@
 package rinth.client.profiler;
 
-import rinth.platform.api.profile.FrameSample;
-import rinth.platform.api.profile.MemoryUsage;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import org.jspecify.annotations.Nullable;
+import rinth.platform.api.profile.FrameSample;
+import rinth.platform.api.profile.MemoryUsage;
 
 /**
  * The profiler's overlay, in the top right corner over every screen, from one hook in

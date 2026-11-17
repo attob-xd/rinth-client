@@ -5,7 +5,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import com.google.gson.JsonParser;
 import com.mojang.blaze3d.font.UnbakedGlyph;
 import com.mojang.serialization.JsonOps;
-import rinth.client.testing.TestPlatform;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
@@ -19,6 +18,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import rinth.client.testing.TestPlatform;
 
 /** {@link PackedUnihex} gives back every glyph's lines and edges exactly as the game's objects hold them. */
 class PackedUnihexTest {

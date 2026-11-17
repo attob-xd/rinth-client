@@ -1,9 +1,9 @@
 package rinth.client.look;
 
-import rinth.client.ui.RoundRects;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.util.Util;
+import rinth.client.ui.RoundRects;
 
 /**
  * Snow falling over the menus in the Normal preset: a hundred or so soft flakes drifting down and

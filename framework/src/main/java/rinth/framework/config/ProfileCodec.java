@@ -4,6 +4,10 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import org.jspecify.annotations.Nullable;
 import rinth.framework.Module;
 import rinth.framework.hud.HudElement;
 import rinth.framework.setting.ActionSetting;
@@ -18,10 +22,6 @@ import rinth.framework.setting.KeySetting;
 import rinth.framework.setting.Setting;
 import rinth.framework.setting.SettingVisitor;
 import rinth.framework.setting.Settings;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import org.jspecify.annotations.Nullable;
 
 /**
  * A profile as JSON: which modules are on and every setting's value, by id.

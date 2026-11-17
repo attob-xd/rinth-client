@@ -1,6 +1,5 @@
 package rinth.client.particle;
 
-import rinth.client.render.TintBlend;
 import it.unimi.dsi.fastutil.longs.Long2IntOpenHashMap;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -8,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.util.Mth;
 import org.jspecify.annotations.Nullable;
+import rinth.client.render.TintBlend;
 
 /**
  * A particle's light (ADR 0024), as the game reads it at the block the particle is in, but

@@ -1,5 +1,13 @@
 package rinth.framework;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.EnumSet;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import org.jspecify.annotations.Nullable;
 import rinth.framework.config.ConfigStorage;
 import rinth.framework.config.ProfileCodec;
 import rinth.framework.config.Profiles;
@@ -15,14 +23,6 @@ import rinth.framework.online.Online;
 import rinth.framework.setting.KeySetting;
 import rinth.framework.setting.Setting;
 import rinth.framework.waypoint.Waypoints;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import org.jspecify.annotations.Nullable;
 
 /**
  * Every module, the events they listen to, their keybinds, their HUD and the profiles that store

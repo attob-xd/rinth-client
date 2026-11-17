@@ -1,12 +1,12 @@
 package rinth.client.modules;
 
-import rinth.framework.game.Weather;
 import net.minecraft.client.ClientClockManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import org.jspecify.annotations.Nullable;
+import rinth.framework.game.Weather;
 
 /**
  * The sky as a module shows it ({@code Game.overrideSky}, Weather Changer): the weather and the

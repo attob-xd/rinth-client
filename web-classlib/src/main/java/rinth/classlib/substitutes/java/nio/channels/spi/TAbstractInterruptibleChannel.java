@@ -1,11 +1,11 @@
 package rinth.classlib.substitutes.java.nio.channels.spi;
 
-import rinth.classlib.substitutes.java.nio.channels.TAsynchronousCloseException;
-import rinth.classlib.substitutes.java.nio.channels.TClosedByInterruptException;
-import rinth.classlib.substitutes.java.nio.channels.TInterruptibleChannel;
 import java.io.IOException;
 import java.nio.channels.Channel;
 import org.jspecify.annotations.Nullable;
+import rinth.classlib.substitutes.java.nio.channels.TAsynchronousCloseException;
+import rinth.classlib.substitutes.java.nio.channels.TClosedByInterruptException;
+import rinth.classlib.substitutes.java.nio.channels.TInterruptibleChannel;
 
 /**
  * {@code java.nio.channels.spi.AbstractInterruptibleChannel}, which TeaVM lacks: the close-once

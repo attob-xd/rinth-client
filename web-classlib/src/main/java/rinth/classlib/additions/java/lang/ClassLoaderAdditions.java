@@ -1,13 +1,13 @@
 package rinth.classlib.additions.java.lang;
 
-import rinth.classlib.InstanceMethod;
-import rinth.classlib.Replaces;
-import rinth.classlib.resources.ClassPathResources;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.Collections;
 import java.util.Enumeration;
 import org.jspecify.annotations.Nullable;
+import rinth.classlib.InstanceMethod;
+import rinth.classlib.Replaces;
+import rinth.classlib.resources.ClassPathResources;
 
 /**
  * {@code java.lang.ClassLoader} methods TeaVM lacks. A compiled page has one fixed set of classes,

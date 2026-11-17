@@ -3,11 +3,11 @@ package rinth.tools.webbuild;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import rinth.tools.build.CliException;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
+import rinth.tools.build.CliException;
 
 class PerfBudgetTest {
 

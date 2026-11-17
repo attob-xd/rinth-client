@@ -1,7 +1,6 @@
 package rinth.client.profile;
 
 import com.mojang.blaze3d.Blaze3D;
-import rinth.client.skins.OwnSkin;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -12,6 +11,7 @@ import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
+import rinth.client.skins.OwnSkin;
 
 /**
  * The cape this player shows on Eagler servers and in their own view: none, or a 64x32 PNG.

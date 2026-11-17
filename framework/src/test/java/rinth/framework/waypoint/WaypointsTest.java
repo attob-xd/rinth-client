@@ -2,14 +2,14 @@ package rinth.framework.waypoint;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.framework.config.ConfigStorage;
-import rinth.framework.hud.Shape;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.Test;
+import rinth.framework.config.ConfigStorage;
+import rinth.framework.hud.Shape;
 
 class WaypointsTest {
 

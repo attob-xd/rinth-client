@@ -2,10 +2,10 @@ package rinth.features.oldanimations;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Test;
 import rinth.framework.event.HeldItem;
 import rinth.framework.setting.BooleanSetting;
 import rinth.framework.testing.TestGame;
-import org.junit.jupiter.api.Test;
 
 class OldAnimationsTest {
 

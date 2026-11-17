@@ -2,7 +2,6 @@ package rinth.platform.web;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.platform.api.input.Scancodes;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,6 +9,7 @@ import java.util.Set;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import rinth.platform.api.input.Scancodes;
 
 class DomKeysTest {
 

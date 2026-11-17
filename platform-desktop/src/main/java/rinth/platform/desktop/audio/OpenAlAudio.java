@@ -1,10 +1,5 @@
 package rinth.platform.desktop.audio;
 
-import rinth.platform.api.PlatformLog;
-import rinth.platform.api.audio.AudioDevice;
-import rinth.platform.api.audio.AudioDeviceList;
-import rinth.platform.api.audio.AudioException;
-import rinth.platform.api.audio.PlatformAudio;
 import java.util.List;
 import org.jspecify.annotations.Nullable;
 import org.lwjgl.openal.ALC;
@@ -14,6 +9,11 @@ import org.lwjgl.openal.ALUtil;
 import org.lwjgl.openal.SOFTSystemEventProc;
 import org.lwjgl.openal.SOFTSystemEvents;
 import org.lwjgl.system.MemoryUtil;
+import rinth.platform.api.PlatformLog;
+import rinth.platform.api.audio.AudioDevice;
+import rinth.platform.api.audio.AudioDeviceList;
+import rinth.platform.api.audio.AudioException;
+import rinth.platform.api.audio.PlatformAudio;
 
 /**
  * {@link PlatformAudio} over OpenAL Soft, through LWJGL.

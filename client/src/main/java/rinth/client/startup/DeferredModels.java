@@ -1,10 +1,6 @@
 package rinth.client.startup;
 
 import com.mojang.logging.LogUtils;
-import rinth.client.platform.ClientPlatform;
-import rinth.client.render.SpriteCache;
-import rinth.client.render.TextLayouts;
-import rinth.client.resources.RemoteAssets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -21,6 +17,10 @@ import net.minecraft.server.packs.resources.SimpleReloadInstance;
 import net.minecraft.util.Unit;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.platform.ClientPlatform;
+import rinth.client.render.SpriteCache;
+import rinth.client.render.TextLayouts;
+import rinth.client.resources.RemoteAssets;
 
 /**
  * Block, item and entity models load after the title screen shows (deferred loading of

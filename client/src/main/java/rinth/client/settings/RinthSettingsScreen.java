@@ -1,9 +1,22 @@
 package rinth.client.settings;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.components.AbstractWidget;
+import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.components.CycleButton;
+import net.minecraft.client.gui.components.StringWidget;
+import net.minecraft.client.gui.layouts.LinearLayout;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.CommonComponents;
+import net.minecraft.network.chat.Component;
+import org.jspecify.annotations.Nullable;
 import rinth.client.RinthBuild;
 import rinth.client.cosmetics.WardrobeScreen;
-import rinth.client.modules.RinthModules;
 import rinth.client.modules.ModuleScreenshots;
+import rinth.client.modules.RinthModules;
 import rinth.client.online.AccountScreen;
 import rinth.client.online.ChatMenu;
 import rinth.client.online.RinthOnline;
@@ -18,19 +31,6 @@ import rinth.client.ui.Theme;
 import rinth.client.ui.Ui;
 import rinth.framework.online.Online;
 import rinth.online.OnlineService;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
-import net.minecraft.client.gui.components.AbstractWidget;
-import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.components.CycleButton;
-import net.minecraft.client.gui.components.StringWidget;
-import net.minecraft.client.gui.layouts.LinearLayout;
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.network.chat.CommonComponents;
-import net.minecraft.network.chat.Component;
-import org.jspecify.annotations.Nullable;
 
 /**
  * Rinth Settings: the pause menu's one way into everything Rinth adds (the module menu, the HUD

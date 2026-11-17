@@ -1,6 +1,5 @@
 package rinth.classlib.nio;
 
-import rinth.classlib.substitutes.java.nio.channels.TFileChannel;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -24,6 +23,7 @@ import java.util.Set;
 import java.util.WeakHashMap;
 import java.util.function.Function;
 import org.jspecify.annotations.Nullable;
+import rinth.classlib.substitutes.java.nio.channels.TFileChannel;
 
 /**
  * Opens {@code FileChannel}s for the browser build, over {@link RandomAccessFile} and TeaVM's

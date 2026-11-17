@@ -6,18 +6,6 @@ import com.mojang.blaze3d.vertex.CompactVectorArray;
 import com.mojang.blaze3d.vertex.MeshData;
 import com.mojang.blaze3d.vertex.VertexSorting;
 import com.mojang.renderpearl.api.pipeline.IndexType;
-import rinth.client.render.AnimatedSprites;
-import rinth.client.render.TerrainVertexFormat;
-import rinth.mesher.Bytes;
-import rinth.mesher.MeshJobs;
-import rinth.mesher.MeshResult;
-import rinth.mesher.MeshTables;
-import rinth.mesher.SectionMesher;
-import rinth.mesher.Snapshot;
-import rinth.platform.api.Platforms;
-import rinth.platform.api.threads.WorkerException;
-import rinth.platform.api.threads.WorkerJob;
-import rinth.platform.api.threads.WorkerPool;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
@@ -35,6 +23,18 @@ import net.minecraft.world.phys.Vec3;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import rinth.client.render.AnimatedSprites;
+import rinth.client.render.TerrainVertexFormat;
+import rinth.mesher.Bytes;
+import rinth.mesher.MeshJobs;
+import rinth.mesher.MeshResult;
+import rinth.mesher.MeshTables;
+import rinth.mesher.SectionMesher;
+import rinth.mesher.Snapshot;
+import rinth.platform.api.Platforms;
+import rinth.platform.api.threads.WorkerException;
+import rinth.platform.api.threads.WorkerJob;
+import rinth.platform.api.threads.WorkerPool;
 
 /**
  * Where the game's section compiles come to Rinth's mesher (ADR 0023). Two hooks in the

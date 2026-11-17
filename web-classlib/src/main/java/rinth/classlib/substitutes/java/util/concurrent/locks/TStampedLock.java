@@ -1,10 +1,10 @@
 package rinth.classlib.substitutes.java.util.concurrent.locks;
 
-import rinth.classlib.substitutes.java.util.concurrent.locks.TLockSupport.Monitors;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.concurrent.TimeUnit;
+import rinth.classlib.substitutes.java.util.concurrent.locks.TLockSupport.Monitors;
 
 /**
  * {@code java.util.concurrent.locks.StampedLock}, built on a private monitor: a non-reentrant

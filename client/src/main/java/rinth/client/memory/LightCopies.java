@@ -1,6 +1,5 @@
 package rinth.client.memory;
 
-import rinth.client.platform.ClientPlatform;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.LongIterator;
@@ -9,6 +8,7 @@ import net.minecraft.world.level.chunk.DataLayer;
 import net.minecraft.world.level.lighting.DataLayerStorageMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import rinth.client.platform.ClientPlatform;
 
 /**
  * The light engine's copies, where every thread is one (ADR 0032). The light engine keeps two maps

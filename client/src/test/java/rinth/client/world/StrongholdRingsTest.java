@@ -2,7 +2,6 @@ package rinth.client.world;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.client.testing.VanillaRegistries;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
@@ -21,6 +20,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import rinth.client.testing.VanillaRegistries;
 
 /**
  * The strongholds worked out ring by ring are the game's own, on the vanilla overworld: the same

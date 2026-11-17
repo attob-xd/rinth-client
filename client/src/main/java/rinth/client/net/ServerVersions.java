@@ -1,6 +1,5 @@
 package rinth.client.net;
 
-import rinth.via.RinthVia;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.SharedConstants;
@@ -10,6 +9,7 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import rinth.via.RinthVia;
 
 /**
  * Which Minecraft version the game speaks to a server (ADR 0017). Each server in the list

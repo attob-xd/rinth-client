@@ -1,9 +1,5 @@
 package rinth.tools.webbuild;
 
-import rinth.tools.build.CliException;
-import rinth.tools.build.Downloader;
-import rinth.tools.build.Log;
-import rinth.tools.build.Workspace;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
@@ -16,6 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.zip.GZIPInputStream;
+import rinth.tools.build.CliException;
+import rinth.tools.build.Downloader;
+import rinth.tools.build.Log;
+import rinth.tools.build.Workspace;
 
 /**
  * Binaryen's {@code wasm-opt} over a release module (ADR 0034), with {@code --wasm-opt}.

@@ -2,12 +2,12 @@ package rinth.features.keystrokes;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.List;
+import org.junit.jupiter.api.Test;
 import rinth.framework.event.ClickListener;
 import rinth.framework.game.GameKey;
 import rinth.framework.setting.BooleanSetting;
 import rinth.framework.testing.TestGame;
-import java.util.List;
-import org.junit.jupiter.api.Test;
 
 class KeystrokesTest {
 

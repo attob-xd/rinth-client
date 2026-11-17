@@ -3,7 +3,6 @@ package rinth.client.render;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.renderpearl.api.commands.RenderPass;
 import com.mojang.renderpearl.api.textures.GpuTextureView;
-import rinth.client.render.mesher.MeshTableCache;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +13,7 @@ import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.geometry.BakedQuad;
 import net.minecraft.util.Util;
 import org.jspecify.annotations.Nullable;
+import rinth.client.render.mesher.MeshTableCache;
 
 /**
  * Animates only the block sprites something draws (ADR 0030), Sodium's idea. Each tick the game

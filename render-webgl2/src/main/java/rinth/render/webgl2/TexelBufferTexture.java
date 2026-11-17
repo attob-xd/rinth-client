@@ -7,9 +7,9 @@ import static org.teavm.jso.webgl.WebGL2RenderingContext.TEXTURE_MIN_FILTER;
 import static org.teavm.jso.webgl.WebGL2RenderingContext.UNPACK_ROW_LENGTH;
 
 import com.mojang.renderpearl.api.GpuFormat;
-import rinth.render.webgl2.shaders.TexelBuffers;
 import org.teavm.jso.webgl.WebGL2RenderingContext;
 import org.teavm.jso.webgl.WebGLTexture;
+import rinth.render.webgl2.shaders.TexelBuffers;
 
 /**
  * A texel buffer emulated as a 2D texture (WebGL2 has no texel buffers): the buffer's elements

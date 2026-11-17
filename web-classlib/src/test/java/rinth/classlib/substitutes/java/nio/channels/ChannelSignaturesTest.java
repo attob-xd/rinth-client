@@ -2,7 +2,6 @@ package rinth.classlib.substitutes.java.nio.channels;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.classlib.substitutes.java.nio.channels.spi.TAbstractInterruptibleChannel;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Executable;
 import java.lang.reflect.Field;
@@ -22,6 +21,7 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
+import rinth.classlib.substitutes.java.nio.channels.spi.TAbstractInterruptibleChannel;
 
 /**
  * The browser build links these substitutes by name, so their public and protected members must

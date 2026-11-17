@@ -3,17 +3,17 @@ package rinth.classlib.memory;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+import java.lang.ref.ReferenceQueue;
+import java.lang.reflect.Field;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import org.junit.jupiter.api.Test;
 import rinth.classlib.substitutes.java.lang.foreign.TMemorySegment;
 import rinth.classlib.substitutes.java.lang.ref.TPhantomReference;
 import rinth.classlib.substitutes.org.lwjgl.TPointerBuffer;
 import rinth.classlib.substitutes.org.lwjgl.system.TMemoryStack;
 import rinth.classlib.substitutes.org.lwjgl.system.TMemoryUtil;
 import rinth.classlib.substitutes.org.lwjgl.system.TPointer;
-import java.lang.ref.ReferenceQueue;
-import java.lang.reflect.Field;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import org.junit.jupiter.api.Test;
 
 /** The off-heap memory the built-in Fabric mods use beyond the game's (Sodium's). */
 class ModMemoryTest {

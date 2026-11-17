@@ -1,8 +1,8 @@
 package rinth.client.cosmetics;
 
+import org.jspecify.annotations.Nullable;
 import rinth.online.Cosmetic;
 import rinth.online.Loadout;
-import org.jspecify.annotations.Nullable;
 
 /**
  * What one player shows, as their render state carries it (ADR 0061): what they wear, and the emote

@@ -1,6 +1,5 @@
 package rinth.classlib.substitutes.java.util.concurrent;
 
-import rinth.classlib.concurrent.Monitors;
 import java.util.Collection;
 import java.util.Objects;
 import java.util.concurrent.Callable;
@@ -8,6 +7,7 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import org.jspecify.annotations.Nullable;
+import rinth.classlib.concurrent.Monitors;
 
 /**
  * {@code java.util.concurrent.ForkJoinTask}, in a deliberately simple form.

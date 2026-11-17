@@ -1,8 +1,5 @@
 package rinth.platform.web;
 
-import rinth.platform.api.threads.WorkerException;
-import rinth.platform.api.threads.WorkerJob;
-import rinth.platform.api.threads.WorkerPool;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayDeque;
@@ -13,6 +10,9 @@ import org.teavm.jso.JSBody;
 import org.teavm.jso.JSFunctor;
 import org.teavm.jso.JSObject;
 import org.teavm.jso.typedarrays.Int8Array;
+import rinth.platform.api.threads.WorkerException;
+import rinth.platform.api.threads.WorkerJob;
+import rinth.platform.api.threads.WorkerPool;
 
 /**
  * Web Workers running a program of the build's beside the game (ADR 0023): each loads the

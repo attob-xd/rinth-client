@@ -1,15 +1,15 @@
 package rinth.classlib.additions.java.lang;
 
-import rinth.classlib.Constructor;
-import rinth.classlib.InstanceMethod;
-import rinth.classlib.Replaces;
-import rinth.classlib.UnicodePatterns;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
+import rinth.classlib.Constructor;
+import rinth.classlib.InstanceMethod;
+import rinth.classlib.Replaces;
+import rinth.classlib.UnicodePatterns;
 
 /** {@code java.lang.String} methods TeaVM lacks. */
 public final class StringAdditions {

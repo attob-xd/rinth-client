@@ -1,5 +1,6 @@
 package rinth.features.shieldtotem;
 
+import org.jspecify.annotations.Nullable;
 import rinth.framework.Category;
 import rinth.framework.Module;
 import rinth.framework.game.EquipmentSlot;
@@ -10,7 +11,6 @@ import rinth.framework.hud.HudCanvas;
 import rinth.framework.hud.HudElement;
 import rinth.framework.hud.Tone;
 import rinth.framework.setting.BooleanSetting;
-import org.jspecify.annotations.Nullable;
 
 /**
  * Shield &amp; Totem HUD, beside Armor &amp; Potion View: the shield the player holds with its

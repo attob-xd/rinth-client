@@ -1,8 +1,8 @@
 package rinth.client.particle;
 
-import rinth.client.tier.DeviceTier;
 import net.minecraft.util.RandomSource;
 import org.jspecify.annotations.Nullable;
+import rinth.client.tier.DeviceTier;
 
 /**
  * How many particles a particle group may hold (ADR 0024), by the device's tier: the game

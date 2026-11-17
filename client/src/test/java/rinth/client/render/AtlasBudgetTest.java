@@ -2,9 +2,9 @@ package rinth.client.render;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.client.tier.DeviceTier;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import rinth.client.tier.DeviceTier;
 
 class AtlasBudgetTest {
 

@@ -1,11 +1,5 @@
 package rinth.client.recorder;
 
-import rinth.client.RinthKeys;
-import rinth.client.settings.ClientSettings;
-import rinth.client.ui.ControlList;
-import rinth.client.ui.ListScreen;
-import rinth.client.ui.Theme;
-import rinth.client.ui.Ui;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -15,6 +9,12 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import org.jspecify.annotations.Nullable;
+import rinth.client.RinthKeys;
+import rinth.client.settings.ClientSettings;
+import rinth.client.ui.ControlList;
+import rinth.client.ui.ListScreen;
+import rinth.client.ui.Theme;
+import rinth.client.ui.Ui;
 
 /**
  * The screen recorder's screen (ADR 0062): start and stop, and how it records (frame rate, quality,

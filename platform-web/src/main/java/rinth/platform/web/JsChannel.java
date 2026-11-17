@@ -1,6 +1,5 @@
 package rinth.platform.web;
 
-import rinth.platform.api.threads.PlatformChannel;
 import java.util.Arrays;
 import org.jspecify.annotations.Nullable;
 import org.teavm.interop.Async;
@@ -10,6 +9,7 @@ import org.teavm.jso.JSFunctor;
 import org.teavm.jso.JSObject;
 import org.teavm.jso.typedarrays.ArrayBuffer;
 import org.teavm.jso.typedarrays.Int8Array;
+import rinth.platform.api.threads.PlatformChannel;
 
 /**
  * A {@link PlatformChannel} over a JavaScript object with four calls, the same at both ends: the

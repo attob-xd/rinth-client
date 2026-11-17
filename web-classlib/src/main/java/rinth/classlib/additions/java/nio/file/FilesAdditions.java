@@ -1,7 +1,5 @@
 package rinth.classlib.additions.java.nio.file;
 
-import rinth.classlib.Replaces;
-import rinth.classlib.nio.FileChannels;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.channels.SeekableByteChannel;
@@ -25,6 +23,8 @@ import java.util.function.BiPredicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.jspecify.annotations.Nullable;
+import rinth.classlib.Replaces;
+import rinth.classlib.nio.FileChannels;
 
 /**
  * {@code java.nio.file.Files} methods TeaVM lacks. The browser's storage is TeaVM's virtual file

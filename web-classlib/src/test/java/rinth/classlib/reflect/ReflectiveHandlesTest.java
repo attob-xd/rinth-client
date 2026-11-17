@@ -3,9 +3,9 @@ package rinth.classlib.reflect;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+import org.junit.jupiter.api.Test;
 import rinth.classlib.substitutes.java.lang.invoke.TMethodHandle;
 import rinth.classlib.substitutes.java.lang.invoke.TMethodHandles$Lookup;
-import org.junit.jupiter.api.Test;
 
 class ReflectiveHandlesTest {
 

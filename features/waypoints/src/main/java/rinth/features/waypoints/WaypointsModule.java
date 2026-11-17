@@ -1,5 +1,7 @@
 package rinth.features.waypoints;
 
+import java.util.List;
+import org.jspecify.annotations.Nullable;
 import rinth.framework.Category;
 import rinth.framework.Module;
 import rinth.framework.event.Events;
@@ -14,8 +16,6 @@ import rinth.framework.setting.Key;
 import rinth.framework.setting.KeySetting;
 import rinth.framework.waypoint.Waypoint;
 import rinth.framework.waypoint.Waypoints;
-import java.util.List;
-import org.jspecify.annotations.Nullable;
 
 /**
  * Waypoints: places the player marks in a world, each with a name, a color and an icon. Over the

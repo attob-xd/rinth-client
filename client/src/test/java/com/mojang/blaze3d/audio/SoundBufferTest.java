@@ -3,11 +3,11 @@ package com.mojang.blaze3d.audio;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import rinth.platform.api.audio.DecodedAudio;
-import rinth.platform.api.audio.PcmFormat;
 import java.nio.ByteBuffer;
 import javax.sound.sampled.AudioFormat;
 import org.junit.jupiter.api.Test;
+import rinth.platform.api.audio.DecodedAudio;
+import rinth.platform.api.audio.PcmFormat;
 
 class SoundBufferTest {
 

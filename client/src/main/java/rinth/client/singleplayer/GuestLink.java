@@ -1,13 +1,13 @@
 package rinth.client.singleplayer;
 
-import rinth.platform.api.net.NetConnection;
-import rinth.platform.api.threads.PlatformChannel;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.util.ArrayDeque;
 import org.jspecify.annotations.Nullable;
+import rinth.platform.api.net.NetConnection;
+import rinth.platform.api.threads.PlatformChannel;
 
 /**
  * The worker's end of a shared world's guest (ADR 0062): the guest's WebRTC data channel lives in

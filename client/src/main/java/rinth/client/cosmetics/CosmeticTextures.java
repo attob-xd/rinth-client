@@ -1,7 +1,6 @@
 package rinth.client.cosmetics;
 
 import com.mojang.blaze3d.platform.NativeImage;
-import rinth.online.Cosmetic;
 import java.util.HashMap;
 import java.util.Map;
 import net.minecraft.client.Minecraft;
@@ -10,6 +9,7 @@ import net.minecraft.core.ClientAsset;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Util;
 import org.jspecify.annotations.Nullable;
+import rinth.online.Cosmetic;
 
 /**
  * The capes' textures and the wardrobe's icons (ADR 0061), painted by {@link CosmeticArt} the first

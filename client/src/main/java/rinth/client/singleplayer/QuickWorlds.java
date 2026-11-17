@@ -1,7 +1,6 @@
 package rinth.client.singleplayer;
 
 import com.mojang.logging.LogUtils;
-import rinth.client.platform.ClientPlatform;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -12,6 +11,7 @@ import net.minecraft.world.level.levelgen.WorldOptions;
 import net.minecraft.world.level.levelgen.presets.WorldPresets;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.platform.ClientPlatform;
 
 /**
  * Singleplayer for the benchmark runner, without its screens: a world created from a fixed seed as
@@ -64,8 +64,7 @@ public final class QuickWorlds {
         if (shared != null && atTitle) {
             pendingShared = null;
             LOGGER.info("Joining the shared world {} on {}", shared[1], shared[0]);
-            minecraft.gui.setScreen(
-                    new rinth.client.relay.RelayConnectScreen(new TitleScreen(), shared[0], shared[1]));
+            minecraft.gui.setScreen(new rinth.client.relay.RelayConnectScreen(new TitleScreen(), shared[0], shared[1]));
             return;
         }
         String name = pendingName;

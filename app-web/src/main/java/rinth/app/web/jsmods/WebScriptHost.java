@@ -1,12 +1,6 @@
 package rinth.app.web.jsmods;
 
 import com.mojang.logging.LogUtils;
-import rinth.framework.game.Game;
-import rinth.framework.game.GameKey;
-import rinth.framework.game.PlayerView;
-import rinth.framework.hud.HudCanvas;
-import rinth.framework.script.ScriptHost;
-import rinth.framework.script.Scripts;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -19,6 +13,12 @@ import org.slf4j.Logger;
 import org.teavm.jso.JSBody;
 import org.teavm.jso.JSFunctor;
 import org.teavm.jso.JSObject;
+import rinth.framework.game.Game;
+import rinth.framework.game.GameKey;
+import rinth.framework.game.PlayerView;
+import rinth.framework.hud.HudCanvas;
+import rinth.framework.script.ScriptHost;
+import rinth.framework.script.Scripts;
 
 /**
  * The browser's script host (ADR 0067): the player's JavaScript mods run in the page

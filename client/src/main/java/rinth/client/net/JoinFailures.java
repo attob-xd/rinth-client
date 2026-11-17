@@ -1,9 +1,9 @@
 package rinth.client.net;
 
-import rinth.client.eagler.EaglerJoinFailures;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import rinth.client.eagler.EaglerJoinFailures;
 
 /**
  * {@code DisconnectedScreen.init}: a join that failed in a way Rinth can act on is taken up here

@@ -1,6 +1,5 @@
 package rinth.client.world;
 
-import rinth.client.platform.ClientPlatform;
 import java.util.AbstractList;
 import java.util.List;
 import java.util.RandomAccess;
@@ -19,6 +18,7 @@ import net.minecraft.world.level.biome.BiomeSource;
 import net.minecraft.world.level.levelgen.RandomState;
 import net.minecraft.world.level.levelgen.structure.placement.ConcentricRingsStructurePlacement;
 import org.jspecify.annotations.Nullable;
+import rinth.client.platform.ClientPlatform;
 
 /**
  * Concentric ring placements (the strongholds) worked out ring by ring, when a chunk asks, instead

@@ -1,12 +1,12 @@
 package rinth.client.look;
 
-import rinth.client.relay.RelayScreen;
-import rinth.client.ui.Look;
-import rinth.client.ui.ScreenEdits;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.PauseScreen;
 import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.client.gui.screens.multiplayer.JoinMultiplayerScreen;
+import rinth.client.relay.RelayScreen;
+import rinth.client.ui.Look;
+import rinth.client.ui.ScreenEdits;
 
 /**
  * Puts the client's look on: the skin ({@link Look}) and the edits to the game's screens, or, in

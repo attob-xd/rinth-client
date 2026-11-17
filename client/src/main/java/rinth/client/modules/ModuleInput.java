@@ -1,9 +1,5 @@
 package rinth.client.modules;
 
-import rinth.framework.ModuleSystem;
-import rinth.framework.event.ClickListener;
-import rinth.framework.event.Events;
-import rinth.framework.event.MovementInput;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Options;
 import net.minecraft.client.player.LocalPlayer;
@@ -11,6 +7,10 @@ import net.minecraft.world.entity.player.Input;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import org.jspecify.annotations.Nullable;
+import rinth.framework.ModuleSystem;
+import rinth.framework.event.ClickListener;
+import rinth.framework.event.Events;
+import rinth.framework.event.MovementInput;
 
 /**
  * The movement event ({@link Events#MOVEMENT}): the local player's movement keys, after the game

@@ -1,9 +1,5 @@
 package rinth.client.recorder;
 
-import rinth.client.RinthKeys;
-import rinth.client.settings.ClientSettings;
-import rinth.platform.api.PlatformRecorder;
-import rinth.platform.api.Platforms;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -11,6 +7,10 @@ import java.util.Locale;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.network.chat.Component;
+import rinth.client.RinthKeys;
+import rinth.client.settings.ClientSettings;
+import rinth.platform.api.PlatformRecorder;
+import rinth.platform.api.Platforms;
 
 /**
  * The screen recorder (ADR 0062), as Eaglercraft's browser builds have it: Record Screen in Rinth

@@ -1,8 +1,5 @@
 package rinth.tools.webbuild;
 
-import rinth.tools.survey.Finding;
-import rinth.tools.survey.Origins;
-import rinth.tools.survey.SurveyRules;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,6 +8,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import org.jspecify.annotations.Nullable;
+import rinth.tools.survey.Finding;
+import rinth.tools.survey.Origins;
+import rinth.tools.survey.SurveyRules;
 
 /**
  * Decides which missing symbols the browser build removes, and keeps the list of what it removed.

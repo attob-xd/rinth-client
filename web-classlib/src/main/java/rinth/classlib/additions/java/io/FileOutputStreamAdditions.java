@@ -1,9 +1,9 @@
 package rinth.classlib.additions.java.io;
 
+import java.io.FileOutputStream;
 import rinth.classlib.InstanceMethod;
 import rinth.classlib.nio.FileChannels;
 import rinth.classlib.substitutes.java.nio.channels.TFileChannel;
-import java.io.FileOutputStream;
 
 /** {@code java.io.FileOutputStream} methods TeaVM lacks. */
 public final class FileOutputStreamAdditions {

@@ -1,8 +1,8 @@
 package rinth.framework.game;
 
-import rinth.framework.waypoint.Waypoint;
 import java.util.function.Consumer;
 import org.jspecify.annotations.Nullable;
+import rinth.framework.waypoint.Waypoint;
 
 /**
  * The game as modules see it: the local player, the world they're in, the options a module may

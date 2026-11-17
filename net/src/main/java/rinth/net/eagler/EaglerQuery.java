@@ -1,9 +1,9 @@
 package rinth.net.eagler;
 
-import rinth.platform.api.net.NetConnection;
-import rinth.platform.api.net.PlatformNetwork;
 import java.nio.ByteBuffer;
 import org.jspecify.annotations.Nullable;
+import rinth.platform.api.net.NetConnection;
+import rinth.platform.api.net.PlatformNetwork;
 
 /**
  * An Eagler server's MOTD, the server list's ping for a WebSocket server. Eagler servers don't

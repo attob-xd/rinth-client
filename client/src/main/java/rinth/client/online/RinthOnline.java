@@ -1,10 +1,6 @@
 package rinth.client.online;
 
 import com.mojang.logging.LogUtils;
-import rinth.client.modules.ModuleStorage;
-import rinth.client.platform.ClientPlatform;
-import rinth.online.OnlineService;
-import rinth.online.Social;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,6 +14,10 @@ import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.util.Util;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.modules.ModuleStorage;
+import rinth.client.platform.ClientPlatform;
+import rinth.online.OnlineService;
+import rinth.online.Social;
 
 /**
  * The client's Rinth account and its connection to the online service (ADR 0058). Accounts aren't

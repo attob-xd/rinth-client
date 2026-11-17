@@ -2,6 +2,8 @@ package rinth.features.armorpotionview;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import rinth.features.armorpotionview.ArmorPotionView.Durability;
 import rinth.framework.game.EffectCategory;
 import rinth.framework.game.EquipmentSlot;
@@ -9,8 +11,6 @@ import rinth.framework.hud.Anchor;
 import rinth.framework.hud.HudElement;
 import rinth.framework.testing.FakePlayer;
 import rinth.framework.testing.TestGame;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 class ArmorPotionViewTest {
 

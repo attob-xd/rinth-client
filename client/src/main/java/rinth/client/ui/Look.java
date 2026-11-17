@@ -1,7 +1,6 @@
 package rinth.client.ui;
 
 import com.mojang.logging.LogUtils;
-import rinth.client.RinthBuild;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -10,6 +9,7 @@ import java.util.Locale;
 import net.minecraft.client.Minecraft;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.RinthBuild;
 
 /**
  * The client's look: Rinth's skin over the game's GUI, and the player's {@link GuiPreset},

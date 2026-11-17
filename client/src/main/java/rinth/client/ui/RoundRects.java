@@ -3,7 +3,6 @@ package rinth.client.ui;
 import com.mojang.blaze3d.platform.NativeImage;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.renderpearl.api.pipeline.RenderPipeline;
-import rinth.client.ui.UiAtlas.Region;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.navigation.ScreenRectangle;
@@ -14,6 +13,7 @@ import net.minecraft.client.renderer.state.gui.GuiElementRenderState;
 import org.joml.Matrix3x2f;
 import org.joml.Matrix3x2fc;
 import org.jspecify.annotations.Nullable;
+import rinth.client.ui.UiAtlas.Region;
 
 /**
  * Rounded rectangles for the skin: filled, outlined and soft shadows, smooth at any GUI scale.

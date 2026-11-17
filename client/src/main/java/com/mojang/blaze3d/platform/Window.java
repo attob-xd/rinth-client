@@ -4,12 +4,6 @@ import com.mojang.blaze3d.platform.cursor.CursorType;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.logging.LogUtils;
 import com.mojang.renderpearl.api.device.GpuBackend;
-import rinth.client.platform.ClientPlatform;
-import rinth.client.platform.DisplayModes;
-import rinth.platform.api.window.DisplayMode;
-import rinth.platform.api.window.IconImage;
-import rinth.platform.api.window.PlatformWindow;
-import rinth.platform.api.window.WindowSpec;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -24,6 +18,12 @@ import net.minecraft.client.main.SilentInitException;
 import net.minecraft.server.packs.PackMetadataResources;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.platform.ClientPlatform;
+import rinth.client.platform.DisplayModes;
+import rinth.platform.api.window.DisplayMode;
+import rinth.platform.api.window.IconImage;
+import rinth.platform.api.window.PlatformWindow;
+import rinth.platform.api.window.WindowSpec;
 
 /**
  * Rinth's replacement for Mojang's window (patches/classes.txt). It keeps the game-facing state

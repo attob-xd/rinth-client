@@ -1,5 +1,14 @@
 package rinth.platform.web;
 
+import java.net.URI;
+import java.util.concurrent.ExecutorService;
+import org.jspecify.annotations.Nullable;
+import org.teavm.interop.Async;
+import org.teavm.interop.AsyncCallback;
+import org.teavm.jso.JSBody;
+import org.teavm.jso.JSFunctor;
+import org.teavm.jso.JSObject;
+import org.teavm.jso.typedarrays.ArrayBuffer;
 import rinth.platform.api.AppInfo;
 import rinth.platform.api.NativeSurfaceFactory;
 import rinth.platform.api.Platform;
@@ -17,15 +26,6 @@ import rinth.platform.api.window.PlatformEventListener;
 import rinth.platform.api.window.PlatformWindow;
 import rinth.platform.api.window.WindowSpec;
 import rinth.platform.web.storage.WebFileSystem;
-import java.net.URI;
-import java.util.concurrent.ExecutorService;
-import org.jspecify.annotations.Nullable;
-import org.teavm.interop.Async;
-import org.teavm.interop.AsyncCallback;
-import org.teavm.jso.JSBody;
-import org.teavm.jso.JSFunctor;
-import org.teavm.jso.JSObject;
-import org.teavm.jso.typedarrays.ArrayBuffer;
 
 /**
  * The platform in a copy of the game started in a worker (ADR 0039): singleplayer's server, which

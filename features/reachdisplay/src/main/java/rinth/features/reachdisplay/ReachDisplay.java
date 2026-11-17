@@ -1,5 +1,6 @@
 package rinth.features.reachdisplay;
 
+import org.jspecify.annotations.Nullable;
 import rinth.framework.Category;
 import rinth.framework.Module;
 import rinth.framework.event.Events;
@@ -9,7 +10,6 @@ import rinth.framework.hud.TextElement;
 import rinth.framework.hud.Tone;
 import rinth.framework.setting.BooleanSetting;
 import rinth.framework.setting.IntSetting;
-import org.jspecify.annotations.Nullable;
 
 /**
  * Reach Display: how far the player's last hit reached, from their eyes to where the crosshair met

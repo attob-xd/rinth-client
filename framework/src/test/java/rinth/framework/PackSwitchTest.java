@@ -3,8 +3,8 @@ package rinth.framework;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import rinth.framework.testing.TestGame;
 import org.junit.jupiter.api.Test;
+import rinth.framework.testing.TestGame;
 
 /** A module that's the switch for a resource pack ({@link Module#followPack}). */
 class PackSwitchTest {

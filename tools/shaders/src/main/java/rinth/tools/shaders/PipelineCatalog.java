@@ -6,7 +6,6 @@ import com.google.gson.JsonParser;
 import com.mojang.renderpearl.api.pipeline.PolygonMode;
 import com.mojang.renderpearl.api.pipeline.RenderPipeline;
 import com.mojang.renderpearl.api.pipeline.ShaderType;
-import rinth.render.webgl2.shaders.ShaderStageKey;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
@@ -20,6 +19,7 @@ import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.client.renderer.ShaderDefines;
 import net.minecraft.client.renderer.oit.OitPipelineSet;
 import net.minecraft.resources.Identifier;
+import rinth.render.webgl2.shaders.ShaderStageKey;
 
 /**
  * Every pipeline the game can compile, as pairs of shader stages. The game's own pipelines come

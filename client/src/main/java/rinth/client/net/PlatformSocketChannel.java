@@ -1,11 +1,11 @@
 package rinth.client.net;
 
+import java.net.InetSocketAddress;
 import rinth.client.platform.ClientPlatform;
 import rinth.client.singleplayer.ChannelLink;
 import rinth.net.NetConnectionChannel;
 import rinth.net.relay.RelayWorldAddress;
 import rinth.platform.api.net.NetConnection;
-import java.net.InetSocketAddress;
 
 /**
  * The game's client channel: {@link NetConnectionChannel} over the installed platform's network,

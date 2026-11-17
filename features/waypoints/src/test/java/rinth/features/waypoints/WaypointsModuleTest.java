@@ -2,6 +2,9 @@ package rinth.features.waypoints;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.List;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import rinth.features.waypoints.WaypointsModule.Labels;
 import rinth.framework.game.PlayerView;
 import rinth.framework.hud.Shape;
@@ -9,9 +12,6 @@ import rinth.framework.testing.FakePlayer;
 import rinth.framework.testing.TestGame;
 import rinth.framework.waypoint.Waypoint;
 import rinth.framework.waypoint.Waypoints;
-import java.util.List;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 class WaypointsModuleTest {
 

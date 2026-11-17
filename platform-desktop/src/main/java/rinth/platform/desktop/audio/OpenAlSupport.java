@@ -1,13 +1,13 @@
 package rinth.platform.desktop.audio;
 
-import rinth.platform.api.audio.AudioException;
-import rinth.platform.api.audio.PcmFormat;
 import java.util.Arrays;
 import org.lwjgl.openal.AL10;
 import org.lwjgl.openal.ALC10;
 import org.lwjgl.openal.ALC11;
 import org.lwjgl.openal.SOFTHRTF;
 import org.lwjgl.openal.SOFTOutputLimiter;
+import rinth.platform.api.audio.AudioException;
+import rinth.platform.api.audio.PcmFormat;
 
 /**
  * The decisions around OpenAL calls that don't need a device: which format enum to upload with,

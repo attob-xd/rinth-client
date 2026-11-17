@@ -1,10 +1,10 @@
 package rinth.platform.web;
 
+import java.util.List;
+import org.jspecify.annotations.Nullable;
 import rinth.platform.api.window.DisplayInfo;
 import rinth.platform.api.window.DisplayMode;
 import rinth.platform.api.window.PlatformDisplays;
-import java.util.List;
-import org.jspecify.annotations.Nullable;
 
 /** The screen the page is on: the only display a page can see. */
 final class WebDisplays implements PlatformDisplays {

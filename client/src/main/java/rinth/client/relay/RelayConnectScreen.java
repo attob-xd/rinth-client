@@ -1,10 +1,6 @@
 package rinth.client.relay;
 
 import com.mojang.logging.LogUtils;
-import rinth.client.net.ServerConnections;
-import rinth.client.platform.ClientPlatform;
-import rinth.net.relay.RelayJoin;
-import rinth.net.relay.RelayWorldAddress;
 import io.netty.channel.ChannelFuture;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
@@ -24,6 +20,10 @@ import net.minecraft.server.network.EventLoopGroupHolder;
 import net.minecraft.util.Util;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.client.net.ServerConnections;
+import rinth.client.platform.ClientPlatform;
+import rinth.net.relay.RelayJoin;
+import rinth.net.relay.RelayWorldAddress;
 
 /**
  * Joins a shared world (ADR 0019): {@link RelayJoin} pairs the client with the world's host

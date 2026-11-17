@@ -2,7 +2,6 @@ package rinth.client.world;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.client.testing.TestPlatform;
 import java.util.Random;
 import net.minecraft.world.level.levelgen.LegacyRandomSource;
 import net.minecraft.world.level.levelgen.PositionalRandomFactory;
@@ -10,6 +9,7 @@ import net.minecraft.world.level.levelgen.XoroshiroRandomSource;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import rinth.client.testing.TestPlatform;
 
 /** {@link PositionalRandoms}' first draws are the ones the game's randoms would make, bit for bit. */
 class PositionalRandomsTest {

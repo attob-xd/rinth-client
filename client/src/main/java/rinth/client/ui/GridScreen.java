@@ -1,7 +1,6 @@
 package rinth.client.ui;
 
 import com.mojang.blaze3d.platform.InputConstants;
-import rinth.framework.setting.GridSetting;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
@@ -9,6 +8,7 @@ import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import org.jspecify.annotations.Nullable;
+import rinth.framework.setting.GridSetting;
 
 /**
  * Edits a {@link GridSetting} cell by cell: a click turns a cell on or off, and a drag paints what

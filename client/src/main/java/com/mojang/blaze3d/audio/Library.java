@@ -1,10 +1,6 @@
 package com.mojang.blaze3d.audio;
 
 import com.mojang.logging.LogUtils;
-import rinth.platform.api.Platforms;
-import rinth.platform.api.audio.AudioDevice;
-import rinth.platform.api.audio.AudioException;
-import rinth.platform.api.audio.PlatformAudio;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.IdentityHashMap;
@@ -14,6 +10,10 @@ import java.util.Set;
 import net.minecraft.SharedConstants;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
+import rinth.platform.api.Platforms;
+import rinth.platform.api.audio.AudioDevice;
+import rinth.platform.api.audio.AudioException;
+import rinth.platform.api.audio.PlatformAudio;
 
 /**
  * Rinth replacement: the sound engine's output, over the platform's {@link PlatformAudio}.

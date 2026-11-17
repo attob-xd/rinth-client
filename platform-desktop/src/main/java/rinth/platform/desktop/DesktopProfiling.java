@@ -1,12 +1,12 @@
 package rinth.platform.desktop;
 
-import rinth.platform.api.profile.FrameSample;
-import rinth.platform.api.profile.MemoryUsage;
-import rinth.platform.api.profile.PlatformProfiling;
 import java.lang.management.BufferPoolMXBean;
 import java.lang.management.GarbageCollectorMXBean;
 import java.lang.management.ManagementFactory;
 import java.util.List;
+import rinth.platform.api.profile.FrameSample;
+import rinth.platform.api.profile.MemoryUsage;
+import rinth.platform.api.profile.PlatformProfiling;
 
 /**
  * Profiling on the JVM: the heap and the collections from the JVM's management beans, the

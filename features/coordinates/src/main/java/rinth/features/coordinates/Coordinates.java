@@ -1,5 +1,6 @@
 package rinth.features.coordinates;
 
+import org.jspecify.annotations.Nullable;
 import rinth.framework.Category;
 import rinth.framework.Module;
 import rinth.framework.game.PlayerView;
@@ -10,7 +11,6 @@ import rinth.framework.hud.TextElement;
 import rinth.framework.hud.Tone;
 import rinth.framework.setting.BooleanSetting;
 import rinth.framework.setting.ChoiceSetting;
-import org.jspecify.annotations.Nullable;
 
 /**
  * Coordinates: where the player is, block by block, which way they face, the biome they stand in,

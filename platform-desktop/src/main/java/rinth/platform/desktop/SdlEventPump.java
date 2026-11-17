@@ -2,8 +2,6 @@ package rinth.platform.desktop;
 
 import static org.lwjgl.sdl.SDLEvents.*;
 
-import rinth.platform.api.input.KeyAction;
-import rinth.platform.api.window.PlatformEventListener;
 import java.util.ArrayList;
 import java.util.List;
 import org.jspecify.annotations.Nullable;
@@ -14,6 +12,8 @@ import org.lwjgl.sdl.SDL_KeyboardEvent;
 import org.lwjgl.sdl.SDL_MouseMotionEvent;
 import org.lwjgl.sdl.SDL_MouseWheelEvent;
 import org.lwjgl.sdl.SDL_TextEditingEvent;
+import rinth.platform.api.input.KeyAction;
+import rinth.platform.api.window.PlatformEventListener;
 
 /** Drains SDL's event queue into a {@link PlatformEventListener}. */
 final class SdlEventPump implements AutoCloseable {

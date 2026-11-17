@@ -1,7 +1,7 @@
 package rinth.classlib.substitutes.org.lwjgl;
 
-import rinth.classlib.memory.Heap;
 import java.nio.ByteBuffer;
+import rinth.classlib.memory.Heap;
 
 /**
  * LWJGL's {@code BufferUtils}: zeroed, native-order buffers the garbage collector frees, which in

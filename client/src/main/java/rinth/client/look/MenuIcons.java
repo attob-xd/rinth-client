@@ -1,7 +1,7 @@
 package rinth.client.look;
 
-import rinth.client.ui.Icons;
 import org.jspecify.annotations.Nullable;
+import rinth.client.ui.Icons;
 
 /** The icons modules name for their menu buttons ({@code MenuButton.icon}). */
 final class MenuIcons {

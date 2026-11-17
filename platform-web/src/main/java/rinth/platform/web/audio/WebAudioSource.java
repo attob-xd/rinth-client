@@ -1,13 +1,13 @@
 package rinth.platform.web.audio;
 
-import rinth.platform.api.audio.AudioBuffer;
-import rinth.platform.api.audio.AudioException;
-import rinth.platform.api.audio.AudioSource;
 import java.util.ArrayList;
 import java.util.List;
 import org.jspecify.annotations.Nullable;
 import org.teavm.jso.JSObject;
 import org.teavm.jso.typedarrays.Int8Array;
+import rinth.platform.api.audio.AudioBuffer;
+import rinth.platform.api.audio.AudioException;
+import rinth.platform.api.audio.AudioSource;
 
 /**
  * One source, with OpenAL's semantics over Web Audio's nodes: a static buffer (paused by

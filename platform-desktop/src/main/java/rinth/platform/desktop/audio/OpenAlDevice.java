@@ -1,12 +1,5 @@
 package rinth.platform.desktop.audio;
 
-import rinth.platform.api.PlatformLog;
-import rinth.platform.api.audio.AudioBuffer;
-import rinth.platform.api.audio.AudioDevice;
-import rinth.platform.api.audio.AudioException;
-import rinth.platform.api.audio.AudioListener;
-import rinth.platform.api.audio.AudioSource;
-import rinth.platform.api.audio.PcmFormat;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Set;
@@ -23,6 +16,13 @@ import org.lwjgl.openal.EXTDisconnect;
 import org.lwjgl.openal.EXTSourceDistanceModel;
 import org.lwjgl.openal.SOFTHRTF;
 import org.lwjgl.system.MemoryUtil;
+import rinth.platform.api.PlatformLog;
+import rinth.platform.api.audio.AudioBuffer;
+import rinth.platform.api.audio.AudioDevice;
+import rinth.platform.api.audio.AudioException;
+import rinth.platform.api.audio.AudioListener;
+import rinth.platform.api.audio.AudioSource;
+import rinth.platform.api.audio.PcmFormat;
 
 /**
  * An OpenAL device with its one context, made current for the whole process. The game keeps a

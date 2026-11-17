@@ -3,16 +3,16 @@ package rinth.client.render.terrain;
 import com.mojang.blaze3d.vertex.MeshData;
 import com.mojang.renderpearl.api.buffers.GpuBuffer;
 import com.mojang.renderpearl.api.pipeline.IndexType;
-import rinth.client.render.SectionLayers;
-import rinth.client.render.mesher.Layers;
-import rinth.mesher.Facings;
-import rinth.mesher.MeshTables;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.client.renderer.chunk.CompiledSectionMesh;
 import net.minecraft.client.renderer.chunk.SectionCompiler;
 import net.minecraft.client.renderer.chunk.SectionMesh;
 import net.minecraft.client.renderer.chunk.SectionRenderDispatcher;
 import org.jspecify.annotations.Nullable;
+import rinth.client.render.SectionLayers;
+import rinth.client.render.mesher.Layers;
+import rinth.mesher.Facings;
+import rinth.mesher.MeshTables;
 
 /**
  * One section mesh's draws, kept between frames (ADR 0030). The game finds them again every frame:

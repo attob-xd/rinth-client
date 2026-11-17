@@ -1,9 +1,9 @@
 package rinth.classlib.additions.java.lang;
 
+import java.time.Duration;
 import rinth.classlib.InstanceMethod;
 import rinth.classlib.concurrent.VirtualThreadBuilder;
 import rinth.classlib.substitutes.java.lang.TThread$Builder$OfVirtual;
-import java.time.Duration;
 
 /** {@code java.lang.Thread} methods TeaVM lacks. */
 public final class ThreadAdditions {

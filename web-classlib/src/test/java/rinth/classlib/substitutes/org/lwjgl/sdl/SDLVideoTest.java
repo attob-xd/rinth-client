@@ -2,8 +2,8 @@ package rinth.classlib.substitutes.org.lwjgl.sdl;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import rinth.classlib.util.PageWindow;
 import org.junit.jupiter.api.Test;
+import rinth.classlib.util.PageWindow;
 
 class SDLVideoTest {
 

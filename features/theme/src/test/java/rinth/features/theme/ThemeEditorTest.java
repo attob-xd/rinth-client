@@ -2,12 +2,12 @@ package rinth.features.theme;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Test;
 import rinth.framework.game.ThemeColors;
 import rinth.framework.game.UiFont;
 import rinth.framework.setting.ActionSetting;
 import rinth.framework.setting.ColorSetting;
 import rinth.framework.testing.TestGame;
-import org.junit.jupiter.api.Test;
 
 class ThemeEditorTest {
 

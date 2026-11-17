@@ -1,12 +1,12 @@
 package rinth.client.net;
 
-import rinth.net.WebSocketAddress;
-import rinth.net.WebSocketUrl;
 import java.net.InetSocketAddress;
 import java.util.Optional;
 import net.minecraft.client.multiplayer.resolver.AddressCheck;
 import net.minecraft.client.multiplayer.resolver.ResolvedServerAddress;
 import net.minecraft.client.multiplayer.resolver.ServerAddress;
+import rinth.net.WebSocketAddress;
+import rinth.net.WebSocketUrl;
 
 /**
  * Servers named by a {@code ws://} or {@code wss://} address (ADR 0009): resolving one needs no DNS

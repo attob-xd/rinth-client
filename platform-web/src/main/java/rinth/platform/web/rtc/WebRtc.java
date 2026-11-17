@@ -1,11 +1,5 @@
 package rinth.platform.web.rtc;
 
-import rinth.platform.api.net.NetConnection;
-import rinth.platform.api.rtc.IceServer;
-import rinth.platform.api.rtc.Microphone;
-import rinth.platform.api.rtc.PlatformRtc;
-import rinth.platform.api.rtc.RemoteVoice;
-import rinth.platform.api.rtc.RtcPeer;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -15,6 +9,12 @@ import org.teavm.jso.JSBody;
 import org.teavm.jso.JSObject;
 import org.teavm.jso.typedarrays.ArrayBuffer;
 import org.teavm.jso.typedarrays.Int8Array;
+import rinth.platform.api.net.NetConnection;
+import rinth.platform.api.rtc.IceServer;
+import rinth.platform.api.rtc.Microphone;
+import rinth.platform.api.rtc.PlatformRtc;
+import rinth.platform.api.rtc.RemoteVoice;
+import rinth.platform.api.rtc.RtcPeer;
 
 /**
  * WebRTC in the browser (ADR 0019): peer connections for Eagler voice and for worlds shared

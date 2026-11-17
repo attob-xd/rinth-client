@@ -7,12 +7,12 @@ import java.nio.charset.StandardCharsets;
  * What an Rinth host says first on a guest's data channel (ADR 0062), so an Rinth guest knows the
  * world is today's game and joins it as it is, without Via and Eagler's 1.8 login. Eagler's hosts
  * never speak first: their guest does. One message: a kind byte none of {@link LanFraming}'s
- * (0x49), "RINTH", then the game's protocol number as four bytes, big-endian.
+ * (0x49), "INCARI" (the wire format Incari hosts send), then the game's protocol number as four bytes, big-endian.
  */
 public final class HostHello {
 
     private static final byte KIND = 0x49;
-    private static final byte[] MAGIC = "RINTH".getBytes(StandardCharsets.US_ASCII);
+    private static final byte[] MAGIC = "INCARI".getBytes(StandardCharsets.US_ASCII);
     private static final int LENGTH = 1 + 6 + 4;
 
     /** How long a guest waits for it after the channel opens, before taking the host for Eagler's. */

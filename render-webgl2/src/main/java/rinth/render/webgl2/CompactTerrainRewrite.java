@@ -1,10 +1,10 @@
 package rinth.render.webgl2;
 
-import rinth.render.webgl2.shaders.TranslatedStage;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import rinth.render.webgl2.shaders.TranslatedStage;
 
 /**
  * Rewrites a terrain vertex shader to read Rinth's compact terrain vertex (ADR 0023) instead

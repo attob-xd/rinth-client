@@ -1,14 +1,14 @@
 package rinth.classlib.nio;
 
-import rinth.classlib.substitutes.java.nio.channels.TFileChannel;
-import rinth.classlib.substitutes.java.nio.channels.TFileLock;
-import rinth.classlib.substitutes.java.nio.channels.TOverlappingFileLockException;
 import java.io.IOException;
 import java.nio.channels.ClosedChannelException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import rinth.classlib.substitutes.java.nio.channels.TFileChannel;
+import rinth.classlib.substitutes.java.nio.channels.TFileLock;
+import rinth.classlib.substitutes.java.nio.channels.TOverlappingFileLockException;
 
 /**
  * The file locks this program holds, by file. The JDK refuses a lock that overlaps one already

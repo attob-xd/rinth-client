@@ -1,5 +1,7 @@
 package rinth.features.theme;
 
+import java.util.Locale;
+import org.jspecify.annotations.Nullable;
 import rinth.framework.Category;
 import rinth.framework.Module;
 import rinth.framework.event.Events;
@@ -8,8 +10,6 @@ import rinth.framework.game.UiFont;
 import rinth.framework.setting.ChoiceSetting;
 import rinth.framework.setting.ColorSetting;
 import rinth.framework.setting.IntSetting;
-import java.util.Locale;
-import org.jspecify.annotations.Nullable;
 
 /**
  * Theme Editor: the client's colors and font, menus and HUD alike. Pick a preset, or change the

@@ -1,6 +1,5 @@
 package rinth.classlib.substitutes.java.lang;
 
-import rinth.classlib.UnknownCaller;
 import java.lang.invoke.MethodType;
 import java.util.Collections;
 import java.util.EnumSet;
@@ -8,6 +7,7 @@ import java.util.Set;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Stream;
+import rinth.classlib.UnknownCaller;
 
 /**
  * {@code java.lang.StackWalker}, which TeaVM lacks. The browser build can't see its own call stack

@@ -1,8 +1,6 @@
 package rinth.client.ui;
 
 import com.mojang.blaze3d.platform.NativeImage;
-import rinth.client.ui.UiAtlas.Region;
-import rinth.framework.hud.Shape;
 import java.util.EnumMap;
 import java.util.Map;
 import net.minecraft.client.Minecraft;
@@ -10,6 +8,8 @@ import net.minecraft.client.gui.GuiGraphicsExtractor;
 import org.joml.Matrix3x2f;
 import org.joml.Matrix3x2fStack;
 import org.jspecify.annotations.Nullable;
+import rinth.client.ui.UiAtlas.Region;
+import rinth.framework.hud.Shape;
 
 /**
  * The canvas's small shapes ({@link Shape}): waypoint icons, the minimap's arrow. Each is painted,

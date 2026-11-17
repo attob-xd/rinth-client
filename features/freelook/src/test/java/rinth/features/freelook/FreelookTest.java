@@ -2,13 +2,13 @@ package rinth.features.freelook;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Test;
 import rinth.framework.event.CameraAngles;
 import rinth.framework.event.Turn;
 import rinth.framework.game.Perspective;
 import rinth.framework.setting.ChoiceSetting;
 import rinth.framework.setting.Key;
 import rinth.framework.testing.TestGame;
-import org.junit.jupiter.api.Test;
 
 class FreelookTest {
 

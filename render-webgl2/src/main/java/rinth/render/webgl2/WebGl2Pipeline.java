@@ -14,13 +14,13 @@ import com.mojang.renderpearl.api.pipeline.PolygonMode;
 import com.mojang.renderpearl.api.pipeline.RenderPipeline;
 import com.mojang.renderpearl.api.pipeline.UniformType;
 import com.mojang.renderpearl.backend.api.BackendRenderPipeline;
-import rinth.render.webgl2.shaders.TranslatedStage;
 import java.util.List;
 import org.jspecify.annotations.Nullable;
 import org.teavm.jso.webgl.WebGL2RenderingContext;
 import org.teavm.jso.webgl.WebGLProgram;
 import org.teavm.jso.webgl.WebGLShader;
 import org.teavm.jso.webgl.WebGLUniformLocation;
+import rinth.render.webgl2.shaders.TranslatedStage;
 
 /**
  * A pipeline: its translated program plus the fixed-function state the game describes with it.

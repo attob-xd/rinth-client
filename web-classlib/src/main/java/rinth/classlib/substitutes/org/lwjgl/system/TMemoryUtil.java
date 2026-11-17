@@ -1,10 +1,10 @@
 package rinth.classlib.substitutes.org.lwjgl.system;
 
-import rinth.classlib.memory.Heap;
-import rinth.classlib.substitutes.org.lwjgl.TPointerBuffer;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 import org.jspecify.annotations.Nullable;
+import rinth.classlib.memory.Heap;
+import rinth.classlib.substitutes.org.lwjgl.TPointerBuffer;
 
 /**
  * LWJGL's {@code MemoryUtil}, the part the game uses outside its OpenGL and Vulkan backends (native

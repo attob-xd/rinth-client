@@ -3,7 +3,6 @@ package rinth.client.world;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.mojang.serialization.DynamicOps;
-import rinth.client.testing.VanillaRegistries;
 import io.netty.buffer.Unpooled;
 import it.unimi.dsi.fastutil.shorts.ShortList;
 import java.util.HashMap;
@@ -54,6 +53,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import rinth.client.testing.VanillaRegistries;
 
 /**
  * A chunk's terrain built by a helper ({@link RemoteTerrain}, ADR 0042) is the chunk the server

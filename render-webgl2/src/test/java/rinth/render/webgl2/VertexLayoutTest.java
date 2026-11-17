@@ -5,10 +5,10 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import com.mojang.renderpearl.api.GpuFormat;
 import com.mojang.renderpearl.api.vertex.VertexFormat;
-import rinth.render.webgl2.shaders.TranslatedStage;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
+import rinth.render.webgl2.shaders.TranslatedStage;
 
 class VertexLayoutTest {
 

@@ -1,7 +1,5 @@
 package rinth.classlib.substitutes.java.util.concurrent;
 
-import rinth.classlib.concurrent.Monitors;
-import rinth.classlib.concurrent.SnapshotIterator;
 import java.util.AbstractCollection;
 import java.util.ArrayDeque;
 import java.util.Collection;
@@ -11,6 +9,8 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.function.Consumer;
 import org.jspecify.annotations.Nullable;
+import rinth.classlib.concurrent.Monitors;
+import rinth.classlib.concurrent.SnapshotIterator;
 
 /**
  * {@code java.util.concurrent.ConcurrentLinkedDeque}: an unbounded, non-blocking deque. As with

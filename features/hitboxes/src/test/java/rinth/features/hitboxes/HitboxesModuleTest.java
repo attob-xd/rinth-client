@@ -2,9 +2,9 @@ package rinth.features.hitboxes;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Test;
 import rinth.framework.game.Hitboxes;
 import rinth.framework.testing.TestGame;
-import org.junit.jupiter.api.Test;
 
 class HitboxesModuleTest {
 

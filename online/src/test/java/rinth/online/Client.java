@@ -1,12 +1,12 @@
 package rinth.online;
 
-import rinth.framework.config.ConfigStorage;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import org.jspecify.annotations.Nullable;
+import rinth.framework.config.ConfigStorage;
 
 /** One client against a {@link FakeService}: a service, its storage, a clock the test moves. */
 final class Client {

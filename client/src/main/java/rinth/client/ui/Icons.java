@@ -1,13 +1,13 @@
 package rinth.client.ui;
 
 import com.mojang.blaze3d.platform.NativeImage;
-import rinth.client.ui.UiAtlas.Region;
 import java.util.EnumMap;
 import java.util.Map;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import org.joml.Matrix3x2f;
 import org.jspecify.annotations.Nullable;
+import rinth.client.ui.UiAtlas.Region;
 
 /**
  * The client's line icons, drawn by Rinth: each a few strokes and shapes described as distances,

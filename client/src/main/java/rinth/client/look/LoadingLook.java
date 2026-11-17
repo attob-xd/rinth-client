@@ -3,11 +3,6 @@ package rinth.client.look;
 import com.mojang.blaze3d.platform.NativeImage;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.renderpearl.api.textures.FilterMode;
-import rinth.client.ui.Logo;
-import rinth.client.ui.Look;
-import rinth.client.ui.MenuBackdrop;
-import rinth.client.ui.RoundRects;
-import rinth.client.ui.Theme;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.renderer.RenderPipelines;
@@ -16,6 +11,11 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.util.ARGB;
 import net.minecraft.util.Util;
 import org.jspecify.annotations.Nullable;
+import rinth.client.ui.Logo;
+import rinth.client.ui.Look;
+import rinth.client.ui.MenuBackdrop;
+import rinth.client.ui.RoundRects;
+import rinth.client.ui.Theme;
 
 /**
  * The loading screen in the client's look: the menus' photo ({@link MenuBackdrop}), Rinth's mark

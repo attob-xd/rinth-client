@@ -1,21 +1,5 @@
 package rinth.client.cosmetics;
 
-import rinth.client.RinthKeys;
-import rinth.client.online.AccountScreen;
-import rinth.client.online.RinthOnline;
-import rinth.client.profile.PlayerName;
-import rinth.client.ui.Icons;
-import rinth.client.ui.Panels;
-import rinth.client.ui.RoundRects;
-import rinth.client.ui.ScreenPanels;
-import rinth.client.ui.Theme;
-import rinth.client.ui.Ui;
-import rinth.framework.online.Online;
-import rinth.online.Catalog;
-import rinth.online.Cosmetic;
-import rinth.online.Loadout;
-import rinth.online.OnlineService;
-import rinth.online.Wardrobe;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
@@ -33,6 +17,22 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.util.ARGB;
 import net.minecraft.util.FormattedCharSequence;
 import org.jspecify.annotations.Nullable;
+import rinth.client.RinthKeys;
+import rinth.client.online.AccountScreen;
+import rinth.client.online.RinthOnline;
+import rinth.client.profile.PlayerName;
+import rinth.client.ui.Icons;
+import rinth.client.ui.Panels;
+import rinth.client.ui.RoundRects;
+import rinth.client.ui.ScreenPanels;
+import rinth.client.ui.Theme;
+import rinth.client.ui.Ui;
+import rinth.framework.online.Online;
+import rinth.online.Catalog;
+import rinth.online.Cosmetic;
+import rinth.online.Loadout;
+import rinth.online.OnlineService;
+import rinth.online.Wardrobe;
 
 /**
  * The Wardrobe (ADR 0061): the player's cosmetics, laid out as the module menu is. Kinds down the

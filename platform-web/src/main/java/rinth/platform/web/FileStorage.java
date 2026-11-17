@@ -1,10 +1,10 @@
 package rinth.platform.web;
 
-import rinth.platform.api.storage.PlatformStorage;
-import rinth.platform.web.storage.WebFileSystem;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import org.jspecify.annotations.Nullable;
+import rinth.platform.api.storage.PlatformStorage;
+import rinth.platform.web.storage.WebFileSystem;
 
 /**
  * The platform's storage in the browser: where the game's folders are (the entry point's
