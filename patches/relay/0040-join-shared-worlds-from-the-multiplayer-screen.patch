@@ -1,0 +1,16 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 29 Sep 2026 18:36:09 -0400
+Subject: [PATCH] relay: Join shared worlds from the multiplayer screen
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/screens/multiplayer/JoinMultiplayerScreen.java b/src/main/java/net/minecraft/client/gui/screens/multiplayer/JoinMultiplayerScreen.java
+index 5df96127e0980bb2127c7638e6c2bed7b4db4170..a484399bffeded13fb082164ad3a8e0d559a4d05 100644
+--- a/src/main/java/net/minecraft/client/gui/screens/multiplayer/JoinMultiplayerScreen.java
++++ b/src/main/java/net/minecraft/client/gui/screens/multiplayer/JoinMultiplayerScreen.java
+@@ -128,2 +128,5 @@
+         bottomFooterButtons.addChild(Button.builder(Component.translatable("selectServer.refresh"), var1x -> this.refreshServerList()).width(74).build());
++        // Rinth start: joining a world shared through an Eagler relay
++        rinth.client.relay.RelayScreen.addButton(bottomFooterButtons, this);
++        // Rinth end
+         bottomFooterButtons.addChild(Button.builder(CommonComponents.GUI_BACK, var1x -> this.onClose()).width(74).build());

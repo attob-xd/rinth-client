@@ -1,0 +1,26 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 26 Sep 2026 11:07:57 -0400
+Subject: [PATCH] net: Route remote connections through the platform's
+ transport
+
+
+diff --git a/src/main/java/net/minecraft/server/network/EventLoopGroupHolder.java b/src/main/java/net/minecraft/server/network/EventLoopGroupHolder.java
+index ca53989da80a7552bfbe22f05f5ceaa147334b81..3329a0e7cc41f02918be0903f49a77e6dbb312db 100644
+--- a/src/main/java/net/minecraft/server/network/EventLoopGroupHolder.java
++++ b/src/main/java/net/minecraft/server/network/EventLoopGroupHolder.java
+@@ -56,2 +56,7 @@
+     public static EventLoopGroupHolder remote(final boolean allowNativeTransport) {
++        // Rinth start: connections go through the platform's transport
++        if (rinth.client.net.PlatformEventLoopGroupHolder.routesRemoteConnections()) {
++            return rinth.client.net.PlatformEventLoopGroupHolder.INSTANCE;
++        }
++        // Rinth end
+         if (allowNativeTransport) {
+@@ -73,3 +78,5 @@
+ 
+-    private EventLoopGroupHolder(final String type, final Class<? extends Channel> channelCls, final Class<? extends ServerChannel> serverChannelCls) {
++    // Rinth start: subclassed by rinth.client.net.PlatformEventLoopGroupHolder
++    protected EventLoopGroupHolder(final String type, final Class<? extends Channel> channelCls, final Class<? extends ServerChannel> serverChannelCls) {
++    // Rinth end
+         this.type = type;

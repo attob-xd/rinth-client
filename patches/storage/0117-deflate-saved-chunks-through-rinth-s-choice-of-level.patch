@@ -1,0 +1,17 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Thu, 8 Oct 2026 23:16:18 -0400
+Subject: [PATCH] storage: Deflate saved chunks through Rinth's choice of level
+
+
+diff --git a/src/main/java/net/minecraft/world/level/chunk/storage/RegionFileVersion.java b/src/main/java/net/minecraft/world/level/chunk/storage/RegionFileVersion.java
+index a7aa9008ac7fc62b0d7275ab90220925b307dc90..afe19ea44d703a35d93641678b27fff29b7bbad3 100644
+--- a/src/main/java/net/minecraft/world/level/chunk/storage/RegionFileVersion.java
++++ b/src/main/java/net/minecraft/world/level/chunk/storage/RegionFileVersion.java
+@@ -30,3 +30,5 @@
+         new RegionFileVersion(
+-            2, "deflate", in -> new FastBufferedInputStream(new InflaterInputStream(in)), out -> new BufferedOutputStream(new DeflaterOutputStream(out))
++            // Rinth start: deflated faster in the browser
++            2, "deflate", in -> new FastBufferedInputStream(new InflaterInputStream(in)), out -> new BufferedOutputStream(rinth.client.world.ChunkCompression.deflate(out))
++            // Rinth end
+         )

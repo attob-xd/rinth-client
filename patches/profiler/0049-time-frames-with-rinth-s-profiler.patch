@@ -1,0 +1,17 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 29 Sep 2026 22:08:13 -0400
+Subject: [PATCH] profiler: Time frames with Rinth's profiler
+
+
+diff --git a/src/main/java/net/minecraft/client/Minecraft.java b/src/main/java/net/minecraft/client/Minecraft.java
+index 299d6eeef1360df71da19f989f764a2fa3f958ea..d0dedf4e43a6746f1dd49845dc363a5ea13780e1 100644
+--- a/src/main/java/net/minecraft/client/Minecraft.java
++++ b/src/main/java/net/minecraft/client/Minecraft.java
+@@ -914,3 +914,5 @@
+ 
+-                    try (Profiler.Scope ignored = Profiler.use(this.constructProfiler(shouldCollectFrameProfile, tickProfiler))) {
++                    // Rinth start: Rinth's profiler times the frame from the game's own zones
++                    try (Profiler.Scope ignored = Profiler.use(rinth.client.profiler.Profiling.decorate(this.constructProfiler(shouldCollectFrameProfile, tickProfiler)))) {
++                    // Rinth end
+                         this.metricsRecorder.startTick();

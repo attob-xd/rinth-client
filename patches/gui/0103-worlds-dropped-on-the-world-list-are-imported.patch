@@ -1,0 +1,20 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 6 Oct 2026 22:32:31 -0400
+Subject: [PATCH] gui: Worlds dropped on the world list are imported
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/screens/worldselection/SelectWorldScreen.java b/src/main/java/net/minecraft/client/gui/screens/worldselection/SelectWorldScreen.java
+index f28d5f8272380dff4a5bacf86d694a7afd178c35..d46fbe40a575d4ac33e4b72e425a328e49a966e4 100644
+--- a/src/main/java/net/minecraft/client/gui/screens/worldselection/SelectWorldScreen.java
++++ b/src/main/java/net/minecraft/client/gui/screens/worldselection/SelectWorldScreen.java
+@@ -161,2 +161,9 @@
+ 
++    // Rinth start: worlds dropped on the list (zips or folders) are imported; a page has no saves folder
++    @Override
++    public void onFilesDrop(final java.util.List<java.nio.file.Path> files) {
++        rinth.client.world.WorldImport.dropped(this.minecraft, this.list, files);
++    }
++    // Rinth end
++
+     public void updateButtonStatus(final @Nullable LevelSummary summary) {

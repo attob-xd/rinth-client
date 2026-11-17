@@ -1,0 +1,16 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: attob-xd <122830347+attob-xd@users.noreply.github.com>
+Date: Mon, 16 Nov 2026 20:47:12 -0600
+Subject: [PATCH] render: Draw no level until the player has a camera
+
+
+diff --git a/src/main/java/net/minecraft/client/renderer/GameRenderer.java b/src/main/java/net/minecraft/client/renderer/GameRenderer.java
+index 637b689eff449f259807248fa2af4dab9f2b63e3..adf21892dee46841335d5ec36d0bb27beaac1a86 100644
+--- a/src/main/java/net/minecraft/client/renderer/GameRenderer.java
++++ b/src/main/java/net/minecraft/client/renderer/GameRenderer.java
+@@ -444,2 +444,5 @@
+         this.gameRenderState.shouldRenderLevel = resourcesLoaded && advanceGameTime && this.minecraft.level != null;
++        // Rinth start: a level whose player hasn't joined yet (the worker's server, slower with mods) has no camera to draw from
++        if (this.minecraft.getCameraEntity() == null) this.gameRenderState.shouldRenderLevel = false;
++        // Rinth end
+         // Rinth start: between the HUD editor's backdrop refreshes on Potato, the level isn't drawn (BackdropCache)

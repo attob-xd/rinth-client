@@ -1,0 +1,19 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Fri, 9 Oct 2026 20:10:42 -0400
+Subject: [PATCH] eagler: Show an Eagler server's pause menu buttons
+
+EaglerXServer's pause_menu.yml gives the menu a server info button and a
+Discord button. Rinth's ServerPauseMenu adds them below the row of icon
+buttons.
+
+diff --git a/src/main/java/net/minecraft/client/gui/screens/PauseScreen.java b/src/main/java/net/minecraft/client/gui/screens/PauseScreen.java
+index db07e8de5141c2d694012f8cbb8089326c05a245..87c328995d37926fb768cb77d9c15d9815dc3fe6 100644
+--- a/src/main/java/net/minecraft/client/gui/screens/PauseScreen.java
++++ b/src/main/java/net/minecraft/client/gui/screens/PauseScreen.java
+@@ -156,2 +156,5 @@
+         helper.addChild(iconButtonRow, 2, gridLayout.newCellSettings().alignHorizontallyCenter());
++        // Rinth start: an Eagler server's own buttons (its pause_menu.yml)
++        rinth.client.eagler.PauseMenuHooks.addButtons(helper);
++        // Rinth end
+         Optional<? extends Holder<Dialog>> additions = this.getCustomAdditions();

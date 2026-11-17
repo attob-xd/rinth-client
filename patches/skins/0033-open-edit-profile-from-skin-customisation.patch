@@ -1,0 +1,16 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 29 Sep 2026 08:00:03 -0400
+Subject: [PATCH] skins: Open Edit Profile from skin customisation
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/screens/options/SkinCustomizationScreen.java b/src/main/java/net/minecraft/client/gui/screens/options/SkinCustomizationScreen.java
+index 46a67070b0bf5bd2afac52d0ae105dfc16870abb..b896e8617e22e48152de00cb1a07c1870f4ccd8b 100644
+--- a/src/main/java/net/minecraft/client/gui/screens/options/SkinCustomizationScreen.java
++++ b/src/main/java/net/minecraft/client/gui/screens/options/SkinCustomizationScreen.java
+@@ -30,2 +30,5 @@
+         widgets.add(this.options.mainHand().createButton(this.options));
++        // Rinth start: Edit Profile (the name and skin)
++        widgets.add(rinth.client.profile.ProfileScreen.button(this));
++        // Rinth end
+         this.list.addSmall(widgets);

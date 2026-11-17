@@ -1,0 +1,5 @@
+{
+  "providers": [
+    { "type": "ttf", "file": "rinth:michroma.ttf", "size": 18, "oversample": 2.0 }
+  ]
+}

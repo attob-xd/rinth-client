@@ -1,0 +1,38 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Thu, 1 Oct 2026 00:17:10 -0400
+Subject: [PATCH] startup: Load models after the title screen where the entry
+ point asks
+
+
+diff --git a/src/main/java/net/minecraft/client/Minecraft.java b/src/main/java/net/minecraft/client/Minecraft.java
+index e4b4fbfd514f9f4659401fbf1248f133da074df4..38a3d0b8320ab7e21b7340a058acbe73b333b966 100644
+--- a/src/main/java/net/minecraft/client/Minecraft.java
++++ b/src/main/java/net/minecraft/client/Minecraft.java
+@@ -2049,2 +2049,5 @@
+     ) {
++        // Rinth start: a world needs the models, which may still be loading after the title screen
++        if (rinth.client.startup.DeferredModels.whenReady(() -> this.doWorldLoad(levelSourceAccess, packRepository, worldStem, gameRules, newWorld))) return;
++        // Rinth end
+         this.disconnectWithProgressScreen();
+diff --git a/src/main/java/net/minecraft/client/gui/screens/ConnectScreen.java b/src/main/java/net/minecraft/client/gui/screens/ConnectScreen.java
+index bf2c34c0c190b98c1feb72b3725b5b2123f41985..bfa10c28f33e2be22a833dd8c1d989815062ee9a 100644
+--- a/src/main/java/net/minecraft/client/gui/screens/ConnectScreen.java
++++ b/src/main/java/net/minecraft/client/gui/screens/ConnectScreen.java
+@@ -62,2 +62,5 @@
+     ) {
++        // Rinth start: a world needs the models, which may still be loading after the title screen
++        if (rinth.client.startup.DeferredModels.whenReady(() -> startConnecting(parent, minecraft, hostAndPort, data, isQuickPlay, transferState))) return;
++        // Rinth end
+         if (minecraft.gui.screen() instanceof ConnectScreen) {
+diff --git a/src/main/java/net/minecraft/server/packs/resources/ReloadableResourceManager.java b/src/main/java/net/minecraft/server/packs/resources/ReloadableResourceManager.java
+index 2bccd6a2ade7e5d2bda6f031202700f9811b8f01..efb0369cf9fa5d314b9b29f18a280ae4f9a165ee 100644
+--- a/src/main/java/net/minecraft/server/packs/resources/ReloadableResourceManager.java
++++ b/src/main/java/net/minecraft/server/packs/resources/ReloadableResourceManager.java
+@@ -47,3 +47,5 @@
+         this.resources = new MultiPackResourceManager(this.type, resourcePacks);
+-        return SimpleReloadInstance.create(this.resources, this.listeners, backgroundExecutor, mainThreadExecutor, initialTask, LOGGER.isDebugEnabled());
++        // Rinth start: the first reload may leave the models until after the title screen
++        return rinth.client.startup.DeferredModels.createReload(this.resources, this.listeners, backgroundExecutor, mainThreadExecutor, initialTask, LOGGER.isDebugEnabled());
++        // Rinth end
+     }

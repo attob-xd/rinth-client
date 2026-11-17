@@ -1,0 +1,28 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Wed, 30 Sep 2026 23:13:24 -0400
+Subject: [PATCH] blocks: Work out sturdy faces once per support shape, and
+ share the tables
+
+
+diff --git a/src/main/java/net/minecraft/world/level/block/state/BlockBehaviour.java b/src/main/java/net/minecraft/world/level/block/state/BlockBehaviour.java
+index 81201ec5c3820e4d30905c93832467fc0a0f4526..b4f9f12b09322e706368173418fbfd17d7dc2328 100644
+--- a/src/main/java/net/minecraft/world/level/block/state/BlockBehaviour.java
++++ b/src/main/java/net/minecraft/world/level/block/state/BlockBehaviour.java
+@@ -980,3 +980,4 @@
+                     .anyMatch(axis -> this.collisionShape.min(axis) < 0.0 || this.collisionShape.max(axis) > 1.0);
+-                this.faceSturdy = new boolean[DIRECTIONS.length * SUPPORT_TYPE_COUNT];
++                // Rinth start: worked out once per support shape, and states with the same answers share one table
++                boolean[] faceSturdy = new boolean[DIRECTIONS.length * SUPPORT_TYPE_COUNT];
+ 
+@@ -984,3 +985,3 @@
+                     for (SupportType type : SupportType.values()) {
+-                        this.faceSturdy[getFaceSupportIndex(direction, type)] = type.isSupporting(state, EmptyBlockGetter.INSTANCE, BlockPos.ZERO, direction);
++                        faceSturdy[getFaceSupportIndex(direction, type)] = rinth.client.memory.BlockStateSharing.isSupporting(type, state, direction);
+                     }
+@@ -988,2 +989,5 @@
+ 
++                this.faceSturdy = rinth.client.memory.BlockStateSharing.flags(faceSturdy);
++                // Rinth end
++
+                 this.isCollisionShapeFullBlock = Block.isShapeFullBlock(state.getCollisionShape(EmptyBlockGetter.INSTANCE, BlockPos.ZERO));

@@ -1,0 +1,18 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sun, 11 Oct 2026 13:48:46 -0400
+Subject: [PATCH] gui: Keep a skin's picture while it holds still
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/render/pip/GuiSkinRenderer.java b/src/main/java/net/minecraft/client/gui/render/pip/GuiSkinRenderer.java
+index 8014e95a1bd5e6b4bcb5ddffe530f13833f1e249..f6b08b31330794a3af25eb25decc92b36e1cbbaf 100644
+--- a/src/main/java/net/minecraft/client/gui/render/pip/GuiSkinRenderer.java
++++ b/src/main/java/net/minecraft/client/gui/render/pip/GuiSkinRenderer.java
+@@ -28,2 +28,7 @@
+ 
++    // Rinth start: the picture kept while the model holds still (SkinPictures)
++    private final rinth.client.gui.SkinPictures.Last rinthLast = new rinth.client.gui.SkinPictures.Last();
++    @Override protected boolean textureIsReadyToBlit(final GuiSkinRenderState skinState) { return this.rinthLast.unchanged(skinState); }
++    // Rinth end
++
+     @Override

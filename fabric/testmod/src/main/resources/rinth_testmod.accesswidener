@@ -1,0 +1,4 @@
+accessWidener v2 official
+
+# Exercises the build's access wideners; the mod reads the field through its accessor anyway.
+accessible field net/minecraft/client/gui/screens/TitleScreen splash Lnet/minecraft/client/gui/components/SplashRenderer;

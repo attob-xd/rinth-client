@@ -1,0 +1,17 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Wed, 7 Oct 2026 14:38:11 -0400
+Subject: [PATCH] world: Look up natural mob spawn settings once per biome
+
+
+diff --git a/src/main/java/net/minecraft/world/level/NaturalSpawner.java b/src/main/java/net/minecraft/world/level/NaturalSpawner.java
+index 64f7e8ab533442e43a05e7907d6712d28e231ca8..67a7827871949e5b723d6ab722b44918258b8e5c 100644
+--- a/src/main/java/net/minecraft/world/level/NaturalSpawner.java
++++ b/src/main/java/net/minecraft/world/level/NaturalSpawner.java
+@@ -80,3 +80,5 @@
+                     chunkGetter.query(ChunkPos.pack(pos), chunk -> {
+-                        MobSpawnSettings naturalMobSpawns = level.environmentAttributes().getValue(EnvironmentAttributes.NATURAL_MOB_SPAWNS, pos);
++                        // Rinth start: the settings looked up once per biome
++                        MobSpawnSettings naturalMobSpawns = rinth.client.world.SpawnCosts.naturalMobSpawns(level, pos);
++                        // Rinth end
+                         MobSpawnSettings.MobSpawnCost mobSpawnCost = naturalMobSpawns.getMobSpawnCost(entity.getType());

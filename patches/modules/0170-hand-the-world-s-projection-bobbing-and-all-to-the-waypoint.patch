@@ -1,0 +1,19 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 13 Oct 2026 18:50:36 -0400
+Subject: [PATCH] modules: Hand the world's projection, bobbing and all, to the
+ waypoint tags
+
+The tags were projected with the camera's projection alone, while the world
+is drawn with view bobbing, the hurt tilt and nausea's warp on top.
+
+diff --git a/src/main/java/net/minecraft/client/renderer/GameRenderer.java b/src/main/java/net/minecraft/client/renderer/GameRenderer.java
+index 4cca1a2d94833a9eb6f2afbe665eccbc3896e907..637b689eff449f259807248fa2af4dab9f2b63e3 100644
+--- a/src/main/java/net/minecraft/client/renderer/GameRenderer.java
++++ b/src/main/java/net/minecraft/client/renderer/GameRenderer.java
+@@ -673,2 +673,5 @@
+ 
++        // Rinth start: waypoint tags follow the world's bobbing, tilt and warp (ADR 0051)
++        rinth.client.modules.ModuleHud.worldProjection(cameraState.projectionMatrix, projectionMatrix);
++        // Rinth end
+         RenderSystem.setProjectionMatrix(this.levelProjectionMatrixBuffer.getBuffer(projectionMatrix), ProjectionType.PERSPECTIVE);

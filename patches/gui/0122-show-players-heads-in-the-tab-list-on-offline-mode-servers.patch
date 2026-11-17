@@ -1,0 +1,21 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Fri, 9 Oct 2026 19:21:12 -0400
+Subject: [PATCH] gui: Show players' heads in the tab list on offline-mode
+ servers
+
+The game shows them only where the server is in online mode. Rinth's
+servers are offline-mode Eagler servers, whose skins come by Eagler's
+own messages, and Eagler clients show heads there.
+
+diff --git a/src/main/java/net/minecraft/client/gui/components/PlayerTabOverlay.java b/src/main/java/net/minecraft/client/gui/components/PlayerTabOverlay.java
+index b60868f6232b8fb859239efd676cfe46fe81fe7f..5a57c13386ee1a9b8bbef3ff54956e2549e4fd85 100644
+--- a/src/main/java/net/minecraft/client/gui/components/PlayerTabOverlay.java
++++ b/src/main/java/net/minecraft/client/gui/components/PlayerTabOverlay.java
+@@ -144,3 +144,5 @@
+ 
+-        boolean showHead = this.minecraft.getConnection().onlineMode();
++        // Rinth start: heads on offline-mode servers too, as Eagler clients show them
++        boolean showHead = true;
++        // Rinth end
+         int widthForScore;

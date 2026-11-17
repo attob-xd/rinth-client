@@ -1,0 +1,28 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 10 Oct 2026 11:55:18 -0400
+Subject: [PATCH] gui: Smooth fonts drawn by the platform, at the GUI scale
+
+Signed-off-by: rinth-client <335801235+rinth-client@users.noreply.github.com>
+
+diff --git a/src/main/java/net/minecraft/client/Minecraft.java b/src/main/java/net/minecraft/client/Minecraft.java
+index 4b7c3abe66de7569345e01189d13f40df68aa934..75ef7d979ca63b79908dd372efc5233ac4e12aaa 100644
+--- a/src/main/java/net/minecraft/client/Minecraft.java
++++ b/src/main/java/net/minecraft/client/Minecraft.java
+@@ -1449,2 +1449,5 @@
+         this.window.setGuiScale(guiScale);
++        // Rinth start: smooth fonts are drawn again at the new scale
++        rinth.client.ui.SmoothFont.guiScale(guiScale, this::updateFontOptions);
++        // Rinth end
+         if (this.gui.screen() != null) {
+diff --git a/src/main/java/net/minecraft/client/gui/font/providers/TrueTypeGlyphProviderDefinition.java b/src/main/java/net/minecraft/client/gui/font/providers/TrueTypeGlyphProviderDefinition.java
+index 9a573fc1aaa1953095da2a6d4afe93dd771d5bfd..b7cf15c0c44588a4ccea10c429c4fac38d24ace0 100644
+--- a/src/main/java/net/minecraft/client/gui/font/providers/TrueTypeGlyphProviderDefinition.java
++++ b/src/main/java/net/minecraft/client/gui/font/providers/TrueTypeGlyphProviderDefinition.java
+@@ -49,2 +49,6 @@
+     private GlyphProvider load(final ResourceManager resourceManager) throws IOException {
++        // Rinth start: the platform draws TrueType fonts (the browser has no FreeType), at the GUI scale
++        GlyphProvider smooth = rinth.client.ui.SmoothFont.load(resourceManager, this.location, this.size, this.shift.x, this.shift.y, this.skip);
++        if (smooth != null) return smooth;
++        // Rinth end
+         FT_Face face = null;

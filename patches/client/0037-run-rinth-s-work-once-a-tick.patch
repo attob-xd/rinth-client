@@ -1,0 +1,16 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 29 Sep 2026 18:36:09 -0400
+Subject: [PATCH] client: Run Rinth's work once a tick
+
+
+diff --git a/src/main/java/net/minecraft/client/Minecraft.java b/src/main/java/net/minecraft/client/Minecraft.java
+index 6626e1fc0c8f6e2504cb56eddf562dce668161e2..a9665e0d1f466d2d940eb3763d209933182219da 100644
+--- a/src/main/java/net/minecraft/client/Minecraft.java
++++ b/src/main/java/net/minecraft/client/Minecraft.java
+@@ -1809,2 +1809,5 @@
+         this.gui.tick();
++        // Rinth start: Rinth's per-tick work (voice chat)
++        rinth.client.RinthTicks.tick(this);
++        // Rinth end
+         if (this.gui.screen() != null) {

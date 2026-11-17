@@ -1,0 +1,24 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Thu, 1 Oct 2026 21:55:19 -0400
+Subject: [PATCH] client: Play under the name chosen in Edit Profile
+
+
+diff --git a/src/main/java/net/minecraft/client/Minecraft.java b/src/main/java/net/minecraft/client/Minecraft.java
+index 72839a1abe93f09186ed68baf6d9dd94a2cdd386..a69b9d211023d1824a09bb6ee6613a0c386eebc6 100644
+--- a/src/main/java/net/minecraft/client/Minecraft.java
++++ b/src/main/java/net/minecraft/client/Minecraft.java
+@@ -2626,3 +2626,5 @@
+     public User getUser() {
+-        return this.user;
++        // Rinth start: offline, the player plays under the name they chose in Edit Profile
++        return rinth.client.profile.PlayerName.user(this.user, this.gameDirectory);
++        // Rinth end
+     }
+@@ -2635,3 +2637,5 @@
+         ProfileResult profileResult = this.profileFuture.join();
+-        return profileResult != null ? profileResult.profile() : new GameProfile(this.user.getProfileId(), this.user.getName());
++        // Rinth start: offline, the player plays under the name they chose in Edit Profile
++        return profileResult != null ? profileResult.profile() : new GameProfile(this.getUser().getProfileId(), this.getUser().getName());
++        // Rinth end
+     }

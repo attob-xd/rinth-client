@@ -1,0 +1,18 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 13 Oct 2026 20:57:25 -0400
+Subject: [PATCH] gui: Rinth's badge before Rinth players' names in the tab
+ list
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/components/PlayerTabOverlay.java b/src/main/java/net/minecraft/client/gui/components/PlayerTabOverlay.java
+index a19cd6c88899f30a98189eeb30484e44428a0b36..58ea9cf400335569d2f27fddcdc4adf619284fc1 100644
+--- a/src/main/java/net/minecraft/client/gui/components/PlayerTabOverlay.java
++++ b/src/main/java/net/minecraft/client/gui/components/PlayerTabOverlay.java
+@@ -105,3 +105,5 @@
+         for (PlayerInfo info : playerInfos) {
+-            Component playerName = this.getNameForDisplay(info);
++            // Rinth start: Rinth's badge before Rinth players' names, as on their name tags
++            Component playerName = rinth.client.cosmetics.Cosmetics.tabListName(info.getProfile().id(), this.getNameForDisplay(info));
++            // Rinth end
+             maxNameWidth = Math.max(maxNameWidth, this.minecraft.font.width(playerName));

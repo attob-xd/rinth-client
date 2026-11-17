@@ -1,0 +1,33 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 10 Oct 2026 18:33:42 -0400
+Subject: [PATCH] modules: Let a module draw the scoreboard sidebar where the
+ player puts it
+
+Custom Scoreboard (ADR 0050) takes the sidebar from its place: the HUD
+leaves it out there, and the module's HUD element has the game draw it
+at the element's place and scale, measuring it as it goes.
+
+diff --git a/src/main/java/net/minecraft/client/gui/Hud.java b/src/main/java/net/minecraft/client/gui/Hud.java
+index 7c842fbd6aa3cfd33c4be9c70eaef4345ac50744..97b06ad6071c42dbd438dfc4b6ba02f137efc5ff 100644
+--- a/src/main/java/net/minecraft/client/gui/Hud.java
++++ b/src/main/java/net/minecraft/client/gui/Hud.java
+@@ -429,2 +429,5 @@
+         Objective displayObjective = teamObjective != null ? teamObjective : scoreboard.getDisplayObjective(DisplaySlot.SIDEBAR);
++        // Rinth start: a module may draw the sidebar where the player puts it (Custom Scoreboard)
++        displayObjective = rinth.client.modules.GameParts.takeSidebar(displayObjective);
++        // Rinth end
+         if (displayObjective != null) {
+@@ -686,3 +689,5 @@
+ 
+-    private void displayScoreboardSidebar(final GuiGraphicsExtractor graphics, final Objective objective) {
++    // Rinth start: public, for a module's HUD element to draw the sidebar (Custom Scoreboard)
++    public void displayScoreboardSidebar(final GuiGraphicsExtractor graphics, final Objective objective) {
++    // Rinth end
+         Scoreboard scoreboard = objective.getScoreboard();
+@@ -726,2 +731,5 @@
+         int headerY = bottom - entriesCount * 9;
++        // Rinth start: drawn for a module's element, the sidebar moves to its place
++        rinth.client.modules.GameParts.sidebarBox(graphics, left - 2, headerY - 9 - 1, right, bottom);
++        // Rinth end
+         // Rinth start: the sidebar on one glass card (HudLook)

@@ -1,0 +1,31 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Wed, 7 Oct 2026 22:32:24 -0400
+Subject: [PATCH] world: Read and write a chunk's surface without the
+ proto-chunk's per-block overhead
+
+
+diff --git a/src/main/java/net/minecraft/world/level/levelgen/material/MaterialSystem.java b/src/main/java/net/minecraft/world/level/levelgen/material/MaterialSystem.java
+index f3807cc7b5d2313051981683ff13eb147b569af3..edf1191fcec11addbd884b5c4ea3f1413ba6d61b 100644
+--- a/src/main/java/net/minecraft/world/level/levelgen/material/MaterialSystem.java
++++ b/src/main/java/net/minecraft/world/level/levelgen/material/MaterialSystem.java
+@@ -100,2 +100,5 @@
+         final int maxY = heightAccessor.getMaxY();
++        // Rinth start: the column read and written without the proto-chunk's per-block overhead
++        final rinth.client.world.SurfaceWrites writes = rinth.client.world.SurfaceWrites.of(protoChunk);
++        // Rinth end
+         BlockColumn column = new BlockColumn() {
+@@ -103,3 +106,5 @@
+             public BlockState getBlock(final int blockY) {
+-                return protoChunk.getBlockState(columnPos.setY(blockY));
++                // Rinth start: through the writer when there is one
++                return writes != null ? writes.get(columnPos.setY(blockY)) : protoChunk.getBlockState(columnPos.setY(blockY));
++                // Rinth end
+             }
+@@ -109,3 +114,5 @@
+                 if (blockY >= minY && blockY <= maxY) {
+-                    protoChunk.setBlockState(columnPos.setY(blockY), state);
++                    // Rinth start: through the writer when there is one
++                    if (writes != null) writes.set(columnPos.setY(blockY), state); else protoChunk.setBlockState(columnPos.setY(blockY), state);
++                    // Rinth end
+                     if (!state.getFluidState().isEmpty()) {

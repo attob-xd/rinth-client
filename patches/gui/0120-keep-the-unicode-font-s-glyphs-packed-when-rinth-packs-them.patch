@@ -1,0 +1,39 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Fri, 9 Oct 2026 00:35:08 -0400
+Subject: [PATCH] gui: Keep the Unicode font's glyphs packed when Rinth packs
+ them
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/font/providers/UnihexProvider.java b/src/main/java/net/minecraft/client/gui/font/providers/UnihexProvider.java
+index 86c204697d89170e0b91eed4a7aba6edb2e8eecc..f5a2b252c559f95e783e04d2f48ceed75a2ee33c 100644
+--- a/src/main/java/net/minecraft/client/gui/font/providers/UnihexProvider.java
++++ b/src/main/java/net/minecraft/client/gui/font/providers/UnihexProvider.java
+@@ -43,2 +43,5 @@
+     private final CodepointMap<UnihexProvider.Glyph> glyphs;
++    // Rinth start: the glyphs packed into arrays instead, when they are
++    private rinth.client.memory.@Nullable PackedUnihex packed;
++    // Rinth end
+ 
+@@ -50,2 +53,5 @@
+     public @Nullable UnbakedGlyph getGlyph(final int codepoint) {
++        // Rinth start: made from the packed arrays
++        if (this.packed != null) return this.packed.get(codepoint, UnihexProvider.Glyph::new);
++        // Rinth end
+         return this.glyphs.get(codepoint);
+@@ -55,2 +61,5 @@
+     public IntSet getSupportedGlyphs() {
++        // Rinth start: the packed arrays' codepoints
++        if (this.packed != null) return this.packed.codepoints();
++        // Rinth end
+         return this.glyphs.keySet();
+@@ -255,2 +264,9 @@
+                 });
++                // Rinth start: the glyphs packed, and their objects let go
++                if (rinth.client.memory.PackedUnihex.isEnabled()) {
++                    UnihexProvider packed = new UnihexProvider(new CodepointMap<>(UnihexProvider.Glyph[]::new, UnihexProvider.Glyph[][]::new));
++                    packed.packed = rinth.client.memory.PackedUnihex.pack(glyphs, UnihexProvider.Glyph::contents, UnihexProvider.Glyph::left, UnihexProvider.Glyph::right);
++                    return packed;
++                }
++                // Rinth end
+                 return new UnihexProvider(glyphs);

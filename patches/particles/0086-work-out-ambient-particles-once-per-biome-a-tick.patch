@@ -1,0 +1,21 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 3 Oct 2026 01:21:55 -0400
+Subject: [PATCH] particles: Work out ambient particles once per biome a tick
+
+
+diff --git a/src/main/java/net/minecraft/client/multiplayer/ClientLevel.java b/src/main/java/net/minecraft/client/multiplayer/ClientLevel.java
+index 60773cf0486b0d8b14c16ccd5f11cab3de9a9b32..2ad4247f5a58f4ff4b013e1da47738a0b56550d3 100644
+--- a/src/main/java/net/minecraft/client/multiplayer/ClientLevel.java
++++ b/src/main/java/net/minecraft/client/multiplayer/ClientLevel.java
+@@ -565,2 +565,3 @@
+         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
++        rinth.client.particle.AmbientParticles.beginTick(); // Rinth: ambient particles once per biome a tick (ADR 0031)
+ 
+@@ -615,3 +616,5 @@
+         if (!state.isCollisionShapeFullBlock(this, pos)) {
+-            for (AmbientParticle particle : this.environmentAttributes().getValue(EnvironmentAttributes.AMBIENT_PARTICLES, pos)) {
++            // Rinth start: ambient particles once per biome a tick (ADR 0031)
++            for (AmbientParticle particle : rinth.client.particle.AmbientParticles.at(this, pos)) {
++            // Rinth end
+                 if (particle.canSpawn(this.random)) {

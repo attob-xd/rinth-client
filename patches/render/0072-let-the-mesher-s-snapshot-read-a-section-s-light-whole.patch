@@ -1,0 +1,20 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Thu, 1 Oct 2026 08:16:50 -0400
+Subject: [PATCH] render: Let the mesher's snapshot read a section's light
+ whole
+
+
+diff --git a/src/main/java/net/minecraft/world/level/lighting/LightEngine.java b/src/main/java/net/minecraft/world/level/lighting/LightEngine.java
+index 8c51a9317033b2ee031b8bb27e8462ef48d8ca71..8fb0a4c0ae6df16ea33ad1e657d6a7fa954fd104 100644
+--- a/src/main/java/net/minecraft/world/level/lighting/LightEngine.java
++++ b/src/main/java/net/minecraft/world/level/lighting/LightEngine.java
+@@ -210,2 +210,8 @@
+ 
++    // Rinth start: the section's light as getLightValue reads it (the visible data, not queued updates), for the mesher's snapshot to copy whole (ADR 0027)
++    public @Nullable DataLayer rinthVisibleLayer(final long sectionNode) {
++        return this.storage.getDataLayer(sectionNode, false);
++    }
++    // Rinth end
++
+     public String getDebugData(final long sectionNode) {

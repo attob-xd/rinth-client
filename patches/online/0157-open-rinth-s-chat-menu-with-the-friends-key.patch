@@ -1,0 +1,16 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Mon, 12 Oct 2026 11:35:50 -0400
+Subject: [PATCH] online: Open Rinth's chat menu with the Friends key
+
+
+diff --git a/src/main/java/net/minecraft/client/Minecraft.java b/src/main/java/net/minecraft/client/Minecraft.java
+index 199524345fc7bdb7e62c42e2db42715d5a929fe7..e659ccbcf6bb418c7a0b0bea762495bc6d8ef9e4 100644
+--- a/src/main/java/net/minecraft/client/Minecraft.java
++++ b/src/main/java/net/minecraft/client/Minecraft.java
+@@ -2374,2 +2374,5 @@
+     private boolean toggleFriendsScreen() {
++        // Rinth start: the Friends key opens Rinth's chat menu (Mojang's friends need a Microsoft account)
++        if (rinth.client.online.ChatMenu.toggle(this)) return true;
++        // Rinth end
+         if (!this.isDemo() && !this.isOfflineDeveloperMode()) {

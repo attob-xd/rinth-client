@@ -1,0 +1,17 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 10 Oct 2026 22:13:56 -0400
+Subject: [PATCH] modules: Let modules count the player's clicks
+
+The click event (ADR 0052): each mouse press over the world, for CPS and Keystrokes.
+
+diff --git a/src/main/java/net/minecraft/client/MouseHandler.java b/src/main/java/net/minecraft/client/MouseHandler.java
+index c37429bc0db1204038f8dca6c21ee0ad7f4cbdbe..f6e923ffad0fec65c57da44b8417193f63a35a93 100644
+--- a/src/main/java/net/minecraft/client/MouseHandler.java
++++ b/src/main/java/net/minecraft/client/MouseHandler.java
+@@ -140,2 +140,5 @@
+                 if (pressed) {
++                    // Rinth start: modules count clicks (CPS)
++                    rinth.client.modules.ModuleInput.click(rawButtonInfo.button());
++                    // Rinth end
+                     KeyMapping.click(mouseKey);

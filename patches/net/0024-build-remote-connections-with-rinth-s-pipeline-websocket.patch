@@ -1,0 +1,19 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sun, 27 Sep 2026 17:03:51 -0400
+Subject: [PATCH] net: Build remote connections with Rinth's pipeline
+ (WebSocket, Eagler, Via)
+
+
+diff --git a/src/main/java/net/minecraft/network/Connection.java b/src/main/java/net/minecraft/network/Connection.java
+index 6c13bfd7dd9aa133a3ab992055f8df553dfc8cf8..06b946fd2827c003d426c9e6c828b1734ce03a88 100644
+--- a/src/main/java/net/minecraft/network/Connection.java
++++ b/src/main/java/net/minecraft/network/Connection.java
+@@ -426,2 +426,7 @@
+     public static ChannelFuture connect(final InetSocketAddress address, final EventLoopGroupHolder eventLoopGroupHolder, final Connection connection) {
++        // Rinth start: WebSocket (Eagler) servers and servers of other versions (Via) get Rinth's pipeline
++        if (rinth.client.net.ServerConnections.accepts(address)) {
++            return rinth.client.net.ServerConnections.connect(address, eventLoopGroupHolder, connection, connection.bandwidthDebugMonitor);
++        }
++        // Rinth end
+         return new Bootstrap().group(eventLoopGroupHolder.eventLoopGroup()).handler(new ChannelInitializer<Channel>() {

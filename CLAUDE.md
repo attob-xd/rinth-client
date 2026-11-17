@@ -1,0 +1,3 @@
+# Rinth Client
+
+@AGENTS.md

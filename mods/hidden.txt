@@ -1,0 +1,2 @@
+# Mods left out of Mod Menu's list and the launcher's, one id a line. They still load and run.
+fabric-api

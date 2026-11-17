@@ -1,0 +1,48 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Fri, 2 Oct 2026 07:51:32 -0400
+Subject: [PATCH] render: Keep each section's draws between frames
+
+
+diff --git a/src/main/java/com/mojang/blaze3d/vertex/UberGpuBuffer.java b/src/main/java/com/mojang/blaze3d/vertex/UberGpuBuffer.java
+index ad78869113d09f529bcc707abbf3d9aded3abe57..308fcf89b04bff1b23c5842bab759db7648785f5 100644
+--- a/src/main/java/com/mojang/blaze3d/vertex/UberGpuBuffer.java
++++ b/src/main/java/com/mojang/blaze3d/vertex/UberGpuBuffer.java
+@@ -96,2 +96,5 @@
+                             this.allocationMap.put(entry.getKey(), allocation);
++                            // Rinth start: a section's kept draws are read again (ADR 0030)
++                            rinth.client.render.terrain.SectionDraws.moved(entry.getKey());
++                            // Rinth end
+                             runCallbackUnchecked(entry.getKey(), entry.getValue());
+@@ -139,2 +142,5 @@
+         if (allocation != null) {
++            // Rinth start: a section's kept draws are read again (ADR 0030)
++            rinth.client.render.terrain.SectionDraws.moved(allocationKey);
++            // Rinth end
+             for (Pair<TlsfAllocator, UberGpuBuffer.UberGpuBufferHeap> node : this.nodes) {
+diff --git a/src/main/java/net/minecraft/client/renderer/LevelRenderer.java b/src/main/java/net/minecraft/client/renderer/LevelRenderer.java
+index 72f8157aa4d9dca0276577e2a9d25bf624dc17de..c91045e36c5268ba182de5edfbad565fc43d4bb4 100644
+--- a/src/main/java/net/minecraft/client/renderer/LevelRenderer.java
++++ b/src/main/java/net/minecraft/client/renderer/LevelRenderer.java
+@@ -894,2 +894,5 @@
+     public ChunkSectionsToRender prepareChunkRendersIndirect(final Matrix4fc modelViewMatrix, final boolean respectTranslucentOrder) {
++        // Rinth start: the draw list from each section's kept draws, quads facing away left out (ADR 0030)
++        if (rinth.client.render.terrain.TerrainDrawLists.enabled()) return rinth.client.render.terrain.TerrainDrawLists.prepare(this.sectionRenderDispatcher, this.visibleSections, modelViewMatrix, respectTranslucentOrder, this.optionsRenderState.chunkSectionFadeInTime, this.levelRenderState.cameraRenderState.pos);
++        // Rinth end
+         EnumMap<ChunkSectionLayer, List<LevelRenderer.ChunkDrawGroup>> drawGroups = new EnumMap<>(ChunkSectionLayer.class);
+diff --git a/src/main/java/net/minecraft/client/renderer/chunk/CompiledSectionMesh.java b/src/main/java/net/minecraft/client/renderer/chunk/CompiledSectionMesh.java
+index 46b753ce8d5e7b23229e938650a4ae72ec3e453c..2aabebea9ebc0e049690aa2ab167fcee0b306259 100644
+--- a/src/main/java/net/minecraft/client/renderer/chunk/CompiledSectionMesh.java
++++ b/src/main/java/net/minecraft/client/renderer/chunk/CompiledSectionMesh.java
+@@ -33,2 +33,5 @@
+     private final long compileTaskStartTimeNs;
++    // Rinth start: the mesh's draws kept between frames (ADR 0030)
++    public final rinth.client.render.terrain.SectionDraws rinthDraws;
++    // Rinth end
+ 
+@@ -45,2 +48,5 @@
+         this.compileTaskStartTimeNs = compileTaskStartTimeNs;
++        // Rinth start: the mesh's draws kept between frames (ADR 0030)
++        this.rinthDraws = rinth.client.render.terrain.SectionDraws.of(results);
++        // Rinth end
+     }

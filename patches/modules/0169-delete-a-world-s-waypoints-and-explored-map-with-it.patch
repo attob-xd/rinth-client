@@ -1,0 +1,18 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 13 Oct 2026 18:48:35 -0400
+Subject: [PATCH] modules: Delete a world's waypoints and explored map with it
+
+Rinth keeps them by the world's folder name, which a new world can take
+again.
+
+diff --git a/src/main/java/net/minecraft/world/level/storage/LevelStorageSource.java b/src/main/java/net/minecraft/world/level/storage/LevelStorageSource.java
+index 261e6f5d75dd24b61eb26e2a42ca20f36f392946..ab19a92fa5f0a5b4d77888c1e8dc74bd7e1b3913 100644
+--- a/src/main/java/net/minecraft/world/level/storage/LevelStorageSource.java
++++ b/src/main/java/net/minecraft/world/level/storage/LevelStorageSource.java
+@@ -662,2 +662,5 @@
+             }
++            // Rinth start: the world's waypoints and explored map go with it
++            rinth.client.modules.RinthModules.worldDeleted(this.levelId);
++            // Rinth end
+         }

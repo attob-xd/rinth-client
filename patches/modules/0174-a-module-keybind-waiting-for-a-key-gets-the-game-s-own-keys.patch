@@ -1,0 +1,17 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 13 Oct 2026 18:40:17 -0400
+Subject: [PATCH] modules: A module keybind waiting for a key gets the game's
+ own keys
+
+
+diff --git a/src/main/java/net/minecraft/client/KeyboardHandler.java b/src/main/java/net/minecraft/client/KeyboardHandler.java
+index 57844a307564c1b77848169641f93205ff201725..9974c68b5f1fb492df96e77d3252f2c9793c5636 100644
+--- a/src/main/java/net/minecraft/client/KeyboardHandler.java
++++ b/src/main/java/net/minecraft/client/KeyboardHandler.java
+@@ -470,2 +470,5 @@
+                 || screen instanceof KeyBindsScreen keyBindsScreen && keyBindsScreen.lastKeySelection > Util.getMillis() - 20L
++                // Rinth start: a module keybind waiting for a key gets the game's own keys too (F2, F11)
++                || rinth.client.modules.RinthModules.capturingKey(screen)
++                // Rinth end
+                 || !this.minecraft.handleGlobalKeyPress(InputConstants.getKey(event), event.hasControlDownWithQuirk())) {

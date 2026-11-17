@@ -1,0 +1,20 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Wed, 7 Oct 2026 22:32:36 -0400
+Subject: [PATCH] world: Find a block's biome without the blur's hashing where
+ its cells agree
+
+
+diff --git a/src/main/java/net/minecraft/world/level/levelgen/material/MaterialSystem.java b/src/main/java/net/minecraft/world/level/levelgen/material/MaterialSystem.java
+index edf1191fcec11addbd884b5c4ea3f1413ba6d61b..c8a0c1038bdb2ab7537a882acda57ab45d1f4182 100644
+--- a/src/main/java/net/minecraft/world/level/levelgen/material/MaterialSystem.java
++++ b/src/main/java/net/minecraft/world/level/levelgen/material/MaterialSystem.java
+@@ -139,5 +139,7 @@
+         );
++        // Rinth start: a block's biome without the blur's hashing where its cells agree
+         MaterialRuleContext context = new MaterialRuleContext(
+-            this, randomState, narrowedVolume, noiseChunk.cachingSamplers(), biomeManager::getBiome, generationContext, possibleBiomes
++            this, randomState, narrowedVolume, noiseChunk.cachingSamplers(), rinth.client.world.BiomeCells.forChunk(biomeManager, minBlockX, minY, minBlockZ, maxY), generationContext, possibleBiomes
+         );
++        // Rinth end
+         RuleEvaluator rule = ruleSource.compile(context);

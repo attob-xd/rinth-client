@@ -1,0 +1,13 @@
+# Rinth's pack: one file a line, by its path in the pack. "<path> = <file>" serves a file of
+# Rinth's at another path: the game's own font is replaced from Rinth's namespace, so no file
+# under assets/minecraft/ is ever in the repo (tools/ci/check-repo-content.sh).
+assets/minecraft/font/default.json = assets/rinth/font/default.json
+assets/rinth/font/red_hat_display.ttf
+assets/rinth/font/wordmark.json
+assets/rinth/font/michroma.ttf
+assets/rinth/font/inter.ttf
+assets/rinth/font/nunito.ttf
+assets/rinth/font/poppins.ttf
+assets/rinth/font/jetbrains_mono.ttf
+assets/rinth/font/badge.json
+assets/rinth/textures/font/badge.png

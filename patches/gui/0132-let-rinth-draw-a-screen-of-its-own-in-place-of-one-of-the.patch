@@ -1,0 +1,17 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 10 Oct 2026 10:09:13 -0400
+Subject: [PATCH] gui: Let Rinth draw a screen of its own in place of one of
+ the game's
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/Gui.java b/src/main/java/net/minecraft/client/gui/Gui.java
+index b94f57ec967aef86464099cf927fd498e4447834..2c3481ce7e7ae287db3afe327ec55c44c514e379 100644
+--- a/src/main/java/net/minecraft/client/gui/Gui.java
++++ b/src/main/java/net/minecraft/client/gui/Gui.java
+@@ -266,2 +266,5 @@
+ 
++        // Rinth start: a screen Rinth draws in place of the game's (ScreenEdits)
++        screen = rinth.client.ui.ScreenEdits.replaced(screen);
++        // Rinth end
+         this.screen = screen;

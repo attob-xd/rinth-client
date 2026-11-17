@@ -1,0 +1,26 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Wed, 30 Sep 2026 23:13:24 -0400
+Subject: [PATCH] blocks: Share block states' arrays of occlusion faces
+
+
+diff --git a/src/main/java/net/minecraft/world/level/block/Blocks.java b/src/main/java/net/minecraft/world/level/block/Blocks.java
+index bb709f69cdc3615528568a98dab97ec8493b8026..c8afcf6bbfd1f84ba17cc03b28670408d52c924e 100644
+--- a/src/main/java/net/minecraft/world/level/block/Blocks.java
++++ b/src/main/java/net/minecraft/world/level/block/Blocks.java
+@@ -5945,2 +5945,5 @@
+         });
++        // Rinth start: what the states share is settled
++        rinth.client.memory.BlockStateSharing.done();
++        // Rinth end
+     }
+diff --git a/src/main/java/net/minecraft/world/level/block/state/BlockBehaviour.java b/src/main/java/net/minecraft/world/level/block/state/BlockBehaviour.java
+index e12f8a042cc73820fcbd489ef1686d400ca4fcf3..81201ec5c3820e4d30905c93832467fc0a0f4526 100644
+--- a/src/main/java/net/minecraft/world/level/block/state/BlockBehaviour.java
++++ b/src/main/java/net/minecraft/world/level/block/state/BlockBehaviour.java
+@@ -531,2 +531,5 @@
+                 }
++                // Rinth start: states with the same faces share one array of them
++                this.occlusionShapesByFace = rinth.client.memory.BlockStateSharing.faces(this.occlusionShapesByFace);
++                // Rinth end
+             }

@@ -1,0 +1,71 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Fri, 2 Oct 2026 07:51:32 -0400
+Subject: [PATCH] textures: Animate only the block sprites something draws
+
+
+diff --git a/src/main/java/net/minecraft/client/renderer/texture/SpriteContents.java b/src/main/java/net/minecraft/client/renderer/texture/SpriteContents.java
+index afd1af5dc071fe9c27599dc2a4d36ea2da1b7bc7..21a264ecdcc188bcf502b2eced1da7b824b7b0f3 100644
+--- a/src/main/java/net/minecraft/client/renderer/texture/SpriteContents.java
++++ b/src/main/java/net/minecraft/client/renderer/texture/SpriteContents.java
+@@ -378,2 +378,8 @@
+ 
++        // Rinth start: draw the current frame though it didn't change this tick (ADR 0030)
++        public void rinthRedraw() {
++            this.isDirty = true;
++        }
++        // Rinth end
++
+         public void drawToAtlas(final RenderPass renderPass, final GpuBufferSlice ubo) {
+diff --git a/src/main/java/net/minecraft/client/renderer/texture/TextureAtlas.java b/src/main/java/net/minecraft/client/renderer/texture/TextureAtlas.java
+index ecc446aa05c36f9ab3c52b85a7d77fc731d8ccd6..b97c65557a5b9c0eed532edf10e45fb1a0314f63 100644
+--- a/src/main/java/net/minecraft/client/renderer/texture/TextureAtlas.java
++++ b/src/main/java/net/minecraft/client/renderer/texture/TextureAtlas.java
+@@ -132,2 +132,5 @@
+         }
++        // Rinth start: animate only the block sprites something draws (ADR 0030)
++        rinth.client.render.AnimatedSprites.atlasBuilt(this, this.sprites, this.animatedTexturesStates, this.mipViews);
++        // Rinth end
+ 
+@@ -241,3 +244,5 @@
+ 
+-            this.uploadAnimationFrames();
++            // Rinth start: animate only the block sprites something draws (ADR 0030)
++            if (!rinth.client.render.AnimatedSprites.upload(this, this.animatedTexturesStates)) this.uploadAnimationFrames();
++            // Rinth end
+         }
+@@ -286,2 +291,5 @@
+         this.animatedTexturesStates = List.of();
++        // Rinth start: animate only the block sprites something draws (ADR 0030)
++        rinth.client.render.AnimatedSprites.atlasCleared(this);
++        // Rinth end
+         this.texturesByName = Map.of();
+diff --git a/src/main/java/net/minecraft/client/renderer/texture/TextureAtlasSprite.java b/src/main/java/net/minecraft/client/renderer/texture/TextureAtlasSprite.java
+index dadf4974ded93b48bf2def353c530100dad59d78..8344a5e07b08af62cfe6389942b45a404541be84 100644
+--- a/src/main/java/net/minecraft/client/renderer/texture/TextureAtlasSprite.java
++++ b/src/main/java/net/minecraft/client/renderer/texture/TextureAtlasSprite.java
+@@ -37,2 +37,6 @@
+ 
++    // Rinth start: the blocks atlas's id for an animated sprite, else -1 (ADR 0030)
++    public int rinthAnimatedId = -1;
++    // Rinth end
++
+     public int getX() {
+@@ -46,2 +50,5 @@
+     public float getU0() {
++        // Rinth start: note an animated sprite as drawn (ADR 0030)
++        if (this.rinthAnimatedId >= 0) rinth.client.render.AnimatedSprites.used(this.rinthAnimatedId);
++        // Rinth end
+         return this.u0;
+@@ -50,2 +57,5 @@
+     public float getU1() {
++        // Rinth start: note an animated sprite as drawn (ADR 0030)
++        if (this.rinthAnimatedId >= 0) rinth.client.render.AnimatedSprites.used(this.rinthAnimatedId);
++        // Rinth end
+         return this.u1;
+@@ -67,2 +77,5 @@
+     public float getU(final float offset) {
++        // Rinth start: note an animated sprite as drawn (ADR 0030)
++        if (this.rinthAnimatedId >= 0) rinth.client.render.AnimatedSprites.used(this.rinthAnimatedId);
++        // Rinth end
+         float diff = this.u1 - this.u0;

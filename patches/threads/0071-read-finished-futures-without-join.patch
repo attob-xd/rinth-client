@@ -1,0 +1,28 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Thu, 1 Oct 2026 08:09:27 -0400
+Subject: [PATCH] threads: Read finished futures without join
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/font/FontManager.java b/src/main/java/net/minecraft/client/gui/font/FontManager.java
+index 9ae1d0028f26a1016046b491143bf0cb71a39a87..0756df52fbea65c3f145ba2e8835ba154d41111b 100644
+--- a/src/main/java/net/minecraft/client/gui/font/FontManager.java
++++ b/src/main/java/net/minecraft/client/gui/font/FontManager.java
+@@ -297,3 +297,5 @@
+                 .map(
+-                    provider -> provider.join().map(p -> List.of(new GlyphProvider.Conditional(p, this.filter))),
++                    // Rinth start: resolved only after every provider has loaded, so read it without join: a blocking call in this Function made every Function.apply a coroutine (ADR 0027)
++                    provider -> provider.resultNow().map(p -> List.of(new GlyphProvider.Conditional(p, this.filter))),
++                    // Rinth end
+                     reference -> {
+diff --git a/src/main/java/net/minecraft/util/Util.java b/src/main/java/net/minecraft/util/Util.java
+index ca0648abc17eb3acb4999eb44e21772e43c89813..b23601bf9196484e71d4fe23002a8d12dac0333a 100644
+--- a/src/main/java/net/minecraft/util/Util.java
++++ b/src/main/java/net/minecraft/util/Util.java
+@@ -670,3 +670,5 @@
+         CompletableFuture<Void> all = CompletableFuture.allOf(futures.toArray(new CompletableFuture[0]));
+-        return all.thenApply(ignored -> futures.stream().map(CompletableFuture::join).toList());
++        // Rinth start: every future has completed normally here, so read it without join: a blocking call in this Function made every Function.apply a coroutine (ADR 0027)
++        return all.thenApply(ignored -> futures.stream().map(CompletableFuture::resultNow).toList());
++        // Rinth end
+     }

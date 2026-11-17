@@ -1,0 +1,55 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 10 Oct 2026 22:39:00 -0400
+Subject: [PATCH] modules: Let a module show other weather and time on the
+ client
+
+Weather Changer (ADR 0053): the client level's rain and thunder, the snow that falls and the day clock's time as a module shows them; the server's own untouched.
+
+diff --git a/src/main/java/net/minecraft/client/ClientClockManager.java b/src/main/java/net/minecraft/client/ClientClockManager.java
+index f2b1eb3ee1002df516f5c389ac7eef51d82653ec..9858e7e201e05d05ae1ca1dc4ca1c8dd7706d18c 100644
+--- a/src/main/java/net/minecraft/client/ClientClockManager.java
++++ b/src/main/java/net/minecraft/client/ClientClockManager.java
+@@ -48,3 +48,5 @@
+         public long totalTicks() {
+-            return this.totalTicks;
++            // Rinth start: a module may hold the time of day on the client (Weather Changer)
++            return rinth.client.modules.ModuleSky.clockTicks(this, this.totalTicks);
++            // Rinth end
+         }
+@@ -53,3 +55,5 @@
+         public float partialTick() {
+-            return this.partialTick;
++            // Rinth start
++            return rinth.client.modules.ModuleSky.clockPartialTick(this, this.partialTick);
++            // Rinth end
+         }
+diff --git a/src/main/java/net/minecraft/client/renderer/WeatherEffectRenderer.java b/src/main/java/net/minecraft/client/renderer/WeatherEffectRenderer.java
+index 96faef34876d4a3b9359d9daf913c8b2c75b5705..e64d608174abd0cb53fa5bdba6ccec3931044efb 100644
+--- a/src/main/java/net/minecraft/client/renderer/WeatherEffectRenderer.java
++++ b/src/main/java/net/minecraft/client/renderer/WeatherEffectRenderer.java
+@@ -83,3 +83,5 @@
+                     if (y1 - y0 != 0) {
+-                        Biome.Precipitation precipitation = level.getPrecipitationAt(mutablePos.set(x, cameraBlockY, z));
++                        // Rinth start: a module may show snow wherever it falls (Weather Changer)
++                        Biome.Precipitation precipitation = rinth.client.modules.ModuleSky.precipitation(level.getPrecipitationAt(mutablePos.set(x, cameraBlockY, z)));
++                        // Rinth end
+                         if (precipitation != Biome.Precipitation.NONE) {
+diff --git a/src/main/java/net/minecraft/world/level/Level.java b/src/main/java/net/minecraft/world/level/Level.java
+index 776775da5978ce831900890b26eafe6cd0dbd67f..853b74670de04d7b11fafdab832a44634b16007f 100644
+--- a/src/main/java/net/minecraft/world/level/Level.java
++++ b/src/main/java/net/minecraft/world/level/Level.java
+@@ -928,3 +928,5 @@
+     public float getThunderLevel(final float a) {
+-        return Mth.lerp(a, this.oThunderLevel, this.thunderLevel) * this.getRainLevel(a);
++        // Rinth start: a module may show other weather on the client (Weather Changer)
++        return rinth.client.modules.ModuleSky.thunder(this, Mth.lerp(a, this.oThunderLevel, this.thunderLevel) * this.getRainLevel(a));
++        // Rinth end
+     }
+@@ -938,3 +940,5 @@
+     public float getRainLevel(final float a) {
+-        return Mth.lerp(a, this.oRainLevel, this.rainLevel);
++        // Rinth start: a module may show other weather on the client (Weather Changer)
++        return rinth.client.modules.ModuleSky.rain(this, Mth.lerp(a, this.oRainLevel, this.rainLevel));
++        // Rinth end
+     }

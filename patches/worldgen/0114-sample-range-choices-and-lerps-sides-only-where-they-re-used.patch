@@ -1,0 +1,46 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Thu, 8 Oct 2026 08:50:00 -0400
+Subject: [PATCH] worldgen: Sample range choices' and lerps' sides only where
+ they're used
+
+
+diff --git a/src/main/java/net/minecraft/world/level/levelgen/densityfunction/SamplerContext.java b/src/main/java/net/minecraft/world/level/levelgen/densityfunction/SamplerContext.java
+index b4520b2b9942ce5e16eb7290b1aa79dfb9e46189..2a9295673419dfbba7f96672513ac856eca00974 100644
+--- a/src/main/java/net/minecraft/world/level/levelgen/densityfunction/SamplerContext.java
++++ b/src/main/java/net/minecraft/world/level/levelgen/densityfunction/SamplerContext.java
+@@ -63,2 +63,14 @@
+             if (cell.buffer == null || !volume.equals(cell.volume)) {
++                // Rinth start: rows of a cached volume answered from it, and cached as all of it
++                if (cell.buffer != null && cell.volume != null && rinth.client.world.DensityBranches.copyRows(cell.volume, cell.buffer, volume, outputBuffer)) return;
++                DensityVolume whole = rinth.client.world.DensityBranches.wholeVolume(volume);
++                if (whole != volume) {
++                    if (cell.buffer != null) cell.buffer.close();
++                    cell.volume = whole;
++                    cell.buffer = this.acquireBuffer(whole);
++                    input.sampleVolume(this, cell.buffer, whole);
++                    rinth.client.world.DensityBranches.copyRows(whole, cell.buffer, volume, outputBuffer);
++                    return;
++                }
++                // Rinth end
+                 if (cell.buffer != null) {
+diff --git a/src/main/java/net/minecraft/world/level/levelgen/densityfunction/op/LerpFunction.java b/src/main/java/net/minecraft/world/level/levelgen/densityfunction/op/LerpFunction.java
+index 9eb77fed666fc692d2da205795e1486091209bdf..93236df21046b6f098450786751d84135998dc15 100644
+--- a/src/main/java/net/minecraft/world/level/levelgen/densityfunction/op/LerpFunction.java
++++ b/src/main/java/net/minecraft/world/level/levelgen/densityfunction/op/LerpFunction.java
+@@ -133,2 +133,5 @@
+         public void sampleVolume(final SamplerContext context, final DensityBuffer outputBuffer, final DensityVolume volume) {
++            // Rinth start: each side sampled only where alpha doesn't skip it
++            if (rinth.client.world.DensityBranches.lerp(context, outputBuffer, volume, this.alpha, this.first, this.second)) return;
++            // Rinth end
+             this.alpha.sampleVolume(context, outputBuffer, volume);
+diff --git a/src/main/java/net/minecraft/world/level/levelgen/densityfunction/op/RangeChoiceFunction.java b/src/main/java/net/minecraft/world/level/levelgen/densityfunction/op/RangeChoiceFunction.java
+index ea54379dbdfce512a84578a4ae290804fafee72e..60596af37a297a9020e6bf288d4f82d708e8dfeb 100644
+--- a/src/main/java/net/minecraft/world/level/levelgen/densityfunction/op/RangeChoiceFunction.java
++++ b/src/main/java/net/minecraft/world/level/levelgen/densityfunction/op/RangeChoiceFunction.java
+@@ -89,2 +89,5 @@
+         public void sampleVolume(final SamplerContext context, final DensityBuffer outputBuffer, final DensityVolume volume) {
++            // Rinth start: each branch sampled only where it's chosen
++            if (rinth.client.world.DensityBranches.rangeChoice(context, outputBuffer, volume, this.input, this.minInclusive, this.maxExclusive, this.whenInRange, this.whenOutOfRange)) return;
++            // Rinth end
+             this.whenInRange.sampleVolume(context, outputBuffer, volume);

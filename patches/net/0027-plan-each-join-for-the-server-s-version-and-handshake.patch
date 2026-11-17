@@ -1,0 +1,16 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 29 Sep 2026 07:59:41 -0400
+Subject: [PATCH] net: Plan each join for the server's version and handshake
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/screens/ConnectScreen.java b/src/main/java/net/minecraft/client/gui/screens/ConnectScreen.java
+index ee1325f73462eab62d4f8619b689d226dd624dc1..bf2c34c0c190b98c1feb72b3725b5b2123f41985 100644
+--- a/src/main/java/net/minecraft/client/gui/screens/ConnectScreen.java
++++ b/src/main/java/net/minecraft/client/gui/screens/ConnectScreen.java
+@@ -118,2 +118,5 @@
+                     address = resolvedAddress.get();
++                    // Rinth start: work out the server's version (Via) and its handshake (Eagler)
++                    rinth.client.net.ServerConnections.prepare(server, hostAndPort);
++                    // Rinth end
+                     Connection pendingConnection;

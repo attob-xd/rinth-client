@@ -1,0 +1,56 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 3 Oct 2026 18:28:19 -0400
+Subject: [PATCH] light: Bring the visible light maps up to date in place
+
+
+diff --git a/src/main/java/net/minecraft/world/level/lighting/DataLayerStorageMap.java b/src/main/java/net/minecraft/world/level/lighting/DataLayerStorageMap.java
+index 81a50ae62892852babb2ee39936f23227782df63..93603b0d2dec959c51a0d17d14328ddf4c87a113 100644
+--- a/src/main/java/net/minecraft/world/level/lighting/DataLayerStorageMap.java
++++ b/src/main/java/net/minecraft/world/level/lighting/DataLayerStorageMap.java
+@@ -21,2 +21,11 @@
+ 
++    // Rinth start: the light maps brought up to date in place on one thread (ADR 0032)
++    public Long2ObjectOpenHashMap<DataLayer> rinthLayers() {
++        return this.map;
++    }
++
++    public void rinthCopyColumnsFrom(final DataLayerStorageMap<?> source) {
++    }
++    // Rinth end
++
+     public DataLayer copyDataLayer(final long sectionNode) {
+diff --git a/src/main/java/net/minecraft/world/level/lighting/LayerLightSectionStorage.java b/src/main/java/net/minecraft/world/level/lighting/LayerLightSectionStorage.java
+index 2342c9527207e623cd4835dcd49e87f3d1605df2..71809e83739095403af4bea566995ae02d55ecf4 100644
+--- a/src/main/java/net/minecraft/world/level/lighting/LayerLightSectionStorage.java
++++ b/src/main/java/net/minecraft/world/level/lighting/LayerLightSectionStorage.java
+@@ -264,2 +264,5 @@
+         if (!this.changedSections.isEmpty()) {
++            // Rinth start: on one thread the visible map is brought up to date in place, not copied whole (ADR 0032)
++            if (!rinth.client.memory.LightCopies.updateInPlace(this.visibleSectionData, this.updatingSectionData, this.changedSections)) {
++            // Rinth end
+             M copy = this.updatingSectionData.copy();
+@@ -267,2 +270,5 @@
+             this.visibleSectionData = copy;
++            // Rinth start
++            }
++            // Rinth end
+             this.changedSections.clear();
+diff --git a/src/main/java/net/minecraft/world/level/lighting/SkyLightSectionStorage.java b/src/main/java/net/minecraft/world/level/lighting/SkyLightSectionStorage.java
+index cf80a034c8f7e77c59a30023b20deb424f5e4f40..675bba7bd4c4ea3837cf1745edc7b44368b0cc68 100644
+--- a/src/main/java/net/minecraft/world/level/lighting/SkyLightSectionStorage.java
++++ b/src/main/java/net/minecraft/world/level/lighting/SkyLightSectionStorage.java
+@@ -160,2 +160,13 @@
+         }
++
++        // Rinth start: the columns copied as copy() copies them, into this map (ADR 0032)
++        @Override
++        public void rinthCopyColumnsFrom(final DataLayerStorageMap<?> source) {
++            SkyLightSectionStorage.SkyDataLayerStorageMap from = (SkyLightSectionStorage.SkyDataLayerStorageMap)source;
++            this.topSections.clear();
++            this.topSections.putAll(from.topSections);
++            this.topSections.defaultReturnValue(from.currentLowestY);
++            this.currentLowestY = from.currentLowestY;
++        }
++        // Rinth end
+     }

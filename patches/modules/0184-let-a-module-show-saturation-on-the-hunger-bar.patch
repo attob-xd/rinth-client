@@ -1,0 +1,17 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Thu, 15 Oct 2026 20:25:12 -0400
+Subject: [PATCH] modules: Let a module show saturation on the hunger bar
+
+Saturation outlines each saturated shank over the game's.
+
+diff --git a/src/main/java/net/minecraft/client/gui/Hud.java b/src/main/java/net/minecraft/client/gui/Hud.java
+index 9c720a4744a8d424cf652a0178f3b088fdbc6f56..86584fa67002e4b8054124a47f88456b6f034a04 100644
+--- a/src/main/java/net/minecraft/client/gui/Hud.java
++++ b/src/main/java/net/minecraft/client/gui/Hud.java
+@@ -1026,2 +1026,5 @@
+             }
++            // Rinth start: a module may show saturation on the bar (Saturation)
++            rinth.client.modules.ModuleHunger.shank(graphics, player, i, xo, yo, half, full);
++            // Rinth end
+         }

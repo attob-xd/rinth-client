@@ -1,0 +1,17 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 29 Sep 2026 18:53:34 -0400
+Subject: [PATCH] combat: Aim with 1.8's margin around entities on 1.8 servers
+
+
+diff --git a/src/main/java/net/minecraft/world/entity/Entity.java b/src/main/java/net/minecraft/world/entity/Entity.java
+index 2db9aac22dc0e955d661ace4d6466ce2b9bb32fd..498d792b5c525c7d06a921e868008d8b0f9b8d43 100644
+--- a/src/main/java/net/minecraft/world/entity/Entity.java
++++ b/src/main/java/net/minecraft/world/entity/Entity.java
+@@ -2659,3 +2659,5 @@
+     public float getPickRadius() {
+-        return 0.0F;
++        // Rinth start: 1.8 aims with a 0.1 margin around every entity
++        return rinth.client.legacy.LegacyCombat.pickRadius(0.0F);
++        // Rinth end
+     }

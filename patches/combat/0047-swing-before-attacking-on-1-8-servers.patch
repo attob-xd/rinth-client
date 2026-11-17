@@ -1,0 +1,22 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 29 Sep 2026 18:53:34 -0400
+Subject: [PATCH] combat: Swing before attacking on 1.8 servers
+
+
+diff --git a/src/main/java/net/minecraft/client/Minecraft.java b/src/main/java/net/minecraft/client/Minecraft.java
+index a9665e0d1f466d2d940eb3763d209933182219da..299d6eeef1360df71da19f989f764a2fa3f958ea 100644
+--- a/src/main/java/net/minecraft/client/Minecraft.java
++++ b/src/main/java/net/minecraft/client/Minecraft.java
+@@ -1685,2 +1685,5 @@
+ 
++                // Rinth start: 1.8 clients swing before they attack or dig
++                boolean swung = rinth.client.legacy.LegacyCombat.swingFirst(this.player, attackAnimation);
++                // Rinth end
+                 switch (this.hitResult.getType()) {
+@@ -1710,2 +1713,5 @@
+ 
++                // Rinth start: not again if it swung first (1.8 servers)
++                if (!swung)
++                // Rinth end
+                 this.player.swing(InteractionHand.MAIN_HAND, attackAnimation, false);

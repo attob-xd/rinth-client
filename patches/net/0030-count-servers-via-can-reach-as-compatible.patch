@@ -1,0 +1,17 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 29 Sep 2026 07:59:55 -0400
+Subject: [PATCH] net: Count servers Via can reach as compatible
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/screens/multiplayer/ServerSelectionList.java b/src/main/java/net/minecraft/client/gui/screens/multiplayer/ServerSelectionList.java
+index 4857c6eaf7fba61de51aa6ff6096ee75f7b8fffd..15aa0fa82e8dabf4291da6e4260191412b9b498b 100644
+--- a/src/main/java/net/minecraft/client/gui/screens/multiplayer/ServerSelectionList.java
++++ b/src/main/java/net/minecraft/client/gui/screens/multiplayer/ServerSelectionList.java
+@@ -285,3 +285,5 @@
+                                                 .setState(
+-                                                    this.serverData.protocol == SharedConstants.getCurrentVersion().protocolVersion()
++                                                    // Rinth start: servers Via can translate for are compatible
++                                                    rinth.client.net.ServerVersions.isCompatible(this.serverData.protocol)
++                                                    // Rinth end
+                                                         ? ServerData.State.SUCCESSFUL

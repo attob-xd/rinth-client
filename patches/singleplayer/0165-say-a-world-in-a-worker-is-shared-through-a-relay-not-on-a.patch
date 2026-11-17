@@ -1,0 +1,17 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Mon, 12 Oct 2026 22:54:48 -0400
+Subject: [PATCH] singleplayer: Say a world in a worker is shared through a
+ relay, not on a port
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/screens/WorldOptionsScreen.java b/src/main/java/net/minecraft/client/gui/screens/WorldOptionsScreen.java
+index 5cf15fc86f012643c4906000711e5d76a118e920..768a7c8b089432ea207e751d4f33d0c2e6cd3ad2 100644
+--- a/src/main/java/net/minecraft/client/gui/screens/WorldOptionsScreen.java
++++ b/src/main/java/net/minecraft/client/gui/screens/WorldOptionsScreen.java
+@@ -637,2 +637,5 @@
+                 : Component.translatable("menu.multiplayerOptions.publish.started.online");
++            // Rinth start: a world in a worker is shared through a relay, not on a port (ADR 0062)
++            if (rinth.client.singleplayer.WorkerWorlds.publishedMessage() != null) message = rinth.client.singleplayer.WorkerWorlds.publishedMessage();
++            // Rinth end
+             this.sendPublishMessage(message);

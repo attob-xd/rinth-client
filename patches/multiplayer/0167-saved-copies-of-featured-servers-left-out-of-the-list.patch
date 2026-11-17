@@ -1,0 +1,17 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 13 Oct 2026 17:09:52 -0400
+Subject: [PATCH] multiplayer: Saved copies of featured servers left out of the
+ list
+
+
+diff --git a/src/main/java/net/minecraft/client/multiplayer/ServerList.java b/src/main/java/net/minecraft/client/multiplayer/ServerList.java
+index cdc77b899f12c80eacf04cfe4f33e50af7fc3ad5..299cac095f1e3e71022a9ba42a10d1d676f9a961 100644
+--- a/src/main/java/net/minecraft/client/multiplayer/ServerList.java
++++ b/src/main/java/net/minecraft/client/multiplayer/ServerList.java
+@@ -43,2 +43,5 @@
+                 ServerData serverData = ServerData.read(serverTag);
++                // Rinth start: featured servers first, never saved
++                if (rinth.client.net.FeaturedServers.isSavedCopy(serverData)) return;
++                // Rinth end
+                 if (serverTag.getBooleanOr("hidden", false)) {

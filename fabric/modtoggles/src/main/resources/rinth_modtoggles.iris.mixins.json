@@ -1,0 +1,12 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "rinth.modtoggles.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "IrisShaderPackScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

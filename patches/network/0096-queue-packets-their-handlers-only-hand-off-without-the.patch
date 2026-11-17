@@ -1,0 +1,22 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 3 Oct 2026 21:19:00 -0400
+Subject: [PATCH] network: Queue packets their handlers only hand off without
+ the round trip
+
+
+diff --git a/src/main/java/net/minecraft/network/Connection.java b/src/main/java/net/minecraft/network/Connection.java
+index 06b946fd2827c003d426c9e6c828b1734ce03a88..e847ad53239b55a0bb3ff029761667fe168e2939 100644
+--- a/src/main/java/net/minecraft/network/Connection.java
++++ b/src/main/java/net/minecraft/network/Connection.java
+@@ -152,4 +152,10 @@
+                 try {
++                    // Rinth start: a packet its handler only hands to the game's thread is queued without the round trip (ADR 0033)
++                    if (!rinth.client.net.PacketHandoff.handOff(packet, packetListener))
++                    // Rinth end
+                     genericsFtw(packet, packetListener);
+                 } catch (RunningOnDifferentThreadException var5) {
++                    // Rinth start
++                    rinth.client.net.PacketHandoff.handedOff(packet, packetListener);
++                    // Rinth end
+                 } catch (RejectedExecutionException ignored) {

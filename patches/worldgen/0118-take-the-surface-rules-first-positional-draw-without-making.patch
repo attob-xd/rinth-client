@@ -1,0 +1,47 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Thu, 8 Oct 2026 23:16:27 -0400
+Subject: [PATCH] worldgen: Take the surface rules' first positional draw
+ without making the random
+
+
+diff --git a/src/main/java/net/minecraft/world/level/levelgen/XoroshiroRandomSource.java b/src/main/java/net/minecraft/world/level/levelgen/XoroshiroRandomSource.java
+index 7aa4e52d4d526925525fa5f88069218d1be2f737..6e693b8326c3e656c0e175b93aa72c2a21649b0f 100644
+--- a/src/main/java/net/minecraft/world/level/levelgen/XoroshiroRandomSource.java
++++ b/src/main/java/net/minecraft/world/level/levelgen/XoroshiroRandomSource.java
+@@ -138,2 +138,12 @@
+ 
++        // Rinth start: the seeds a position's random is made with, for rinth.client.world.PositionalRandoms
++        public long rinthSeedAt(final int x, final int y, final int z) {
++            return Mth.getSeed(x, y, z) ^ this.seedLo;
++        }
++
++        public long rinthSeedHi() {
++            return this.seedHi;
++        }
++        // Rinth end
++
+         @VisibleForTesting
+diff --git a/src/main/java/net/minecraft/world/level/levelgen/material/MaterialSystem.java b/src/main/java/net/minecraft/world/level/levelgen/material/MaterialSystem.java
+index c8a0c1038bdb2ab7537a882acda57ab45d1f4182..87b8884edf6a7d5bb6a2512ccc86cf39966ef32e 100644
+--- a/src/main/java/net/minecraft/world/level/levelgen/material/MaterialSystem.java
++++ b/src/main/java/net/minecraft/world/level/levelgen/material/MaterialSystem.java
+@@ -220,3 +220,5 @@
+         double noiseValue = this.surfaceNoise.get(blockX, 0.0, blockZ);
+-        return (int)(noiseValue * 2.75 + 3.0 + this.noiseRandom.at(blockX, 0, blockZ).nextDouble() * 0.25);
++        // Rinth start: the first draw without making the random
++        return (int)(noiseValue * 2.75 + 3.0 + rinth.client.world.PositionalRandoms.nextDoubleAt(this.noiseRandom, blockX, 0, blockZ) * 0.25);
++        // Rinth end
+     }
+diff --git a/src/main/java/net/minecraft/world/level/levelgen/material/condition/VerticalGradientCondition.java b/src/main/java/net/minecraft/world/level/levelgen/material/condition/VerticalGradientCondition.java
+index fe68d13f80bf9358e30939ea257a0bbe84dc42df..56364835cac90426b854ae10780fba90d497d23d 100644
+--- a/src/main/java/net/minecraft/world/level/levelgen/material/condition/VerticalGradientCondition.java
++++ b/src/main/java/net/minecraft/world/level/levelgen/material/condition/VerticalGradientCondition.java
+@@ -44,4 +44,5 @@
+                 double probability = Mth.map(blockY, trueAtAndBelow, falseAtAndAbove, 1.0, 0.0);
+-                RandomSource random = randomFactory.at(this.context.blockX(), blockY, this.context.blockZ());
+-                return random.nextFloat() < probability;
++                // Rinth start: the first draw without making the random
++                return rinth.client.world.PositionalRandoms.nextFloatAt(randomFactory, this.context.blockX(), blockY, this.context.blockZ()) < probability;
++                // Rinth end
+             }

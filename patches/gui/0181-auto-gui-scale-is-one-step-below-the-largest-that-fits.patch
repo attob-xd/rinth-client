@@ -1,0 +1,17 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Thu, 15 Oct 2026 17:42:00 -0400
+Subject: [PATCH] gui: Auto GUI scale is one step below the largest that fits
+
+
+diff --git a/src/main/java/net/minecraft/client/Minecraft.java b/src/main/java/net/minecraft/client/Minecraft.java
+index 2476dc5742d9567e70f006bb55f74488f46785ec..7501e80a6d79a0bb2fdde7d31b5f1118cd2046e9 100644
+--- a/src/main/java/net/minecraft/client/Minecraft.java
++++ b/src/main/java/net/minecraft/client/Minecraft.java
+@@ -1454,3 +1454,5 @@
+     public void resizeGui() {
+-        int guiScale = this.window.calculateScale(this.options.guiScale().get(), this.isEnforceUnicode());
++        // Rinth start: Auto, the default, is one step below the largest scale that fits
++        int guiScale = rinth.client.ui.AutoGuiScale.of(this.window, this.options.guiScale().get(), this.isEnforceUnicode());
++        // Rinth end
+         this.window.setGuiScale(guiScale);

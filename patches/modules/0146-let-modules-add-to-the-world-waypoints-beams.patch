@@ -1,0 +1,16 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 10 Oct 2026 20:19:50 -0400
+Subject: [PATCH] modules: Let modules add to the world, waypoints' beams
+
+
+diff --git a/src/main/java/net/minecraft/client/renderer/LevelRenderer.java b/src/main/java/net/minecraft/client/renderer/LevelRenderer.java
+index c91045e36c5268ba182de5edfbad565fc43d4bb4..fd2196d6e2b5b66249d7b64c187727a480b4af7c 100644
+--- a/src/main/java/net/minecraft/client/renderer/LevelRenderer.java
++++ b/src/main/java/net/minecraft/client/renderer/LevelRenderer.java
+@@ -334,2 +334,5 @@
+         levelRenderState.particlesRenderState.submit(submitNodeCollector, levelRenderState.cameraRenderState);
++        // Rinth start: what modules add to the world, waypoints' beams (ADR 0051)
++        rinth.client.modules.ModuleWorld.submit(poseStack, submitNodeCollector, levelRenderState.cameraRenderState);
++        // Rinth end
+         if (renderOutline) {

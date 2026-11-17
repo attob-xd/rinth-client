@@ -1,0 +1,17 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 10 Oct 2026 22:13:56 -0400
+Subject: [PATCH] modules: Let modules see how far a hit reached
+
+The attack event (ADR 0052): the distance from the player's eyes to where the crosshair met the target, for Reach Display.
+
+diff --git a/src/main/java/net/minecraft/client/Minecraft.java b/src/main/java/net/minecraft/client/Minecraft.java
+index c8d87a79389753c84e26bf53ac62925f654d687a..199524345fc7bdb7e62c42e2db42715d5a929fe7 100644
+--- a/src/main/java/net/minecraft/client/Minecraft.java
++++ b/src/main/java/net/minecraft/client/Minecraft.java
+@@ -1719,2 +1719,5 @@
+                             this.gameMode.attack(this.player, ((EntityHitResult)this.hitResult).getEntity());
++                            // Rinth start: modules see the hit's reach (Reach Display)
++                            rinth.client.modules.ModuleInput.attacked(this.player, this.hitResult);
++                            // Rinth end
+                         }

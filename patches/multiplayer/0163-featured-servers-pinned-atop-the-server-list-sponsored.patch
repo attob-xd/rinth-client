@@ -1,0 +1,55 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Mon, 12 Oct 2026 22:39:58 -0400
+Subject: [PATCH] multiplayer: Featured servers pinned atop the server list,
+ Sponsored, never saved or deleted
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/screens/multiplayer/JoinMultiplayerScreen.java b/src/main/java/net/minecraft/client/gui/screens/multiplayer/JoinMultiplayerScreen.java
+index a484399bffeded13fb082164ad3a8e0d559a4d05..fc26bcbc1bdb7185d2f13ee966c67820f160d7a3 100644
+--- a/src/main/java/net/minecraft/client/gui/screens/multiplayer/JoinMultiplayerScreen.java
++++ b/src/main/java/net/minecraft/client/gui/screens/multiplayer/JoinMultiplayerScreen.java
+@@ -269,2 +269,5 @@
+                 this.deleteButton.active = true;
++                // Rinth start: featured servers can't be edited or deleted
++                if (rinth.client.net.FeaturedServers.is(((ServerSelectionList.OnlineServerEntry)entry).getServerData())) this.editButton.active = this.deleteButton.active = false;
++                // Rinth end
+             }
+diff --git a/src/main/java/net/minecraft/client/gui/screens/multiplayer/ServerSelectionList.java b/src/main/java/net/minecraft/client/gui/screens/multiplayer/ServerSelectionList.java
+index 15aa0fa82e8dabf4291da6e4260191412b9b498b..0d2c9bbf396f17845a517844d6930ddcb13f80f8 100644
+--- a/src/main/java/net/minecraft/client/gui/screens/multiplayer/ServerSelectionList.java
++++ b/src/main/java/net/minecraft/client/gui/screens/multiplayer/ServerSelectionList.java
+@@ -309,2 +309,5 @@
+             graphics.text(this.minecraft.font, this.serverData.name, this.getContentX() + 32 + 3, this.getContentY() + 1, -1);
++            // Rinth start: a featured server's Sponsored label
++            rinth.client.net.FeaturedServers.decorate(graphics, this.minecraft.font, this.serverData, this.getContentX() + 32 + 3 + this.minecraft.font.width(this.serverData.name) + 4, this.getContentY() + 1);
++            // Rinth end
+             List<FormattedCharSequence> lines = this.minecraft.font.split(this.serverData.motd, this.getContentWidth() - 32 - 2);
+@@ -490,2 +493,5 @@
+         private void swap(final int currentIndex, final int newIndex) {
++            // Rinth start: featured servers stay where they are
++            if (rinth.client.net.FeaturedServers.pinned(this.screen.getServers(), currentIndex, newIndex)) return;
++            // Rinth end
+             this.screen.getServers().swap(currentIndex, newIndex);
+diff --git a/src/main/java/net/minecraft/client/multiplayer/ServerList.java b/src/main/java/net/minecraft/client/multiplayer/ServerList.java
+index 0cfcbc89f28840f9f1ad7471578eeef4a149fc67..cdc77b899f12c80eacf04cfe4f33e50af7fc3ad5 100644
+--- a/src/main/java/net/minecraft/client/multiplayer/ServerList.java
++++ b/src/main/java/net/minecraft/client/multiplayer/ServerList.java
+@@ -33,2 +33,5 @@
+             this.hiddenServerList.clear();
++            // Rinth start: featured servers first, never saved
++            rinth.client.net.FeaturedServers.addTo(this.serverList);
++            // Rinth end
+             CompoundTag tag = NbtIo.read(this.minecraft.gameDirectory.toPath().resolve("servers.dat"));
+@@ -56,2 +59,5 @@
+             for (ServerData server : this.serverList) {
++                // Rinth start: featured servers first, never saved
++                if (rinth.client.net.FeaturedServers.is(server)) continue;
++                // Rinth end
+                 CompoundTag serverTag = server.write();
+@@ -114,2 +120,5 @@
+     public void remove(final ServerData thing) {
++        // Rinth start: featured servers can't be deleted
++        if (rinth.client.net.FeaturedServers.is(thing)) return;
++        // Rinth end
+         if (!this.serverList.remove(thing)) {

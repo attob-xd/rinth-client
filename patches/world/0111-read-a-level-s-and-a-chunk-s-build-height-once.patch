@@ -1,0 +1,67 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Wed, 7 Oct 2026 22:32:50 -0400
+Subject: [PATCH] world: Read a level's and a chunk's build height once
+
+
+diff --git a/src/main/java/net/minecraft/world/level/Level.java b/src/main/java/net/minecraft/world/level/Level.java
+index 8558d22ef726392ca784128fbe6135eaf08a9aae..776775da5978ce831900890b26eafe6cd0dbd67f 100644
+--- a/src/main/java/net/minecraft/world/level/Level.java
++++ b/src/main/java/net/minecraft/world/level/Level.java
+@@ -124,2 +124,5 @@
+     private final Holder<DimensionType> dimensionTypeRegistration;
++    // Rinth start: the dimension's height read once
++    private final rinth.client.world.Heights rinthHeights;
++    // Rinth end
+     protected final WritableLevelData levelData;
+@@ -145,2 +148,5 @@
+         this.dimensionTypeRegistration = dimensionTypeRegistration;
++        // Rinth start: the dimension's height read once
++        this.rinthHeights = rinth.client.world.Heights.of(dimensionTypeRegistration);
++        // Rinth end
+         this.dimension = dimension;
+@@ -1049,2 +1055,14 @@
+ 
++    // Rinth start: the dimension's height read once
++    @Override
++    public int getMinY() {
++        return this.rinthHeights.minY();
++    }
++
++    @Override
++    public int getHeight() {
++        return this.rinthHeights.height();
++    }
++    // Rinth end
++
+     public Holder<DimensionType> dimensionTypeRegistration() {
+diff --git a/src/main/java/net/minecraft/world/level/chunk/ChunkAccess.java b/src/main/java/net/minecraft/world/level/chunk/ChunkAccess.java
+index d25d0044f221ec67cbc825f06a3e1e4efa24ef2e..41669888a1dedfb2579e08cf8243e4138828ffd9 100644
+--- a/src/main/java/net/minecraft/world/level/chunk/ChunkAccess.java
++++ b/src/main/java/net/minecraft/world/level/chunk/ChunkAccess.java
+@@ -78,2 +78,5 @@
+     protected final LevelHeightAccessor levelHeightAccessor;
++    // Rinth start: the level's height read once
++    private final rinth.client.world.Heights rinthHeights;
++    // Rinth end
+     protected final LevelChunkSection[] sections;
+@@ -92,2 +95,5 @@
+         this.levelHeightAccessor = levelHeightAccessor;
++        // Rinth start: the level's height read once
++        this.rinthHeights = rinth.client.world.Heights.of(levelHeightAccessor);
++        // Rinth end
+         this.sections = new LevelChunkSection[levelHeightAccessor.getSectionsCount()];
+@@ -398,3 +404,5 @@
+     public int getMinY() {
+-        return this.levelHeightAccessor.getMinY();
++        // Rinth start: the level's height read once
++        return this.rinthHeights.minY();
++        // Rinth end
+     }
+@@ -403,3 +411,5 @@
+     public int getHeight() {
+-        return this.levelHeightAccessor.getHeight();
++        // Rinth start: the level's height read once
++        return this.rinthHeights.height();
++        // Rinth end
+     }

@@ -1,0 +1,27 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 10 Oct 2026 22:39:00 -0400
+Subject: [PATCH] modules: Let a module turn the camera without the player
+
+The turn and camera events (ADR 0053): the mouse's turns may be kept from the player and the camera's angles changed (Freelook).
+
+diff --git a/src/main/java/net/minecraft/client/Camera.java b/src/main/java/net/minecraft/client/Camera.java
+index de5172d8ef4c63e62590fab82cd5154b436e8574..d5943fbf738807d72cc9697b3bb6f80c4102b6b0 100644
+--- a/src/main/java/net/minecraft/client/Camera.java
++++ b/src/main/java/net/minecraft/client/Camera.java
+@@ -270,2 +270,5 @@
+         this.detached = !this.minecraft.options.getCameraType().isFirstPerson();
++        // Rinth start: a module may turn the camera without the player (Freelook)
++        if (rinth.client.modules.ModuleCamera.camera(this.yRot, this.xRot)) this.setRotation(rinth.client.modules.ModuleCamera.yaw(), rinth.client.modules.ModuleCamera.pitch());
++        // Rinth end
+         if (this.detached) {
+diff --git a/src/main/java/net/minecraft/client/MouseHandler.java b/src/main/java/net/minecraft/client/MouseHandler.java
+index f6e923ffad0fec65c57da44b8417193f63a35a93..6512267accbf5bc9d26c2f7f98a22a5dd90d3209 100644
+--- a/src/main/java/net/minecraft/client/MouseHandler.java
++++ b/src/main/java/net/minecraft/client/MouseHandler.java
+@@ -345,2 +345,5 @@
+         this.minecraft.getTutorial().onMouse(xo, yo);
++        // Rinth start: a module may turn the camera instead of the player (Freelook)
++        if (rinth.client.modules.ModuleCamera.turn(xo, yo)) return;
++        // Rinth end
+         if (this.minecraft.player != null) {

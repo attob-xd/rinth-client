@@ -1,0 +1,31 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 10 Oct 2026 12:09:31 -0400
+Subject: [PATCH] gui: Containers' labels in the client's look
+
+Signed-off-by: rinth-client <335801235+rinth-client@users.noreply.github.com>
+
+diff --git a/src/main/java/net/minecraft/client/gui/screens/inventory/AbstractContainerScreen.java b/src/main/java/net/minecraft/client/gui/screens/inventory/AbstractContainerScreen.java
+index 765580001bed31c67bfce29681b572f0e97dd72e..9f6c2d124a2fc1af71fc19474993ba938e70511b 100644
+--- a/src/main/java/net/minecraft/client/gui/screens/inventory/AbstractContainerScreen.java
++++ b/src/main/java/net/minecraft/client/gui/screens/inventory/AbstractContainerScreen.java
+@@ -189,4 +189,6 @@
+     protected void extractLabels(final GuiGraphicsExtractor graphics, final int xm, final int ym) {
+-        graphics.text(this.font, this.title, this.titleLabelX, this.titleLabelY, -12566464, false);
+-        graphics.text(this.font, this.playerInventoryTitle, this.inventoryLabelX, this.inventoryLabelY, -12566464, false);
++        // Rinth start: light labels on the containers the look redraws as glass
++        graphics.text(this.font, this.title, this.titleLabelX, this.titleLabelY, rinth.client.ui.ContainerSkin.label(this, -12566464), false);
++        graphics.text(this.font, this.playerInventoryTitle, this.inventoryLabelX, this.inventoryLabelY, rinth.client.ui.ContainerSkin.label(this, -12566464), false);
++        // Rinth end
+     }
+diff --git a/src/main/java/net/minecraft/client/gui/screens/inventory/InventoryScreen.java b/src/main/java/net/minecraft/client/gui/screens/inventory/InventoryScreen.java
+index 6ed06d48f83abdf1d6d3660c7b9fda51630fec53..14d657bb6d191216f9e2d254248c2544c238a9c7 100644
+--- a/src/main/java/net/minecraft/client/gui/screens/inventory/InventoryScreen.java
++++ b/src/main/java/net/minecraft/client/gui/screens/inventory/InventoryScreen.java
+@@ -73,3 +73,5 @@
+     protected void extractLabels(final GuiGraphicsExtractor graphics, final int xm, final int ym) {
+-        graphics.text(this.font, this.title, this.titleLabelX, this.titleLabelY, -12566464, false);
++        // Rinth start: light labels on the containers the look redraws as glass
++        graphics.text(this.font, this.title, this.titleLabelX, this.titleLabelY, rinth.client.ui.ContainerSkin.label(this, -12566464), false);
++        // Rinth end
+     }

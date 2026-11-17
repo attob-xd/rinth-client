@@ -1,0 +1,29 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Thu, 1 Oct 2026 00:52:04 -0400
+Subject: [PATCH] textures: Make vanilla sprites from the build's decoded
+ copies
+
+
+diff --git a/src/main/java/net/minecraft/client/renderer/texture/SpriteContents.java b/src/main/java/net/minecraft/client/renderer/texture/SpriteContents.java
+index d3847e145302810fe6b32af20a345efc217379d2..afd1af5dc071fe9c27599dc2a4d36ea2da1b7bc7 100644
+--- a/src/main/java/net/minecraft/client/renderer/texture/SpriteContents.java
++++ b/src/main/java/net/minecraft/client/renderer/texture/SpriteContents.java
+@@ -85,2 +85,6 @@
+     public void increaseMipLevel(final int mipLevel) {
++        // Rinth start: the build's mip levels of a vanilla sprite, where it has them
++        NativeImage[] prebuilt = rinth.client.render.SpriteCache.mipLevels(this.originalImage, mipLevel);
++        if (prebuilt != null) { this.byMipLevel = prebuilt; return; }
++        // Rinth end
+         try {
+diff --git a/src/main/java/net/minecraft/client/renderer/texture/atlas/SpriteResourceLoader.java b/src/main/java/net/minecraft/client/renderer/texture/atlas/SpriteResourceLoader.java
+index b2ce454d1d4549ba482a81afea879b5a50c7423a..84a4519e5649c1a14019cff9a8d9a0fae25b6a49 100644
+--- a/src/main/java/net/minecraft/client/renderer/texture/atlas/SpriteResourceLoader.java
++++ b/src/main/java/net/minecraft/client/renderer/texture/atlas/SpriteResourceLoader.java
+@@ -41,2 +41,6 @@
+             NativeImage image;
++            // Rinth start: the build's decoded copy of a vanilla sprite, where it has one
++            NativeImage prebuilt = rinth.client.render.SpriteCache.image(spriteLocation, resource);
++            if (prebuilt != null) image = prebuilt; else
++            // Rinth end
+             try (InputStream is = resource.open()) {

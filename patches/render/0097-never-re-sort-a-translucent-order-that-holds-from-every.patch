@@ -1,0 +1,17 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sun, 4 Oct 2026 15:11:14 -0400
+Subject: [PATCH] render: Never re-sort a translucent order that holds from
+ every camera
+
+
+diff --git a/src/main/java/net/minecraft/client/renderer/chunk/SectionRenderDispatcher.java b/src/main/java/net/minecraft/client/renderer/chunk/SectionRenderDispatcher.java
+index 2f1cbcf3ece63fe9ef7f9facc4d8664da29787e0..aeae7918968b6a1819a817d5205be0ff067153f5 100644
+--- a/src/main/java/net/minecraft/client/renderer/chunk/SectionRenderDispatcher.java
++++ b/src/main/java/net/minecraft/client/renderer/chunk/SectionRenderDispatcher.java
+@@ -269,2 +269,5 @@
+         public void resortTransparency() {
++            // Rinth start: a translucent order that holds from every camera is never sorted again
++            if (rinth.client.render.terrain.SectionDraws.keepsOrder(this.getSectionMesh())) return;
++            // Rinth end
+             if (this.getSectionMesh() instanceof CompiledSectionMesh mesh) {

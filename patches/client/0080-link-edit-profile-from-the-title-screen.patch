@@ -1,0 +1,16 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Thu, 1 Oct 2026 21:55:19 -0400
+Subject: [PATCH] client: Link Edit Profile from the title screen
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/screens/TitleScreen.java b/src/main/java/net/minecraft/client/gui/screens/TitleScreen.java
+index 80d9e3e19ccfc348f8f073ece4fb4a678d8440ac..26da2acda269ecf67274d46ebb24b9e95cd08994 100644
+--- a/src/main/java/net/minecraft/client/gui/screens/TitleScreen.java
++++ b/src/main/java/net/minecraft/client/gui/screens/TitleScreen.java
+@@ -160,2 +160,5 @@
+         );
++        // Rinth start: a link to Edit Profile (the name and skin)
++        this.addRenderableWidget(rinth.client.profile.ProfileScreen.titleLink(this));
++        // Rinth end
+         if (this.realmsNotificationsScreen == null) {

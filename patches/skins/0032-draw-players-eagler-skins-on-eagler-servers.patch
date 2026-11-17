@@ -1,0 +1,17 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 29 Sep 2026 08:00:03 -0400
+Subject: [PATCH] skins: Draw players' Eagler skins on Eagler servers
+
+
+diff --git a/src/main/java/net/minecraft/client/multiplayer/PlayerInfo.java b/src/main/java/net/minecraft/client/multiplayer/PlayerInfo.java
+index 9356f5edb9f4112283dac54d765953e284709baa..86c735735ff5ebbe4703925750a09836e524c96b 100644
+--- a/src/main/java/net/minecraft/client/multiplayer/PlayerInfo.java
++++ b/src/main/java/net/minecraft/client/multiplayer/PlayerInfo.java
+@@ -33,3 +33,5 @@
+         boolean requireSecure = !minecraft.isLocalPlayer(profile.id());
+-        return minecraft.getSkinManager().createLookup(profile, requireSecure);
++        // Rinth start: on Eagler servers, skins come from the server by UUID
++        return rinth.client.skins.EaglerSkins.lookup(profile, minecraft.getSkinManager().createLookup(profile, requireSecure));
++        // Rinth end
+     }

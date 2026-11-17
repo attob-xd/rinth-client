@@ -1,0 +1,27 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Fri, 9 Oct 2026 20:10:42 -0400
+Subject: [PATCH] voice: Voice chat in a panel at the pause menu's top right
+
+The pause menu's "Voice Chat..." button gives way to a panel in the
+corner, where Eagler's 1.8 client has its voice controls: the channel in
+one click, who is connected and talking, mute toggles, and a link to the
+full settings. The same hook draws an Eagler server's icons over the
+menu's buttons.
+
+diff --git a/src/main/java/net/minecraft/client/gui/screens/PauseScreen.java b/src/main/java/net/minecraft/client/gui/screens/PauseScreen.java
+index cd3f36855cc7133e02b897268b7fbff79b7ab299..db07e8de5141c2d694012f8cbb8089326c05a245 100644
+--- a/src/main/java/net/minecraft/client/gui/screens/PauseScreen.java
++++ b/src/main/java/net/minecraft/client/gui/screens/PauseScreen.java
+@@ -156,5 +156,2 @@
+         helper.addChild(iconButtonRow, 2, gridLayout.newCellSettings().alignHorizontallyCenter());
+-        // Rinth start: voice chat's screen, on a server with Eagler voice
+-        rinth.client.eagler.VoiceScreen.addPauseButton(helper, this);
+-        // Rinth end
+         Optional<? extends Holder<Dialog>> additions = this.getCustomAdditions();
+@@ -183,2 +180,5 @@
+         gridLayout.visitWidgets(this::addRenderableWidget);
++        // Rinth start: voice chat's panel in the top right, and an Eagler server's icons over the buttons
++        rinth.client.eagler.PauseMenuHooks.addOverlays(this, this::addRenderableWidget, this::addRenderableOnly);
++        // Rinth end
+     }

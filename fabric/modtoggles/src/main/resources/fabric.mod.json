@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "rinth_modtoggles",
+  "version": "1.0.0",
+  "name": "Rinth Mod Switches",
+  "description": "An ON/OFF switch beside each mod in Mod Menu: every mod is built into the client, and a switch turns one on or off when the page reloads, in any combination. Hides the build's library mods from the list. Also explains in Iris's shader pack screen why a browser has no shader packs.",
+  "authors": [
+    "Rinth Client"
+  ],
+  "license": "GPL-3.0-or-later",
+  "environment": "client",
+  "mixins": [
+    "rinth_modtoggles.mixins.json",
+    "rinth_modtoggles.iris.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.17",
+    "minecraft": "~26.3",
+    "modmenu": "*"
+  }
+}

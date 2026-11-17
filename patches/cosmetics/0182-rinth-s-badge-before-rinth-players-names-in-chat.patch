@@ -1,0 +1,17 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Thu, 15 Oct 2026 18:43:22 -0400
+Subject: [PATCH] cosmetics: Rinth's badge before Rinth players' names in chat
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/components/ChatComponent.java b/src/main/java/net/minecraft/client/gui/components/ChatComponent.java
+index e07f330252bec5d4b278bbc6ae9c6db4a250bc81..4d7522875e12a8fa1f8f0b90e60d9d63810b585d 100644
+--- a/src/main/java/net/minecraft/client/gui/components/ChatComponent.java
++++ b/src/main/java/net/minecraft/client/gui/components/ChatComponent.java
+@@ -266,3 +266,5 @@
+     ) {
+-        GuiMessage message = new GuiMessage(this.minecraft.gui.hud.getGuiTicks(), contents, signature, source, tag);
++        // Rinth start: Rinth's badge before Rinth players' names, as in the tab list
++        GuiMessage message = new GuiMessage(this.minecraft.gui.hud.getGuiTicks(), rinth.client.cosmetics.Cosmetics.chatMessage(contents), signature, source, tag);
++        // Rinth end
+         if (this.visibleMessageFilter.test(message)) {

@@ -1,0 +1,18 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Mon, 12 Oct 2026 22:46:20 -0400
+Subject: [PATCH] gui: Draw the screen recorder's REC with the profiler's
+ overlay
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/Gui.java b/src/main/java/net/minecraft/client/gui/Gui.java
+index 2c3481ce7e7ae287db3afe327ec55c44c514e379..fc9b561bd85267076ec0f8f0751417b0c06e6ff7 100644
+--- a/src/main/java/net/minecraft/client/gui/Gui.java
++++ b/src/main/java/net/minecraft/client/gui/Gui.java
+@@ -213,4 +213,4 @@
+ 
+-        // Rinth start: the profiler's overlay
+-        rinth.client.profiler.ProfilerOverlay.extract(graphics);
++        // Rinth start: the profiler's overlay and the screen recorder's REC (ADR 0062)
++        rinth.client.gui.TopOverlays.extract(graphics);
+         // Rinth end

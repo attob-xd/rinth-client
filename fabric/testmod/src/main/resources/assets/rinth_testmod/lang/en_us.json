@@ -1,0 +1,4 @@
+{
+  "rinth_testmod.loaded": "Fabric test mod: %s mods built in, entrypoint ran: %s, accessor: %s",
+  "rinth_testmod.splash": "Fabric mods work!"
+}

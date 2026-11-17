@@ -1,0 +1,47 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 6 Oct 2026 23:28:27 -0400
+Subject: [PATCH] client: Singleplayer's server runs in a worker where the
+ platform has one
+
+
+diff --git a/src/main/java/net/minecraft/client/Minecraft.java b/src/main/java/net/minecraft/client/Minecraft.java
+index 1c3c0cf302f3479537008709815fbc18d10e4b34..4b7c3abe66de7569345e01189d13f40df68aa934 100644
+--- a/src/main/java/net/minecraft/client/Minecraft.java
++++ b/src/main/java/net/minecraft/client/Minecraft.java
+@@ -1241,3 +1241,6 @@
+         boolean var28 = this.pause;
+-        this.pause = this.hasSingleplayerServer() && this.gui.isPausing() && !this.singleplayerServer.isPublished();
++        this.pause = this.hasSingleplayerServer() && this.gui.isPausing() && !this.singleplayerServer.isPublished()
++            // Rinth start: a world whose server runs in a worker pauses as an integrated server's does (ADR 0039)
++            || rinth.client.singleplayer.WorkerWorlds.pauses(this);
++            // Rinth end
+         if (!var28 && this.pause) {
+@@ -1619,3 +1622,6 @@
+     public void pauseGame(final boolean suppressPauseMenuIfWeReallyArePausing) {
+-        boolean canGameReallyBePaused = this.hasSingleplayerServer() && !this.singleplayerServer.isPublished();
++        boolean canGameReallyBePaused = this.hasSingleplayerServer() && !this.singleplayerServer.isPublished()
++            // Rinth start: a world whose server runs in a worker can pause (ADR 0039)
++            || rinth.client.singleplayer.WorkerWorlds.running();
++            // Rinth end
+         this.gui.setPauseScreen(suppressPauseMenuIfWeReallyArePausing, canGameReallyBePaused);
+@@ -2058,2 +2064,12 @@
+         // Rinth end
++        // Rinth start: the world's server runs in a worker where the platform has one (ADR 0039)
++        if (rinth.client.singleplayer.WorkerWorlds.load(this, levelSourceAccess, packRepository, worldStem, gameRules, newWorld)) {
++            Connection workerConnection = rinth.client.singleplayer.WorkerWorlds.takeConnection();
++            if (workerConnection != null) {
++                this.isLocalServer = true;
++                this.pendingConnection = workerConnection;
++            }
++            return;
++        }
++        // Rinth end
+         this.disconnectWithProgressScreen();
+@@ -2201,2 +2217,6 @@
+ 
++            // Rinth start: a world whose server runs in a worker saves and stops there (ADR 0039)
++            rinth.client.singleplayer.WorkerWorlds.stopAndWait(this);
++            // Rinth end
++
+             this.setScreenAndShow(screen);

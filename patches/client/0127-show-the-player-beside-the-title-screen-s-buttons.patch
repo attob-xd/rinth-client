@@ -1,0 +1,20 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Fri, 9 Oct 2026 21:17:45 -0400
+Subject: [PATCH] client: Show the player beside the title screen's buttons
+
+The title screen's Edit Profile link in the top left corner gives way to
+the player's model, their name over their head and an Edit Profile button
+below, to the right of the main buttons (Rinth's TitleProfile).
+
+diff --git a/src/main/java/net/minecraft/client/gui/screens/TitleScreen.java b/src/main/java/net/minecraft/client/gui/screens/TitleScreen.java
+index 26da2acda269ecf67274d46ebb24b9e95cd08994..e59ed0779a1074756620a50c8911297a2ba96238 100644
+--- a/src/main/java/net/minecraft/client/gui/screens/TitleScreen.java
++++ b/src/main/java/net/minecraft/client/gui/screens/TitleScreen.java
+@@ -160,4 +160,4 @@
+         );
+-        // Rinth start: a link to Edit Profile (the name and skin)
+-        this.addRenderableWidget(rinth.client.profile.ProfileScreen.titleLink(this));
++        // Rinth start: the player, beside the buttons, and Edit Profile (the name and skin)
++        rinth.client.profile.TitleProfile.add(this, this::addRenderableWidget);
+         // Rinth end

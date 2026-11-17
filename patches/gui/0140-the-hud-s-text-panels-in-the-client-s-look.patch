@@ -1,0 +1,71 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 10 Oct 2026 12:07:44 -0400
+Subject: [PATCH] gui: The HUD's text panels in the client's look
+
+Signed-off-by: rinth-client <335801235+rinth-client@users.noreply.github.com>
+
+diff --git a/src/main/java/net/minecraft/client/gui/Hud.java b/src/main/java/net/minecraft/client/gui/Hud.java
+index deccde690ddda03d4d2a1ecf23d0686146e35951..7c842fbd6aa3cfd33c4be9c70eaef4345ac50744 100644
+--- a/src/main/java/net/minecraft/client/gui/Hud.java
++++ b/src/main/java/net/minecraft/client/gui/Hud.java
+@@ -726,4 +726,10 @@
+         int headerY = bottom - entriesCount * 9;
++        // Rinth start: the sidebar on one glass card (HudLook)
++        if (!rinth.client.look.HudLook.scoreboard(graphics, left - 2, headerY - 9 - 1, right, bottom, headerY - 1)) {
++        // Rinth end
+         graphics.fill(left - 2, headerY - 9 - 1, right, headerY - 1, headerBackgroundColor);
+         graphics.fill(left - 2, headerY - 1, right, bottom, backgroundColor);
++        // Rinth start
++        }
++        // Rinth end
+         graphics.text(this.getFont(), objectiveDisplayName, left + width / 2 - objectiveDisplayNameWidth / 2, headerY - 9, -1, false);
+diff --git a/src/main/java/net/minecraft/client/gui/components/ChatComponent.java b/src/main/java/net/minecraft/client/gui/components/ChatComponent.java
+index 1e1e3229fb3968d0c074f2c27c18e0fabf67abf7..bca3960296de57069d08e6ca23d6859be5288aaa 100644
+--- a/src/main/java/net/minecraft/client/gui/components/ChatComponent.java
++++ b/src/main/java/net/minecraft/client/gui/components/ChatComponent.java
+@@ -166,3 +166,5 @@
+                 int entryTop = entryBottom - entryHeight;
+-                graphics.fill(-4, entryTop, maxWidth + 4 + 4, entryBottom, ARGB.black(alphax * backgroundOpacity));
++                // Rinth start: chat's lines on the look's cold tint (HudLook)
++                graphics.fill(-4, entryTop, maxWidth + 4 + 4, entryBottom, rinth.client.look.HudLook.chatLine(ARGB.black(alphax * backgroundOpacity)));
++                // Rinth end
+             });
+diff --git a/src/main/java/net/minecraft/client/gui/components/PlayerTabOverlay.java b/src/main/java/net/minecraft/client/gui/components/PlayerTabOverlay.java
+index 5a57c13386ee1a9b8bbef3ff54956e2549e4fd85..a19cd6c88899f30a98189eeb30484e44428a0b36 100644
+--- a/src/main/java/net/minecraft/client/gui/components/PlayerTabOverlay.java
++++ b/src/main/java/net/minecraft/client/gui/components/PlayerTabOverlay.java
+@@ -181,2 +181,5 @@
+         if (headerLines != null) {
++            // Rinth start: the tab list on rounded glass (HudLook)
++            if (!rinth.client.look.HudLook.tabBox(graphics, screenWidth / 2 - maxLineWidth / 2 - 1, yyo - 1, screenWidth / 2 + maxLineWidth / 2 + 1, yyo + headerLines.size() * 9, true, false))
++            // Rinth end
+             graphics.fill(
+@@ -194,2 +197,5 @@
+ 
++        // Rinth start: the tab list on rounded glass (HudLook)
++        if (!rinth.client.look.HudLook.tabBox(graphics, screenWidth / 2 - maxLineWidth / 2 - 1, yyo - 1, screenWidth / 2 + maxLineWidth / 2 + 1, yyo + rows * 9, headerLines == null, footerLines == null))
++        // Rinth end
+         graphics.fill(screenWidth / 2 - maxLineWidth / 2 - 1, yyo - 1, screenWidth / 2 + maxLineWidth / 2 + 1, yyo + rows * 9, Integer.MIN_VALUE);
+@@ -202,2 +208,5 @@
+             int yo = yyo + row * 9;
++            // Rinth start: the tab list on rounded glass (HudLook)
++            if (!rinth.client.look.HudLook.tabRow(graphics, xo, yo, xo + slotWidth, yo + 8))
++            // Rinth end
+             graphics.fill(xo, yo, xo + slotWidth, yo + 8, background);
+@@ -229,2 +238,5 @@
+             yyo += rows * 9 + 1;
++            // Rinth start: the tab list on rounded glass (HudLook)
++            if (!rinth.client.look.HudLook.tabBox(graphics, screenWidth / 2 - maxLineWidth / 2 - 1, yyo - 1, screenWidth / 2 + maxLineWidth / 2 + 1, yyo + footerLines.size() * 9, false, true))
++            // Rinth end
+             graphics.fill(
+diff --git a/src/main/java/net/minecraft/client/gui/screens/ChatScreen.java b/src/main/java/net/minecraft/client/gui/screens/ChatScreen.java
+index b5cfe4956f0ac38faa9e1bf6c1cae9ed1798729a..015c3017d0a7d85b1a72f2d04e6f95e112a394c0 100644
+--- a/src/main/java/net/minecraft/client/gui/screens/ChatScreen.java
++++ b/src/main/java/net/minecraft/client/gui/screens/ChatScreen.java
+@@ -277,2 +277,5 @@
+     public void extractRenderState(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY, final float a) {
++        // Rinth start: the chat field as a rounded well (HudLook)
++        if (!rinth.client.look.HudLook.chatField(graphics, 2, this.height - 14, this.width - 2, this.height - 2))
++        // Rinth end
+         graphics.fill(2, this.height - 14, this.width - 2, this.height - 2, this.minecraft.options.getBackgroundColor(Integer.MIN_VALUE));

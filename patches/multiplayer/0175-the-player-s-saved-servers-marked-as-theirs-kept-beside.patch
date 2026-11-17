@@ -1,0 +1,22 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 13 Oct 2026 18:56:28 -0400
+Subject: [PATCH] multiplayer: The player's saved servers marked as theirs,
+ kept beside featured ones
+
+
+diff --git a/src/main/java/net/minecraft/client/multiplayer/ServerList.java b/src/main/java/net/minecraft/client/multiplayer/ServerList.java
+index 299cac095f1e3e71022a9ba42a10d1d676f9a961..2e0068f6d70aa3ad9cd6ad8fe212beef77941bd9 100644
+--- a/src/main/java/net/minecraft/client/multiplayer/ServerList.java
++++ b/src/main/java/net/minecraft/client/multiplayer/ServerList.java
+@@ -44,3 +44,3 @@
+                 // Rinth start: featured servers first, never saved
+-                if (rinth.client.net.FeaturedServers.isSavedCopy(serverData)) return;
++                if (rinth.client.net.FeaturedServers.isSavedCopy(serverTag, serverData)) return;
+                 // Rinth end
+@@ -77,2 +77,5 @@
+             CompoundTag tag = new CompoundTag();
++            // Rinth start: the player's own entries told apart from older builds' featured copies
++            rinth.client.net.FeaturedServers.markOwn(serverTags);
++            // Rinth end
+             tag.put("servers", serverTags);

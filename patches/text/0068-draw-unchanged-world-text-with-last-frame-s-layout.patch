@@ -1,0 +1,30 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Thu, 1 Oct 2026 01:00:20 -0400
+Subject: [PATCH] text: Draw unchanged world text with last frame's layout
+
+
+diff --git a/src/main/java/net/minecraft/client/Minecraft.java b/src/main/java/net/minecraft/client/Minecraft.java
+index 38a3d0b8320ab7e21b7340a058acbe73b333b966..72839a1abe93f09186ed68baf6d9dd94a2cdd386 100644
+--- a/src/main/java/net/minecraft/client/Minecraft.java
++++ b/src/main/java/net/minecraft/client/Minecraft.java
+@@ -951,2 +951,5 @@
+         this.fontManager.updateOptions(this.options);
++        // Rinth start: text laid out with the old glyphs goes
++        rinth.client.render.TextLayouts.clear();
++        // Rinth end
+     }
+diff --git a/src/main/java/net/minecraft/client/renderer/feature/TextFeatureRenderer.java b/src/main/java/net/minecraft/client/renderer/feature/TextFeatureRenderer.java
+index b48a8f5c74c0ed9c9b186e2f1e82ae7aefa57b98..eaa5c9545668f346b5411475c7f3be2f39b9acd2 100644
+--- a/src/main/java/net/minecraft/client/renderer/feature/TextFeatureRenderer.java
++++ b/src/main/java/net/minecraft/client/renderer/feature/TextFeatureRenderer.java
+@@ -46,5 +46,7 @@
+         if (content.outlineColor() == 0) {
+-            Font.PreparedText text = font.prepareText(
+-                content.string(), content.x(), content.y(), content.color(), content.dropShadow(), false, content.backgroundColor()
++            // Rinth start: the same layout as last frame, where the text and how it's drawn haven't changed
++            Font.PreparedText text = rinth.client.render.TextLayouts.prepare(
++                font, content.string(), content.x(), content.y(), content.color(), content.dropShadow(), content.backgroundColor()
+             );
++            // Rinth end
+             text.visit(glyphRenderer);

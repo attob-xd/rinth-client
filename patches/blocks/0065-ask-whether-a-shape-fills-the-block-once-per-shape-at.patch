@@ -1,0 +1,25 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Wed, 30 Sep 2026 23:16:03 -0400
+Subject: [PATCH] blocks: Ask whether a shape fills the block once per shape at
+ bootstrap
+
+
+diff --git a/src/main/java/net/minecraft/world/level/block/state/BlockBehaviour.java b/src/main/java/net/minecraft/world/level/block/state/BlockBehaviour.java
+index b4f9f12b09322e706368173418fbfd17d7dc2328..a071828a1bbcc6edb5c344e3771e37a424789c19 100644
+--- a/src/main/java/net/minecraft/world/level/block/state/BlockBehaviour.java
++++ b/src/main/java/net/minecraft/world/level/block/state/BlockBehaviour.java
+@@ -520,3 +520,5 @@
+             this.occlusionShape = this.canOcclude ? this.owner.getOcclusionShape(this.asState()) : Shapes.empty();
+-            this.solidRender = Block.isShapeFullBlock(this.occlusionShape);
++            // Rinth start: asked once per shape at bootstrap
++            this.solidRender = rinth.client.memory.BlockStateSharing.isFullBlock(this.occlusionShape);
++            // Rinth end
+             if (this.occlusionShape.isEmpty()) {
+@@ -992,3 +994,5 @@
+ 
+-                this.isCollisionShapeFullBlock = Block.isShapeFullBlock(state.getCollisionShape(EmptyBlockGetter.INSTANCE, BlockPos.ZERO));
++                // Rinth start: asked once per shape at bootstrap
++                this.isCollisionShapeFullBlock = rinth.client.memory.BlockStateSharing.isFullBlock(state.getCollisionShape(EmptyBlockGetter.INSTANCE, BlockPos.ZERO));
++                // Rinth end
+             }

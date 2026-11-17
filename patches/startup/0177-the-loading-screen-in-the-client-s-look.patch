@@ -1,0 +1,40 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 13 Oct 2026 20:36:12 -0400
+Subject: [PATCH] startup: The loading screen in the client's look
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/screens/LoadingOverlay.java b/src/main/java/net/minecraft/client/gui/screens/LoadingOverlay.java
+index c28b7c295bddb7e797bd5a286062c911ae028f74..e800140b369fc381f596fb30f29f3b6c3101cbcd 100644
+--- a/src/main/java/net/minecraft/client/gui/screens/LoadingOverlay.java
++++ b/src/main/java/net/minecraft/client/gui/screens/LoadingOverlay.java
+@@ -86,3 +86,5 @@
+             graphics.nextStratum();
+-            graphics.fill(0, 0, width, height, replaceAlpha(BRAND_BACKGROUND.getAsInt(), alpha));
++            // Rinth start: the menus' photo behind, not Mojang's red (LoadingLook)
++            rinth.client.look.LoadingLook.background(graphics, width, height, alpha);
++            // Rinth end
+             logoAlpha = 1.0F - Mth.clamp(fadeOutAnim - 1.0F, 0.0F, 1.0F);
+@@ -97,3 +99,5 @@
+             graphics.nextStratum();
+-            graphics.fill(0, 0, width, height, replaceAlpha(BRAND_BACKGROUND.getAsInt(), alpha));
++            // Rinth start: the menus' photo behind, not Mojang's red (LoadingLook)
++            rinth.client.look.LoadingLook.background(graphics, width, height, alpha);
++            // Rinth end
+             logoAlpha = Mth.clamp(fadeInAnim, 0.0F, 1.0F);
+@@ -101,2 +105,3 @@
+             ARGB.setVector4fFromARGB32(this.minecraft.gameRenderer.gameRenderState().guiRenderState.clearColorOverride, BRAND_BACKGROUND.getAsInt());
++            rinth.client.look.LoadingLook.background(graphics, width, height, 255); // Rinth: the menus' photo (LoadingLook)
+             logoAlpha = 1.0F;
+@@ -104,2 +109,11 @@
+ 
++        // Rinth start: Rinth's mark and loading bar, not Mojang's logo and bar (LoadingLook)
++        if (rinth.client.look.LoadingLook.content(this, graphics, logoAlpha, this.reload.getActualProgress(), fadeOutAnim < 1.0F ? 1.0F - Mth.clamp(fadeOutAnim, 0.0F, 1.0F) : 0.0F)) {
++            if (fadeOutAnim >= 2.0F) {
++                this.minecraft.gui.setOverlay(null);
++            }
++            return;
++        }
++        // Rinth end
++
+         int contentX = (int)(graphics.guiWidth() * 0.5);

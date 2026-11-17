@@ -1,0 +1,16 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 10 Oct 2026 10:27:23 -0400
+Subject: [PATCH] gui: Let Rinth's skin draw the game's widgets
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/components/AbstractWidget.java b/src/main/java/net/minecraft/client/gui/components/AbstractWidget.java
+index e3775c2e5daaba52a1cc6e8364d76ef21afd923d..90eddaa0ca493fab310b052b124a4ad5673f1580 100644
+--- a/src/main/java/net/minecraft/client/gui/components/AbstractWidget.java
++++ b/src/main/java/net/minecraft/client/gui/components/AbstractWidget.java
+@@ -58,2 +58,5 @@
+             this.isHovered = graphics.containsPointInScissor(mouseX, mouseY) && this.areCoordinatesInRectangle(mouseX, mouseY);
++            // Rinth start: Rinth's skin may draw the widget itself (Skins)
++            if (!rinth.client.ui.Skins.widget(graphics, this, mouseX, mouseY, a))
++            // Rinth end
+             this.extractWidgetRenderState(graphics, mouseX, mouseY, a);

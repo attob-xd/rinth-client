@@ -1,0 +1,29 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sun, 4 Oct 2026 16:09:25 -0400
+Subject: [PATCH] render: Accessors to read a section copy's blocks in bulk
+
+
+diff --git a/src/main/java/net/minecraft/client/renderer/chunk/RenderSectionRegion.java b/src/main/java/net/minecraft/client/renderer/chunk/RenderSectionRegion.java
+index cca0c5e25e38003f1ba0d00f154aebb0c89034c0..5bf76d83cdf87f20a09f3e80845d6952448fe0fb 100644
+--- a/src/main/java/net/minecraft/client/renderer/chunk/RenderSectionRegion.java
++++ b/src/main/java/net/minecraft/client/renderer/chunk/RenderSectionRegion.java
+@@ -74,2 +74,6 @@
+ 
++    // Rinth start: a section's copy, for reading its blocks in bulk
++    public SectionCopy rinthSection(final int sectionX, final int sectionY, final int sectionZ) { return this.getSection(sectionX, sectionY, sectionZ); }
++    // Rinth end
++
+     @Override
+diff --git a/src/main/java/net/minecraft/client/renderer/chunk/SectionCopy.java b/src/main/java/net/minecraft/client/renderer/chunk/SectionCopy.java
+index 967e4fcf526fdd913bac8e826bdbf231ed7dff81..bd72d3b186817c266dde28b77f1bf0268e1420e4 100644
+--- a/src/main/java/net/minecraft/client/renderer/chunk/SectionCopy.java
++++ b/src/main/java/net/minecraft/client/renderer/chunk/SectionCopy.java
+@@ -42,2 +42,7 @@
+ 
++    // Rinth start: the copied blocks, for reading them in bulk (null: all air, or a debug world's)
++    public @Nullable PalettedContainer<BlockState> rinthStates() { return this.debug ? null : this.section; }
++    public boolean rinthDebug() { return this.debug; }
++    // Rinth end
++
+     public @Nullable BlockEntity getBlockEntity(final BlockPos pos) {

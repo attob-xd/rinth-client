@@ -1,0 +1,17 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 26 Sep 2026 13:35:51 -0400
+Subject: [PATCH] platform: Let the entry point load the native libraries
+
+
+diff --git a/src/main/java/net/minecraft/client/main/Main.java b/src/main/java/net/minecraft/client/main/Main.java
+index 998dbcfc63e8830cdc489bda2c2454c0a2a4aa86..0de841c155bf4a3cfb7ff6dbfe0bbb806c733b24 100644
+--- a/src/main/java/net/minecraft/client/main/Main.java
++++ b/src/main/java/net/minecraft/client/main/Main.java
+@@ -126,3 +126,5 @@
+         try {
+-            NativeLibrariesBootstrap.loadLibraries();
++            // Rinth start: the entry point loads native libraries (desktop has them, a page doesn't)
++            rinth.client.platform.PlatformLifecycle.loadNativeLibraries();
++            // Rinth end
+         } catch (Throwable t) {

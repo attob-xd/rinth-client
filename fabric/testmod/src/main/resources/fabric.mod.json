@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "rinth_testmod",
+  "version": "1.0.0",
+  "name": "Rinth Test Mod",
+  "description": "Tests Rinth's build-time Fabric loader: an entrypoint, mixins, MixinExtras, an accessor, an access widener and a language file.",
+  "authors": ["Rinth"],
+  "license": "GPL-3.0-or-later",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["rinth.testmod.TestMod"]
+  },
+  "mixins": ["rinth_testmod.mixins.json"],
+  "accessWidener": "rinth_testmod.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.17",
+    "minecraft": "~26.3"
+  }
+}

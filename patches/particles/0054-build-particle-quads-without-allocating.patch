@@ -1,0 +1,32 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Wed, 30 Sep 2026 11:54:44 -0400
+Subject: [PATCH] particles: Build particle quads without allocating
+
+
+diff --git a/src/main/java/net/minecraft/client/particle/SingleQuadParticle.java b/src/main/java/net/minecraft/client/particle/SingleQuadParticle.java
+index 3e5b08028b6db397e3793680fabad6dd15b866bd..0ae27df9d8e18ef79b2c067683b455bec6eace87 100644
+--- a/src/main/java/net/minecraft/client/particle/SingleQuadParticle.java
++++ b/src/main/java/net/minecraft/client/particle/SingleQuadParticle.java
+@@ -53,3 +53,5 @@
+     public void extract(final QuadParticleRenderState particleTypeRenderState, final Camera camera, final float partialTickTime) {
+-        Quaternionf rotation = new Quaternionf();
++        // Rinth start: one rotation reused, not one a particle a frame
++        Quaternionf rotation = rinth.client.particle.ParticleScratch.facing();
++        // Rinth end
+         this.getFacingCameraMode().setRotation(rotation, camera, partialTickTime);
+diff --git a/src/main/java/net/minecraft/client/renderer/state/level/QuadParticleRenderState.java b/src/main/java/net/minecraft/client/renderer/state/level/QuadParticleRenderState.java
+index 6e20369a36bacb09bafe56d176b4919f63d5647e..27d4bf468e8f68898f5b33f80807ccf7dc8886da 100644
+--- a/src/main/java/net/minecraft/client/renderer/state/level/QuadParticleRenderState.java
++++ b/src/main/java/net/minecraft/client/renderer/state/level/QuadParticleRenderState.java
+@@ -84,7 +84,5 @@
+     ) {
+-        Quaternionf rotation = new Quaternionf(xRot, yRot, zRot, wRot);
+-        this.renderVertex(builder, rotation, x, y, z, 1.0F, -1.0F, scale, u1, v1, color, lightCoords);
+-        this.renderVertex(builder, rotation, x, y, z, 1.0F, 1.0F, scale, u1, v0, color, lightCoords);
+-        this.renderVertex(builder, rotation, x, y, z, -1.0F, 1.0F, scale, u0, v0, color, lightCoords);
+-        this.renderVertex(builder, rotation, x, y, z, -1.0F, -1.0F, scale, u0, v1, color, lightCoords);
++        // Rinth start: corners rotated once for all the particles turned the same way, nothing allocated
++        rinth.client.particle.ParticleQuads.render(builder, x, y, z, xRot, yRot, zRot, wRot, scale, u0, u1, v0, v1, color, lightCoords);
++        // Rinth end
+     }

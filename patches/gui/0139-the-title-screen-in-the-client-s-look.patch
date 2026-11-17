@@ -1,0 +1,28 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 10 Oct 2026 12:03:07 -0400
+Subject: [PATCH] gui: The title screen in the client's look
+
+Signed-off-by: rinth-client <335801235+rinth-client@users.noreply.github.com>
+
+diff --git a/src/main/java/net/minecraft/client/gui/screens/TitleScreen.java b/src/main/java/net/minecraft/client/gui/screens/TitleScreen.java
+index e59ed0779a1074756620a50c8911297a2ba96238..7b470eeaf8b9f3d1428b4a040d3f115964910524 100644
+--- a/src/main/java/net/minecraft/client/gui/screens/TitleScreen.java
++++ b/src/main/java/net/minecraft/client/gui/screens/TitleScreen.java
+@@ -105,2 +105,5 @@
+     protected void init() {
++        // Rinth start: the title screen in the client's look
++        if (rinth.client.look.TitleLook.init(this, this::addRenderableWidget)) return;
++        // Rinth end
+         if (this.splash == null) {
+@@ -292,2 +295,10 @@
+     public void extractRenderState(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY, final float a) {
++        // Rinth start: the title screen in the client's look
++        if (rinth.client.look.TitleLook.active(this)) {
++            rinth.client.look.TitleLook.extractBehind(this, graphics, mouseX, mouseY, a);
++            super.extractRenderState(graphics, mouseX, mouseY, a);
++            rinth.client.look.TitleLook.extractFront(this, graphics, mouseX, mouseY, a);
++            return;
++        }
++        // Rinth end
+         if (this.fadeInStart == 0L && this.fading) {

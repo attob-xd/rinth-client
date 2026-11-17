@@ -1,0 +1,18 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sun, 11 Oct 2026 12:19:21 -0400
+Subject: [PATCH] gui: Let Rinth's own render states take the clip
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/GuiGraphicsExtractor.java b/src/main/java/net/minecraft/client/gui/GuiGraphicsExtractor.java
+index 4f717915f76ffc6d715f0136193baf6aae7e673d..a0122e82b75b6b001429da1b0452a3edef2af2cb 100644
+--- a/src/main/java/net/minecraft/client/gui/GuiGraphicsExtractor.java
++++ b/src/main/java/net/minecraft/client/gui/GuiGraphicsExtractor.java
+@@ -157,2 +157,7 @@
+ 
++    // Rinth start: Rinth's own render states join the GUI with its clip (RoundRects, Circles)
++    public @Nullable ScreenRectangle rinthScissor() { return this.scissorStack.peek(); }
++    public void rinthSubmit(final net.minecraft.client.renderer.state.gui.GuiElementRenderState state) { this.guiRenderState.addGuiElement(state); }
++    // Rinth end
++
+     public void horizontalLine(int x0, int x1, final int y, final int col) {

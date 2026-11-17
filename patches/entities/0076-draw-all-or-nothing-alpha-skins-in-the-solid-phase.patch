@@ -1,0 +1,32 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Thu, 1 Oct 2026 18:11:22 -0400
+Subject: [PATCH] entities: Draw all-or-nothing-alpha skins in the solid phase
+
+
+diff --git a/src/main/java/net/minecraft/client/renderer/SubmitNodeCollection.java b/src/main/java/net/minecraft/client/renderer/SubmitNodeCollection.java
+index 88dc48572d853934f57e271ddc3ac0dc1ff3529b..1dac3c5e198ead12d5dcc1fac5a454aa06faaf4b 100644
+--- a/src/main/java/net/minecraft/client/renderer/SubmitNodeCollection.java
++++ b/src/main/java/net/minecraft/client/renderer/SubmitNodeCollection.java
+@@ -256,3 +256,4 @@
+                 this.waterMask.submit(submit);
+-            } else if (!renderType.forceSolidModelPhase() && renderType.hasBlending()) {
++            } else if (!renderType.forceSolidModelPhase() && renderType.hasBlending()
++                && !rinth.client.render.entity.OpaqueSkins.drawsAsSolid(renderType, tintedColor)) { // Rinth: all-or-nothing alpha draws as solid (ADR 0027)
+                 this.translucentModels.submit(submit);
+diff --git a/src/main/java/net/minecraft/client/renderer/texture/DynamicTexture.java b/src/main/java/net/minecraft/client/renderer/texture/DynamicTexture.java
+index e39e28ccaea233f2d221080b91a9011966fbecf8..e57e936c448d68ac5139ac0f8e4229f12c8cbaa2 100644
+--- a/src/main/java/net/minecraft/client/renderer/texture/DynamicTexture.java
++++ b/src/main/java/net/minecraft/client/renderer/texture/DynamicTexture.java
+@@ -51,2 +51,3 @@
+             RenderSystem.getDevice().createCommandEncoder().writeToTexture(this.texture, this.pixels);
++            rinth.client.render.entity.OpaqueSkins.uploaded(this.texture, this.pixels); // Rinth: note all-or-nothing alpha (ADR 0027)
+         } else {
+diff --git a/src/main/java/net/minecraft/client/renderer/texture/ReloadableTexture.java b/src/main/java/net/minecraft/client/renderer/texture/ReloadableTexture.java
+index cd27b085c839cd107927d38741ed9d6edc46dac3..a0be0cedf2102ad00a56c699f24561baacf2c648 100644
+--- a/src/main/java/net/minecraft/client/renderer/texture/ReloadableTexture.java
++++ b/src/main/java/net/minecraft/client/renderer/texture/ReloadableTexture.java
+@@ -43,2 +43,3 @@
+         device.createCommandEncoder().writeToTexture(this.texture, image);
++        rinth.client.render.entity.OpaqueSkins.uploaded(this.texture, image); // Rinth: note all-or-nothing alpha (ADR 0027)
+     }

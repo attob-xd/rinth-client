@@ -1,0 +1,16 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 29 Sep 2026 17:53:23 -0400
+Subject: [PATCH] net: Join again with the version a server's refusal names
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/screens/DisconnectedScreen.java b/src/main/java/net/minecraft/client/gui/screens/DisconnectedScreen.java
+index 3eadecbf7e8e8e2c40731ccb2779656774c32d24..af9c32d028ce7e298fa88be4f881184281780408 100644
+--- a/src/main/java/net/minecraft/client/gui/screens/DisconnectedScreen.java
++++ b/src/main/java/net/minecraft/client/gui/screens/DisconnectedScreen.java
+@@ -43,2 +43,5 @@
+     protected void init() {
++        // Rinth start: a join Rinth can recover (a version refusal, a password, a redirect) goes on
++        if (rinth.client.net.JoinFailures.handle(this.minecraft, this.parent, this.details.reason())) return;
++        // Rinth end
+         this.layout.defaultCellSetting().alignHorizontallyCenter().padding(10);

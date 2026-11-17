@@ -1,0 +1,21 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sun, 4 Oct 2026 16:07:48 -0400
+Subject: [PATCH] render: Drop kept tint biomes only near a chunk that came or
+ went
+
+
+diff --git a/src/main/java/net/minecraft/client/multiplayer/ClientLevel.java b/src/main/java/net/minecraft/client/multiplayer/ClientLevel.java
+index 2ad4247f5a58f4ff4b013e1da47738a0b56550d3..53d41f591465f374b418cd9d664474663fef57b7 100644
+--- a/src/main/java/net/minecraft/client/multiplayer/ClientLevel.java
++++ b/src/main/java/net/minecraft/client/multiplayer/ClientLevel.java
+@@ -503,3 +503,3 @@
+     public void unload(final LevelChunk levelChunk) {
+-        rinth.client.render.TintBlend.changed(); // Rinth: the biomes held changed (ADR 0027)
++        rinth.client.render.TintBlend.chunkChanged(levelChunk.getPos().x(), levelChunk.getPos().z()); // Rinth: the biomes held changed (ADR 0027, 0034)
+         levelChunk.clearAllBlockEntities();
+@@ -510,3 +510,3 @@
+     public void onChunkLoaded(final ChunkPos pos) {
+-        rinth.client.render.TintBlend.changed(); // Rinth: the biomes held changed (ADR 0027)
++        rinth.client.render.TintBlend.chunkChanged(pos.x(), pos.z()); // Rinth: the biomes held changed (ADR 0027, 0034)
+         this.tintCaches.forEach((resolver, cache) -> cache.invalidateForChunk(pos.x(), pos.z()));

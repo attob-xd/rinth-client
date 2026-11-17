@@ -1,0 +1,33 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 10 Oct 2026 15:16:25 -0400
+Subject: [PATCH] client: The HUD editor's blurred backdrop kept between
+ refreshes on Potato
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/render/GuiRenderer.java b/src/main/java/net/minecraft/client/gui/render/GuiRenderer.java
+index deb868eef8ebf195ad1749b36cfa7323ba0326ca..d2a5ade2d1091e7357f04abb117bfdd8a14f263e 100644
+--- a/src/main/java/net/minecraft/client/gui/render/GuiRenderer.java
++++ b/src/main/java/net/minecraft/client/gui/render/GuiRenderer.java
+@@ -209,2 +209,5 @@
+                 RenderSystem.getDevice().createCommandEncoder().clearDepthTexture(mainRenderTarget.getDepthTexture(), 0.0);
++                // Rinth start: the HUD editor's backdrop, blurred a few times a second on Potato and kept between (BackdropCache)
++                if (!rinth.client.gui.BackdropCache.blur(mainRenderTarget))
++                // Rinth end
+                 minecraft.gameRenderer.processBlurEffect();
+diff --git a/src/main/java/net/minecraft/client/renderer/GameRenderer.java b/src/main/java/net/minecraft/client/renderer/GameRenderer.java
+index 9e7af3e1f77c32fe97245afd50b963582a89a45a..4cca1a2d94833a9eb6f2afbe665eccbc3896e907 100644
+--- a/src/main/java/net/minecraft/client/renderer/GameRenderer.java
++++ b/src/main/java/net/minecraft/client/renderer/GameRenderer.java
+@@ -444,2 +444,5 @@
+         this.gameRenderState.shouldRenderLevel = resourcesLoaded && advanceGameTime && this.minecraft.level != null;
++        // Rinth start: between the HUD editor's backdrop refreshes on Potato, the level isn't drawn (BackdropCache)
++        if (rinth.client.gui.BackdropCache.beginFrame(this.mainRenderTarget)) this.gameRenderState.shouldRenderLevel = false;
++        // Rinth end
+         float worldPartialTicks = deltaTracker.getGameTimeDeltaPartialTick(false);
+@@ -515,2 +518,5 @@
+         this.renderBuffers.endFrame();
++        // Rinth start: frames that reuse the HUD editor's kept backdrop use no pooled targets; they mustn't age them out (BackdropCache)
++        if (!rinth.client.gui.BackdropCache.reusing())
++        // Rinth end
+         this.resourcePool.endFrame();

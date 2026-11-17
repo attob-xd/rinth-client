@@ -1,0 +1,29 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Wed, 30 Sep 2026 21:55:23 -0400
+Subject: [PATCH] datafix: Build the data fixer only when something needs
+ upgrading
+
+
+diff --git a/src/main/java/net/minecraft/client/Minecraft.java b/src/main/java/net/minecraft/client/Minecraft.java
+index d0dedf4e43a6746f1dd49845dc363a5ea13780e1..e4b4fbfd514f9f4659401fbf1248f133da074df4 100644
+--- a/src/main/java/net/minecraft/client/Minecraft.java
++++ b/src/main/java/net/minecraft/client/Minecraft.java
+@@ -424,3 +424,5 @@
+         KeybindResolver.setKeyResolver(KeyMapping::createNameSupplier);
+-        this.fixerUpper = DataFixers.getDataFixer();
++        // Rinth start: the data fixer may be built only when something needs upgrading
++        this.fixerUpper = rinth.client.datafix.DataFixing.fixer();
++        // Rinth end
+         this.gameThread = Thread.currentThread();
+diff --git a/src/main/java/net/minecraft/client/main/Main.java b/src/main/java/net/minecraft/client/main/Main.java
+index 0de841c155bf4a3cfb7ff6dbfe0bbb806c733b24..1a2bb5f10d875fed64375b554c11099ba6c4df91 100644
+--- a/src/main/java/net/minecraft/client/main/Main.java
++++ b/src/main/java/net/minecraft/client/main/Main.java
+@@ -156,3 +156,5 @@
+             TracyClient.reportAppInfo("Minecraft Java Edition " + SharedConstants.getCurrentVersion().name());
+-            CompletableFuture<?> dataFixerOptimization = DataFixers.optimize(DataFixTypes.TYPES_FOR_LEVEL_LIST);
++            // Rinth start: none where the data fixer is built only when needed
++            CompletableFuture<?> dataFixerOptimization = rinth.client.datafix.DataFixing.optimizeAtStart(DataFixTypes.TYPES_FOR_LEVEL_LIST);
++            // Rinth end
+             CrashReport.preload();

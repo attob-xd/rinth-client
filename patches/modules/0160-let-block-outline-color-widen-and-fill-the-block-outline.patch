@@ -1,0 +1,20 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Mon, 12 Oct 2026 19:25:17 -0400
+Subject: [PATCH] modules: Let Block Outline color, widen and fill the block
+ outline
+
+
+diff --git a/src/main/java/net/minecraft/client/renderer/LevelRenderer.java b/src/main/java/net/minecraft/client/renderer/LevelRenderer.java
+index fd2196d6e2b5b66249d7b64c187727a480b4af7c..ad4f3e4d0f0b31198d17c3c5b1525b255a61d550 100644
+--- a/src/main/java/net/minecraft/client/renderer/LevelRenderer.java
++++ b/src/main/java/net/minecraft/client/renderer/LevelRenderer.java
+@@ -1091,2 +1091,3 @@
+             int outlineColor = state.highContrast() ? -11010079 : ARGB.black(102);
++            outlineColor = rinth.client.modules.ModuleEffects.outlineColor(outlineColor, state.highContrast(), poseStack, submitNodeCollector, state.shape()); // Rinth: Block Outline
+             RenderType blockOutlineRenderType;
+@@ -1106,3 +1107,3 @@
+                 outlineColor,
+-                this.gameRenderer.gameRenderState().windowRenderState.appropriateLineWidth,
++                rinth.client.modules.ModuleEffects.outlineWidth(this.gameRenderer.gameRenderState().windowRenderState.appropriateLineWidth), // Rinth: Block Outline
+                 state.isTranslucent()

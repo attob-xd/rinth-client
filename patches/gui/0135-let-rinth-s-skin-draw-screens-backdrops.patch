@@ -1,0 +1,16 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 10 Oct 2026 10:27:23 -0400
+Subject: [PATCH] gui: Let Rinth's skin draw screens' backdrops
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/screens/Screen.java b/src/main/java/net/minecraft/client/gui/screens/Screen.java
+index 4f623f3ee6deb9ffa5ad4351d12354fb5f1a6431..a11481f6c13633cecdb4abceb86a3db461915e48 100644
+--- a/src/main/java/net/minecraft/client/gui/screens/Screen.java
++++ b/src/main/java/net/minecraft/client/gui/screens/Screen.java
+@@ -393,2 +393,5 @@
+     public void extractBackground(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY, final float a) {
++        // Rinth start: Rinth's skin may draw the backdrop its own way (Skins)
++        if (!rinth.client.ui.Skins.background(graphics, this, a))
++        // Rinth end
+         if (this.isInGameUi()) {

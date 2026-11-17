@@ -1,0 +1,18 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 10 Oct 2026 11:39:31 -0400
+Subject: [PATCH] gui: The Normal GUI preset's menu blur
+
+Signed-off-by: rinth-client <335801235+rinth-client@users.noreply.github.com>
+
+diff --git a/src/main/java/net/minecraft/client/renderer/GameRenderer.java b/src/main/java/net/minecraft/client/renderer/GameRenderer.java
+index f94d13aea19489898e43918a0df2fc52bce18992..9e7af3e1f77c32fe97245afd50b963582a89a45a 100644
+--- a/src/main/java/net/minecraft/client/renderer/GameRenderer.java
++++ b/src/main/java/net/minecraft/client/renderer/GameRenderer.java
+@@ -761,3 +761,5 @@
+         optionsState.ambientOcclusion = options.ambientOcclusion().get();
+-        optionsState.menuBackgroundBlurriness = options.getMenuBackgroundBlurriness();
++        // Rinth start: the Normal GUI preset frosts menus even where the graphics preset turns the blur off
++        optionsState.menuBackgroundBlurriness = rinth.client.ui.Look.blurRadius(options.getMenuBackgroundBlurriness());
++        // Rinth end
+         optionsState.panoramaSpeed = options.panoramaSpeed().get();

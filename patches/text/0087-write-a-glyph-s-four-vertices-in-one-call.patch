@@ -1,0 +1,36 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 3 Oct 2026 01:21:55 -0400
+Subject: [PATCH] text: Write a glyph's four vertices in one call
+
+
+diff --git a/src/main/java/com/mojang/blaze3d/vertex/BufferBuilder.java b/src/main/java/com/mojang/blaze3d/vertex/BufferBuilder.java
+index 96ac165980a7eb4f6d4c20344fce264f62629bd1..7782a5609f45aff4bd629b6aacde09545d975a60 100644
+--- a/src/main/java/com/mojang/blaze3d/vertex/BufferBuilder.java
++++ b/src/main/java/com/mojang/blaze3d/vertex/BufferBuilder.java
+@@ -189,2 +189,15 @@
+ 
++    // Rinth start: a whole vertex of position, color, texture and maybe light, in one call (ADR 0031: glyph quads)
++    public void rinthVertex(final float x, final float y, final float z, final int color, final float u, final float v, final int light) {
++        long pointer = this.beginVertex();
++        this.elementsToFill = 0;
++        putVec3f(pointer + this.elements[0].offset(), x, y, z);
++        putRgba(pointer + this.elements[1].offset(), color);
++        MemoryUtil.memPutFloat(pointer + this.elements[2].offset(), u);
++        MemoryUtil.memPutFloat(pointer + this.elements[2].offset() + 4L, v);
++        if (this.elements[4] != null) putPackedUv(pointer + this.elements[4].offset(), light);
++    }
++    public VertexFormat rinthFormat() { return this.format; }
++    // Rinth end
++
+     // Rinth start: write baked quads without five vectors each (items in the world)
+diff --git a/src/main/java/net/minecraft/client/gui/font/glyphs/BakedSheetGlyph.java b/src/main/java/net/minecraft/client/gui/font/glyphs/BakedSheetGlyph.java
+index ba382d15e8788b86750dd93247af17b4cfc76fc2..365ea701d46a96248c9fffa1a549a0f5f4769776 100644
+--- a/src/main/java/net/minecraft/client/gui/font/glyphs/BakedSheetGlyph.java
++++ b/src/main/java/net/minecraft/client/gui/font/glyphs/BakedSheetGlyph.java
+@@ -133,2 +133,5 @@
+         float extraThickness = extraThickness(bold);
++        // Rinth start: the four vertices in one call (ADR 0031)
++        if (rinth.client.render.GlyphQuads.put(builder, pose, x0 + shearY0 - extraThickness, y0 - extraThickness, x0 + shearY1 - extraThickness, y1 + extraThickness, x1 + shearY1 + extraThickness, y1 + extraThickness, x1 + shearY0 + extraThickness, y0 - extraThickness, z, color, this.u0, this.v0, this.u1, this.v1, packedLightCoords)) return;
++        // Rinth end
+         builder.addVertex(pose, x0 + shearY0 - extraThickness, y0 - extraThickness, z).setColor(color).setUv(this.u0, this.v0).setLight(packedLightCoords);

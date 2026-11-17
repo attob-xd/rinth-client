@@ -1,0 +1,19 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sun, 4 Oct 2026 16:05:48 -0400
+Subject: [PATCH] render: Queue a section task again without a throw when no
+ buffer pack is free
+
+
+diff --git a/src/main/java/net/minecraft/client/renderer/chunk/SectionRenderDispatcher.java b/src/main/java/net/minecraft/client/renderer/chunk/SectionRenderDispatcher.java
+index aeae7918968b6a1819a817d5205be0ff067153f5..a3ac4444c3fcbdec7b03566d69a15d9085f75db6 100644
+--- a/src/main/java/net/minecraft/client/renderer/chunk/SectionRenderDispatcher.java
++++ b/src/main/java/net/minecraft/client/renderer/chunk/SectionRenderDispatcher.java
+@@ -88,3 +88,6 @@
+                 try {
+-                    SectionBufferBuilderPack buffer = Objects.requireNonNull(this.bufferPool.acquire());
++                    // Rinth start: no free buffer pack: queued again without throwing for it, as the catch below does
++                    SectionBufferBuilderPack buffer = this.bufferPool.acquire();
++                    if (buffer == null) { this.queue.add(task); return; }
++                    // Rinth end
+                     SectionRenderDispatcher.RenderSection.SectionTask.SectionTaskResult result = task.doTask(buffer);

@@ -1,0 +1,16 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 29 Sep 2026 22:08:13 -0400
+Subject: [PATCH] profiler: Draw the profiler's overlay over every screen
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/Gui.java b/src/main/java/net/minecraft/client/gui/Gui.java
+index 3fd7c2d6e118c66a04b946dcb2dc9d2e121c10ae..f0e058f9b1d3889528f47927ec9c5582bc6061a1 100644
+--- a/src/main/java/net/minecraft/client/gui/Gui.java
++++ b/src/main/java/net/minecraft/client/gui/Gui.java
+@@ -203,2 +203,5 @@
+ 
++        // Rinth start: the profiler's overlay
++        rinth.client.profiler.ProfilerOverlay.extract(graphics);
++        // Rinth end
+         this.hud.extractDeferredSubtitles();

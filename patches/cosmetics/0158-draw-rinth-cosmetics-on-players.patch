@@ -1,0 +1,26 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Mon, 12 Oct 2026 19:04:57 -0400
+Subject: [PATCH] cosmetics: Draw Rinth cosmetics on players
+
+
+diff --git a/src/main/java/net/minecraft/client/renderer/entity/player/AvatarRenderer.java b/src/main/java/net/minecraft/client/renderer/entity/player/AvatarRenderer.java
+index 1fd159147ffcf439c2fe034e32f5c9ce24fd4bd3..de5129a2f60df7db6586cc572638c24e26e15880 100644
+--- a/src/main/java/net/minecraft/client/renderer/entity/player/AvatarRenderer.java
++++ b/src/main/java/net/minecraft/client/renderer/entity/player/AvatarRenderer.java
+@@ -64,2 +64,3 @@
+         this.addLayer(new BeeStingerLayer<>(this, context));
++        this.addLayer(rinth.client.cosmetics.Cosmetics.layer(this)); // Rinth: cosmetics (ADR 0061)
+     }
+@@ -187,2 +188,3 @@
+         }
++        rinth.client.cosmetics.Cosmetics.extract(entity, state); // Rinth: cosmetics (ADR 0061)
+     }
+diff --git a/src/main/java/net/minecraft/client/renderer/entity/state/AvatarRenderState.java b/src/main/java/net/minecraft/client/renderer/entity/state/AvatarRenderState.java
+index 5fd4ec9d03015bbb8897e95a346432cc639f153d..9db9088b557f0dd3cd97c391f96e2aef1ef8b0a5 100644
+--- a/src/main/java/net/minecraft/client/renderer/entity/state/AvatarRenderState.java
++++ b/src/main/java/net/minecraft/client/renderer/entity/state/AvatarRenderState.java
+@@ -32,2 +32,3 @@
+     public final ItemStackRenderState heldOnHead = new ItemStackRenderState();
++    public rinth.client.cosmetics.Worn rinthWorn = rinth.client.cosmetics.Worn.NONE; // Rinth: cosmetics (ADR 0061)
+ 

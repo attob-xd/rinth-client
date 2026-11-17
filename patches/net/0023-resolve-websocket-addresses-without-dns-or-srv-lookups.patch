@@ -1,0 +1,18 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sun, 27 Sep 2026 17:03:44 -0400
+Subject: [PATCH] net: Resolve WebSocket addresses without DNS or SRV lookups
+
+
+diff --git a/src/main/java/net/minecraft/client/multiplayer/resolver/ServerNameResolver.java b/src/main/java/net/minecraft/client/multiplayer/resolver/ServerNameResolver.java
+index e02f8e45a9b5e9c4a995cef0b24a3e0267b55bc9..e0409df426cce5888b913aba94596a9829397210 100644
+--- a/src/main/java/net/minecraft/client/multiplayer/resolver/ServerNameResolver.java
++++ b/src/main/java/net/minecraft/client/multiplayer/resolver/ServerNameResolver.java
+@@ -21,2 +21,7 @@
+     public Optional<ResolvedServerAddress> resolveAddress(final ServerAddress address) {
++        // Rinth start: a WebSocket address needs no DNS or SRV lookup
++        if (rinth.client.net.WebSocketConnections.isWebSocket(address)) {
++            return rinth.client.net.WebSocketConnections.resolve(address, this.addressCheck);
++        }
++        // Rinth end
+         Optional<ResolvedServerAddress> resolvedAddress = this.resolver.resolve(address);

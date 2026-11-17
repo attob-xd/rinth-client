@@ -1,0 +1,18 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 13 Oct 2026 18:59:48 -0400
+Subject: [PATCH] modules: Let modules see a spear's stab
+
+A piercing weapon's attack returned before the attack hook, so Hit & Kill
+Effects and Reach Display never saw it.
+
+diff --git a/src/main/java/net/minecraft/client/Minecraft.java b/src/main/java/net/minecraft/client/Minecraft.java
+index e659ccbcf6bb418c7a0b0bea762495bc6d8ef9e4..2476dc5742d9567e70f006bb55f74488f46785ec 100644
+--- a/src/main/java/net/minecraft/client/Minecraft.java
++++ b/src/main/java/net/minecraft/client/Minecraft.java
+@@ -1708,2 +1708,5 @@
+                     this.gameMode.piercingAttack(attackAnimation, piercingWeapon);
++                    // Rinth start: modules see a spear's stab too (Hit & Kill Effects, Reach Display)
++                    rinth.client.modules.ModuleInput.stabbed(this.player, this.hitResult);
++                    // Rinth end
+                     return true;

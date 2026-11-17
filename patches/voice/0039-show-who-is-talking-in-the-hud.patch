@@ -1,0 +1,16 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 29 Sep 2026 18:36:09 -0400
+Subject: [PATCH] voice: Show who is talking in the HUD
+
+
+diff --git a/src/main/java/net/minecraft/client/gui/Hud.java b/src/main/java/net/minecraft/client/gui/Hud.java
+index 35c23b1f1784381744b15753da5c79ea9dc01754..0669a3f596897b4a2c4fe65eb6d936d1ba8a0081 100644
+--- a/src/main/java/net/minecraft/client/gui/Hud.java
++++ b/src/main/java/net/minecraft/client/gui/Hud.java
+@@ -236,2 +236,5 @@
+                 this.extractTitle(graphics, deltaTracker);
++                // Rinth start: who is talking in voice chat
++                rinth.client.eagler.VoiceOverlay.extract(graphics);
++                // Rinth end
+                 this.extractChat(graphics, deltaTracker);

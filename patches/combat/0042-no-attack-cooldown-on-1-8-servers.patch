@@ -1,0 +1,16 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Tue, 29 Sep 2026 18:53:34 -0400
+Subject: [PATCH] combat: No attack cooldown on 1.8 servers
+
+
+diff --git a/src/main/java/net/minecraft/world/entity/player/Player.java b/src/main/java/net/minecraft/world/entity/player/Player.java
+index 54e8cc0621c38bd3da22ef85b662ba182270b317..986f048880a9f139b0a8e21ae764d9ffae0018a0 100644
+--- a/src/main/java/net/minecraft/world/entity/player/Player.java
++++ b/src/main/java/net/minecraft/world/entity/player/Player.java
+@@ -1812,2 +1812,5 @@
+     public float getAttackStrengthScale(final float a) {
++        // Rinth start: 1.8 servers have no attack cooldown
++        if (rinth.client.legacy.LegacyCombat.noCooldown()) return 1.0F;
++        // Rinth end
+         return Mth.clamp((this.attackStrengthTicker + a) / this.getCurrentItemAttackStrengthDelay(), 0.0F, 1.0F);

@@ -1,0 +1,23 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Fri, 2 Oct 2026 07:53:23 -0400
+Subject: [PATCH] threads: Skip the chunk palettes' threading checks on one
+ thread
+
+
+diff --git a/src/main/java/net/minecraft/util/ThreadingDetector.java b/src/main/java/net/minecraft/util/ThreadingDetector.java
+index 7eb0de4f4abeba928eac78e564b724ea618f276c..f3eeee6256d6b46793ba86d5b70a62aa12050c1d 100644
+--- a/src/main/java/net/minecraft/util/ThreadingDetector.java
++++ b/src/main/java/net/minecraft/util/ThreadingDetector.java
+@@ -29,2 +29,5 @@
+     public void checkAndLock() {
++        // Rinth start: one thread can't race itself (ADR 0030)
++        if (rinth.client.platform.ClientPlatform.oneThread()) return;
++        // Rinth end
+         boolean released = false;
+@@ -54,2 +57,5 @@
+     public void checkAndUnlock() {
++        // Rinth start: one thread can't race itself (ADR 0030)
++        if (rinth.client.platform.ClientPlatform.oneThread()) return;
++        // Rinth end
+         try {

@@ -1,0 +1,38 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Fri, 9 Oct 2026 19:21:07 -0400
+Subject: [PATCH] options: A Potato graphics preset below Fast, and the default
+
+Low-end Chromebooks want the cheapest settings from the first start:
+render distance 4, no clouds, minimal particles, no mip levels, no menu
+blur. The preset's values live in Rinth's PotatoGraphics.
+
+diff --git a/src/main/java/net/minecraft/client/GraphicsPreset.java b/src/main/java/net/minecraft/client/GraphicsPreset.java
+index aba39c429dd04961ebf89b8694fc0305f874f12e..2961a5c6fd7a1ef5e1cf6586cdecad59956f1112 100644
+--- a/src/main/java/net/minecraft/client/GraphicsPreset.java
++++ b/src/main/java/net/minecraft/client/GraphicsPreset.java
+@@ -11,2 +11,5 @@
+ public enum GraphicsPreset implements StringRepresentable {
++    // Rinth start: a Potato preset below Fast, for low-end Chromebooks
++    POTATO("potato", rinth.client.tier.PotatoGraphics.KEY),
++    // Rinth end
+     FAST("fast", "options.graphics.fast"),
+@@ -38,2 +41,7 @@
+         switch (this) {
++            // Rinth start: a Potato preset below Fast, for low-end Chromebooks
++            case POTATO:
++                rinth.client.tier.PotatoGraphics.apply(minecraft.options, screen);
++                break;
++            // Rinth end
+             case FAST: {
+diff --git a/src/main/java/net/minecraft/client/Options.java b/src/main/java/net/minecraft/client/Options.java
+index fb62b794cf13f6b6fea2970b4eebb3ef284675c3..3aee71f80c1bb934292956d2447d90f5ab7399ce 100644
+--- a/src/main/java/net/minecraft/client/Options.java
++++ b/src/main/java/net/minecraft/client/Options.java
+@@ -163,3 +163,5 @@
+         GraphicsPreset.CODEC,
+-        GraphicsPreset.FANCY,
++        // Rinth start: Potato by default, for low-end Chromebooks
++        GraphicsPreset.POTATO,
++        // Rinth end
+         this::applyGraphicsPreset

@@ -1,0 +1,16 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Mon, 28 Sep 2026 22:47:06 -0400
+Subject: [PATCH] platform: Let the platform pace frames under the frame limit
+
+
+diff --git a/src/main/java/net/minecraft/client/FramerateLimiter.java b/src/main/java/net/minecraft/client/FramerateLimiter.java
+index 4a4cf66c65065475ff2614789cf64830a2b59fa7..6c63a9c3fd79bdaae2c5c6410f1858c85654f16f 100644
+--- a/src/main/java/net/minecraft/client/FramerateLimiter.java
++++ b/src/main/java/net/minecraft/client/FramerateLimiter.java
+@@ -15,2 +15,5 @@
+     public static void limitDisplayFPS(final int framerateLimit) {
++        // Rinth start: a platform that paces frames itself (the browser) delays the next frame instead of sleeping in this one
++        if (rinth.client.platform.ClientPlatform.get().limitFrameRate(framerateLimit)) return;
++        // Rinth end
+         long targetTimePerFrame = 1000000000L / framerateLimit;

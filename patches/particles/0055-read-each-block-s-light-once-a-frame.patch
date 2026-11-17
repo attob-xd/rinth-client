@@ -1,0 +1,18 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Wed, 30 Sep 2026 11:54:44 -0400
+Subject: [PATCH] particles: Read each block's light once a frame
+
+
+diff --git a/src/main/java/net/minecraft/client/particle/Particle.java b/src/main/java/net/minecraft/client/particle/Particle.java
+index 916808027072f07e9d963b966528875789b72c84..66dba29f8119eb883f213986e26f444c39f886a9 100644
+--- a/src/main/java/net/minecraft/client/particle/Particle.java
++++ b/src/main/java/net/minecraft/client/particle/Particle.java
+@@ -187,4 +187,5 @@
+     protected int getLightCoords(final float a) {
+-        BlockPos pos = BlockPos.containing(this.x, this.y, this.z);
+-        return this.level.hasChunkAt(pos) ? LightCoordsUtil.getLightCoords(this.level, pos) : 15728640;
++        // Rinth start: each block's light read once a frame for all the particles in it
++        return rinth.client.particle.ParticleLight.at(this.level, this.x, this.y, this.z);
++        // Rinth end
+     }

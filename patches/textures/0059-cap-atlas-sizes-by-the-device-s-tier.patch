@@ -1,0 +1,35 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Wed, 30 Sep 2026 21:55:23 -0400
+Subject: [PATCH] textures: Cap atlas sizes by the device's tier
+
+
+diff --git a/src/main/java/net/minecraft/client/renderer/texture/SpriteLoader.java b/src/main/java/net/minecraft/client/renderer/texture/SpriteLoader.java
+index be3e9cfac371fde4c875493521d13b7afb907cd8..954189a06a1d9cc3d89747f033373e5c97b3ab5b 100644
+--- a/src/main/java/net/minecraft/client/renderer/texture/SpriteLoader.java
++++ b/src/main/java/net/minecraft/client/renderer/texture/SpriteLoader.java
+@@ -47,3 +47,5 @@
+         try (Zone ignored = Profiler.get().zone(() -> "stitch " + this.location)) {
+-            int maxTextureSize = this.maxSupportedTextureSize;
++            // Rinth start: the tier's largest atlas
++            int maxTextureSize = rinth.client.render.AtlasBudget.maxSize(this.maxSupportedTextureSize);
++            // Rinth end
+             int minTexelSize = Integer.MAX_VALUE;
+@@ -131,3 +133,5 @@
+             .thenCompose(sprites -> runSpriteSuppliers(spriteResourceLoader, (List<SpriteSource.Loader>)sprites, taskExecutor))
+-            .thenApply(resources -> this.stitch((List<SpriteContents>)resources, maxMipmapLevels, taskExecutor));
++            // Rinth start: sprites that don't fit the tier's largest atlas at full resolution are halved
++            .thenApply(resources -> this.stitch(rinth.client.render.AtlasBudget.fit(this.location, (List<SpriteContents>)resources, this.maxSupportedTextureSize, maxMipmapLevels), maxMipmapLevels, taskExecutor));
++            // Rinth end
+     }
+diff --git a/src/main/java/net/minecraft/client/renderer/texture/atlas/SpriteResourceLoader.java b/src/main/java/net/minecraft/client/renderer/texture/atlas/SpriteResourceLoader.java
+index 6f0204fca659a316dba8d04b8df3de2dc0aa4d03..b2ce454d1d4549ba482a81afea879b5a50c7423a 100644
+--- a/src/main/java/net/minecraft/client/renderer/texture/atlas/SpriteResourceLoader.java
++++ b/src/main/java/net/minecraft/client/renderer/texture/atlas/SpriteResourceLoader.java
+@@ -67,3 +67,5 @@
+ 
+-            return new SpriteContents(spriteLocation, frameSize, image, animationInfo, additionalMetadata, textureInfo);
++            // Rinth start: the atlas size cap may load it again at a lower resolution
++            return rinth.client.render.AtlasBudget.loaded(spriteLocation, frameSize, image, animationInfo, additionalMetadata, textureInfo);
++            // Rinth end
+         };

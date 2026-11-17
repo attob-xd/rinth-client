@@ -1,0 +1,19 @@
+# Changes here need a human reviewer. Agents may
+# open pull requests that touch these paths, but a person approves them.
+
+# Patches into Mojang code and the manifest of replaced classes.
+/patches/                  @rinth-client
+# Graphics and networking.
+/render-*/                 @rinth-client
+/tools/shaders/            @rinth-client
+/net/                      @rinth-client
+# Licensing, and the guards and workflow that keep the repo legal.
+/LICENSE                   @rinth-client
+/LICENSE-EXCEPTION.txt     @rinth-client
+/DCO.txt                   @rinth-client
+/docs/adr/0002-*           @rinth-client
+/.github/                  @rinth-client
+/tools/ci/                 @rinth-client
+/tools/copycheck/          @rinth-client
+# The architecture's allowed dependencies.
+/gradle/module-boundaries.txt  @rinth-client

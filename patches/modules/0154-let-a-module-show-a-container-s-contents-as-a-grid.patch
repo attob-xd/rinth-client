@@ -1,0 +1,38 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Sat, 10 Oct 2026 22:55:29 -0400
+Subject: [PATCH] modules: Let a module show a container's contents as a grid
+
+Shulker Tooltips (ADR 0054): the tooltip's image a grid of the items inside, drawn by Rinth, and the game's lines of names left out meanwhile.
+
+diff --git a/src/main/java/net/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipComponent.java b/src/main/java/net/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipComponent.java
+index eb7c7f8ae87ded37fb49c226080ad74ef8bb09c4..8503405f5b06cc2a9ef2ade1f99e0fc2e6824e6e 100644
+--- a/src/main/java/net/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipComponent.java
++++ b/src/main/java/net/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipComponent.java
+@@ -17,2 +17,5 @@
+             case ClientActivePlayersTooltip.ActivePlayersTooltip activePlayersTooltip -> new ClientActivePlayersTooltip(activePlayersTooltip);
++            // Rinth start: a container's contents as a grid (Shulker Tooltips)
++            case rinth.client.modules.ModuleTooltips.Preview preview -> rinth.client.modules.ModuleTooltips.client(preview);
++            // Rinth end
+             default -> throw new IllegalArgumentException("Unknown TooltipComponent");
+diff --git a/src/main/java/net/minecraft/world/item/ItemStack.java b/src/main/java/net/minecraft/world/item/ItemStack.java
+index f7be0a48eec5003a6ab6b84cc5d80d16b53c6f17..859957947df0396a8491e3e6de394420b6089f6b 100644
+--- a/src/main/java/net/minecraft/world/item/ItemStack.java
++++ b/src/main/java/net/minecraft/world/item/ItemStack.java
+@@ -215,3 +215,5 @@
+     public Optional<TooltipComponent> getTooltipImage() {
+-        return this.getItem().getTooltipImage(this);
++        // Rinth start: a module may show a container's contents as a grid (Shulker Tooltips)
++        return rinth.client.modules.ModuleTooltips.image(this, this.getItem().getTooltipImage(this));
++        // Rinth end
+     }
+diff --git a/src/main/java/net/minecraft/world/item/component/ItemContainerContents.java b/src/main/java/net/minecraft/world/item/component/ItemContainerContents.java
+index ef76a02b1394de08db4e79ba661eac02b3dcdd22..d815bf3cf945bc4f88ed63d7b23a30200b0e332b 100644
+--- a/src/main/java/net/minecraft/world/item/component/ItemContainerContents.java
++++ b/src/main/java/net/minecraft/world/item/component/ItemContainerContents.java
+@@ -177,2 +177,5 @@
+     ) {
++        // Rinth start: not while a module shows the contents as a grid (Shulker Tooltips)
++        if (rinth.client.modules.ModuleTooltips.hidesLines(this)) return;
++        // Rinth end
+         int lineCount = 0;

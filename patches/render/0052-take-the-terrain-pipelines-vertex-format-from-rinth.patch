@@ -1,0 +1,34 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: rinth-client <335801235+rinth-client@users.noreply.github.com>
+Date: Wed, 30 Sep 2026 11:54:44 -0400
+Subject: [PATCH] render: Take the terrain pipelines' vertex format from Rinth
+
+
+diff --git a/src/main/java/net/minecraft/client/renderer/RenderPipelines.java b/src/main/java/net/minecraft/client/renderer/RenderPipelines.java
+index add9f5febc18e1c902a09681880010719c26be67..1723c5526b21e28e7286599cbe6d3692779abb9d 100644
+--- a/src/main/java/net/minecraft/client/renderer/RenderPipelines.java
++++ b/src/main/java/net/minecraft/client/renderer/RenderPipelines.java
+@@ -76,2 +76,5 @@
+     private static final RenderPipeline.Snippet TERRAIN_SNIPPET = RenderPipeline.builder(LIT_BLOCKS_SNIPPET)
++        // Rinth start: the terrain vertex format (compact in the browser)
++        .withVertexBinding(0, rinth.client.render.TerrainVertexFormat.terrain())
++        // Rinth end
+         .withBindGroupLayout(BindGroupLayouts.PROJECTION)
+@@ -83,2 +86,5 @@
+     private static final RenderPipeline.Snippet MULTIDRAW_TERRAIN_SNIPPET = RenderPipeline.builder(LIT_BLOCKS_SNIPPET)
++        // Rinth start: the terrain vertex format (compact in the browser)
++        .withVertexBinding(0, rinth.client.render.TerrainVertexFormat.terrain())
++        // Rinth end
+         .withBindGroupLayout(BindGroupLayouts.PROJECTION)
+@@ -407,2 +413,5 @@
+                 RenderPipeline.builder(GENERIC_BLOCKS_SNIPPET)
++                    // Rinth start: the terrain vertex format (compact in the browser)
++                    .withVertexBinding(0, rinth.client.render.TerrainVertexFormat.terrain())
++                    // Rinth end
+                     .withVertexShader("core/terrain")
+@@ -420,2 +429,5 @@
+                 RenderPipeline.builder(GENERIC_BLOCKS_SNIPPET)
++                    // Rinth start: the terrain vertex format (compact in the browser)
++                    .withVertexBinding(0, rinth.client.render.TerrainVertexFormat.terrain())
++                    // Rinth end
+                     .withVertexShader("core/terrain")
